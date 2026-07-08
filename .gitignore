@@ -1,0 +1,2 @@
+# Exclude local-only user thought incubator files
+intent_engine/intent_awakening/
