@@ -1,17 +1,18 @@
 {
   "project_name": "AUM",
-  "invariants": [
+  "yamas": [
+    "Ahiṃsā (Non-harm): Do not break existing compile builds or functional code paths",
+    "Asteya (Non-stealing): Do not delete existing user logic, comments, or licenses without authorization",
+    "Satya (Truth): Do not write mock placeholders, stubs, or fake test data",
     "All configuration, sessions, blueprints, and logs must reside in .aum/",
+    "Maintain complete file isolation: do not read/write outside the workspace"
+  ],
+  "niyamas": [
+    "Śauca (Purity): Maintain clean code formatting, clear temporary files, and adhere to lint/compiler warnings",
+    "Svādhyāya (Self-study): Double-check logical syntax and trace execution flow sequences before applying changes",
     "Ensure state alignment using 'AUM: DRONE' at the start of each session",
-    "Maintain complete file isolation: do not read/write outside the workspace",
     "Every communication must respect formatting schema (headings, alerts, bolding)",
     "Adhere strictly to the Golden Guardrails in PHILOSOPHY.md before proposing framework modifications"
-
-  ],
-  "prohibited_actions": [
-    "Do not implement code modules or edit primary files before capturing intent",
-    "Do not bypass the Tāla verification steps",
-    "Do not write code outside the approved workspace path"
   ],
   "tala_stages": [
     "intake",

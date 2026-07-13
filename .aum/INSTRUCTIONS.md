@@ -15,6 +15,12 @@ For details on the Vedic and musical theory foundations of this architecture, se
 2.  **Halt Unaligned Work**: Do not write source code unless the Tāla beat is set to `manifest`. If a request is unaligned, ask the user to resolve intent first.
 3.  **Execute Triggers**: Intercept trigger commands from the user (or output them yourself when appropriate) and perform the corresponding file edits in the workspace.
 4.  **Render Visual Receipts**: Every time you resolve a trigger, you **MUST** output a formatted transactional receipt block in your chat response.
+5.  **Pramāṇa Source Audit**: Before editing files or executing commands, you must perform a validation check:
+    *   *Śabda (Authority)*: Citing the exact instruction or Saṅkalpa goal.
+    *   *Pratyakṣa (Observation)*: Citing the files/state observed.
+    *   *Anumāna (Inference)*: Detailing why the proposed edit matches the goal and does not violate invariants.
+6.  **Dhāraṇā Focus Lock**: Before every code edit or file change, output a single-line block confirming focus:
+    `🧘 [ DHĀRAṆĀ FOCUS LOCK ]: [1-sentence focal target]`
 
 ---
 
