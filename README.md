@@ -59,6 +59,7 @@ This workspace houses the **Intent Engine**—a technology-agnostic cognitive fr
         *   [boundaries.md](file:///Users/universe/AUM/.aum/templates/boundaries.md)
     *   **`intent_awakening/`** — Contains the private thought incubator [sparks.md](file:///Users/universe/AUM/.aum/intent_awakening/sparks.md).
     *   **`sankalpas/`** — Contains progress logs for active, paused, and completed Saṅkalpas.
+*   **`.agents/`** — Workspace customizations root containing [AGENTS.md](file:///Users/universe/AUM/.agents/AGENTS.md) used to auto-initialize customization-supporting AI agents at startup.
 *   **`github_reporter.py`** — Root command utility to fetch public profile and repo details from GitHub.
 
 ---
@@ -78,6 +79,7 @@ The AUM Engine is a **portable cognitive guardrail system**. It can be deployed 
     *   For **Cline/Roo-Code**: Copy `.clinerules` to the target root.
     *   For **Claude Code**: Copy `CLAUDE.md` to the target root.
     *   For **Copilot**: Copy `.github/copilot-instructions.md` under the target's `.github/` folder.
+    *   For **Customization-supporting Agents**: Copy the `.agents/` directory to the target root to enable auto-initialization.
 3.  **Configure Gitignore**: Add the following exclusions to the target project's `.gitignore` file to ensure local task history and session states are not pushed to the shared codebase:
     ```gitignore
     # Exclude AUM local task history and dynamic session state
