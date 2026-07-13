@@ -118,3 +118,13 @@ When executing Git commands or preparing repository updates, the AI agent must a
 3.  **Saṃhāra (Purging & Refactoring)**: Before staging, delete all temporary scratch files, resolve compiler/linter warnings, and remove placeholder comments.
 4.  **Vilaya (Ignoring & Abstraction)**: Ensure local session configurations (`sphota.json` and custom task logs) are explicitly listed in `.gitignore` and never committed.
 5.  **Anugraha (Committing & Pushing)**: Commit messages must follow semantic commit rules (e.g. `feat: ...`, `chore: ...`). Do not push code to remote repositories without executing a final `git status` check.
+
+---
+
+## 🔄 Grantha Synchronization Protocol (Reverse Vāk Trace)
+
+Any agent operating in this workspace must enforce the **Reverse Vāk Trace** to prevent documentation decay and ensure that code remains aligned with system designs:
+
+1.  **Verify Authority**: Before editing public-facing files (e.g. `README.md`, `CLAUDE.md`, or source code), verify that there is an active Saṅkalpa or an approved ADR that authorizes this change.
+2.  **Enforce Docs Before Code**: If the change is not backed by an ADR or active Saṅkalpa, you must **halt execution** and instruct the user to create the ARB/ADR first, mapping the change out in the architecture logs before editing the public file.
+3.  **Sync Documentation**: Once the code is successfully written, compiled/tested, and committed, you must immediately update the corresponding ADR/Saṅkalpa logs to document the completion details, compile results, and Git commit hashes.
