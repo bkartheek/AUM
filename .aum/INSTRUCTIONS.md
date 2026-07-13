@@ -174,3 +174,15 @@ When designing data schemas, modules, or class systems, you must classify every 
 5.  **Viśeṣa (Particularity)**: Maintain unique identifier systems (UUIDs/IDs) and singleton services as distinct components.
 6.  **Samavāya (Inherence)**: Formally declare database foreign relations and object references.
 7.  **Abhāva (Non-existence)**: Explicitly handle Null values and throw errors using try/catch structures rather than returning silent defaults.
+
+---
+
+## 🌀 Sāṅkhya Compilation & Build Lifecycle
+
+When compiling code, packaging assets, or executing build scripts, you must verify the structural integrity of each evolutionary phase:
+
+1.  **Prakṛti (Source Code)**: Ensure all source files and templates conform to language guidelines before triggering a build.
+2.  **Buddhi (Syntax & AST)**: Confirm that the Abstract Syntax Tree parses cleanly by running compiler check syntax commands (e.g. `tsc --noEmit` or equivalent linter checks).
+3.  **Ahaṅkāra (Linking & Names)**: Validate that all package imports, external references, and class dependencies are correctly named and linked in the symbol table.
+4.  **Manas (Memory & Scheduling)**: Ensure import sequence orders and environment configurations are resolved.
+5.  **Bhūtas (Physical Assets)**: Verify that the compiled output binaries or distribution packages are successfully generated and saved to the target output directory.
