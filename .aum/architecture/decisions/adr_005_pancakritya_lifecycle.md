@@ -45,7 +45,7 @@ Prior to this decision, version control commands and Git operations were perform
 
 ## 3. Theoretical & Cognitive Foundations
 
-Kashmir Shaivism describes the dynamic operation of consciousness as a sequence of five cosmic actions (**Pañcakṛtya**). We map this sequence directly to version control operations:
+In the non-dual philosophy of Kashmir Shaivism, absolute consciousness is described as **Prakāśa-Vimarśamaya**: it is both the pure, self-luminous light of awareness (**Prakāśa**) and the active, self-reflective recognition of that light (**Vimarśa**). This dynamic awareness operates continuously through five cosmic activities known as the **Pañcakṛtya** (the five acts of Shiva). We translate this cosmic lifecycle directly into the stages of Git version control:
 
 ```text
        ┌────────────────────────────────────────────────────────┐
@@ -60,20 +60,22 @@ Kashmir Shaivism describes the dynamic operation of consciousness as a sequence 
 ```
 
 1.  **Sṛṣṭi (Emanation / Creation)**:
-    *   *Concept*: Bringing form out of unmanifest potential.
-    *   *Git Mapping*: Spawning new feature branches (`git checkout -b feature/...`) and initializing new source files/templates.
+    *   *Concept*: Bringing manifest form out of unmanifest potential.
+    *   *Git Mapping*: Spawning new feature branches (`git checkout -b feature/...`) and initializing new source files, templates, or directories.
 2.  **Sthiti (Preservation / Maintenance)**:
-    *   *Concept*: Stabilizing and sustaining the manifested form.
-    *   *Git Mapping*: Compiling code, running unit tests, and verifying that the invariants and Yamas/Niyamas boundaries are fully satisfied before staging files (`git add`).
+    *   *Concept*: Stabilizing, sustaining, and verifying the manifested form to ensure integrity.
+    *   *Git Mapping*: Compiling code, running unit tests, executing lint checks, and verifying that the invariants and Yamas/Niyamas boundaries are fully satisfied before staging files (`git add`).
 3.  **Saṃhāra (Dissolution / Refactoring)**:
-    *   *Concept*: Reabsorbing physical forms back into potential.
-    *   *Git Mapping*: Purging placeholder code, removing temporary scratch files, and decoupling components during code refactoring (`git rm` / file cleanup).
+    *   *Concept*: Reabsorbing physical forms back into the unmanifest potential, dissolving clutter.
+    *   *Git Mapping*: Purging placeholder code, removing temporary files/folders, cleaning stubs, and decoupling components during code refactoring (`git rm` / file cleanup).
 4.  **Vilaya (Concealment / Abstraction)**:
-    *   *Concept*: Veiling the true nature of things.
+    *   *Concept*: Veiling the true nature of things, concealing details to allow focus on the essential.
     *   *Git Mapping*: Modifying `.gitignore` rules, hiding environment variables/secrets, and abstracting module interfaces.
-5.  **Anugraha (Grace / Revelation)**:
-    *   *Concept*: Liberating and releasing the form.
+5.  **Anugraha (Grace / Revelation / Release)**:
+    *   *Concept*: Liberating and releasing the form, sharing it with the universe.
     *   *Git Mapping*: Authoring clean commits, pushing changes to remote main repositories (`git push`), and triggering continuous deployment (CD) pipelines.
+
+If an AI agent executes Git operations in an ad-hoc, unstructured manner, it acts with **Apūrṇa-khyāti** (incomplete, fragmented knowledge), producing broken commits and a messy repo history. Structuring these operations under the *Pañcakṛtya* five acts of consciousness ensures that each transition represents a conscious, validated leap in repository evolution, keeping the codebase in harmony with system design invariants.
 
 ---
 
@@ -107,14 +109,19 @@ When executing Git commands or preparing repository updates, the AI agent must a
 
 ## 6. Vedic Alignment Audit
 
-### 1. Śravaṇa (Hearing)
-The user requested the creation of a sequence of ADRs and to implement the Pañcakṛtya Git Lifecycle Mapping.
+### 1. Śravaṇa (Hearing / Receiving the Vision)
+We receive the user's direction to implement the Git Lifecycle Mapping as the **Śruti** (revelation) calling for **Krama-Regulīra** (the establishment of structural progression). The instruction manifests as **Icchā Śakti** (will), seeking to bring order to Git transactions, ensuring they reflect the underlying cosmic rhythm (*Tāla*) rather than chaotic, random executions.
 
-### 2. Manana (Reflecting)
-Reflecting on the version control workflow, we found that unstructured Git actions are a primary cause of codebase chaos. Incorporating the *Pañcakṛtya* five-fold acts of consciousness provides the AI agent with a logical and disciplined approach to staging and pushing code.
+### 2. Manana (Reflecting / Philosophical Contemplation)
+Reflecting on the nature of Git workflows, we observe that typical software integration practices suffer from **Vikṣepa** (mental distraction/restlessness), causing developers and AI agents to commit incomplete files or push unverified builds. 
 
-### 3. Nididhyāsana (Meditating/Integrating)
-The decision has been written, instructions in `INSTRUCTIONS.md` updated, and changes verified and committed on branch `main` (`56243b4`).
+By mapping the version control lifecycle to the **Pañcakṛtya** of Kashmir Shaivism, we provide a structured, five-fold checklist that aligns physical command executions (**Vaikharī**) with the logical preservation of system invariants (**Jñāna Śakti**). This ensures that staging, refactoring, and pushing are treated not as isolated operations, but as sequential transitions of code manifestation.
+
+### 3. Nididhyāsana (Meditating / Deep Integration)
+The implementation of the Git lifecycle was executed as a systematic refinement:
+*   [adr_005_pancakritya_lifecycle.md](file:///Users/universe/AUM/.aum/architecture/decisions/adr_005_pancakritya_lifecycle.md) was created to establish the structural mapping.
+*   [INSTRUCTIONS.md](file:///Users/universe/AUM/.aum/INSTRUCTIONS.md) was modified to append the Git lifecycle protocols, ensuring all system agents enforce these checks at compile and staging stages.
+*   The final changes were validated and committed on branch `main` (`56243b4`).
 
 ---
 

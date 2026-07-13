@@ -51,18 +51,21 @@ Prior to this intervention, the repository suffered from a dual-architecture set
 
 ## 3. Theoretical & Cognitive Foundations
 
-The AUM framework maps the software development lifecycle to the Sanskrit grammarian Bhartrihari's theory of **Vāk (Levels of Speech)** and **Sphoṭa (Holistic Cognition)**, as documented in his text *Vākyapadīya* (5th Century CE). 
+The AUM framework maps the software development lifecycle to the Sanskrit grammarian Bhartrihari's theory of **Vāk (Levels of Speech)** and **Sphoṭa (Holistic Cognition)**, as documented in his monumental text *Vākyapadīya* (5th Century CE). In Bhartrihari's linguistic philosophy (*Sphoṭavāda*), the concept of *Vāk* is not simply linguistic communication, but the absolute manifestation of cosmic consciousness (*Śabda-Brahman*).
 
-According to Bhartrihari, speech and meaning manifest in four descending levels:
-1.  **Parā Vāk**: The unmanifest, silent potential of thought. In our system, this corresponds to the invariants in `config.json` which set the rules of what is possible.
-2.  **Paśyantī Vāk**: The undifferentiated visual seed of an idea. Mapped to `sparks.md` where raw concepts are captured.
-3.  **Madhyamā Vāk**: The structured, logical syntax formed in the mind. Mapped to the design blueprints and active Saṅkalpas.
-4.  **Vaikharī Vāk**: The physical, audible articulation. Mapped to the compiled, executable source code written in the workspace.
+According to this tradition, meaning and sound manifest through four descending levels of density:
+1.  **Parā Vāk (The Transcendent Speech)**: The unmanifest, silent potential of absolute thought. In our system, this corresponds to the invariants in `config.json` which set the rules of what is possible.
+2.  **Paśyantī Vāk (The Visionary Speech)**: The undifferentiated visual seed of an idea, where the end is seen in the beginning. Mapped to `sparks.md` where raw concepts are captured.
+3.  **Madhyamā Vāk (The Intermediate Speech)**: The structured, logical syntax formed in the mind before physical expression. Mapped to the design blueprints and active Saṅkalpas.
+4.  **Vaikharī Vāk (The Articulated Speech)**: The physical, audible articulation. Mapped to the compiled, executable source code written in the workspace.
 
 ### The Cognitive Pathologies of Dual-Architecture
-When the cognitive framework is split across two directory trees (`intent_engine/` and `.aum/`), the **Sphoṭa**—the sudden, holistic flash of understanding—is fractured. The AI agent, when reading the workspace, is presented with a conflicted, split representation of the system rules. This causes the agent's reasoning flow to break down, resulting in cognitive drift.
 
-Consolidating all layers of *Vāk* under a single root directory (`.aum/`) ensures that the agent's perception of the project's "Pure Vision" (*Turīya*) remains unified, preventing path confusion and ensuring that meaning flashes cleanly in the agent's context.
+When the cognitive framework is split across two directory trees (`intent_engine/` and `.aum/`), the **Sphoṭa**—the sudden, holistic flash of understanding—is fractured. In Indian philosophy, this state of division is known as **Vikalpa** (distorted conceptual duality), which leads to **Saṃśaya** (doubt/hesitation) and **Bhrama** (cognitive error). 
+
+The AI agent, when reading the workspace, is presented with a conflicted, split representation of the system rules. This dual-reality wastes token space and creates attention fragmentation, causing the agent's reasoning flow to break down.
+
+By consolidating all layers of *Vāk* under a single root directory (`.aum/`), we eliminate **Vikalpa** and restore **Avibhāga** (non-division/absolute unity). The *Sphoṭa* can now manifest instantaneously because the agent is presented with a single, clear source of truth (*Ekam Sat*), preventing path confusion and ensuring that meaning flashes cleanly in the agent's context window.
 
 ---
 
@@ -118,17 +121,19 @@ Consolidating all layers of *Vāk* under a single root directory (`.aum/`) ensur
 
 ## 6. Vedic Alignment Audit
 
-### 1. Śravaṇa (Hearing)
-The user requested a mechanism to combine the framework into a single folder structure to make it portable and easily deployable to other projects.
+### 1. Śravaṇa (Hearing / Receiving the Vision)
+We receive the user's voice not as a transient engineering request, but as the **Śruti** (revelation) calling for absolute spatial order. The user's prompt identified the structural friction of running dual configuration directories (`intent_engine/` and `.aum/`). This instruction acts as the primary seed of will (**Icchā Śakti**), seeking to restore the framework to a pristine, unified form that can be ported to other workspaces.
 
-### 2. Manana (Reflecting)
-Reflecting on this restructure, we identified that having duplicate layout files violated the *Golden Guardrails of Vedic Alignment* (specifically **Guardrail 1: Invariance of the Sphoṭa**). A dual structure created dual realities. The consolidation resolves this issue, simplifying the mapping of the descending levels of *Vāk* and providing a clean, single-point reference system.
+### 2. Manana (Reflecting / Philosophical Contemplation)
+Reflecting on the dual structure, we contemplate how it violates the foundational Upanishadic dictum: **Ekamevādvitīyam** (one without a second). A split directory tree creates a state of **Pratibandha** (cognitive obstruction). The AI agent, seeking to manifest the code, is presented with two separate realities, fragmenting its attention and creating conceptual drift. 
 
-### 3. Nididhyāsana (Meditating/Integrating)
-The restructuring was fully executed and verified:
-*   Redundant files were deleted.
-*   The system was updated and the configurations were validated.
-*   A clean git history was committed on branch `main`.
+Consolidating everything into a single, unified root directory ([.aum/](file:///Users/universe/AUM/.aum)) resolves this division. It allows the agent's mind to rest in **Advaita** (non-duality), viewing the workspace rules as a seamless, integrated mass of knowledge (**Jñāna Śakti**).
+
+### 3. Nididhyāsana (Meditating / Deep Integration)
+The physical execution of this consolidation was conducted as a meditative act of purification (**Śauca**):
+*   Redundant templates and layout scripts under `intent_engine/` were systematically deleted, dissolving the duplicate forms (*Saṃhāra*).
+*   All editor configuration instructions were updated to point to the single `.aum/` root, establishing absolute architectural anchoring.
+*   The final integration was validated by running Git logs and committing a clean history on branch `main`.
 
 ---
 

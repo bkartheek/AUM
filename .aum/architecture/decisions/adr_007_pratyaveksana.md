@@ -44,13 +44,19 @@ In software repositories where multiple human developers and AI agents collabora
 
 ## 3. Theoretical & Cognitive Foundations
 
-### A. Pratyavēkṣaṇa (Retrospection & Self-Examination)
-In Vedic psychology, *Pratyavēkṣaṇa* is the conscious process of retrospective reflection or recognition. It is the act of looking back and analyzing past actions to verify whether they remain aligned with the core Self (*Ātman*) or unmanifest values (*Parā*). 
+This framework leverages two primary Vedic and yogic psychological principles to maintain repository health:
 
-By establishing a **Pratyavēkṣaṇa Audit**, we force the operating AI agent and developers to execute a self-examination loop. Instead of simply generating new code, the system takes time to reflect on its own purity (*Śauca*), resolving deviations.
+### A. Pratyavēkṣaṇa (Retrospective Self-Recognition)
+In the non-dual school of Kashmir Shaivism (specifically the *Pratyabhijñā* school), the ultimate liberation of consciousness is achieved through **Pratyabhijñā** (spontaneous recognition of one's true, divine nature). This recognition is catalyzed by **Pratyavēkṣaṇa** (active introspection, self-examination, or looking back). Consciousness reflects upon its own manifested forms to ensure they remain expressions of its core identity.
 
-### B. Satsaṅga (Collective Alignment)
-When multiple engineers contribute to a project, individual interpretations of rules can drift. The retrospective process acts as a **Satsaṅga**—a collective association with truth. By compiling retrospective logs, all contributors are tuned back to the same invariant frequency, preventing logical divergence.
+In software repositories, as code is written sequentially across multiple acceleration cycles, the codebase naturally accumulates **Tamas** (inertia, decay, or technical debt). Stale logic, temporary stubs, and inconsistent formatting begin to corrupt the system's structural integrity. 
+
+By introducing the **Pratyavēkṣaṇa Audit**, we establish a formal, self-contemplative feedback loop. At regular intervals, the system halts forward progress and looks backward, auditing its git history, template registries, and modified files against the *Yamas* and *Niyamas*. This directly implements the niyama of **Śauca** (purification), restoring the workspace to its original, aligned state.
+
+### B. Satsaṅga (Collective Alignment to Invariant Truth)
+In Vedic psychology, individual minds are highly susceptible to cognitive drift and distraction (**Vikṣepa**). To counter this, the tradition emphasizes **Satsaṅga** (association with the truth, or collective grouping with aligned minds). 
+
+In a multi-developer environment where several human engineers and AI agents write code, individual interpretations of the framework guidelines will inevitably diverge. Running a periodic retrospective acts as a **Satsaṅga**—a collective alignment meeting where all past modifications are audited and re-anchored to the absolute invariants (*Parā*) of the AUM engine. This coordinates divergent branch developments and tunes the entire team back to the same unified frequency.
 
 ---
 
@@ -75,14 +81,19 @@ When multiple engineers contribute to a project, individual interpretations of r
 
 ## 6. Vedic Alignment Audit
 
-### 1. Śravaṇa (Hearing)
-The user requested a retrospective mechanism to perform regular introspection on project and framework development, ensuring the core philosophy does not drift as multiple engineers contribute.
+### 1. Śravaṇa (Hearing / Receiving the Vision)
+We receive the user's voice requesting a retrospective alignment framework as the **Śruti** (revelation) calling for **Pratyabhijñā-Vidhi** (the prescription of recognition). The prompt manifests as **Icchā Śakti** (will), seeking to preserve the system's core purity across multiple cycles of team and agent contributions.
 
-### 2. Manana (Reflecting)
-Reflecting on this, we found that introducing a self-examination loop is critical for maintaining long-term repository health. Running retrospectives directly implements the *Śauca* (purity) niyama and the *Pratyavēkṣaṇa* (retrospective) psychology, giving the AI agent a clear check-off to prevent logic decay.
+### 2. Manana (Reflecting / Philosophical Contemplation)
+Reflecting on this request, we observe that forward action (**Karma**) without periodic self-study and contemplation (**Svādhyāya**) inevitably slips into **Moha** (delusion) and technical decay (**Tamas**). 
 
-### 3. Nididhyāsana (Meditating/Integrating)
-The template was created, instructions in `INSTRUCTIONS.md` updated, and changes verified and committed on branch `main` (`765694d`).
+By establishing the **Pratyavēkṣaṇa Audit**, we institute a formal verification loop that evaluates all past commits and Saṅkalpas against our system ethics (Yamas/Niyamas). This directly implements the niyama of **Śauca** (purification), verifying that the physical code remains in perfect alignment with the transcendent system vision (**Jñāna Śakti**).
+
+### 3. Nididhyāsana (Meditating / Deep Integration)
+The implementation of the retrospective framework was executed as a meditative configuration check:
+*   [retrospective_template.md](file:///Users/universe/AUM/.aum/templates/retrospective_template.md) was created to structure health checks for Yamas/Niyamas, Vāk sync, and Git history verification.
+*   [INSTRUCTIONS.md](file:///Users/universe/AUM/.aum/INSTRUCTIONS.md) was modified to append the `AUM: RETROSPECT` trigger and visual receipt template, forcing agents to run alignment audits.
+*   The final changes were validated and committed on branch `main` (`765694d`).
 
 ---
 

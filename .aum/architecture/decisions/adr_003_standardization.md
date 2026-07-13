@@ -49,13 +49,15 @@ This lack of depth made the early logs unfit for compilation into a published bo
 
 ## 3. Theoretical & Cognitive Foundations
 
-In the classical Indian intellectual traditions, knowledge is compiled using a two-part textual structure:
-1.  **Sūtra (Aphorism)**: Extremely concise, dense statements of rules or guidelines.
-2.  **Bhāṣya (Commentary)**: Expansive, detailed analysis that handles justifications, questions, and logical connections.
+In the classical Indian intellectual and philosophical traditions, complex systems of knowledge are preserved and transmitted through a rigorous, two-tiered commentarial structure:
+1.  **Sūtra (Aphoristic Thread)**: Extremely concise, dense statements of rules or guidelines, derived from the Sanskrit root *siv* (to sew). A *Sūtra* is designed for optimal memory retention, conveying maximum meaning with minimum syllables (*alpākṣaram asandigdham*).
+2.  **Bhāṣya (Commentarial Exposition)**: An expansive, detailed analysis that handles justifications, reconciles apparent contradictions, addresses opposing views (**Pūrvapakṣa**), and establishes the final logical conclusion (**Siddhānta**).
 
-A bare *Sūtra* is easily misinterpreted or forgotten without its corresponding *Bhāṣya*. Similarly, a software repository's rule files (`.cursorrules`, `.clinerules`) act as concise *Sūtras*. Without a comprehensive ARB document acting as the *Bhāṣya* (documenting the research, observations, and logical inferences), the intent behind the rules drifts, and the AI agent loses the original alignment.
+Without its corresponding *Bhāṣya*, a bare *Sūtra* is easily misinterpreted, misapplied, or forgotten over time. 
 
-Standardizing our ARB reports into a detailed, publication-grade format bridges the gap between sūtras and bhāṣyas. It preserves the complete cognitive lineage of the workspace, ensuring the "Why" is never lost, which is vital for both AI alignment and book publication (*Grantha*).
+In software engineering, runtime rule files (`.cursorrules`, `.clinerules`, or instructions sets) act as concise *Sūtras*. They are execution-level threads. If an AI agent operates *only* on these raw instructions without access to the *Bhāṣya* (the complete history of architectural designs, research contexts, and structural impacts), it acts with superficial comprehension. This leads to **Smṛti-Bhramśa** (loss of memory/intent alignment) and cognitive drift.
+
+By standardizing our ARB reports into a detailed, publication-grade format, we bridge the gap between sūtras and bhāṣyas. It preserves the complete intellectual lineage (**Paramparā**) of the workspace, ensuring the "Why" is never lost. This commentarial depth is essential both for locking AI agent alignment and preparing our design logs for future book publication (**Grantha-Nirmāṇa**).
 
 ---
 
@@ -92,14 +94,19 @@ We introduced the standardized template file and updated the active architecture
 
 ## 6. Vedic Alignment Audit
 
-### 1. Śravaṇa (Hearing)
-The user requested a proper ARB template that explains proposed changes, system impacts, improvements, deprecations, and detailed research, and requested that all previous ARB logs be rewritten to conform to this standard for future book publication.
+### 1. Śravaṇa (Hearing / Receiving the Vision)
+We receive the user's voice requesting a standardized, book-ready documentation template as the **Śruti** (revelation) calling for **Grantha-Saṃskāra** (the refined purification of our texts). The user's vision demands that all decisions are tracked with extensive research context, clear diagrams, system impact analyses, and explicit deprecation logs. This instructions manifests as **Icchā Śakti** (will), seeking to preserve the system's intellectual lineage.
 
-### 2. Manana (Reflecting)
-Reflecting on this request, we recognized that brief documentation violates the core AUM goal of absolute clarity and intent preservation. Providing a standard template modeled after the classical *Sūtra-Bhāṣya* tradition provides a rich knowledge base that is both human-readable and AI-aligned.
+### 2. Manana (Reflecting / Philosophical Contemplation)
+Reflecting on this request, we observe that concise documentation is prone to **Ajñāna** (ignorance) and **Adhyāsa** (false attribution). When an engineering choice is documented in only a few lines, future developers and AI agents are left to guess the underlying motives, leading to conceptual drift. 
 
-### 3. Nididhyāsana (Meditating/Integrating)
-The template was created, all prior files rewritten, and this report was generated. The changes have been validated and committed on branch `main` (`8a7fc77`).
+By modeling our documentation on the classical **Sūtra-Bhāṣya** commentarial tradition, we establish a rich repository of knowledge (**Jñāna Śakti**). This ensures that every aphoristic rule has a corresponding commentary, preserving the design context and providing a rigorous treatise ready for publication.
+
+### 3. Nididhyāsana (Meditating / Deep Integration)
+The implementation of these documentation standards was executed as a meditative refinement:
+*   [arb_template.md](file:///Users/universe/AUM/.aum/templates/arb_template.md) was created to establish the standard commentary schema.
+*   Prior logs (ARB-001 and ARB-002) were completely rewritten and expanded, integrating detailed Vedic context, ASCII architectural maps, and impact parameters.
+*   The final changes were validated and committed on branch `main` (`8a7fc77`).
 
 ---
 

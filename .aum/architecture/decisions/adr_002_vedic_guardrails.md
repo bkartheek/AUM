@@ -48,29 +48,29 @@ Agentic AI systems (such as Cursor, Copilot, and Cline) operate under token-limi
 
 ## 3. Theoretical & Cognitive Foundations
 
-To enforce logical rigor, this framework integrates two major Vedic philosophical systems: **Nyāya Epistemology** (Pramāṇa) and **Ashtaṅga Yoga Psychology** (Samyama, Yamas, and Niyamas).
+To enforce absolute logical rigor and prevent cognitive drift, this framework integrates two major classical Indian systems: **Nyāya Epistemology (Pramāṇavāda)** and **Patanjali's Yoga Psychology (Aṣṭāṅga Yoga)**.
 
-### A. The Nyāya Pramāṇa Audit
-*Pramāṇa* refers to the valid means by which a conscious observer obtains right knowledge (*Pramā*). The classical school of *Nyāya* outlines four pramāṇas. We incorporate three:
-1.  **Śabda (Verbal Testimony / Authoritative Source)**: For an AI agent, this is the explicit user instruction or the active Saṅkalpa log file.
-2.  **Pratyakṣa (Direct Observation)**: This corresponds to active file readings, console errors, or terminal outputs in the immediate workspace context.
-3.  **Anumāna (Logical Deduction/Inference)**: The reasoning sequence that bridges the gap between what was observed (*Pratyakṣa*) and what was authorized (*Śabda*) to formulate a proposed edit.
+### A. The Nyāya Pramāṇa Audit (Epistemic Verification)
+*Pramāṇa* refers to the valid means by which a conscious observer (*Pramātā*) obtains right and verified knowledge (*Pramā*). The classical school of *Nyāya* outlines four distinct sources of valid knowledge. We incorporate three of these as active verification steps inside the agent's reasoning loop:
+1.  **Śabda (Verbal Testimony / Authoritative Revelation)**: The primary, trusted source of truth. For the operating AI agent, this is the explicit user instruction, the system invariants, or the active Saṅkalpa log file. It establishes the baseline objective and direction.
+2.  **Pratyakṣa (Direct Sensory Observation)**: The direct perception of the current environment. This corresponds to the agent performing active file readings, inspecting compiler outputs, reading console errors, or parsing shell logs. It represents the immediate, physical state of the codebase.
+3.  **Anumāna (Logical Deduction / Inference)**: The reasoning sequence that bridges the gap between what was directly observed (*Pratyakṣa*) and what was authorized (*Śabda*) to formulate a proposed edit. For example, if the compiler (*Pratyakṣa*) shows an error, and the instructions (*Śabda*) require compilation safety, the agent infers (*Anumāna*) the necessary code fix.
 
-By requiring a **Pramāṇa Audit** before any file write, the agent must construct a verifiable chain of custody for its knowledge. This makes it impossible for the agent to write speculative, unrequested code.
+By requiring a **Pramāṇa Audit** before any file edit, the agent must construct a verifiable chain of custody for its knowledge. This prevents the agent from introducing speculative, unrequested code based on hallucinated logic (**Bhrama**).
 
-### B. Samyama (Dhāraṇā Focus Lock)
-Patanjali's *Yoga Sutras* describes *Samyama* as the progressive stabilization of attention:
-*   **Dhāraṇā (Concentration)**: Binding the mind's attention to a single localized object (*Desha-bandhash-chittasya-dharana*).
+### B. Saṃyama (Dhāraṇā Focus Lock)
+Patanjali's *Yoga Sūtras* describes *Samyama* as the progressive stabilization of attention through the three internal stages: *Dhāraṇā* (concentration), *Dhyāna* (absorption), and *Samādhi* (oneness). We apply the first stage to anchor agent attention:
+*   **Dhāraṇā (Concentration)**: Defined as binding the mind's attention to a single localized point or object (*deśa-bandhaś-cittasya dhāraṇā*, Yoga Sūtras III.1).
 
-We map this to a **Dhāraṇā Focus Lock**. Before proposing any file edit, the agent must output a single-sentence statement summarizing the active task. This acts as a semantic anchor, forcing the agent's context window to remain locked onto the active task and preventing it from drifting to unrelated parts of the codebase.
+We implement this as the **Dhāraṇā Focus Lock**. Before proposing any file edit, the agent must output a single-sentence statement summarizing the active task. This acts as a semantic anchor, forcing the agent's context window to remain locked onto the active task, preventing it from drifting to unrelated parts of the codebase.
 
 ### C. Yamas & Niyamas (Ethical System Constraints)
 Rather than treating rules as arbitrary syntax, we structure workspace constraints using Patanjali’s ethical framework:
-*   **Yamas (Restraints)**: Prevent destructive actions.
+*   **Yamas (Universal Restraints / Prohibitions)**: Prevent actions that lead to entropy and system harm.
     *   *Ahiṃsā (Non-harm)*: Prohibits breaking existing build compiles or functional paths.
     *   *Asteya (Non-stealing)*: Prohibits deleting user comments, docstrings, or licenses.
     *   *Satya (Truth)*: Prohibits writing placeholders or fake data.
-*   **Niyamas (Observances)**: Promote positive practices.
+*   **Niyamas (Individual Observances / Duties)**: Promote practices that lead to system purity.
     *   *Śauca (Purity)*: Enforces code formatting, file hygiene, and compiler warning resolutions.
     *   *Svādhyāya (Self-study)*: Enforces checking syntax and tracing execution pathways before execution.
 
@@ -127,18 +127,20 @@ We added the following runtime verification directives to the primary instructio
 
 ## 6. Vedic Alignment Audit
 
-### 1. Śravaṇa (Hearing)
-The user requested more Vedic philosophy to be integrated into the framework to make the AI agent work without drifting from the core idea of development.
+### 1. Śravaṇa (Hearing / Receiving the Vision)
+We receive the user's call to prevent agent logic drift as a request to establish **Sthairyam** (cognitive stability). The user's vision calls for guardrails that bind the agent's attention directly to the human developer's intent. This instruction manifests as **Icchā Śakti** (the energy of pure will), demanding a system where the operating agent cannot drift into unauthorized codebase changes.
 
-### 2. Manana (Reflecting)
-Reflecting on the nature of AI drift, we determined that standard guidelines lack semantic enforcement. Incorporating Nyāya epistemology (Pramāṇa) and Patanjali's attention-binding principles (Dhāraṇā) creates a logical validation loop. Translating project rules into Yamas and Niyamas infuses the system constraints with structured weight.
+### 2. Manana (Reflecting / Philosophical Contemplation)
+Reflecting on the problem of drift, we observe that standard prompt instructions lack epistemic authority, leading to **Vikṣepa** (mental distraction/scattering of focus). We resolve this by drawing directly from **Nyāya Epistemology** (Pramāṇavāda) and **Aṣṭāṅga Yoga**. 
 
-### 3. Nididhyāsana (Meditating/Integrating)
-The changes were successfully integrated:
-*   `config.json` was updated.
-*   `INSTRUCTIONS.md` directives were rewritten.
-*   `boundaries.md` template was aligned.
-*   All changes were verified and committed on branch `main` (`85e602f`).
+By establishing the three-fold *Pramāṇa* verification (Śabda, Pratyakṣa, Anumāna), we force the agent to establish the valid means of knowledge before proposing any action. Furthermore, by framing workspace rules under *Yamas* (Restraints) and *Niyamas* (Observances), system constraints are elevated from syntax validation to ethical code conduct boundaries. The *Dhāraṇā Focus Lock* completes this by anchoring the agent's mind to a single point, preventing cognitive scattering.
+
+### 3. Nididhyāsana (Meditating / Deep Integration)
+The integration of these guardrails was executed systematically across our configuration systems:
+*   [config.json](file:///Users/universe/AUM/.aum/config.json) was restructured to group all file system invariants under explicit `yamas` and `niyamas` parameters.
+*   [INSTRUCTIONS.md](file:///Users/universe/AUM/.aum/INSTRUCTIONS.md) was updated to enforce the Pramāṇa verification loop and the Dhāraṇā Focus Lock on all agent execution beats.
+*   The boundary limits template ([boundaries.md](file:///Users/universe/AUM/.aum/templates/boundaries.md)) was aligned to ensure validation checks are run during staging.
+*   The final changes were committed to branch `main` (`85e602f`).
 
 ---
 
