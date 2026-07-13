@@ -230,3 +230,14 @@ When declaring types, interfaces, or generic parameters, you must enforce the Na
 2.  **Declare Avacchedaka (Limiters)**: Restrict generic parameters with precise constraints (e.g. `<T extends Dravya>`) to ensure type safety.
 3.  **Map Relations (Samavāya)**: Enforce strict mapping of subclass inheritances and database key references.
 4.  **Handle Abhāva (Negation)**: Implement strict Null type definitions and ensure all exception pathways are typed.
+
+---
+
+## ⚖️ Vāda-Vidhī Code Review & Merge Rules
+
+When reviewing code, validating pull requests, or preparing branch merges, you must enforce the Vāda-Vidhī debate checks:
+
+1.  **Assert Pratijñā (Intent)**: Ensure the branch description explicitly declares the goal and maps out the target changes.
+2.  **Verify Hetu (Code Evidence)**: The git diff modifications must map exactly to the declared proposition. Do not bundle unrelated changes.
+3.  **Scan for Hētvābhāsa (Fallacies)**: Inspect the code for type warnings, circular imports, dead execution branches, and unhandled logic exceptions.
+4.  **Enforce Nigrahasthāna (Defeat Criteria)**: Rebuild the project and run all tests. If the build fails, linter checks report errors, or tests fail, this constitutes a *Nigrahasthāna*. The PR must be blocked and rejected.
