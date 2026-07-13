@@ -1,0 +1,22 @@
+{
+  "project_name": "AUM",
+  "invariants": [
+    "All configuration, sessions, blueprints, and logs must reside in .aum/",
+    "Ensure state alignment using 'AUM: DRONE' at the start of each session",
+    "Maintain complete file isolation: do not read/write outside the workspace",
+    "Every communication must respect formatting schema (headings, alerts, bolding)",
+    "Adhere strictly to the Golden Guardrails in PHILOSOPHY.md before proposing framework modifications"
+
+  ],
+  "prohibited_actions": [
+    "Do not implement code modules or edit primary files before capturing intent",
+    "Do not bypass the Tāla verification steps",
+    "Do not write code outside the approved workspace path"
+  ],
+  "tala_stages": [
+    "intake",
+    "blueprint",
+    "verification",
+    "manifest"
+  ]
+}

@@ -1,48 +1,124 @@
 # AUM: Intent-Driven Cognitive Workspace
 
+```text
+  █████╗ ██╗   ██╗███╗   ███╗    ███████╗███╗   ██╗ ██████╗██╗███╗   ██╗███████╗
+ ██╔══██╗██║   ██║████╗ ████║    ██╔════╝████╗  ██║██╔════╝██║████╗  ██║██╔════╝
+ ███████║██║   ██║██╔████╔██║    █████╗  ██╔██╗ ██║██║  ███╗██║██╔██╗ ██║█████╗  
+ ██╔══██║██║   ██║██║╚██╔╝██║    ██╔══╝  ██║╚██╗██║██║   ██║██║██║╚██╗██║██╔══╝  
+ ██║  ██║╚██████╔╝██║ ╚═╝ ██║    ███████╗██║ ╚████║╚██████╔╝██║██║ ╚████║███████╗
+ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝    ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
+                               A U M   E N G I N E
+```
+
 This workspace houses the **Intent Engine**—a technology-agnostic cognitive framework designed to align developers (human or AI) with repository-wide constraints, user resolves, and conceptual blueprints before raw development begins. It also hosts the local **GitHub Reporter** utility.
 
 ---
 
-## 🎨 System Architecture Graph (Aki/ASCII Art)
+## 🎨 System Architecture Graph (Unicode Block Drawing)
 
 ```text
-       =====================================================================
-                             TURIYA (Amātra - Silence)
-                                  [ intent_engine/ ]
-                        Master Directives & AI constraints
-                                | |           | |
-          +---------------------+ |           | +---------------------+
-          |                       |           |                       |
-          | Governs               | Governs   | Governs               | Governs
-          v                       v           v                       v
- +------------------+    +------------------+    +------------------+    +------------------+
- |  PAŚYANTĪ        |    |  JĀGRAT          |    |  SVAPNA          |    |  SUṢUPTI         |
- |  (Awakening)     |    |  (Waking State)  |    |  (Dream State)   |    |  (Deep Sleep)    |
- |  [intent_        |    |  [waking/]       |    |  [dreaming/]     |    |  [deepsleep/]    |
- |   awakening/]    |    |                  |    |                  |    |                  |
- |  Local Incubator |    |  Intake Worksheet|    |  Flow Blueprints |    |  Saṅkalpa logs,  |
- |  & sparks        |    |  (Clarification) |    |  & sandbox area  |    |  ADRs, boundaries|
- +------------------+    +------------------+    +------------------+    +------------------+
-          |                       |                       |                       ^
-          |                       |                       |                       | Updates
-          | Takes Birth           | Formulates            | Stages                | State
-          v                       v                       v                       |
-   [ sparks/diary ] ------------> [ intake queries ] ----> [ outline blueprint ] --+
-       
-       =====================================================================
+                  ┌───────────────────────────────────────────┐
+                  │        TURĪYA (Silence / Pure Vision)     │
+                  │             .aum/INSTRUCTIONS.md          │
+                  └─────────────────────┬─────────────────────┘
+                                        │
+                    Governs & anchors   │   Directs runtime triggers
+                    all stages          │   & visual receipts
+                                        ▼
+                  ┌───────────────────────────────────────────┐
+                  │                 TĀLA CYCLE                │
+                  │             .aum/sphota.json              │
+                  └───────┬───────┬───────────────┬───────┬───┘
+                          │       │               │       │
+      1. Spawn Spark      │       │ 2. Resolve    │       │ 3. Run Beat
+      (Paśyantī)          │       │ (Saṅkalpa)    │       │ (Concord)
+      ▼                   ▼       ▼               ▼       ▼
+┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐
+│    PAŚYANTĪ      │    │     JĀGRAT       │    │     SVAPNA       │    │    SUṢUPTI       │
+│ (Awakened Seed)  │    │  (Waking State)  │    │  (Dream State)   │    │  (Consolidated)  │
+│                  │───➔│                  │───➔│                  │───➔│                  │
+│ .aum/            │    │ .aum/templates/  │    │ .aum/templates/  │    │ .aum/sankalpas/  │
+│  intent_         │    │  clarification_  │    │  blueprint_      │    │                  │
+│  awakening/      │    │  template.md     │    │  template.md     │    │ Invariants, ADRs │
+│  (sparks.md)     │    │  (Intake Q&A)    │    │  (Blueprint)     │    │ & Boundary Rules │
+└──────────────────┘    └──────────────────┘    └──────────────────┘    └──────────────────┘
 ```
 
 ---
 
 ## 📂 Directory Layout
 
-*   **`intent_engine/`** — Root container containing instructions (`AI_INSTRUCTIONS.md`), manifests (`INTENT.md`), and decisions (`architecture/`).
-    *   **`intent_awakening/`** — (Phase 0: Paśyantī) Local-only private incubator for raw thoughts and sparks. Excluded from git.
-    *   **`waking/`** — (Phase 4: Jāgrat) Concordance worksheet template (`clarification_template.md`).
-    *   **`dreaming/`** — (Phase 3: Svapna) Staging templates and sandbox area (`blueprint_template.md`, `sandbox/`).
-    *   **`deepsleep/`** — (Phase 2: Suṣupti) Workspace invariants (`boundaries.md`) and persistent resolve targets (`logs/`).
+*   **`.aum/`** — Core portable configuration folder containing:
+    *   [INSTRUCTIONS.md](file:///Users/universe/AUM/.aum/INSTRUCTIONS.md) — Self-orchestrating execution commands and visual receipt specifications.
+    *   [PHILOSOPHY.md](file:///Users/universe/AUM/.aum/PHILOSOPHY.md) — Vedic and musical philosophy background.
+    *   [config.json](file:///Users/universe/AUM/.aum/config.json) — System invariants, prohibited actions, and Tāla stages.
+    *   [sphota.json](file:///Users/universe/AUM/.aum/sphota.json) — Dynamic cognitive state tracking active Saṅkalpa and Tāla stage beats.
+    *   **`templates/`** — Contains reusable templates and boundaries:
+        *   [clarification_template.md](file:///Users/universe/AUM/.aum/templates/clarification_template.md)
+        *   [blueprint_template.md](file:///Users/universe/AUM/.aum/templates/blueprint_template.md)
+        *   [boundaries.md](file:///Users/universe/AUM/.aum/templates/boundaries.md)
+    *   **`intent_awakening/`** — Contains the private thought incubator [sparks.md](file:///Users/universe/AUM/.aum/intent_awakening/sparks.md).
+    *   **`sankalpas/`** — Contains progress logs for active, paused, and completed Saṅkalpas.
 *   **`github_reporter.py`** — Root command utility to fetch public profile and repo details from GitHub.
+
+---
+
+## 🕉️ Using the AUM Engine (Instruction-Based Triggers)
+
+The AUM Engine is entirely technology-agnostic. It runs without Python or other local scripts, orchestrating the codebase directly through **natural language trigger commands** parsed by the AI agent.
+
+When you type a trigger command in your message, the AI agent is instructed to modify the configuration files inside `.aum/` and return a visual confirmation transaction receipt.
+
+### 1. `AUM: SPARK [Idea]`
+Captures raw brainstorms/ideas (Paśyantī state) in the gitignored thought incubator file.
+*   **Input**: `AUM: SPARK Add custom validation logic`
+*   **AI Action**: Appends to `.aum/intent_awakening/sparks.md` and renders:
+```text
+=====================================================================
+            🕉️ [ PASHYANTĪ SEED CAPTURED ]
+=====================================================================
+  Spark ID   : spark_20260713_0702
+  Concept    : "Add custom validation logic"
+  Incubator  : .aum/intent_awakening/sparks.md
+  Status     : Causal State (Phase 0)
+=====================================================================
+```
+
+### 2. `AUM: RESOLVE [Goal Title]`
+Initializes a new target resolve and logs it in `.aum/sankalpas/sankalpa_XXX_[name].md` (Saṅkalpa state).
+*   **Input**: `AUM: RESOLVE Build dashboard analytics UI`
+*   **AI Action**: Creates a new `.md` log file, sets `active_sankalpa_id` in `.aum/sphota.json`, and renders:
+```text
+=====================================================================
+            🧵 [ SAṄKALPA RESOLVE INITIATED ]
+=====================================================================
+  Resolve ID : sankalpa_002_build_dashboard_analytics_ui
+  Objective  : "Build dashboard analytics UI"
+  Status     : Intake Stage (Tāla Beat: INTAKE)
+  Log File   : .aum/sankalpas/sankalpa_002_build_dashboard_analytics_ui.md
+=====================================================================
+```
+
+### 3. `AUM: BEAT next`
+Advances the active Tāla beat stage (Intake ➔ Blueprint ➔ Verification ➔ Manifest).
+*   **Input**: `AUM: BEAT next`
+*   **AI Action**: Updates `tala_beat` in `.aum/sphota.json` and renders:
+```text
+=====================================================================
+            ⏱️ [ TĀLA BEAT ADVANCED ]
+=====================================================================
+  Resolve ID : sankalpa_002_build_dashboard_analytics_ui
+  Transition : INTAKE ➔ BLUEPRINT
+  Directive  : "Map out abstract components and flow sequences. Do not edit source code yet."
+=====================================================================
+```
+
+### 4. `AUM: DRONE`
+Prints the Tanpura "reference pitch" containing invariants, active Saṅkalpa, and current beat.
+*   **Input**: `AUM: DRONE`
+*   **AI Action**: Displays the active rules and task context to anchor the conversation.
+
+
 
 ---
 

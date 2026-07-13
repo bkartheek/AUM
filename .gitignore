@@ -1,2 +1,4 @@
 # Exclude local-only user thought incubator files
 intent_engine/intent_awakening/
+.aum/intent_awakening/
+

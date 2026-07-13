@@ -8,12 +8,13 @@ description: "Repository-wide instructions for Claude Code to conform to the Int
 
 # CLAUDE.md: Claude Code Project Rules
 
-This project uses the **Intent Engine**—a technology-agnostic cognitive framework based on classical Vedic principles of thought manifestation.
+This project uses the **AUM Intent Engine**—a universal cognitive framework to align AI and human actions with the user's intent.
 
 ## 🚨 CRITICAL RULES FOR CLAUDE CODE
 
-1.  **Check Saṅkalpa Registry**: At start of session, read the active Saṅkalpa log under `intent_engine/deepsleep/logs/sankalpa_00X_[name].md` to align with the active resolve.
-2.  **Halt Premature Execution**: Do not write workspace code without an active Saṅkalpa. If no active Saṅkalpa is found, present the clarification intake worksheet (`intent_engine/waking/clarification_template.md`).
-3.  **Draft Blueprinting**: Map out conceptual blueprints under `intent_engine/dreaming/sandbox/` using the instructions in `intent_engine/dreaming/blueprint_template.md` before finalizing active workspace code.
-4.  **Directory Mapping**: Use the `_intent.md` manifest guides inside each directory level as your index maps to understand subdirectories, files, and localized constraints.
-5.  **Workspace Constraints**: Always adhere strictly to the invariants listed in `intent_engine/deepsleep/boundaries.md`.
+1.  **Check Active Saṅkalpa**: At start of session, read `.aum/sphota.json` and the active log under `.aum/sankalpas/` to align with the invariants, constraints, and active resolve.
+2.  **Halt Premature Execution**: Do not edit workspace code unless there is an active Saṅkalpa and the Tāla beat is set to `manifest` in `sphota.json`.
+3.  **Self-Orchestrate Triggers**: Act as the framework's runtime engine. Intercept user triggers (e.g. `AUM: RESOLVE`, `AUM: SPARK`, `AUM: BEAT next`, `AUM: DRONE`), modify the `.aum/` state files accordingly, and print visual transaction receipts.
+4.  **Keep Logs Updated**: Document session progress, blueprint structures, and resolutions inside the active resolve log under `.aum/sankalpas/sankalpa_XXX_[name].md`.
+5.  **Adhere to Boundaries**: Respect constraints in `.aum/config.json` and [boundaries.md](file:///Users/universe/AUM/.aum/templates/boundaries.md).
+
