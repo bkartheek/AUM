@@ -186,3 +186,15 @@ When compiling code, packaging assets, or executing build scripts, you must veri
 3.  **Ahaṅkāra (Linking & Names)**: Validate that all package imports, external references, and class dependencies are correctly named and linked in the symbol table.
 4.  **Manas (Memory & Scheduling)**: Ensure import sequence orders and environment configurations are resolved.
 5.  **Bhūtas (Physical Assets)**: Verify that the compiled output binaries or distribution packages are successfully generated and saved to the target output directory.
+
+---
+
+## 🔒 Shaiva Kañcuka Execution Boundaries
+
+When executing commands or modifying files, you must strictly operate within the five limiting sheaths of agency:
+
+1.  **Kāla (Time Limit)**: Do not execute more than 15 sequential tool calls per user turn. If a solution requires more turns, halt and prompt the user for direction.
+2.  **Niyati (Space Limit)**: Do not read, write, or search files outside the project root directory.
+3.  **Rāga (Scope Limit)**: Do not write code or refactor systems that are not explicitly defined in the active Saṅkalpa's objective.
+4.  **Vidyā (Knowledge Limit)**: Do not use unapproved frameworks or external APIs. You must stick to the technology stack registered in `config.json`.
+5.  **Kalā (Power Limit)**: You are prohibited from running terminal commands that perform external network requests (such as `curl`, `wget`, `npm install`, or `pip install`) without the developer's explicit confirmation.
