@@ -6,7 +6,7 @@ vedic_state: "Turīya"
 description: "The root index of folders, guidelines, safety criteria, and documentation synchronization rules."
 ---
 
-# Mūla Sphoṭa Global Manifest (V1.6.0)
+# Mūla Sphoṭa Global Manifest (V1.7.0)
 
 This document serves as the **Mūla Sphoṭa** (the root holistic manifest) for the workspace. It indexes all directories, templates, and rules, and defines the safety conditions and synchronization protocols that govern AI agents.
 
@@ -24,10 +24,11 @@ This document serves as the **Mūla Sphoṭa** (the root holistic manifest) for 
 | ├── **[templates/](file:///Users/universe/AUM/.aum/templates/)** | *Suṣupti* | Reusable guidelines, intake worksheets, and boundary specifications. |
 | │   ├── [clarification_template.md](file:///Users/universe/AUM/.aum/templates/clarification_template.md) | *Jāgrat* | Intake worksheet template. |
 | │   ├── [blueprint_template.md](file:///Users/universe/AUM/.aum/templates/blueprint_template.md) | *Svapna* | Abstract blueprinting template. |
-| │   └── [boundaries.md](file:///Users/universe/AUM/.aum/templates/boundaries.md) | *Suṣupti* | Boundary constraints template. |
+| │   ├── [boundaries.md](file:///Users/universe/AUM/.aum/templates/boundaries.md) | *Suṣupti* | Boundary constraints template. |
+| │   └── [retrospective_template.md](file:///Users/universe/AUM/.aum/templates/retrospective_template.md) | *Suṣupti* | Pratyavēkṣaṇa self-examination template. |
 | ├── **[sankalpas/](file:///Users/universe/AUM/.aum/sankalpas/)** | *Suṣupti* | Directory for active, paused, and completed task resolve logs. |
 | ├── **[architecture/](file:///Users/universe/AUM/.aum/architecture/)** | *Suṣupti* | Master Architecture Review Board (ARB) logs. |
-| │   └── **[decisions/](file:///Users/universe/AUM/.aum/architecture/decisions/)** | *Suṣupti* | Master Architecture Decision Record (ADR) logs (ADR-001 to ADR-006). |
+| │   └── **[decisions/](file:///Users/universe/AUM/.aum/architecture/decisions/)** | *Suṣupti* | Master Architecture Decision Record (ADR) logs (ADR-001 to ADR-007). |
 | └── **[intent_awakening/sparks.md](file:///Users/universe/AUM/.aum/intent_awakening/sparks.md)** | *Paśyantī* | Private local thought incubator diary (VCS gitignored). |
 
 ---

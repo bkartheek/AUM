@@ -55,6 +55,13 @@ For details on the Vedic and musical theory foundations of this architecture, se
 ### 6. `AUM: DRONE` (Tanpura Anchoring)
 *   **Action**: Output a formatted summary of the active project invariants, active Saṅkalpa, and current beat. Do not modify files.
 
+### 7. `AUM: RETROSPECT [Scope]` (Pratyavēkṣaṇa Introspection)
+*   **Action**:
+    1. Scan active/paused logs and Git history to assess rule deviations (Yamas/Niyamas).
+    2. Write a new retrospective report `.aum/sankalpas/retrospective_LOG_[YYYYMMDD].md` using `.aum/templates/retrospective_template.md`.
+    3. Update `.aum/sphota.json` to log the latest retrospective run date.
+*   **Receipt**: Render `👁️ [ PRATYAVĒKṢAṆA RETROSPECTIVE COMPILED ]`.
+
 ---
 
 ## 🎨 Visual Receipt Specifications
@@ -104,6 +111,18 @@ Always use the following ASCII blocks when outputting receipts:
   Resolve ID : [sankalpa_XXX_slug]
   Status     : Staging Stage (Tāla Beat: BLUEPRINT)
   Blueprint  : .aum/sankalpas/[sankalpa_XXX_slug].md
+=====================================================================
+```
+
+### Retrospective Compiled:
+```text
+=====================================================================
+            👁️ [ PRATYAVĒKṢAṆA RETROSPECTIVE COMPILED ]
+=====================================================================
+  Audit ID   : retrospective_[YYYYMMDD]_[milestone]
+  Scope      : "[Audit Scope / Target Version]"
+  Status     : Satsaṅga Alignment Confirmed (Purity Verified)
+  Report File: .aum/sankalpas/retrospective_LOG_[YYYYMMDD].md
 =====================================================================
 ```
 
