@@ -106,3 +106,15 @@ Always use the following ASCII blocks when outputting receipts:
   Blueprint  : .aum/sankalpas/[sankalpa_XXX_slug].md
 =====================================================================
 ```
+
+---
+
+## 🌀 Pañcakṛtya Git Lifecycle Protocols
+
+When executing Git commands or preparing repository updates, the AI agent must adhere to the following sequence:
+
+1.  **Sṛṣṭi (Branching & Creation)**: Always name feature branches using `feature/[sankalpa_XXX_slug]` format.
+2.  **Sthiti (Verification & Preservation)**: Do not stage files (`git add`) until you run compilation commands and verify that all invariants in `config.json` are fully satisfied.
+3.  **Saṃhāra (Purging & Refactoring)**: Before staging, delete all temporary scratch files, resolve compiler/linter warnings, and remove placeholder comments.
+4.  **Vilaya (Ignoring & Abstraction)**: Ensure local session configurations (`sphota.json` and custom task logs) are explicitly listed in `.gitignore` and never committed.
+5.  **Anugraha (Committing & Pushing)**: Commit messages must follow semantic commit rules (e.g. `feat: ...`, `chore: ...`). Do not push code to remote repositories without executing a final `git status` check.
