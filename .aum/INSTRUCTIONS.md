@@ -219,3 +219,14 @@ When refactoring code, eliminating duplication, or pruning dependencies, you mus
 1.  **Identify Adhyāsa (Bloat)**: Search the codebase for redundant helper functions, deep class nestings, and external dependency wrappers that can be replaced with native, simpler code blocks.
 2.  **Apply Apavāda (Negation)**: Cleanly delete unused variables, empty constructor hooks, and duplicate files. Enforce the *Neti Neti* ("not this, not this") rule: if a block of code does not directly contribute to the core execution, remove it.
 3.  **Consolidate to Unity (Brahman)**: Consolidate duplicate functions spread across different modules into a single, unified utility function. Maintain one single source of truth.
+
+---
+
+## 📐 Navya-Nyāya Relational Type Constraints
+
+When declaring types, interfaces, or generic parameters, you must enforce the Navya-Nyāya logical boundaries:
+
+1.  **Strict Dharmin (Typing)**: Do not use implicit any or loose type declarations. Every variable instance must carry an explicit type signature.
+2.  **Declare Avacchedaka (Limiters)**: Restrict generic parameters with precise constraints (e.g. `<T extends Dravya>`) to ensure type safety.
+3.  **Map Relations (Samavāya)**: Enforce strict mapping of subclass inheritances and database key references.
+4.  **Handle Abhāva (Negation)**: Implement strict Null type definitions and ensure all exception pathways are typed.
