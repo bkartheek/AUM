@@ -1,4 +1,8 @@
 # Exclude local-only user thought incubator files
-intent_engine/intent_awakening/
 .aum/intent_awakening/
 
+# Exclude dynamic cognitive session state (prevents merge conflicts)
+.aum/sphota.json
+
+# Exclude developer-specific local task/resolve logs
+.aum/sankalpas/sankalpa_*.md
