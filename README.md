@@ -63,6 +63,48 @@ This workspace houses the **Intent Engine**—a technology-agnostic cognitive fr
 
 ---
 
+## 🚀 Deploying & Using AUM in Any Project
+
+The AUM Engine is a **portable cognitive guardrail system**. It can be deployed in any target project root to align any AI editor agent (such as Cursor, Cline, Copilot, or Claude Code) with the developer's core intentions, stopping task drift and premature code execution.
+
+### 📥 Step 1: Downloading & Integrating AUM
+
+1.  **Copy the Engine Root**: Copy the entire `.aum/` directory and place it in the root of the target project workspace:
+    ```bash
+    cp -r /path/to/AUM/.aum /path/to/target-project/
+    ```
+2.  **Deploy Agent Instructions**: Copy the rule files matching the IDE tools you use into the target project's root:
+    *   For **Cursor**: Copy `.cursorrules` to the target root.
+    *   For **Cline/Roo-Code**: Copy `.clinerules` to the target root.
+    *   For **Claude Code**: Copy `CLAUDE.md` to the target root.
+    *   For **Copilot**: Copy `.github/copilot-instructions.md` under the target's `.github/` folder.
+3.  **Configure Gitignore**: Add the following exclusions to the target project's `.gitignore` file to ensure local task history and session states are not pushed to the shared codebase:
+    ```gitignore
+    # Exclude AUM local task history and dynamic session state
+    .aum/intent_awakening/
+    .aum/sphota.json
+    .aum/sankalpas/sankalpa_*.md
+    ```
+
+---
+
+## ⚙️ How it Works: The Cognitive Stages
+
+Once deployed, the AUM instructions force the AI agent to follow a strict will-knowledge-action pipeline (**Trika Śakti**) to prevent premature execution. The development cycle moves sequentially through four beats:
+
+```text
+  [ Intake Stage ]   ➔   [ Blueprint Stage ]   ➔   [ Verification ]   ➔   [ Manifestation ]
+  (intake beat)          (blueprint beat)          (verification beat)    (manifest beat)
+  Clarify vision         Design abstract flows     Outline test plans     Write/edit code
+```
+
+1.  **Intake (`intake`)**: The agent interviews you to capture vision parameters. No code writing is allowed.
+2.  **Blueprint (`blueprint`)**: The agent maps system diagrams and interfaces under `.aum/templates/blueprint_template.md`. No code writing is allowed.
+3.  **Verification (`verification`)**: The agent maps boundary constraints ([boundaries.md](file:///Users/universe/AUM/.aum/templates/boundaries.md)) and defines verification commands.
+4.  **Manifestation (`manifest`)**: The agent physically edits files, compiles code, runs test validations, and logs completions.
+
+---
+
 ## 🕉️ Using the AUM Engine (Instruction-Based Triggers)
 
 The AUM Engine is entirely technology-agnostic. It runs without Python or other local scripts, orchestrating the codebase directly through **natural language trigger commands** parsed by the AI agent.
