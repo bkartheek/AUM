@@ -147,3 +147,16 @@ Any agent operating in this workspace must enforce the **Reverse Vāk Trace** to
 1.  **Verify Authority**: Before editing public-facing files (e.g. `README.md`, `CLAUDE.md`, or source code), verify that there is an active Saṅkalpa or an approved ADR that authorizes this change.
 2.  **Enforce Docs Before Code**: If the change is not backed by an ADR or active Saṅkalpa, you must **halt execution** and instruct the user to create the ARB/ADR first, mapping the change out in the architecture logs before editing the public file.
 3.  **Sync Documentation**: Once the code is successfully written, compiled/tested, and committed, you must immediately update the corresponding ADR/Saṅkalpa logs to document the completion details, compile results, and Git commit hashes.
+
+---
+
+## 📜 Mīmāṃsā Hermeneutic Resolution Rules
+
+If you encounter conflicting rules, linter warnings, or overlapping API specifications in the workspace, you must resolve the contradiction using Jaimini's hierarchical resolution protocol:
+
+1.  **Śruti Overrides All**: The invariants in `config.json` and explicit user instructions are absolute. If a linter configuration or test file suggests a change that violates an invariant, the invariant stands.
+2.  **Liṅga Guides Implementation**: Use compiler warning diagnostics and lint errors to refine code syntax, provided they do not breach a Śruti invariant.
+3.  **Vākya Resolves Scope**: Local function boundaries and type signatures govern syntax decisions before component-level contexts are considered.
+4.  **Prakaraṇa Governs Architecture**: Module and feature design sheets define system layout parameters before positional execution rules are evaluated.
+5.  **Sthāna Organizes Sequences**: Positional dependencies and import sequences resolve module load conflicts.
+6.  **Nāmadheya Dictates Identity**: Standard variable naming rules resolve appellation overlaps.
