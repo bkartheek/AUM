@@ -160,3 +160,17 @@ If you encounter conflicting rules, linter warnings, or overlapping API specific
 4.  **Prakaraṇa Governs Architecture**: Module and feature design sheets define system layout parameters before positional execution rules are evaluated.
 5.  **Sthāna Organizes Sequences**: Positional dependencies and import sequences resolve module load conflicts.
 6.  **Nāmadheya Dictates Identity**: Standard variable naming rules resolve appellation overlaps.
+
+---
+
+## 🗃️ Vaiśeṣika Domain Ontological Mappings
+
+When designing data schemas, modules, or class systems, you must classify every software component under Kaṇāda's seven Padārtha categories:
+
+1.  **Dravya (Substances)**: Keep data schemas, DB entities, and state structures isolated. Do not mix business logic operations directly inside Dravya classes.
+2.  **Guṇa (Attributes)**: Type every property explicitly. Enforce strict primitive type bindings.
+3.  **Karma (Actions)**: Consolidate methods, API routes, and event handlers inside distinct service classes, separated from data models.
+4.  **Sāmānya (Generality)**: Standardize generic components and abstract interfaces to maximize reuse.
+5.  **Viśeṣa (Particularity)**: Maintain unique identifier systems (UUIDs/IDs) and singleton services as distinct components.
+6.  **Samavāya (Inherence)**: Formally declare database foreign relations and object references.
+7.  **Abhāva (Non-existence)**: Explicitly handle Null values and throw errors using try/catch structures rather than returning silent defaults.
