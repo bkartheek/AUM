@@ -198,3 +198,14 @@ When executing commands or modifying files, you must strictly operate within the
 3.  **Rāga (Scope Limit)**: Do not write code or refactor systems that are not explicitly defined in the active Saṅkalpa's objective.
 4.  **Vidyā (Knowledge Limit)**: Do not use unapproved frameworks or external APIs. You must stick to the technology stack registered in `config.json`.
 5.  **Kalā (Power Limit)**: You are prohibited from running terminal commands that perform external network requests (such as `curl`, `wget`, `npm install`, or `pip install`) without the developer's explicit confirmation.
+
+---
+
+## 🌊 Spanda Dynamic Event Mappings
+
+When writing reactive code, event listeners, or WebSocket streams, you must structure the event cycle under the Spanda vibration protocols:
+
+1.  **Unmeṣa (Emission)**: Explicitly document the publisher, channel name, and message schema of every emitted event.
+2.  **Spanda (Streams)**: Encapsulate all event streams within formal event buses or observable wrappers. Do not allow loose global event listeners.
+3.  **Nimeṣa (Consumption & Cleanup)**: Every event subscription *must* declare a cleanup function (e.g. `unsubscribe()` or `removeEventListener`) executed on component unmount to prevent memory leaks.
+4.  **Spanda-Sandhi (Throttling)**: Use throttling or debouncing filters on high-frequency events (such as mouse movements or keystrokes) to prevent event flooding.
