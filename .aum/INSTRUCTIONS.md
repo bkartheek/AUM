@@ -209,3 +209,13 @@ When writing reactive code, event listeners, or WebSocket streams, you must stru
 2.  **Spanda (Streams)**: Encapsulate all event streams within formal event buses or observable wrappers. Do not allow loose global event listeners.
 3.  **Nimeṣa (Consumption & Cleanup)**: Every event subscription *must* declare a cleanup function (e.g. `unsubscribe()` or `removeEventListener`) executed on component unmount to prevent memory leaks.
 4.  **Spanda-Sandhi (Throttling)**: Use throttling or debouncing filters on high-frequency events (such as mouse movements or keystrokes) to prevent event flooding.
+
+---
+
+## ✂️ Advaita Refactoring & Negation Rules
+
+When refactoring code, eliminating duplication, or pruning dependencies, you must apply the Advaita negation protocols:
+
+1.  **Identify Adhyāsa (Bloat)**: Search the codebase for redundant helper functions, deep class nestings, and external dependency wrappers that can be replaced with native, simpler code blocks.
+2.  **Apply Apavāda (Negation)**: Cleanly delete unused variables, empty constructor hooks, and duplicate files. Enforce the *Neti Neti* ("not this, not this") rule: if a block of code does not directly contribute to the core execution, remove it.
+3.  **Consolidate to Unity (Brahman)**: Consolidate duplicate functions spread across different modules into a single, unified utility function. Maintain one single source of truth.
