@@ -27,11 +27,12 @@ jobs:
       - name: Build React Vite SPA
         run: |
           cd docs_portal
-          if ! npm install --no-audit --no-fund > build.log 2>&1; then
+          if ! npm install --legacy-peer-deps --no-audit --no-fund > build.log 2>&1; then
             echo "### NPM Install Failed" >> $GITHUB_STEP_SUMMARY
             echo '```text' >> $GITHUB_STEP_SUMMARY
             cat build.log >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
+            cat build.log
             exit 1
           fi
           if ! npm run build > build.log 2>&1; then
@@ -39,6 +40,7 @@ jobs:
             echo '```text' >> $GITHUB_STEP_SUMMARY
             cat build.log >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
+            cat build.log
             exit 1
           fi
 
