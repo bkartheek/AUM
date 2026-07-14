@@ -956,13 +956,22 @@ export default function App() {
                   <p className="aum-banner-desc">
                     A technology-agnostic software architecture organizing AI agent workflows under Mandukya state cycles, Pramāṇa epistemology, and Patanjali's ethical boundaries.
                   </p>
-                  <button 
-                    onClick={() => setShowJourney(true)}
-                    style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', backgroundColor: 'var(--accent-saffron)', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '700', fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(194, 65, 12, 0.25)' }}
-                  >
-                    <Play size={16} fill="white" />
-                    Start Guided 31-Step Onboarding Journey
-                  </button>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '20px' }}>
+                    <button 
+                      onClick={() => setShowJourney(true)}
+                      style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', backgroundColor: 'var(--accent-saffron)', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '700', fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(194, 65, 12, 0.25)' }}
+                    >
+                      <Play size={16} fill="white" />
+                      Start Guided 31-Step Onboarding Journey
+                    </button>
+                    <a 
+                      href="/AUM/vedic_library/"
+                      style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', backgroundColor: 'transparent', border: '1px solid var(--accent-gold)', borderRadius: '8px', color: 'var(--accent-gold)', fontWeight: '700', fontSize: '0.9rem', textDecoration: 'none', cursor: 'pointer' }}
+                    >
+                      <Compass size={16} />
+                      Launch Interactive Vedic Library
+                    </a>
+                  </div>
                 </div>
               </div>
 
