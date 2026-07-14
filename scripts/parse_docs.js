@@ -55,12 +55,32 @@ function main() {
   const arbs = scanDir(path.join(aumDir, 'architecture'));
   const adrs = scanDir(path.join(aumDir, 'architecture', 'decisions'));
   
+  const samskarasDir = path.join(aumDir, 'samskaras');
+  const samskaras = [];
+  if (fs.existsSync(samskarasDir)) {
+    fs.readdirSync(samskarasDir)
+      .filter(file => file.endsWith('.json'))
+      .forEach(file => {
+        const filePath = path.join(samskarasDir, file);
+        try {
+          const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          samskaras.push({
+            filename: file,
+            ...content
+          });
+        } catch (e) {
+          console.error(`Error parsing memory log ${file}:`, e);
+        }
+      });
+  }
+  
   const docsData = {
     manifest,
     instructions,
     config,
     arbs,
     adrs,
+    samskaras,
     compiledAt: new Date().toISOString()
   };
 

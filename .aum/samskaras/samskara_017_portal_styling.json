@@ -1,0 +1,11 @@
+{
+  "sankalpa_id": "sankalpa_017_pages_portal",
+  "task_title": "Vaikharī Documentation Portal Setup & Styling",
+  "summary": "Resolved CSS rendering bugs and native compiler binding crash on GitHub Actions runner.",
+  "resolved_date": "2026-07-14",
+  "critical_learnings": [
+    "Vite template lacked Tailwind config directives, PostCSS packages, and utility maps, resulting in completely unstyled HTML. Refactoring portal view to pure Vanilla CSS variable parameters resolved all styling blocks.",
+    "Vite v8 native bindings for Rolldown skip optional installation checks on GitHub Actions Linux runner VM environments, causing compiler execution crashes. Adding step 'npm install @rolldown/binding-linux-x64-gnu' before compile resolved the deployment failure."
+  ],
+  "associated_adr": "adr_017_github_pages.md"
+}

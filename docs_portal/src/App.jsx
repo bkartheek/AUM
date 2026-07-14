@@ -36,7 +36,7 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [docSource, setDocSource] = useState('dashboard'); // 'dashboard' | 'journey'
 
-  // Comprehensive 18-Step Guided Journey Timeline (Aligned with actual ADR filenames)
+  // Comprehensive 18-Step Guided Journey Timeline
   const journeySteps = useMemo(() => [
     {
       number: 1,
@@ -256,7 +256,7 @@ export default function App() {
     }
   ], []);
 
-  // Group docs by category
+  // Group docs by category (Updated to support samskaras array)
   const categories = useMemo(() => {
     const list = [
       {
@@ -282,6 +282,20 @@ export default function App() {
         name: 'Svapna (Reviews)',
         icon: BookOpen,
         items: docsData.arbs || []
+      },
+      {
+        id: 'samskaras',
+        name: 'Saṃskāras (Memories)',
+        icon: Layers,
+        items: (docsData.samskaras || []).map(s => ({
+          filename: s.filename,
+          attributes: {
+            title: s.task_title || s.sankalpa_id,
+            type: "cognitive_memory",
+            phase: s.sankalpa_id
+          },
+          body: `## Cognitive Memory: ${s.task_title}\n\n**Summary:** ${s.summary}\n\n**Resolved Date:** ${s.resolved_date}\n\n### Critical Learnings\n${s.critical_learnings.map(l => `* ${l}`).join('\n')}\n\n**Associated ADR:** [${s.associated_adr}](file:///Users/universe/AUM/.aum/architecture/decisions/${s.associated_adr})`
+        }))
       }
     ];
     return list;
@@ -346,7 +360,8 @@ export default function App() {
       ...(docsData.manifest ? [docsData.manifest] : []),
       ...(docsData.instructions ? [docsData.instructions] : []),
       ...(docsData.adrs || []),
-      ...(docsData.arbs || [])
+      ...(docsData.arbs || []),
+      ...categories.find(c => c.id === 'samskaras').items
     ];
     const match = allDocs.find(d => d.filename === filename);
     if (match) {
@@ -689,6 +704,37 @@ export default function App() {
                 </div>
               </div>
 
+              {/* Active Cognitive Impressions (Saṃskāras) Ledger */}
+              <div className="glass-panel" style={{ padding: '32px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                  <Layers size={20} style={{ color: 'var(--accent-saffron)' }} />
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                    Active Cognitive Impressions (Saṃskāras)
+                  </h3>
+                </div>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '20px', lineHeight: 1.6 }}>
+                  These are persistent memory traces stored in the workspace cache (`.aum/samskaras/`). Developer agents load these impressions at startup to align execution tendencies (*Vāsanās*) and bypass known compiler and environment conflicts.
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {(docsData.samskaras || []).map(s => (
+                    <div key={s.filename} style={{ padding: '16px', backgroundColor: 'rgba(253, 250, 244, 0.5)', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+                        <strong style={{ fontSize: '0.9rem', color: 'var(--accent-gold)' }}>{s.task_title || s.sankalpa_id}</strong>
+                        <span className="aum-tag" style={{ margin: 0, fontSize: '0.65rem' }}>{s.sankalpa_id}</span>
+                      </div>
+                      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                        {s.summary}
+                      </p>
+                      <ul style={{ paddingLeft: '1.2rem', margin: 0 }}>
+                        {(s.critical_learnings || []).map((l, i) => (
+                          <li key={i} style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>{l}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Embedded Onboarding Handbook Section */}
               <div className="glass-panel" style={{ padding: '40px', backgroundColor: 'var(--bg-surface-glass)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', borderBottom: '1px solid var(--border-color)', paddingBottom: '16px' }}>
@@ -797,61 +843,6 @@ export default function App() {
                     </table>
                   </div>
 
-                </div>
-              </div>
-
-              {/* Core Framework Mappings */}
-              <div className="aum-info-grid">
-                {/* 4 Quarters of Consciousness */}
-                <div className="aum-info-card glass-panel">
-                  <div className="aum-info-header">
-                    <div className="aum-info-bar" />
-                    <h2 className="aum-info-title">Quarters of Consciousness (Māṇdūkya)</h2>
-                  </div>
-                  <div className="aum-info-list">
-                    <div className="aum-info-item">
-                      <h4 className="aum-info-item-title">1. Jāgrat (Waking State) — Intake</h4>
-                      <p className="aum-info-item-desc">Gathers context, processes initial user requirements, and defines task inputs.</p>
-                    </div>
-                    <div className="aum-info-item">
-                      <h4 className="aum-info-item-title">2. Svapna (Dreaming State) — Blueprint</h4>
-                      <p className="aum-info-item-desc">Abstract cognitive planning, architecture design logs, and workflow blueprints.</p>
-                    </div>
-                    <div className="aum-info-item">
-                      <h4 className="aum-info-item-title">3. Suṣupti (Deep Sleep) — Invariant Bounds</h4>
-                      <p className="aum-info-item-desc">Frozen system configurations, ethics rules (Yamas/Niyamas), and safety boundaries.</p>
-                    </div>
-                    <div className="aum-info-item">
-                      <h4 className="aum-info-item-title">4. Turīya (Absolute Consciousness) — Manifest Index</h4>
-                      <p className="aum-info-item-desc">The Mūla Sphoṭa global manifest indexing the entire repository state.</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 5 limiting sheaths */}
-                <div className="aum-info-card glass-panel">
-                  <div className="aum-info-header">
-                    <div className="aum-info-bar" />
-                    <h2 className="aum-info-title">Limiting Sheaths of Agency (Shaiva Kañcukas)</h2>
-                  </div>
-                  <div className="aum-info-list">
-                    <div className="aum-info-item">
-                      <h4 className="aum-info-item-title">Kāla (Time Bounds)</h4>
-                      <p className="aum-info-item-desc">Limits maximum turn step counts to prevent infinite loops during diagnostic executions.</p>
-                    </div>
-                    <div className="aum-info-item">
-                      <h4 className="aum-info-item-title">Niyati (Space Bounds)</h4>
-                      <p className="aum-info-item-desc">Limits file system actions strictly to the workspace directory to prevent sandbox leakage.</p>
-                    </div>
-                    <div className="aum-info-item">
-                      <h4 className="aum-info-item-title">Rāga (Scope Limits)</h4>
-                      <p className="aum-info-item-desc">Restricts modifications to items explicitly mapped out in the active Saṅkalpa log.</p>
-                    </div>
-                    <div className="aum-info-item">
-                      <h4 className="aum-info-item-title">Kalā / Vidyā (Tool Safety)</h4>
-                      <p className="aum-info-item-desc">Blocks arbitrary terminal network downloads (npm/pip) without explicit developer confirmation.</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
