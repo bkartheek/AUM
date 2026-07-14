@@ -16,5 +16,5 @@ This project uses the **AUM Intent Engine**—a universal cognitive framework to
 2.  **Halt Premature Execution**: Do not edit workspace code unless there is an active Saṅkalpa and the Tāla beat is set to `manifest` in `sphota.json`.
 3.  **Self-Orchestrate Triggers**: Act as the framework's runtime engine. Intercept user triggers (e.g. `AUM: RESOLVE`, `AUM: SPARK`, `AUM: BEAT next`, `AUM: DRONE`), modify the `.aum/` state files accordingly, and print visual transaction receipts.
 4.  **Keep Logs Updated**: Document session progress, blueprint structures, and resolutions inside the active resolve log under `.aum/sankalpas/sankalpa_XXX_[name].md`.
-5.  **Adhere to Boundaries**: Respect constraints in `.aum/config.json` and [boundaries.md](file:///Users/universe/AUM/.aum/templates/boundaries.md).
+5.  **Adhere to Boundaries**: Respect constraints in `.aum/config.json` and [boundaries.md](.aum/templates/boundaries.md).
 

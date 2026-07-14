@@ -378,7 +378,7 @@ export default function App() {
             type: "cognitive_memory",
             phase: s.sankalpa_id
           },
-          body: `## Cognitive Memory: ${s.task_title}\n\n**Summary:** ${s.summary}\n\n**Resolved Date:** ${s.resolved_date}\n\n### Critical Learnings\n${s.critical_learnings.map(l => `* ${l}`).join('\n')}\n\n**Associated ADR:** [${s.associated_adr}](file:///Users/universe/AUM/.aum/architecture/decisions/${s.associated_adr})`
+          body: `## Cognitive Memory: ${s.task_title}\n\n**Summary:** ${s.summary}\n\n**Resolved Date:** ${s.resolved_date}\n\n### Critical Learnings\n${s.critical_learnings.map(l => `* ${l}`).join('\n')}\n\n**Associated ADR:** [${s.associated_adr}](.aum/architecture/decisions/${s.associated_adr})`
         }))
       }
     ];
