@@ -12,11 +12,8 @@ import {
   Menu,
   X,
   ArrowRight,
-  HelpCircle,
-  Play,
   Layers,
-  FileText,
-  AlertTriangle
+  Play
 } from 'lucide-react';
 import docsData from './docs_data.json';
 
@@ -39,7 +36,7 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [docSource, setDocSource] = useState('dashboard'); // 'dashboard' | 'journey'
 
-  // Comprehensive 18-Step Guided Journey Timeline
+  // Comprehensive 18-Step Guided Journey Timeline (Aligned with actual ADR filenames)
   const journeySteps = useMemo(() => [
     {
       number: 1,
@@ -51,7 +48,7 @@ export default function App() {
       engTitle: "Software Analogy: Stateless Core Architecture",
       engDesc: "AUM is built on a stateless execution model. The engine does not maintain local in-memory session side-effects; all state is reconstructed deterministically from active files.",
       engWhy: "This eliminates state-drift and race conditions across turn iterations, ensuring reliable agent executions.",
-      adrLink: "adr_001_core_architecture.md"
+      adrLink: "adr_001_consolidation.md"
     },
     {
       number: 2,
@@ -63,7 +60,7 @@ export default function App() {
       engTitle: "Software Analogy: Linter & Compilation Guards",
       engDesc: "AUM defines strict compilation guards that block illegal commands, placeholder code stubs, or modifications outside of specified workspace paths.",
       engWhy: "This ensures the agent cannot execute unaligned work or write broken syntax, preserving master codebase health.",
-      adrLink: "adr_002_invariant_guards.md"
+      adrLink: "adr_002_vedic_guardrails.md"
     },
     {
       number: 3,
@@ -75,43 +72,43 @@ export default function App() {
       engTitle: "Software Analogy: Execution State Machine",
       engDesc: "The framework cycles through corresponding phases: Intake (waking requirements), Blueprinting (planning architecture reviews), Invariants (safeguarding ethics limits), and Manifesting (writing files).",
       engWhy: "This coordinates AI agent turns into structured, verifiable cognitive steps rather than arbitrary code execution loops.",
-      adrLink: "adr_003_mandukya_state.md"
+      adrLink: "adr_003_standardization.md"
     },
     {
       number: 4,
-      label: "Focus",
-      title: "ADR-004: Saṅkalpa Focus Lock ➔ Context Locking",
-      vedicTitle: "Vedic Philosophy: Saṅkalpa (Sacred Resolve)",
+      label: "Customs",
+      title: "ADR-004: Workspace Customizations ➔ Intent Setup",
+      vedicTitle: "Vedic Philosophy: Saṅkalpa & Rules Registration",
       vedicDesc: "A Saṅkalpa is a solemn vow or intention made with complete focus. Once set, all action (Karma) is aligned solely toward fulfilling this specific resolve.",
       vedicKeyTerms: ["Saṅkalpa (Focal Resolve)", "Ekāgratā (One-pointed Focus)", "Karma (Aligned Action)"],
-      engTitle: "Software Analogy: Context Locking File",
-      engDesc: "AUM implements a local lock file tracking the active task. The engine checks this file at startup and rejects any edits that do not align with the locked focus target.",
-      engWhy: "This stops AI agents from going off-track, drifting focus, or making unrelated files changes during execution.",
-      adrLink: "adr_004_sankalpa_focus.md"
+      engTitle: "Software Analogy: Config Customizations Setup",
+      engDesc: "AUM loads setup parameters from local sankalpas and agents configuration configurations at startup, defining active workspace rules.",
+      engWhy: "This enables the development team to dynamically adjust linter parameters and active task scopes on a project-by-project basis.",
+      adrLink: "adr_004_customizations.md"
     },
     {
       number: 5,
-      label: "Time Beats",
-      title: "ADR-005: Tāla Time Beats ➔ Turn Throttling",
-      vedicTitle: "Vedic Musicology: Tāla (Musical Rhythm)",
-      vedicDesc: "Tāla is the musical metric system that measures cycles of time. It ensures that melody flows within structured, repeating rhythmic pulses.",
-      vedicKeyTerms: ["Tāla (Time Cycle)", "Mātrā (Time Beats)", "Laya (Speed Regulation)"],
-      engTitle: "Software Analogy: Turn Execution Throttler",
-      engDesc: "AUM structures execution cycles around turn counts and beat durations. The engine processes a specific number of turns before pausing to sync state and request confirmation.",
-      engWhy: "This prevents runaway processes or infinite loops from consuming compute resource blocks during testing.",
-      adrLink: "adr_005_tala_time.md"
+      label: "Lifecycle",
+      title: "ADR-005: Pañcakṛtya ➔ Turn Execution Lifecycle",
+      vedicTitle: "Vedic Philosophy: Pañcakṛtya (Five Cosmic Actions)",
+      vedicDesc: "In Shaiva cosmology, the universe flows through five cosmic acts: creation (Sṛṣṭi), maintenance (Sthiti), dissolution (Saṃhāra), concealment (Tirobhāva), and grace (Anugraha).",
+      vedicKeyTerms: ["Sṛṣṭi (File Creation)", "Saṃhāra (Cleanup/Negation)", "Anugraha (Commit/Push)"],
+      engTitle: "Software Analogy: Execution Turn States",
+      engDesc: "Agent execution runs through corresponding states: context assembly (Sṛṣṭi), diff review (Sthiti), refactoring pruning (Saṃhāra), output rendering (Tirobhāva), and commit deployment (Anugraha).",
+      engWhy: "This structures execution turns into a systematic loop, ensuring that code is compiled and validated before deployment.",
+      adrLink: "adr_005_pancakritya_lifecycle.md"
     },
     {
       number: 6,
-      label: "Validation",
-      title: "ADR-006: Pramāṇa Verification ➔ Epistemological Tests",
-      vedicTitle: "Vedic Philosophy: Pramāṇa (Epistemology)",
-      vedicDesc: "Nyāya epistemology defines Pramāṇa as a means of valid knowledge: Śabda (authority), Pratyakṣa (perception/observation), and Anumāna (logical inference).",
-      vedicKeyTerms: ["Śabda (Authority/Spec)", "Pratyakṣa (Test Suite Results)", "Anumāna (Reasoning Diffs)"],
-      engTitle: "Software Analogy: Code Verification Checks",
-      engDesc: "AUM audits edits against code authorities (Śabda), active verification tests (Pratyakṣa), and logical diff impact analysis (Anumāna).",
-      engWhy: "This guarantees that every code change has a formal justification and satisfies test coverage before staging.",
-      adrLink: "adr_006_pramana_validation.md"
+      label: "Registry",
+      title: "ADR-006: Mūla Sphoṭa ➔ Framework Registry",
+      vedicTitle: "Vedic Philosophy: Sphoṭa (Holistic Sound/Concept Burst)",
+      vedicDesc: "In grammar philosophy, Sphoṭa is the sudden cognitive flash of the entire semantic meaning of a word, overriding individual letters or syllables.",
+      vedicKeyTerms: ["Mūla Sphoṭa (Root Manifest)", "Nāda (Vibration)", "Sphurana (Flashing)"],
+      engTitle: "Software Analogy: Root Manifest Registry",
+      engDesc: "AUM registers the entire workspace file inventory, active reviews, decisions, and instructions under the Mūla Sphoṭa global manifest.",
+      engWhy: "This provides a unified index of the codebase, ensuring that AI agents can find all relevant references.",
+      adrLink: "adr_006_mula_sphota.md"
     },
     {
       number: 7,
@@ -123,22 +120,10 @@ export default function App() {
       engTitle: "Software Analogy: Task Retrospective Logs",
       engDesc: "Every task completion requires writing a retrospective review mapping what was learned, what errors occurred, and how they were corrected.",
       engWhy: "This builds a cumulative database of workspace-specific learnings that future agent runs load to avoid repeating mistakes.",
-      adrLink: "adr_007_retrospective_audits.md"
+      adrLink: "adr_007_pratyaveksana.md"
     },
     {
       number: 8,
-      label: "Etymology",
-      title: "ADR-008: Nirukta Audits ➔ Sanskrit Validation",
-      vedicTitle: "Vedic Linguistics: Nirukta (Etymology)",
-      vedicDesc: "Nirukta is the science of etymology and semantic derivation. It requires tracing every word back to its root sound to verify its true meaning.",
-      vedicKeyTerms: ["Nirukta (Etymology)", "Dhātu (Root Sound)", "Nāman (Noun Form)"],
-      engTitle: "Software Analogy: Sanskrit Registry Checks",
-      engDesc: "AUM runs linter checks on Sanskrit parameters used in registry names to ensure they derive logically from correct roots.",
-      engWhy: "This maintains naming convention purity across the codebase, preventing loose transliterations from corrupting definitions.",
-      adrLink: "adr_008_nirukta_audits.md"
-    },
-    {
-      number: 9,
       label: "Overrides",
       title: "ADR-009: Mīmāṃsā Hermeneutics ➔ Overrides Hierarchy",
       vedicTitle: "Vedic Philosophy: Text Interpretation Rules",
@@ -150,8 +135,8 @@ export default function App() {
       adrLink: "adr_009_mimamsa_hermeneutics.md"
     },
     {
-      number: 10,
-      label: "Ontologies",
+      number: 9,
+      label: "Ontology",
       title: "ADR-010: Vaiśeṣika Categories ➔ Data Models",
       vedicTitle: "Vedic Philosophy: Vaiśeṣika Padārthas (Categories)",
       vedicDesc: "The Vaiśeṣika system classifies everything in the universe into six categories: substance (Dravya), quality (Guṇa), action (Karma), generality (Sāmānya), particularity, and inherence.",
@@ -159,10 +144,10 @@ export default function App() {
       engTitle: "Software Analogy: AST Node Type Models",
       engDesc: "Data schemas in AUM map directly to Padārthas. Objects are Dravya, properties/types are Guṇa, and logic methods are Karma.",
       engWhy: "This provides a clean, ontological classification system for organizing software components and data structures.",
-      adrLink: "adr_010_vaiseṣika_ontologies.md"
+      adrLink: "adr_010_vaisesika_ontologies.md"
     },
     {
-      number: 11,
+      number: 10,
       label: "Build",
       title: "ADR-011: Sāṅkhya Evolution ➔ Build Lifecycle",
       vedicTitle: "Vedic Philosophy: Sāṅkhya Material Evolution",
@@ -174,8 +159,8 @@ export default function App() {
       adrLink: "adr_011_sankhye_evolution.md"
     },
     {
-      number: 12,
-      label: "Sandboxes",
+      number: 11,
+      label: "Sandbox",
       title: "ADR-012: Shaiva Kañcukas ➔ Security Limits",
       vedicTitle: "Vedic Philosophy: The Five Limiting Sheaths",
       vedicDesc: "In Shaivism, the infinite power of consciousness (Shiva) is limited by sheaths (Kañcukas) to allow individual agency: time (Kāla), space (Niyati), desire (Rāga), knowledge (Vidyā), and power (Kalā).",
@@ -186,8 +171,8 @@ export default function App() {
       adrLink: "adr_012_shaiva_kancukas.md"
     },
     {
-      number: 13,
-      label: "Event Streams",
+      number: 12,
+      label: "Streams",
       title: "ADR-013: Spanda Pulsation ➔ WebSocket Streams",
       vedicTitle: "Vedic Philosophy: Spanda (Dynamic Pulse)",
       vedicDesc: "Spanda philosophy describes the universe as a dynamic, vibrating pulse. It manifests through opening (Unmeṣa / creation) and closing (Nimeṣa / withdrawal) phases, maintaining cosmic balance.",
@@ -198,7 +183,7 @@ export default function App() {
       adrLink: "adr_013_spanda_reactive.md"
     },
     {
-      number: 14,
+      number: 13,
       label: "Refactoring",
       title: "ADR-014: Advaita Vedānta ➔ Code Negation",
       vedicTitle: "Vedic Philosophy: Negation (Apavāda / Neti Neti)",
@@ -210,8 +195,8 @@ export default function App() {
       adrLink: "adr_014_advaita_refactoring.md"
     },
     {
-      number: 15,
-      label: "Type Safety",
+      number: 14,
+      label: "Typing",
       title: "ADR-015: Navya-Nyāya Logic ➔ Strict Typing (AST)",
       vedicTitle: "Vedic Philosophy: Symbolic Category Logic",
       vedicDesc: "Navya-Nyāya provides a formal symbolic language to describe properties and relations without ambiguity. Every statement defines a subject (Dharmin), its qualifiers, and relation limiters (Avacchedaka).",
@@ -222,7 +207,7 @@ export default function App() {
       adrLink: "adr_015_navya_nyaya_ast.md"
     },
     {
-      number: 16,
+      number: 15,
       label: "Reviews",
       title: "ADR-016: Vāda-Vidhī Debate ➔ Branch Code Reviews",
       vedicTitle: "Vedic Philosophy: Rules of Logical Debate",
@@ -234,8 +219,8 @@ export default function App() {
       adrLink: "adr_016_vada_vidhi_reviews.md"
     },
     {
-      number: 17,
-      label: "Pages Portal",
+      number: 16,
+      label: "Portal",
       title: "ADR-017: Vaikharī Pages ➔ Documentation Deployment",
       vedicTitle: "Vedic Philosophy: Vaikharī (Spoken Word)",
       vedicDesc: "In Bhartṛhari's philosophy of language, Vaikharī is the final, outer spoken form of sound—making the unmanifest thought audible to others.",
@@ -246,8 +231,8 @@ export default function App() {
       adrLink: "adr_017_github_pages.md"
     },
     {
-      number: 18,
-      label: "Journey",
+      number: 17,
+      label: "Roadmap",
       title: "ADR-018: Upamāna Journey ➔ Interactive Roadmap",
       vedicTitle: "Vedic Philosophy: Upamāna (Epistemological Analogy)",
       vedicDesc: "Upamāna is the process of learning by analogy—gaining knowledge of an unfamiliar subject by matching it to a familiar one.",
@@ -256,6 +241,18 @@ export default function App() {
       engDesc: "The onboarding journey maps Sanskrit metaphysics side-by-side with familiar design patterns to build quick understanding.",
       engWhy: "This resolves developer onboarding friction and eliminates the need for prior classical training.",
       adrLink: "adr_018_onboarding_journey.md"
+    },
+    {
+      number: 18,
+      label: "Layouts",
+      title: "ADR-019: Portal Layouts ➔ Collapsible Workspace",
+      vedicTitle: "Vedic Philosophy: Dharā-Vāha-Smṛti (Unbroken Stream)",
+      vedicDesc: "Dharā-Vāha-Smṛti is the continuous, cognitive tracking of state flow. In workspace interactions, a user should never suffer context breakage or navigation reset.",
+      vedicKeyTerms: ["Dharā (Flow)", "Smṛti (Memory State)", "Vikṣepa (Distraction Block)"],
+      engTitle: "Software Analogy: Context-Sensitive Navigation",
+      engDesc: "The UI tracks navigation sources and provides sidebar toggles, expanding reading viewport spaces without losing user session coordinates.",
+      engWhy: "This ensures the developer stays focused during dense codebase research, improving navigation convenience.",
+      adrLink: "adr_019_portal_enhancements.md"
     }
   ], []);
 
@@ -805,11 +802,11 @@ export default function App() {
 
               {/* Core Framework Mappings */}
               <div className="aum-info-grid">
-                {/* 4 States of Consciousness */}
+                {/* 4 Quarters of Consciousness */}
                 <div className="aum-info-card glass-panel">
                   <div className="aum-info-header">
                     <div className="aum-info-bar" />
-                    <h2 className="aum-info-title">Quarters of Consciousness (Māṇḍūkya)</h2>
+                    <h2 className="aum-info-title">Quarters of Consciousness (Māṇdūkya)</h2>
                   </div>
                   <div className="aum-info-list">
                     <div className="aum-info-item">
