@@ -23,10 +23,6 @@ jobs:
           cache: npm
           cache-dependency-path: docs_portal/package-lock.json
 
-      - name: Install root dependencies
-        run: |
-          npm ci --prefer-offline --no-audit || npm install
-
       - name: Generate static docs JSON data
         run: node scripts/parse_docs.js
 
