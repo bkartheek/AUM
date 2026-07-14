@@ -6,7 +6,7 @@ vedic_state: "Turīya"
 description: "The root index of folders, guidelines, safety criteria, and documentation synchronization rules."
 ---
 
-# Mūla Sphoṭa Global Manifest (V1.25.0)
+# Mūla Sphoṭa Global Manifest (V1.31.0)
 
 This document serves as the **Mūla Sphoṭa** (the root holistic manifest) for the workspace. It indexes all directories, templates, and rules, and defines the safety conditions and synchronization protocols that govern AI agents.
 
@@ -28,13 +28,19 @@ This document serves as the **Mūla Sphoṭa** (the root holistic manifest) for 
 | │   └── [retrospective_template.md](templates/retrospective_template.md) | *Suṣupti* | Pratyavēkṣaṇa self-examination template. |
 | ├── **[sankalpas/](sankalpas/)** | *Suṣupti* | Directory for active, paused, and completed task resolve logs. |
 | ├── **[architecture/](architecture/)** | *Suṣupti* | Master Architecture Review Board (ARB) logs. |
-| │   └── **[decisions/](architecture/decisions/)** | *Suṣupti* | Master Architecture Decision Record (ADR) logs (ADR-001 to ADR-026). |
+| │   └── **[decisions/](architecture/decisions/)** | *Suṣupti* | Master Architecture Decision Record (ADR) logs (ADR-001 to ADR-032). |
 | ├── **[samskaras/](samskaras/)** | *Suṣupti* | Persistent cognitive memory caches storing learnings. |
 | └── **[intent_awakening/sparks.md](intent_awakening/sparks.md)** | *Paśyantī* | Private local thought incubator diary (VCS gitignored). |
 | **[scripts/](../scripts/)** | *Vaikharī* | Framework compilation and static parser utility scripts. |
 | ├── **[parse_docs.js](../scripts/parse_docs.js)** | *Vaikharī* | Compiles framework markdown files into docs_data.json. |
 | ├── **[aum.js](../scripts/aum.js)** | *Vaikharī* | The central AUM CLI Intent Orchestrator wrapper router. |
-| └── **[dispatcher.js](../scripts/dispatcher.js)** | *Vaikharī* | Dynamic context classifier and Kañcukas sheaths sandboxing tool. |
+| ├── **[dispatcher.js](../scripts/dispatcher.js)** | *Vaikharī* | Dynamic context classifier and Kañcukas sheaths sandboxing tool. |
+| ├── **[pranayama.js](../scripts/pranayama.js)** | *Vaikharī* | Context ventilation token compressor utility. |
+| ├── **[bhavana.js](../scripts/bhavana.js)** | *Vaikharī* | Dynamic rule evolution compiler tool. |
+| ├── **[upaya.js](../scripts/upaya.js)** | *Vaikharī* | Catur-Upāya progressive error recovery resolver. |
+| ├── **[panini.js](../scripts/panini.js)** | *Vaikharī* | Pāṇinian generative code synthesization parser. |
+| ├── **[catuskoti.js](../scripts/catuskoti.js)** | *Vaikharī* | Catuṣkoṭi tetralemma logic assertions testing library. |
+| └── **[pratyabhijna.js](../scripts/pratyabhijna.js)** | *Vaikharī* | Pratyabhijñā host environment self-audit recognition script. |
 | **[docs_portal/](../docs_portal/)** | *Vaikharī* | Premium React/Vite Single Page App documentation dashboard. |
 | **[.github/workflows/deploy.yml](../.github/workflows/deploy.yml)** | *Vaikharī* | GitHub Actions automation pipeline for Pages deployment. |
 

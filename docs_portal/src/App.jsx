@@ -337,6 +337,78 @@ export default function App() {
       engDesc: "A resident agent skill 'Yogi' defined inside '.agents/skills/yogi/' auto-triggers during workspace initialization to guide developers and enforce invariants.",
       engWhy: "This ensures that whenever the framework is downloaded or cloned, Yogi comes alive to guide developer prompts and maintain architectural alignment.",
       adrLink: "adr_026_yogi_guardian.md"
+    },
+    {
+      number: 26,
+      label: "Pranayama",
+      title: "ADR-027: Context Ventilation ➔ Prāṇāyāma",
+      vedicTitle: "Vedic Philosophy: Prāṇāyāma (Breath Control)",
+      vedicDesc: "Prāṇāyāma regulates the breath through inhalation (Pūraka), retention (Kumbhaka), and exhalation (Recaka) to purify focus.",
+      vedicKeyTerms: ["Pūraka (Inhalation)", "Kumbhaka (Retention)", "Recaka (Exhalation)"],
+      engTitle: "Software Analogy: Token Limit Compressor",
+      engDesc: "A context compressor script 'scripts/pranayama.js' filters raw session logs, retaining pinned instructions and targets while pruning build outputs.",
+      engWhy: "This prevents instruction decay inside the context window during long-running engineering runs.",
+      adrLink: "adr_027_pranayama.md"
+    },
+    {
+      number: 27,
+      label: "Bhavana",
+      title: "ADR-028: Rule Incubator ➔ Sphoṭa-Bhāvanā",
+      vedicTitle: "Vedic Philosophy: Bhāvanā (Continuous Incubation)",
+      vedicDesc: "Bhāvanā is the persistent cognitive incubation of subconscious impressions that matures ideas into fully articulated reality.",
+      vedicKeyTerms: ["Bhāvanā (Incubation)", "Sphoṭa (Holistic Flashing)", "Saṃskāras (Impressions)"],
+      engTitle: "Software Analogy: Dynamic Prompt Evolution",
+      engDesc: "A rule compiler script 'scripts/bhavana.js' synthesizes memory logs from '.aum/samskaras/' and auto-appends newly learned rules to the configuration files.",
+      engWhy: "This lets the prompt rules automatically evolve and learn from past compilation vm environments adjustments.",
+      adrLink: "adr_028_bhavana.md"
+    },
+    {
+      number: 28,
+      label: "Upayas",
+      title: "ADR-029: Recovery Resolver ➔ Catur-Upāya",
+      vedicTitle: "Vedic Philosophy: Catur-Upāya (Four Strategies)",
+      vedicDesc: "The Upāyas are four classical methods to resolve conflict or achieve state objectives: Sama (conciliation), Dana (compensation), Bheda (division), and Danda (force).",
+      vedicKeyTerms: ["Sāma (Soft override)", "Dāna (Stub injection)", "Bheda (Code separation)", "Daṇḍa (Git rollback)"],
+      engTitle: "Software Analogy: Progressive Error Recovery",
+      engDesc: "An error recovery state machine 'scripts/upaya.js' sequentially applies warning overrides (Sāma), import stubbing (Dāna), dependency isolation (Bheda), and check resets (Daṇḍa) on compiler crashes.",
+      engWhy: "This ensures the system can recover from complex compile issues without crashing the continuous integration runs.",
+      adrLink: "adr_029_upaya.md"
+    },
+    {
+      number: 29,
+      label: "Panini",
+      title: "ADR-030: Code Synthesizer ➔ Pāṇinian Grammar",
+      vedicTitle: "Vedic Philosophy: Panini's Aṣṭādhyāyī (Semantic Grammar)",
+      vedicDesc: "Pāṇini formulated 3,959 algebraic sutra rules to generate Sanskrit syntax, representing the earliest context-free generative metalanguage.",
+      vedicKeyTerms: ["Dhātu (Semantic Root)", "Pratyaya (Modifier)", "Sūtra (Parsing Rule)"],
+      engTitle: "Software Analogy: Generative AST Compiler",
+      engDesc: "A parsing code generator 'scripts/panini.js' translates root intent descriptors into mathematically correct class declarations using rule-rewriting chains.",
+      engWhy: "This eliminates code typos and boilerplate bloat by generating source files via formal logic chains.",
+      adrLink: "adr_030_panini.md"
+    },
+    {
+      number: 30,
+      label: "Catuskoti",
+      title: "ADR-031: Assertion Logic ➔ Catuṣkoṭi Engine",
+      vedicTitle: "Vedic Philosophy: Catuṣkoṭi Tetralemma Logic",
+      vedicDesc: "Catuṣkoṭi is the classical Indian tetralemma logic asserting four state alternatives: Is, Is Not, Both, and Neither.",
+      vedicKeyTerms: ["Sat (Exists)", "Asat (Does not exist)", "Ubhaya (Both)", "Anubhaya (Neither)"],
+      engTitle: "Software Analogy: Non-Binary Test assertions",
+      engDesc: "A test validation module 'scripts/catuskoti.js' models async stream assertions under resolved (Sat), rejected (Asat), cache-fetch (Ubhaya), and pending (Anubhaya) states.",
+      engWhy: "This permits auditing complex race conditions and streaming parameters that binary unit tests cannot model.",
+      adrLink: "adr_031_catuskoti.md"
+    },
+    {
+      number: 31,
+      label: "Pratyabhijna",
+      title: "ADR-032: Environmental Auditor ➔ Pratyabhijñā",
+      vedicTitle: "Vedic Philosophy: Pratyabhijñā (Self-Recognition)",
+      vedicDesc: "Pratyabhijñā is the recognition of one's absolute, internal capabilities rather than acquiring new external variables.",
+      vedicKeyTerms: ["Pratyabhijñā (Self-recognition)", "Vimarśa (Self-audit)", "Jñāna (Identity)"],
+      engTitle: "Software Analogy: Environment Diagnostic Auto-Aligner",
+      engDesc: "A diagnostic script 'scripts/pratyabhijna.js' checks host OS, node versions, and directory access permissions to align agent limits.",
+      engWhy: "This ensures the agent can auto-align execution commands across different development laptops and runners.",
+      adrLink: "adr_032_pratyabhijna.md"
     }
   ], []);
 
@@ -750,7 +822,7 @@ export default function App() {
                     style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', backgroundColor: 'var(--accent-saffron)', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '700', fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(194, 65, 12, 0.25)' }}
                   >
                     <Play size={16} fill="white" />
-                    Start Guided 25-Step Onboarding Journey
+                    Start Guided 31-Step Onboarding Journey
                   </button>
                 </div>
               </div>
