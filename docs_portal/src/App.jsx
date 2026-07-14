@@ -36,7 +36,7 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [docSource, setDocSource] = useState('dashboard'); // 'dashboard' | 'journey'
 
-  // Comprehensive 18-Step Guided Journey Timeline
+  // Comprehensive 23-Step Guided Journey Timeline (Aligned with actual ADR filenames)
   const journeySteps = useMemo(() => [
     {
       number: 1,
@@ -253,6 +253,54 @@ export default function App() {
       engDesc: "The UI tracks navigation sources and provides sidebar toggles, expanding reading viewport spaces without losing user session coordinates.",
       engWhy: "This ensures the developer stays focused during dense codebase research, improving navigation convenience.",
       adrLink: "adr_019_portal_enhancements.md"
+    },
+    {
+      number: 19,
+      label: "Memory Cache",
+      title: "ADR-020: Persistent Caching ➔ Saṃskāra Memory",
+      vedicTitle: "Vedic Philosophy: Saṃskāras (Subconscious Impressions)",
+      vedicDesc: "Every experience leaves a subconscious impression (Saṃskāra). Over time, these impressions shape active behavioral tendencies (Vāsanās).",
+      vedicKeyTerms: ["Saṃskāras (Impressions)", "Vāsanās (Tendencies)", "Smṛti (Memory Retention)"],
+      engTitle: "Software Analogy: Experience JSON Logs Cache",
+      engDesc: "The framework logs task resolutions, linter gotchas, and VM env patches to JSON files. Future agent runs load these caches to inherit past experience patterns.",
+      engWhy: "This prevents developer agents from hitting the same compiler native binding or configuration errors repeatedly across runs.",
+      adrLink: "adr_020_samskara_memory.md"
+    },
+    {
+      number: 20,
+      label: "Linter Auditor",
+      title: "ADR-021: Programmatic Linter ➔ Hētvābhāsa Fallacies",
+      vedicTitle: "Vedic Philosophy: Logic Fallacies (Hētvābhāsa)",
+      vedicDesc: "In Nyāya epistemology, logical arguments are audited for fallacies (Hētvābhāsa) such as unproved premises (Asiddha) or out-of-scope edits (Savyabhicāra).",
+      vedicKeyTerms: ["Asiddha (Unproved/Stub)", "Savyabhicāra (Irregular/Scope-drift)", "Nigraha (Commit Block)"],
+      engTitle: "Software Analogy: Git Pre-commit Validator",
+      engDesc: "A Node pre-commit script audits staged git files, scanning for commented stubs, console logs, or file modifications outside the active focus lock.",
+      engWhy: "This guarantees master branch integrity by automatically blocking unaligned commits or placeholder code blocks.",
+      adrLink: "adr_021_hetvabhasa_auditor.md"
+    },
+    {
+      number: 21,
+      label: "Context Pruner",
+      title: "ADR-022: Attention Pruning ➔ Pratyāhāra Context",
+      vedicTitle: "Vedic Philosophy: Sensory Abstraction (Pratyāhāra)",
+      vedicDesc: "Pratyāhāra represents the withdrawal of senses from external noise. It shields the mind from distraction to ensure absolute cognitive concentration.",
+      vedicKeyTerms: ["Pratyāhāra (Abstraction)", "Vikṣepa (Distraction Pruning)", "Ekāgratā (One-pointed Focus)"],
+      engTitle: "Software Analogy: Workspace Context Compressor",
+      engDesc: "A context compressor dynamically prunes unrelated dependency nodes, build outputs, and logs, compiling a minimal task-specific file inventory.",
+      engWhy: "This protects finite context windows from token bloat, ensuring instructions are not forgotten during long agent runs.",
+      adrLink: "adr_022_pratyahara_context.md"
+    },
+    {
+      number: 22,
+      label: "Self Healer",
+      title: "ADR-023: Self-Healing Runner ➔ Prāyaścitta Recovery",
+      vedicTitle: "Vedic Philosophy: Atonement & Correction (Prāyaścitta)",
+      vedicDesc: "Prāyaścitta refers to self-cleansing rituals and corrective behaviors performed to repair past deviations and restore system equilibrium.",
+      vedicKeyTerms: ["Prāyaścitta (Correction)", "Doṣa (Runtime Deviation)", "Śuddhi (System Purification)"],
+      engTitle: "Software Analogy: Self-Correcting Test Runner",
+      engDesc: "A test wrapper catches compilation crashes, maps issues to correction profiles (such as native Rolldown binds on Linux runner VMs), runs patches, and retries.",
+      engWhy: "This prevents minor native environment binding mismatches from crashing CI/CD delivery pipelines.",
+      adrLink: "adr_023_prayascitta_recovery.md"
     }
   ], []);
 
@@ -666,7 +714,7 @@ export default function App() {
                     style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', backgroundColor: 'var(--accent-saffron)', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '700', fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(194, 65, 12, 0.25)' }}
                   >
                     <Play size={16} fill="white" />
-                    Start Guided 18-Step Onboarding Journey
+                    Start Guided 22-Step Onboarding Journey
                   </button>
                 </div>
               </div>
