@@ -6,7 +6,7 @@ vedic_state: "Turīya"
 description: "The root index of folders, guidelines, safety criteria, and documentation synchronization rules."
 ---
 
-# Mūla Sphoṭa Global Manifest (V1.31.0)
+# Mūla Sphoṭa Global Manifest (V1.33.0)
 
 This document serves as the **Mūla Sphoṭa** (the root holistic manifest) for the workspace. It indexes all directories, templates, and rules, and defines the safety conditions and synchronization protocols that govern AI agents.
 
@@ -28,7 +28,7 @@ This document serves as the **Mūla Sphoṭa** (the root holistic manifest) for 
 | │   └── [retrospective_template.md](templates/retrospective_template.md) | *Suṣupti* | Pratyavēkṣaṇa self-examination template. |
 | ├── **[sankalpas/](sankalpas/)** | *Suṣupti* | Directory for active, paused, and completed task resolve logs. |
 | ├── **[architecture/](architecture/)** | *Suṣupti* | Master Architecture Review Board (ARB) logs. |
-| │   └── **[decisions/](architecture/decisions/)** | *Suṣupti* | Master Architecture Decision Record (ADR) logs (ADR-001 to ADR-032). |
+| │   └── **[decisions/](architecture/decisions/)** | *Suṣupti* | Master Architecture Decision Record (ADR) logs (ADR-001 to ADR-033). |
 | ├── **[samskaras/](samskaras/)** | *Suṣupti* | Persistent cognitive memory caches storing learnings. |
 | └── **[intent_awakening/sparks.md](intent_awakening/sparks.md)** | *Paśyantī* | Private local thought incubator diary (VCS gitignored). |
 | **[scripts/](../scripts/)** | *Vaikharī* | Framework compilation and static parser utility scripts. |

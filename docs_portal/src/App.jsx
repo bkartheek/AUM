@@ -26,17 +26,23 @@ marked.setOptions({
 });
 
 export default function App() {
-  const [selectedDoc, setSelectedDoc] = useState(null); // null means Dashboard or Journey
+  const [selectedDoc, setSelectedDoc] = useState(null); // null means Dashboard, Journey or Simulator
   const [showJourney, setShowJourney] = useState(false);  // true renders Onboarding Journey
+  const [showSimulator, setShowSimulator] = useState(false); // true renders Sādhana Arena Simulator
   const [activeJourneyStep, setActiveJourneyStep] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // New States: Collapsible Sidebar & Navigation Source Context Memory
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [docSource, setDocSource] = useState('dashboard'); // 'dashboard' | 'journey'
+  const [docSource, setDocSource] = useState('dashboard'); // 'dashboard' | 'journey' | 'simulator'
 
-  // Comprehensive 25-Step Guided Journey Timeline (Aligned with actual ADR filenames)
+  // Simulator States
+  const [simulatorPrompt, setSimulatorPrompt] = useState('generate API documentation index');
+  const [simulatedResult, setSimulatedResult] = useState(null);
+  const [isSimulating, setIsSimulating] = useState(false);
+
+  // Comprehensive 31-Step Guided Journey Timeline (Aligned with actual ADR filenames)
   const journeySteps = useMemo(() => [
     {
       number: 1,
@@ -481,6 +487,7 @@ export default function App() {
     setSelectedDoc(doc);
     setDocSource(source);
     setShowJourney(false);
+    setShowSimulator(false);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -530,9 +537,48 @@ export default function App() {
     setSelectedDoc(null);
     if (docSource === 'journey') {
       setShowJourney(true);
+    } else if (docSource === 'simulator') {
+      setShowSimulator(true);
     } else {
       setShowJourney(false);
+      setShowSimulator(false);
     }
+  };
+
+  // Simulator Classification Execution
+  const handleSimulate = () => {
+    setIsSimulating(true);
+    setTimeout(() => {
+      const query = simulatorPrompt.toLowerCase();
+      let category = 'GENERAL_DEVELOPER';
+      let allowedTools = ['read_file', 'write_file', 'run_command'];
+      let turnLimit = 10;
+      let permission = 'READ-WRITE';
+
+      if (query.includes('fix') || query.includes('debug') || query.includes('bug') || query.includes('error')) {
+        category = 'DEBUGGER';
+        allowedTools = ['read_file', 'write_file', 'run_command'];
+        turnLimit = 5;
+      } else if (query.includes('refactor') || query.includes('de-duplicate') || query.includes('clean') || query.includes('formatting')) {
+        category = 'REFACTORER';
+        allowedTools = ['read_file', 'write_file'];
+        turnLimit = 8;
+      } else if (query.includes('document') || query.includes('doc') || query.includes('guide') || query.includes('index')) {
+        category = 'DOCUMENTER';
+        allowedTools = ['read_file'];
+        turnLimit = 3;
+        permission = 'READ-ONLY';
+      }
+
+      setSimulatedResult({
+        category,
+        allowedTools,
+        turnLimit,
+        permission,
+        latency: Math.floor(Math.random() * 5) + 1
+      });
+      setIsSimulating(false);
+    }, 450);
   };
 
   return (
@@ -571,17 +617,27 @@ export default function App() {
 
         {/* Dashboard Link */}
         <button 
-          onClick={() => { setShowJourney(false); setSelectedDoc(null); setMobileMenuOpen(false); }}
-          className={`aum-dashboard-btn ${!selectedDoc && !showJourney ? 'active' : ''}`}
+          onClick={() => { setShowJourney(false); setShowSimulator(false); setSelectedDoc(null); setMobileMenuOpen(false); }}
+          className={`aum-dashboard-btn ${!selectedDoc && !showJourney && !showSimulator ? 'active' : ''}`}
           style={{ marginBottom: '10px' }}
         >
           <Activity size={18} />
           <span>Cognitive Dashboard</span>
         </button>
 
+        {/* Sādhana Arena Simulator Link */}
+        <button 
+          onClick={() => { setShowSimulator(true); setShowJourney(false); setSelectedDoc(null); setMobileMenuOpen(false); }}
+          className={`aum-dashboard-btn ${showSimulator ? 'active' : ''}`}
+          style={{ marginBottom: '10px' }}
+        >
+          <Play size={18} />
+          <span>Sādhana Arena Simulator</span>
+        </button>
+
         {/* Guided Onboarding Journey Link */}
         <button 
-          onClick={() => { setShowJourney(true); setSelectedDoc(null); setMobileMenuOpen(false); }}
+          onClick={() => { setShowJourney(true); setShowSimulator(false); setSelectedDoc(null); setMobileMenuOpen(false); }}
           className={`aum-dashboard-btn ${showJourney ? 'active' : ''}`}
           style={{ marginBottom: '24px' }}
         >
@@ -654,7 +710,7 @@ export default function App() {
                 onClick={handleBackNavigation}
                 className="aum-back-btn"
               >
-                ← Back {docSource === 'journey' ? `to Journey (Step ${activeJourneyStep + 1})` : 'to Dashboard'}
+                ← Back {docSource === 'journey' ? `to Journey` : docSource === 'simulator' ? 'to Simulator' : 'to Dashboard'}
               </button>
               
               <article className="aum-article-card glass-panel">
@@ -685,6 +741,89 @@ export default function App() {
                   dangerouslySetInnerHTML={renderedContent} 
                 />
               </article>
+            </div>
+          ) : showSimulator ? (
+            /* Sādhana Arena Simulator View */
+            <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <div className="aum-journey-header">
+                <span className="aum-tag">Kañcukas Sandboxing Playground</span>
+                <h1 className="aum-journey-title">Sādhana Arena Simulator</h1>
+                <p className="aum-journey-subtitle">
+                  Input a developer prompt to witness Yogi's classification latency (Prāṇa) and see the sheaths constraints (Kañcukas) dynamically cage prompt payload targets.
+                </p>
+              </div>
+
+              {/* Interactive Input Form */}
+              <div className="glass-panel" style={{ padding: '24px' }}>
+                <label style={{ display: 'block', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '8px', fontSize: '0.85rem', textTransform: 'uppercase' }}>
+                  Select or Enter Developer Prompt
+                </label>
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px' }}>
+                  <button onClick={() => setSimulatorPrompt('fix build compilation error')} className="aum-tag hover-btn" style={{ cursor: 'pointer' }}>Fix Error</button>
+                  <button onClick={() => setSimulatorPrompt('refactor duplicate loops')} className="aum-tag hover-btn" style={{ cursor: 'pointer' }}>Refactor Loops</button>
+                  <button onClick={() => setSimulatorPrompt('generate API index guide')} className="aum-tag hover-btn" style={{ cursor: 'pointer' }}>Generate Docs</button>
+                </div>
+                <textarea 
+                  value={simulatorPrompt} 
+                  onChange={(e) => setSimulatorPrompt(e.target.value)}
+                  placeholder="Enter a prompt..."
+                  style={{ width: '100%', minHeight: '80px', padding: '12px', border: '1px solid var(--border-color)', borderRadius: '8px', fontFamily: 'inherit', fontSize: '0.9rem', backgroundColor: 'rgba(253, 250, 244, 0.5)', color: 'var(--text-primary)', resize: 'vertical', marginBottom: '16px' }}
+                />
+                <button 
+                  onClick={handleSimulate}
+                  disabled={isSimulating}
+                  style={{ padding: '12px 24px', backgroundColor: 'var(--accent-saffron)', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: '700', fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}
+                >
+                  <Play size={16} fill="white" />
+                  {isSimulating ? 'Classifying (Prāṇa)...' : 'Dispatch through Kañcukas'}
+                </button>
+              </div>
+
+              {/* Simulation Result */}
+              {simulatedResult && (
+                <div className="glass-panel" style={{ padding: '32px' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-primary)', marginBottom: '4px' }}>
+                    Sphoṭa Category: {simulatedResult.category}
+                  </h3>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                    Intake Latency: {simulatedResult.latency}ms
+                  </span>
+
+                  {/* Sheaths Cards Grid */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginTop: '24px', marginBottom: '24px' }}>
+                    <div style={{ padding: '16px', backgroundColor: 'rgba(253, 250, 244, 0.5)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+                      <strong style={{ display: 'block', color: 'var(--accent-saffron)', fontSize: '0.85rem', marginBottom: '6px' }}>KĀLA (Time)</strong>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Turn Limit: {simulatedResult.turnLimit} max turns</span>
+                    </div>
+                    <div style={{ padding: '16px', backgroundColor: 'rgba(253, 250, 244, 0.5)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+                      <strong style={{ display: 'block', color: 'var(--accent-saffron)', fontSize: '0.85rem', marginBottom: '6px' }}>NIYATI (Space)</strong>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Directory Lock: target repo only</span>
+                    </div>
+                    <div style={{ padding: '16px', backgroundColor: 'rgba(253, 250, 244, 0.5)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+                      <strong style={{ display: 'block', color: 'var(--accent-saffron)', fontSize: '0.85rem', marginBottom: '6px' }}>VIDYĀ (Tools)</strong>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Allowed: [{simulatedResult.allowedTools.join(', ')}]</span>
+                    </div>
+                    <div style={{ padding: '16px', backgroundColor: 'rgba(253, 250, 244, 0.5)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+                      <strong style={{ display: 'block', color: 'var(--accent-saffron)', fontSize: '0.85rem', marginBottom: '6px' }}>KALĀ (Power)</strong>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Permission: {simulatedResult.permission}</span>
+                    </div>
+                  </div>
+
+                  <strong style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>Compiled Sandbox Configuration Payload:</strong>
+                  <pre style={{ margin: 0, padding: '16px', backgroundColor: 'rgba(32, 17, 3, 0.05)', border: '1px solid var(--border-color)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.8rem', color: 'var(--text-primary)', overflowX: 'auto' }}>
+{`{
+  "active_intent": "${simulatedResult.category}",
+  "limiting_sheaths": {
+    "kala_turn_ceiling": ${simulatedResult.turnLimit},
+    "niyati_workspace_bounds": "/Users/universe/AUM",
+    "vidya_allowed_tools": ${JSON.stringify(simulatedResult.allowedTools)},
+    "kala_permission_level": "${simulatedResult.permission}"
+  },
+  "sanitized_payload": "${simulatorPrompt}"
+}`}
+                  </pre>
+                </div>
+              )}
             </div>
           ) : showJourney ? (
             /* Guided Onboarding Journey View */
