@@ -661,3 +661,224 @@ body {
     padding: 24px;
   }
 }
+
+/* Onboarding Journey Styles */
+.aum-journey-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.aum-journey-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.aum-journey-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.aum-journey-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.aum-journey-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 16px 24px;
+  border-radius: 12px;
+  overflow-x: auto;
+  gap: 12px;
+}
+
+.aum-timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  min-width: 90px;
+}
+
+.aum-timeline-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--bg-base);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.aum-timeline-node.active .aum-timeline-dot {
+  background-color: var(--accent-saffron);
+  border-color: var(--accent-saffron);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
+}
+
+.aum-timeline-node.completed .aum-timeline-dot {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #fff;
+}
+
+.aum-timeline-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.aum-timeline-node.active .aum-timeline-label {
+  color: var(--accent-saffron);
+}
+
+.aum-journey-card-pair {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .aum-journey-card-pair {
+    flex-direction: column;
+  }
+  .aum-journey-connector {
+    transform: rotate(90deg);
+    margin: 12px auto;
+  }
+}
+
+.aum-journey-card {
+  flex: 1;
+  padding: 32px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 12px;
+}
+
+.aum-journey-card.vedic {
+  border-left: 4px solid var(--accent-saffron);
+  background: linear-gradient(135deg, rgba(194, 65, 12, 0.03), rgba(246, 239, 226, 0.5));
+}
+
+.aum-journey-card.engineering {
+  border-left: 4px solid var(--accent-blue);
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.03), rgba(246, 239, 226, 0.5));
+}
+
+.aum-journey-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aum-journey-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.aum-journey-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-saffron);
+  font-size: 1.5rem;
+  align-self: center;
+}
+
+.aum-journey-term {
+  font-weight: 600;
+  color: var(--accent-gold);
+  background-color: rgba(180, 83, 9, 0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.aum-journey-adr-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-blue);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.aum-journey-adr-link:hover {
+  color: var(--accent-saffron);
+}
+
+.aum-journey-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.aum-journey-btn {
+  padding: 10px 20px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aum-journey-btn:hover:not(:disabled) {
+  background-color: var(--bg-base);
+  border-color: var(--accent-saffron);
+  color: var(--accent-saffron);
+}
+
+.aum-journey-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.aum-journey-btn.primary {
+  background-color: var(--accent-saffron);
+  border-color: var(--accent-saffron);
+  color: #fff;
+}
+
+.aum-journey-btn.primary:hover {
+  background-color: var(--accent-saffron-hover);
+  border-color: var(--accent-saffron-hover);
+  color: #fff;
+}
