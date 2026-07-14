@@ -31,6 +31,10 @@ jobs:
             cat build.log
             exit 1
           fi
+          if ! npm install --legacy-peer-deps --no-audit --no-fund @rolldown/binding-linux-x64-gnu > build.log 2>&1; then
+            cat build.log
+            exit 1
+          fi
           if ! npm run build > build.log 2>&1; then
             cat build.log
             exit 1
