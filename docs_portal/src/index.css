@@ -5,25 +5,25 @@
   --font-display: 'Outfit', sans-serif;
   --font-mono: 'Fira Code', monospace;
 
-  /* Color Palette - Vedic Cosmic Theme */
-  --bg-base: #060813;
-  --bg-surface: #0b0e1e;
-  --bg-surface-glass: rgba(11, 14, 30, 0.75);
+  /* Color Palette - Sacred Vedic Light Theme */
+  --bg-base: #fdfaf4;             /* Sacred Parchment */
+  --bg-surface: #f6efe2;          /* Sandstone Cream */
+  --bg-surface-glass: rgba(246, 239, 226, 0.9);
   
-  --border-color: rgba(245, 158, 11, 0.15); /* Saffron Gold border */
-  --border-color-active: rgba(245, 158, 11, 0.4);
+  --border-color: rgba(124, 77, 18, 0.12); /* Teakwood border */
+  --border-color-active: rgba(217, 79, 4, 0.35); /* Saffron hover border */
 
-  --accent-saffron: #f97316;
-  --accent-saffron-hover: #ea580c;
-  --accent-gold: #fbbf24;
-  --accent-blue: #3b82f6;
+  --accent-saffron: #c2410c;      /* Sacred Saffron / Kesar */
+  --accent-saffron-hover: #9a3412;
+  --accent-gold: #b45309;         /* Turmeric / Haldi Gold */
+  --accent-blue: #1d4ed8;         /* Peacock Blue */
   
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #475569;
+  --text-primary: #2d1b03;        /* Dark Sandalwood Charcoal */
+  --text-secondary: #5f4a32;      /* Sandalwood Brown */
+  --text-muted: #8c7860;          /* Muted Dust */
   
-  --shadow-main: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 8px 32px 0 rgba(245, 158, 11, 0.04);
+  --shadow-main: 0 8px 24px rgba(124, 77, 18, 0.05);
+  --shadow-glow: 0 8px 24px rgba(217, 79, 4, 0.08);
 }
 
 *, *::before, *::after {
@@ -49,11 +49,11 @@ body {
   background: var(--bg-base);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(245, 158, 11, 0.15);
+  background: rgba(124, 77, 18, 0.15);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(245, 158, 11, 0.35);
+  background: rgba(124, 77, 18, 0.3);
 }
 
 /* Layout Framework */
@@ -63,10 +63,11 @@ body {
   background-color: var(--bg-base);
 }
 
+/* Sidebar - Rich Dark Teakwood Contrast */
 .aum-sidebar {
   width: 320px;
-  background-color: var(--bg-surface);
-  border-right: 1px solid var(--border-color);
+  background-color: #201103;    /* Teakwood Dark */
+  border-right: 1px solid rgba(124, 77, 18, 0.25);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -108,7 +109,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent-saffron), var(--accent-gold));
+  background: linear-gradient(135deg, #ea580c, #d97706);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,21 +117,21 @@ body {
   font-weight: 700;
   font-size: 1.2rem;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
 }
 
 .aum-brand-title {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #f8fafc;
   line-height: 1.2;
 }
 
 .aum-brand-sub {
   font-size: 0.7rem;
   font-weight: 600;
-  color: var(--accent-saffron);
+  color: #fbbf24;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -144,18 +145,18 @@ body {
   position: absolute;
   left: 12px;
   top: 50%;
-  transform: translate-y(-50%);
-  color: var(--text-secondary);
+  transform: translateY(-50%);
+  color: #94a3b8;
   pointer-events: none;
 }
 
 .aum-search-input {
   width: 100%;
-  background-color: var(--bg-base);
-  border: 1px solid var(--border-color);
+  background-color: #120902;
+  border: 1px solid rgba(124, 77, 18, 0.3);
   border-radius: 8px;
   padding: 10px 12px 10px 38px;
-  color: var(--text-primary);
+  color: #f8fafc;
   font-family: var(--font-sans);
   font-size: 0.85rem;
   outline: none;
@@ -163,8 +164,8 @@ body {
 }
 
 .aum-search-input:focus {
-  border-color: var(--accent-saffron);
-  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.25);
 }
 
 .aum-dashboard-btn {
@@ -176,7 +177,7 @@ body {
   background: none;
   border: 1px solid transparent;
   border-radius: 8px;
-  color: var(--text-secondary);
+  color: #cbd5e1;
   font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 600;
@@ -187,14 +188,14 @@ body {
 }
 
 .aum-dashboard-btn:hover {
-  color: var(--text-primary);
-  background-color: rgba(255, 255, 255, 0.03);
+  color: #f8fafc;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .aum-dashboard-btn.active {
-  background: linear-gradient(90deg, rgba(249, 115, 22, 0.12), rgba(251, 191, 36, 0.03));
-  border: 1px solid rgba(249, 115, 22, 0.25);
-  color: var(--accent-saffron);
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.2), rgba(251, 191, 36, 0.05));
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  color: #fbbf24;
 }
 
 /* Navigation Lists */
@@ -218,7 +219,7 @@ body {
 .aum-nav-section-title {
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -236,7 +237,7 @@ body {
   background: none;
   border: none;
   border-left: 2px solid transparent;
-  color: var(--text-secondary);
+  color: #94a3b8;
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 500;
@@ -254,20 +255,20 @@ body {
 }
 
 .aum-nav-btn:hover {
-  color: var(--text-primary);
-  background-color: rgba(255, 255, 255, 0.02);
+  color: #f8fafc;
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .aum-nav-btn.active {
-  color: var(--accent-gold);
-  background-color: rgba(251, 191, 36, 0.04);
-  border-left-color: var(--accent-gold);
+  color: #fbbf24;
+  background-color: rgba(251, 191, 36, 0.06);
+  border-left-color: #fbbf24;
 }
 
 .aum-nav-chevron {
   opacity: 0;
   transition: opacity 0.2s ease;
-  color: var(--accent-gold);
+  color: #fbbf24;
 }
 
 .aum-nav-btn:hover .aum-nav-chevron {
@@ -277,8 +278,8 @@ body {
 /* Glass Panels */
 .glass-panel {
   background: var(--bg-surface-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   box-shadow: var(--shadow-main);
@@ -295,8 +296,9 @@ body {
   padding: 40px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(11, 14, 30, 0.9), rgba(15, 23, 42, 0.2));
+  background: linear-gradient(135deg, #fbf7ee, #f5ecd6);
   margin-bottom: 32px;
+  border: 1px solid rgba(124, 77, 18, 0.15);
 }
 
 .aum-banner-glow {
@@ -305,7 +307,7 @@ body {
   top: -50px;
   width: 250px;
   height: 250px;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(217, 79, 4, 0.08) 0%, transparent 70%);
   filter: blur(20px);
   pointer-events: none;
 }
@@ -313,8 +315,8 @@ body {
 .aum-tag {
   display: inline-block;
   padding: 4px 12px;
-  background: rgba(249, 115, 22, 0.1);
-  border: 1px solid rgba(249, 115, 22, 0.2);
+  background: rgba(194, 65, 12, 0.08);
+  border: 1px solid rgba(194, 65, 12, 0.2);
   border-radius: 99px;
   color: var(--accent-saffron);
   font-size: 0.7rem;
@@ -328,7 +330,7 @@ body {
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 12px;
   letter-spacing: -0.01em;
@@ -353,6 +355,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  border: 1px solid var(--border-color);
 }
 
 .aum-stat-icon {
@@ -365,17 +368,17 @@ body {
 }
 
 .aum-stat-icon.saffron {
-  background: rgba(249, 115, 22, 0.1);
+  background: rgba(194, 65, 12, 0.08);
   color: var(--accent-saffron);
 }
 
 .aum-stat-icon.gold {
-  background: rgba(251, 191, 36, 0.1);
+  background: rgba(180, 83, 9, 0.08);
   color: var(--accent-gold);
 }
 
 .aum-stat-icon.blue {
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(29, 78, 216, 0.08);
   color: var(--accent-blue);
 }
 
@@ -392,7 +395,7 @@ body {
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* Dashboard Info Grids */
@@ -410,6 +413,7 @@ body {
 
 .aum-info-card {
   padding: 32px;
+  border: 1px solid var(--border-color);
 }
 
 .aum-info-header {
@@ -430,7 +434,7 @@ body {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .aum-info-list {
@@ -441,7 +445,7 @@ body {
 
 .aum-info-item {
   padding: 16px;
-  background-color: rgba(6, 8, 19, 0.5);
+  background-color: rgba(253, 250, 244, 0.8);
   border: 1px solid var(--border-color);
   border-radius: 8px;
 }
@@ -486,6 +490,7 @@ body {
 
 .aum-article-card {
   padding: 48px;
+  border: 1px solid var(--border-color);
 }
 
 .aum-article-meta {
@@ -494,7 +499,7 @@ body {
   gap: 12px;
   margin-bottom: 32px;
   padding-bottom: 24px;
-  border-bottom: 1px solid rgba(245, 158, 11, 0.08);
+  border-bottom: 1px solid rgba(124, 77, 18, 0.08);
 }
 
 .aum-meta-tag {
@@ -502,16 +507,128 @@ body {
   font-weight: 500;
   color: var(--text-secondary);
   padding: 4px 12px;
-  background-color: rgba(6, 8, 19, 0.6);
+  background-color: rgba(253, 250, 244, 0.7);
   border: 1px solid var(--border-color);
   border-radius: 99px;
+}
+
+/* Markdown Rendering Customizations */
+.markdown-body {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.markdown-body h1 {
+  font-size: 2.2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-gold);
+}
+
+.markdown-body h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-gold);
+  border-bottom: 1px solid rgba(124, 77, 18, 0.08);
+  padding-bottom: 0.3rem;
+}
+
+.markdown-body h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent-saffron);
+}
+
+.markdown-body p {
+  margin-bottom: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.markdown-body ul, .markdown-body ol {
+  margin-bottom: 1.2rem;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.markdown-body li {
+  margin-bottom: 0.4rem;
+}
+
+.markdown-body code {
+  font-family: var(--font-mono);
+  background: rgba(124, 77, 18, 0.04);
+  border: 1px solid rgba(124, 77, 18, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--accent-gold);
+}
+
+.markdown-body pre {
+  background: #fdfbf7;
+  border: 1px solid var(--border-color);
+  padding: 1.2rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.markdown-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.markdown-body th, .markdown-body td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.markdown-body th {
+  background: rgba(124, 77, 18, 0.04);
+  color: var(--accent-gold);
+}
+
+.markdown-body td {
+  color: var(--text-secondary);
+}
+
+.markdown-body tr:nth-child(even) {
+  background: rgba(253, 250, 244, 0.5);
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid var(--accent-saffron);
+  background: rgba(217, 79, 4, 0.03);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.markdown-body blockquote p {
+  margin-bottom: 0;
+  font-style: italic;
 }
 
 /* Mobile responsive toggle header */
 .aum-mobile-header {
   display: none;
-  background-color: var(--bg-surface);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #201103;
+  border-bottom: 1px solid rgba(124, 77, 18, 0.25);
   padding: 16px;
   align-items: center;
   justify-content: space-between;
@@ -528,11 +645,11 @@ body {
     top: 0;
     bottom: 0;
     height: 100vh;
-    transform: translate-x(-100%);
+    transform: translateX(-100%);
     transition: transform 0.3s ease;
   }
   .aum-sidebar.open {
-    transform: translate-x(0);
+    transform: translateX(0);
   }
   .aum-mobile-header {
     display: flex;
