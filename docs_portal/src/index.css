@@ -6,38 +6,37 @@
   --font-mono: 'Fira Code', monospace;
 
   /* Color Palette - Vedic Cosmic Theme */
-  --bg-base: #070913;
-  --bg-surface: #0e1222;
-  --bg-surface-glass: rgba(14, 18, 34, 0.65);
+  --bg-base: #060813;
+  --bg-surface: #0b0e1e;
+  --bg-surface-glass: rgba(11, 14, 30, 0.75);
   
-  --border-color: rgba(245, 158, 11, 0.15); /* Saffron Gold subtle border */
-  --border-glow: rgba(245, 158, 11, 0.3);
+  --border-color: rgba(245, 158, 11, 0.15); /* Saffron Gold border */
+  --border-color-active: rgba(245, 158, 11, 0.4);
 
   --accent-saffron: #f97316;
   --accent-saffron-hover: #ea580c;
   --accent-gold: #fbbf24;
+  --accent-blue: #3b82f6;
   
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --text-saffron: #ffedd5;
+  --text-muted: #475569;
   
-  font-family: var(--font-sans);
-  line-height: 1.6;
-  color: var(--text-primary);
-  background-color: var(--bg-base);
-  box-sizing: border-box;
+  --shadow-main: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 8px 32px 0 rgba(245, 158, 11, 0.04);
 }
 
 *, *::before, *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
+  font-family: var(--font-sans);
   background-color: var(--bg-base);
   color: var(--text-primary);
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
@@ -50,158 +49,498 @@ body {
   background: var(--bg-base);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(245, 158, 11, 0.2);
+  background: rgba(245, 158, 11, 0.15);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.35);
 }
 
-/* Glassmorphism Styles */
+/* Layout Framework */
+.aum-app {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-base);
+}
+
+.aum-sidebar {
+  width: 320px;
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.aum-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.aum-main-viewport {
+  flex: 1;
+  padding: 48px;
+  overflow-y: auto;
+}
+
+/* Sidebar Elements */
+.aum-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.aum-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aum-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-saffron), var(--accent-gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.aum-brand-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.aum-brand-sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-saffron);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aum-search-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.aum-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translate-y(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.aum-search-input {
+  width: 100%;
+  background-color: var(--bg-base);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px 10px 38px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.aum-search-input:focus {
+  border-color: var(--accent-saffron);
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.15);
+}
+
+.aum-dashboard-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.aum-dashboard-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.aum-dashboard-btn.active {
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.12), rgba(251, 191, 36, 0.03));
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  color: var(--accent-saffron);
+}
+
+/* Navigation Lists */
+.aum-nav {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.aum-nav-section {
+  margin-bottom: 24px;
+}
+
+.aum-nav-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+
+.aum-nav-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.aum-nav-list {
+  list-style: none;
+}
+
+.aum-nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.aum-nav-btn span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 8px;
+}
+
+.aum-nav-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.aum-nav-btn.active {
+  color: var(--accent-gold);
+  background-color: rgba(251, 191, 36, 0.04);
+  border-left-color: var(--accent-gold);
+}
+
+.aum-nav-chevron {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--accent-gold);
+}
+
+.aum-nav-btn:hover .aum-nav-chevron {
+  opacity: 1;
+}
+
+/* Glass Panels */
 .glass-panel {
   background: var(--bg-surface-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: var(--shadow-main);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-panel:hover {
-  border-color: rgba(245, 158, 11, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(245, 158, 11, 0.05);
+  border-color: var(--border-color-active);
+  box-shadow: var(--shadow-glow);
 }
 
-/* Micro-animations */
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.9;
-  }
+/* Banner Card */
+.aum-banner {
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(11, 14, 30, 0.9), rgba(15, 23, 42, 0.2));
+  margin-bottom: 32px;
 }
 
-.pulsing-dot {
-  animation: pulseGlow 2s infinite ease-in-out;
+.aum-banner-glow {
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
 }
 
-/* Typography styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+.aum-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  border-radius: 99px;
+  color: var(--accent-saffron);
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
 }
 
-/* Markdown Rendering Customizations */
-.markdown-body {
-  color: var(--text-primary);
-  font-size: 1.05rem;
-}
-
-.markdown-body h1 {
+.aum-banner-title {
+  font-family: var(--font-display);
   font-size: 2.2rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--accent-gold);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
 }
 
-.markdown-body h2 {
-  font-size: 1.6rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: var(--accent-gold);
-  border-bottom: 1px solid rgba(245, 158, 11, 0.08);
-  padding-bottom: 0.3rem;
+.aum-banner-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 720px;
 }
 
-.markdown-body h3 {
-  font-size: 1.25rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+/* Stats Layout */
+.aum-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.aum-stat-card {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.aum-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aum-stat-icon.saffron {
+  background: rgba(249, 115, 22, 0.1);
   color: var(--accent-saffron);
 }
 
-.markdown-body p {
-  margin-bottom: 1.2rem;
-  color: var(--text-secondary);
-}
-
-.markdown-body ul, .markdown-body ol {
-  margin-bottom: 1.2rem;
-  padding-left: 1.5rem;
-  color: var(--text-secondary);
-}
-
-.markdown-body li {
-  margin-bottom: 0.4rem;
-}
-
-.markdown-body code {
-  font-family: var(--font-mono);
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.15);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.9em;
+.aum-stat-icon.gold {
+  background: rgba(251, 191, 36, 0.1);
   color: var(--accent-gold);
 }
 
-.markdown-body pre {
-  background: rgba(14, 18, 34, 0.85);
-  border: 1px solid var(--border-color);
-  padding: 1.2rem;
-  border-radius: 8px;
-  overflow-x: auto;
-  margin-bottom: 1.5rem;
+.aum-stat-icon.blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-blue);
 }
 
-.markdown-body pre code {
+.aum-stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.aum-stat-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Dashboard Info Grids */
+.aum-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .aum-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aum-info-card {
+  padding: 32px;
+}
+
+.aum-info-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.aum-info-bar {
+  width: 4px;
+  height: 24px;
+  background-color: var(--accent-saffron);
+  border-radius: 2px;
+}
+
+.aum-info-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.aum-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aum-info-item {
+  padding: 16px;
+  background-color: rgba(6, 8, 19, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.aum-info-item-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: 4px;
+}
+
+.aum-info-item-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Document Article View */
+.aum-article-view {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aum-back-btn {
   background: none;
   border: none;
-  padding: 0;
-  color: var(--text-primary);
+  color: var(--accent-saffron);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  transition: color 0.2s ease;
 }
 
-.markdown-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.markdown-body th, .markdown-body td {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border-color);
-  text-align: left;
-}
-
-.markdown-body th {
-  background: rgba(245, 158, 11, 0.08);
+.aum-back-btn:hover {
   color: var(--accent-gold);
 }
 
-.markdown-body td {
+.aum-article-card {
+  padding: 48px;
+}
+
+.aum-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.08);
+}
+
+.aum-meta-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
   color: var(--text-secondary);
+  padding: 4px 12px;
+  background-color: rgba(6, 8, 19, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 99px;
 }
 
-.markdown-body tr:nth-child(even) {
-  background: rgba(14, 18, 34, 0.35);
+/* Mobile responsive toggle header */
+.aum-mobile-header {
+  display: none;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 90;
 }
 
-.markdown-body blockquote {
-  border-left: 4px solid var(--accent-saffron);
-  background: rgba(245, 158, 11, 0.04);
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
-  border-radius: 0 8px 8px 0;
-}
-
-.markdown-body blockquote p {
-  margin-bottom: 0;
-  font-style: italic;
+@media (max-width: 1024px) {
+  .aum-app {
+    flex-direction: column;
+  }
+  .aum-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    transform: translate-x(-100%);
+    transition: transform 0.3s ease;
+  }
+  .aum-sidebar.open {
+    transform: translate-x(0);
+  }
+  .aum-mobile-header {
+    display: flex;
+  }
+  .aum-main-viewport {
+    padding: 24px;
+  }
+  .aum-article-card {
+    padding: 24px;
+  }
 }
