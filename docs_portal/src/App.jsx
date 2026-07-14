@@ -301,6 +301,18 @@ export default function App() {
       engDesc: "A test wrapper catches compilation crashes, maps issues to correction profiles (such as native Rolldown binds on Linux runner VMs), runs patches, and retries.",
       engWhy: "This prevents minor native environment binding mismatches from crashing CI/CD delivery pipelines.",
       adrLink: "adr_023_prayascitta_recovery.md"
+    },
+    {
+      number: 23,
+      label: "Orchestrator",
+      title: "ADR-024: CLI Entry ➔ AUM Intent Orchestrator",
+      vedicTitle: "Vedic Philosophy: Combined Samyama (Total Coordination)",
+      vedicDesc: "Samyama is the combined practice of Dharana (focus), Dhyana (meditation), and Samadhi (absorption). It represents the absolute synthesis and orchestration of cognitive capacities.",
+      vedicKeyTerms: ["Samyama (Combined Synthesis)", "Manas (Central Coordinator)", "Kriyā (Coordinated Action)"],
+      engTitle: "Software Analogy: CLI Lifecycle Orchestrator",
+      engDesc: "A central Node script 'scripts/aum.js' wraps all linter, context pruner, compiler self-healer, and doc parser scripts into simplified commands.",
+      engWhy: "This consolidates cognitive lifecycles (Pañcakṛtya) under a single entry point, ensuring uniform check executions during turn runs.",
+      adrLink: "adr_024_cli_orchestrator.md"
     }
   ], []);
 
@@ -714,7 +726,7 @@ export default function App() {
                     style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', backgroundColor: 'var(--accent-saffron)', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '700', fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(194, 65, 12, 0.25)' }}
                   >
                     <Play size={16} fill="white" />
-                    Start Guided 22-Step Onboarding Journey
+                    Start Guided 23-Step Onboarding Journey
                   </button>
                 </div>
               </div>

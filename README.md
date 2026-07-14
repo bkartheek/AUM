@@ -60,9 +60,9 @@ This workspace houses the **Intent Engine**—a technology-agnostic cognitive fr
         *   [retrospective_template.md](file:///Users/universe/AUM/.aum/templates/retrospective_template.md)
     *   **`intent_awakening/`** — Contains the private thought incubator [sparks.md](file:///Users/universe/AUM/.aum/intent_awakening/sparks.md).
     *   **`sankalpas/`** — Contains progress logs for active, paused, and completed Saṅkalpas.
-    *   **`architecture/`** — Master Architecture Review Board logs (ARB-000 through ARB-023):
+    *   **`architecture/`** — Master Architecture Review Board logs (ARB-000 through ARB-024):
         *   [arb_000_mandukya_foundation.md](file:///Users/universe/AUM/.aum/architecture/arb_000_mandukya_foundation.md) — Foundational Mandukya Upanishad mapping.
-        *   **`decisions/`** — Centralized Architecture Decision Record (ADR) logs (ADR-001 through ADR-023).
+        *   **`decisions/`** — Centralized Architecture Decision Record (ADR) logs (ADR-001 through ADR-024).
 *   **`.agents/`** — Workspace customizations root containing [AGENTS.md](file:///Users/universe/AUM/.agents/AGENTS.md) used to auto-initialize customization-supporting AI agents at startup.
 *   **`github_reporter.py`** — Root command utility to fetch public profile and repo details from GitHub.
 
