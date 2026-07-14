@@ -6,7 +6,7 @@ vedic_state: "Turīya"
 description: "The root index of folders, guidelines, safety criteria, and documentation synchronization rules."
 ---
 
-# Mūla Sphoṭa Global Manifest (V1.23.0)
+# Mūla Sphoṭa Global Manifest (V1.24.0)
 
 This document serves as the **Mūla Sphoṭa** (the root holistic manifest) for the workspace. It indexes all directories, templates, and rules, and defines the safety conditions and synchronization protocols that govern AI agents.
 
@@ -28,12 +28,13 @@ This document serves as the **Mūla Sphoṭa** (the root holistic manifest) for 
 | │   └── [retrospective_template.md](file:///Users/universe/AUM/.aum/templates/retrospective_template.md) | *Suṣupti* | Pratyavēkṣaṇa self-examination template. |
 | ├── **[sankalpas/](file:///Users/universe/AUM/.aum/sankalpas/)** | *Suṣupti* | Directory for active, paused, and completed task resolve logs. |
 | ├── **[architecture/](file:///Users/universe/AUM/.aum/architecture/)** | *Suṣupti* | Master Architecture Review Board (ARB) logs. |
-| │   └── **[decisions/](file:///Users/universe/AUM/.aum/architecture/decisions/)** | *Suṣupti* | Master Architecture Decision Record (ADR) logs (ADR-001 to ADR-024). |
+| │   └── **[decisions/](file:///Users/universe/AUM/.aum/architecture/decisions/)** | *Suṣupti* | Master Architecture Decision Record (ADR) logs (ADR-001 to ADR-025). |
 | ├── **[samskaras/](file:///Users/universe/AUM/.aum/samskaras/)** | *Suṣupti* | Persistent cognitive memory caches storing learnings. |
 | └── **[intent_awakening/sparks.md](file:///Users/universe/AUM/.aum/intent_awakening/sparks.md)** | *Paśyantī* | Private local thought incubator diary (VCS gitignored). |
 | **[scripts/](file:///Users/universe/AUM/scripts/)** | *Vaikharī* | Framework compilation and static parser utility scripts. |
 | ├── **[parse_docs.js](file:///Users/universe/AUM/scripts/parse_docs.js)** | *Vaikharī* | Compiles framework markdown files into docs_data.json. |
-| └── **[aum.js](file:///Users/universe/AUM/scripts/aum.js)** | *Vaikharī* | The central AUM CLI Intent Orchestrator wrapper router. |
+| ├── **[aum.js](file:///Users/universe/AUM/scripts/aum.js)** | *Vaikharī* | The central AUM CLI Intent Orchestrator wrapper router. |
+| └── **[dispatcher.js](file:///Users/universe/AUM/scripts/dispatcher.js)** | *Vaikharī* | Dynamic context classifier and Kañcukas sheaths sandboxing tool. |
 | **[docs_portal/](file:///Users/universe/AUM/docs_portal/)** | *Vaikharī* | Premium React/Vite Single Page App documentation dashboard. |
 | **[.github/workflows/deploy.yml](file:///Users/universe/AUM/.github/workflows/deploy.yml)** | *Vaikharī* | GitHub Actions automation pipeline for Pages deployment. |
 

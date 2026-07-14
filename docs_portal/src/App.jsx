@@ -36,7 +36,7 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [docSource, setDocSource] = useState('dashboard'); // 'dashboard' | 'journey'
 
-  // Comprehensive 23-Step Guided Journey Timeline (Aligned with actual ADR filenames)
+  // Comprehensive 24-Step Guided Journey Timeline (Aligned with actual ADR filenames)
   const journeySteps = useMemo(() => [
     {
       number: 1,
@@ -313,6 +313,18 @@ export default function App() {
       engDesc: "A central Node script 'scripts/aum.js' wraps all linter, context pruner, compiler self-healer, and doc parser scripts into simplified commands.",
       engWhy: "This consolidates cognitive lifecycles (Pañcakṛtya) under a single entry point, ensuring uniform check executions during turn runs.",
       adrLink: "adr_024_cli_orchestrator.md"
+    },
+    {
+      number: 24,
+      label: "Sheath Dispatch",
+      title: "ADR-025: Intake Classifier ➔ Kañcukas Dispatcher",
+      vedicTitle: "Vedic Philosophy: Dynamic Sheaths (Kañcukas Sandboxes)",
+      vedicDesc: "In Shaiva metaphysics, the absolute Shiva limits infinite power through sheaths (Kañcukas) to manifest focused, safe agency.",
+      vedicKeyTerms: ["Kañcukas (Limiting Sheaths)", "Prāṇa (Light Intake)", "Sādhaka (Focused Agent)"],
+      engTitle: "Software Analogy: Low-Latency Intent Sandbox",
+      engDesc: "A classifier pre-processor script 'scripts/dispatcher.js' categorizes developer strings in under 150ms and dynamically sets turn budgets and tool write scopes.",
+      engWhy: "This eliminates context window lag and prevents unaligned actions by programmatically sandboxing the agent before system prompt calls.",
+      adrLink: "adr_025_kancuka_dispatcher.md"
     }
   ], []);
 
@@ -726,14 +738,14 @@ export default function App() {
                     style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', backgroundColor: 'var(--accent-saffron)', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '700', fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(194, 65, 12, 0.25)' }}
                   >
                     <Play size={16} fill="white" />
-                    Start Guided 23-Step Onboarding Journey
+                    Start Guided 24-Step Onboarding Journey
                   </button>
                 </div>
               </div>
 
               {/* Statistics Grid */}
               <div className="aum-stats-grid">
-                <div className="aum-stat-card glass-panel">
+                <div className="aum-stats-card glass-panel">
                   <div className="aum-stat-icon saffron">
                     <CheckCircle size={24} />
                   </div>
