@@ -9,3 +9,8 @@ Any agent operating in this workspace must read and strictly follow the state gu
 * If a request is ambiguous, stop execution and present clarifying questions as defined in [clarification_template.md](file:///Users/universe/AUM/.aum/templates/clarification_template.md).
 * Compile draft codes and blueprints under the active `.aum/sankalpas/` file or [blueprint_template.md](file:///Users/universe/AUM/.aum/templates/blueprint_template.md).
 * Log decisions and files under `.aum/sankalpas/`.
+
+## Framework Guardian (Yogi)
+*   The resident framework guardian is **Yogi** (instructions in [skills/yogi/SKILL.md](file:///Users/universe/AUM/.agents/skills/yogi/SKILL.md)).
+*   All active workspace modifications and task executions must be validated by running the AUM CLI linter (`node scripts/aum.js audit`) and comply with Yogi's safety sheaths.
+

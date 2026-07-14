@@ -36,7 +36,7 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [docSource, setDocSource] = useState('dashboard'); // 'dashboard' | 'journey'
 
-  // Comprehensive 24-Step Guided Journey Timeline (Aligned with actual ADR filenames)
+  // Comprehensive 25-Step Guided Journey Timeline (Aligned with actual ADR filenames)
   const journeySteps = useMemo(() => [
     {
       number: 1,
@@ -325,6 +325,18 @@ export default function App() {
       engDesc: "A classifier pre-processor script 'scripts/dispatcher.js' categorizes developer strings in under 150ms and dynamically sets turn budgets and tool write scopes.",
       engWhy: "This eliminates context window lag and prevents unaligned actions by programmatically sandboxing the agent before system prompt calls.",
       adrLink: "adr_025_kancuka_dispatcher.md"
+    },
+    {
+      number: 25,
+      label: "Yogi Guardian",
+      title: "ADR-026: Resident Agent ➔ Yogi Goptrī",
+      vedicTitle: "Vedic Philosophy: The Goptrī (Resident Guardian)",
+      vedicDesc: "The Goptrī represents the protector who guards the sacred code of conduct and maintains focus to fulfill the primary Saṅkalpa resolve.",
+      vedicKeyTerms: ["Goptrī (Protector)", "Sādhaka (Yogi Practitioner)", "Samādhi (Unbroken Focus)"],
+      engTitle: "Software Analogy: Workspace Customization Agent",
+      engDesc: "A resident agent skill 'Yogi' defined inside '.agents/skills/yogi/' auto-triggers during workspace initialization to guide developers and enforce invariants.",
+      engWhy: "This ensures that whenever the framework is downloaded or cloned, Yogi comes alive to guide developer prompts and maintain architectural alignment.",
+      adrLink: "adr_026_yogi_guardian.md"
     }
   ], []);
 
@@ -738,14 +750,14 @@ export default function App() {
                     style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', backgroundColor: 'var(--accent-saffron)', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '700', fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(194, 65, 12, 0.25)' }}
                   >
                     <Play size={16} fill="white" />
-                    Start Guided 24-Step Onboarding Journey
+                    Start Guided 25-Step Onboarding Journey
                   </button>
                 </div>
               </div>
 
               {/* Statistics Grid */}
               <div className="aum-stats-grid">
-                <div className="aum-stats-card glass-panel">
+                <div className="aum-stat-card glass-panel">
                   <div className="aum-stat-icon saffron">
                     <CheckCircle size={24} />
                   </div>
