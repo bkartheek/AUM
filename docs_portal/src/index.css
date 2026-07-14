@@ -76,6 +76,16 @@ body {
   top: 0;
   flex-shrink: 0;
   z-index: 100;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aum-sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  border-right: none;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .aum-main-content {
@@ -881,4 +891,30 @@ body {
   background-color: var(--accent-saffron-hover);
   border-color: var(--accent-saffron-hover);
   color: #fff;
+}
+
+.aum-toggle-sidebar-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+  align-self: flex-start;
+  box-shadow: var(--shadow-main);
+}
+
+.aum-toggle-sidebar-btn:hover {
+  background-color: var(--bg-base);
+  border-color: var(--accent-saffron);
+  color: var(--accent-saffron);
+  box-shadow: var(--shadow-glow);
 }
