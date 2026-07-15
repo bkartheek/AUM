@@ -1,93 +1,144 @@
-# ॐ AUM: Intent-Driven Cognitive Workspace Framework
+# ॐ AUM: Intent-Driven Cognitive Guardrail Framework
 
-Welcome to the development workspace for **AUM**, a framework designed to establish cognitive guardrails, design compliance sheaths, and safe AI agent pair-programming parameters inside developer workspaces.
+[![GitHub License](https://img.shields.io/github/license/bkartheek/AUM)](LICENSE)
+[![GitHub PRs](https://img.shields.io/github/issues-pr/bkartheek/AUM)](https://github.com/bkartheek/AUM/pulls)
+[![Node Version](https://img.shields.io/badge/node-%3E%3D22.0.0-green.svg)](https://nodejs.org/)
 
-The framework is developed inside the `aum_framework/` package and is dogfooded at the root of this workspace to govern and guide its own development.
-
----
-
-## 📂 Architecture & Directory Layout
-
-The workspace is organized to keep machine-read parameters isolated from human-readable design documentation:
-
-- **`.aum/`**: Dynamic runtime state directory. Contains:
-  - `config.json`: Workspace rules configuration (Yamas and Niyamas).
-  - `sphota.json`: Live session state tracker (gitignored).
-  - `sankalpas/`: Task resolution logs (active logs gitignored).
-  - `samskaras/`: Local memory profile caches (gitignored).
-- **`.agents/`**: Yogi agent instructions and cognitive guidelines.
-- **`docs/architecture/`**: Human-readable design records (35+ ARBs and 33+ ADR decisions).
-- **`aum_framework/`**: The standalone npm package source code:
-  - `scripts/`: CLI parser orchestrator (`aum.js`) and compiler engines.
-  - `pkg_files/`: Standard rules templates and pristine setups.
-- **`docs_portal/`**: Source folder for the premium React SPA documentation portal.
-- **`release/`**: Built static assets of the documentation portal (served via GitHub Pages).
+**AUM** is a cognitive guardrail framework designed for pair-programming with AI agents. It establishes strict safety boundaries (*Kañcukas*), automates session checks (*Pratyabhijñā*), and audits codebases for logical design errors (*Hētvābhāsa*). AUM keeps your workspace clean, protects developer attention, and guarantees that AI agents operate in alignment with your architecture.
 
 ---
 
-## 🛠️ Key Features & Implementations
+## 🎯 Main Purpose of the Framework
 
-### 1. Interactive Dharmic Setup Wizard (`aum init`)
-Initializing AUM in any new or existing target codebase runs a clean, interactive setup wizard:
-- **Project Customization**: Prompts for project name and configures rules dynamically.
-- **Guardrail Presets**: Offers selection of **Strict Guardrails** (pre-commit audits, Yamas & Niyamas checks) or **Lightweight Mode** (basic Yogi instructions).
-- **Non-Interactive Scripting**: Supports `-y`, `--yes`, and `--non-interactive` flags to bypass prompts when executed inside pipelines or automated script runners.
+When coding with modern agentic AI assistants, it is easy to accumulate technical debt, loose code patterns, unapproved packages, and untracked architectural deviations. 
 
-### 2. Intelligent Upgrade & Merge Engine
-When running `aum init` in an existing workspace, the initializer enters **Upgrade Mode**:
-- **Zero Data Loss**: User-owned dynamic files (`sphota.json`), task histories (`sankalpas/`), memory caches (`samskaras/`), and custom design records are preserved.
-- **Merge Configuration**: Merges properties inside `.aum/config.json`, keeping custom project parameters.
-- **Core Update**: Overwrites only the static framework rules (`INSTRUCTIONS.md`, Yogi instructions, and editor rules) to keep the engine up-to-date.
-
-### 3. Configurable Design Directories
-To prevent bloating hidden directories, AUM separates human-readable documentation from machine-read states:
-- **Configurable Paths**: Developers can configure where their ADRs and blueprints live via the `"architecture_dir"` setting in `.aum/config.json` (e.g. `docs/architecture` or `design/`).
-- **Pristine Templates**: Moves the framework's own design files out of the package template, keeping the distributed `.aum/` template under 5KB.
-- **Dynamic Compilation**: `parse_docs.js` automatically resolves the custom configured path to compile markdown decisions into the search portal database.
-
-### 4. Gitignore Auto-Management
-To protect codebases from git pollution and merge conflicts, the setup wizard automatically manages exclusions:
-- Appends AUM-specific ignore directives cleanly to any existing `.gitignore` in the target project without modifying existing custom lines.
-- Creates a new `.gitignore` if none exists.
-- Automatically ignores `.aum/sphota.json`, `.aum/samskaras/`, `.aum/intent_awakening/`, and local resolve logs `sankalpa_*.md`.
+AUM solves this problem by enforcing a **turn-based development lifecycle (Pañcakṛtya)** and injecting active system sheaths directly into the AI agent's memory using standard IDE rule structures. AUM guarantees:
+- **Design Authority**: Code cannot be changed unless backed by an Architecture Decision Record (ADR) or task blueprint.
+- **Fallacy Prevention**: Automatic scans check changed files for TODO stubs, print logs, and logic gaps.
+- **Environment Stability**: Environment diagnostics ensure your system parameters are recognized before execution.
+- **Lightweight Workspace**: All session states, caches, and memory profiles are isolated and kept out of Git.
 
 ---
 
-## 🚀 Workspace Commands
+## 📦 Directory Structure
 
-To participate in self-guided development inside this repository, run:
-
-### Installation
-Run `npm install` at the root to symlink the local package:
-```bash
-npm install
-```
-
-### Turn lifecycle Commands
-Run framework checks inside the workspace root using `npx aum`:
-```bash
-npx aum start       # Start a development turn and prune context
-npx aum recognize   # Run environmental diagnostic audits
-npx aum audit       # Run linter checks for logical fallacies
-npx aum publish     # Recompile documentation portal database
-```
-
-### target Project Onboarding
-To initialize the Yogi agent in an external target project:
-```bash
-# Interactive setup
-node /path/to/AUM/aum_framework/scripts/aum_init.js
-
-# Non-interactive script setup (default paths)
-node /path/to/AUM/aum_framework/scripts/aum_init.js --yes
+```text
+├── .agents/                    # Yogi agent instructions and custom system sheaths
+├── .aum/                       # Cognitive runtime folder (machine-read config & logs)
+│   ├── config.json             # Workspace rule configurations (Yamas/Niyamas)
+│   ├── sphota.json             # Live session stage state (gitignored)
+│   ├── samskaras/              # Local memory profile caches (gitignored)
+│   └── sankalpas/              # Developer resolve logs (WIP files gitignored)
+├── aum_framework/              # The AUM npm package source code
+│   ├── scripts/                # Execution binaries (aum.js, aum_init.js, etc.)
+│   └── pkg_files/              # Pristine rules and setup templates
+├── docs/                       # Human-readable documentation
+│   └── architecture/           # Architecture Review Board (ARB) & ADR decisions
+├── docs_portal/                # React Vite SPA documentation reader source
+└── release/                    # Compiled production documentation portal
 ```
 
 ---
 
-## ॐ Yogi's Persona & System Guardrails
+## 🚀 Getting Started & Installation
 
-Yogi is the resident framework guardian that enforces focus (*Saṅkalpa*), checks for logical fallacies (*Hētvābhāsa*), and aligns the turn lifecycle (*Pañcakṛtya*). Yogi guides development inside the workspace through standard IDE files loaded natively by VS Code, Cursor, and Cline:
+AUM requires **Node.js (v22+)** and works natively with advanced AI-enabled editors like **Cursor**, **Cline**, **Roo Code**, and **VS Code**.
 
-- **`.cursorrules` / `.clinerules`**: Workspace rules mapping Yogi directly into editor prompts.
-- **`CLAUDE.md`**: Guide directions for terminal execution.
-- **`USERS.md`**: Onboarding manual.
+### 1. Developing AUM (Workspace Setup)
+If you want to contribute to AUM or run it locally in this repository:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bkartheek/AUM.git
+   cd AUM
+   ```
+2. Install package dependencies and symlink the CLI command:
+   ```bash
+   npm install
+   ```
+3. Run diagnostic checks:
+   ```bash
+   npx aum recognize
+   npx aum audit
+   ```
+
+### 2. Adding AUM to Multiple Projects (Initialization)
+You can initialize AUM inside **any existing or new target codebase** to enforce Yogi agent guardrails:
+1. From the root of your target project, run AUM's initializer:
+   ```bash
+   # Using the absolute path to your local AUM clone
+   node /path/to/AUM/aum_framework/scripts/aum_init.js
+   ```
+2. The **Interactive Wizard** will prompt you:
+   - **Project Name**: Customize your workspace identity.
+   - **Design Directory**: Choose where your ADR markdown files should live (Default: `docs/architecture`).
+   - **Guardrails Preset**: Select **Strict Guardrails** (standard audits and constraints) or **Lightweight Mode** (basic Yogi instructions).
+3. The wizard will copy Yogi's rules (`.agents/`, `.cursorrules`, `.clinerules`, `CLAUDE.md`) and automatically update your `.gitignore` with AUM exclusions.
+
+---
+
+## ॐ Yogi: How Yogi Guides Development
+
+Once initialized, the resident framework guardian **Yogi** takes control of the IDE workspace:
+- **Yamas & Niyamas**: Yogi enforces workspace constraints (e.g. file isolation, compilation builds checking) defined in `.aum/config.json`.
+- **Pre-Commit Audits**: Runs fallacy checks (`npx aum audit`) on git staged files before commits are accepted.
+- **Reverse Vāk Trace**: Ensures all source code modifications correspond to a designated Architecture Decision Record (ADR) under `docs/architecture/decisions/`.
+
+---
+
+## 🛠️ Debugging & Troubleshooting
+
+If you encounter issues during development or linting, run these commands to diagnose:
+
+### 1. Linter Audit Fails (`npx aum audit`)
+If Yogi reports logical fallacy errors (*Hētvābhāsa*):
+```text
+[ HĒTVĀBHĀSA ERROR ] [ Asiddha Fallacy ]: File contains 1 placeholder stubs (TODO/FIXME).
+[ HĒTVĀBHĀSA AUDIT ]: FAILED. 1 violations detected.
+```
+- **Action**: Open the reported file, remove any temporary `TODO`, `FIXME`, or debug console prints, and re-run `npx aum audit`.
+
+### 2. Verification / Environment Crash
+If your workspace is unaligned or dependencies are broken, trigger AUM's self-healing runner (*Prāyaścitta*):
+```bash
+npx aum verify
+```
+This performs a system check, reinstalls broken dependencies, and attempts to resolve configuration conflicts.
+
+---
+
+## 🤝 Developer Contribution Guide
+
+We welcome contributions to AUM! To ensure the cognitive codebase remains clean and stable, all developers must adhere to the following rules:
+
+### Yamas (Restraints to Follow)
+- **Ahiṃsā (Non-harm)**: Do not submit code that breaks the compiler build or existing test profiles.
+- **Asteya (Non-stealing)**: Do not delete existing user logic, helper functions, or license agreements.
+- **Satya (Truth)**: Do not submit mock stubs, empty test cases, or placeholder functions.
+- **Isolation**: Do not write code that reads or writes files outside the workspace root.
+
+### Pre-PR Checklist
+Before pushing code or opening a Pull Request:
+1. Verify that your environment is healthy:
+   ```bash
+   npx aum recognize
+   ```
+2. Run the linter to ensure zero logical violations:
+   ```bash
+   npx aum audit
+   ```
+3. Compile the documentation portal and update the release directory:
+   ```bash
+   # Compiles markdown to json
+   npx aum publish
+   # Rebuilds portal SPA
+   cd docs_portal && npm run build && cd ..
+   # Copies to release
+   rm -rf release/* && cp -R docs_portal/dist/* release/
+   ```
+
+---
+
+## ⚠️ Critical Precautions (Careful Actions)
+
+- **Never Commit Dynamic Files**: Do not track `.aum/sphota.json` or `.aum/samskaras/` in your commits. They contain local session configurations and machine memory profiles.
+- **Respect Design Separation**: Never create a design decision directly in code. Always write the Architecture Decision Record (ADR) under `docs/architecture/decisions/` *before* implementing the change.
