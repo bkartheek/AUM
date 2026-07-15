@@ -1,0 +1,73 @@
+name: Release Package
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'aum_framework/**'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Extract Version
+        id: get_version
+        run: |
+          VERSION=$(node -e "console.log(require('./aum_framework/package.json').version)")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check if Release Exists
+        id: check_release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "v${{ env.VERSION }}" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Release v${{ env.VERSION }} already exists. Skipping."
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create GitHub Release 🚀
+        if: steps.check_release.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VERSION }}
+          name: Release v${{ env.VERSION }}
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Automated Release for AUM Framework v${{ env.VERSION }}.
+            
+            ### Installation
+            ```bash
+            npm install git+https://github.com/${{ github.repository }}.git#path:aum_framework
+            ```
+            
+            To view full architectural logs, see the documentation portal.
+
+      - name: Publish to NPM 📦
+        if: steps.check_release.outputs.exists == 'false'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "$NODE_AUTH_TOKEN" ]; then
+            cd aum_framework
+            npm publish --access public
+          else
+            echo "NPM_TOKEN secret not configured in GitHub repository. Skipping npm publication."
+          fi
