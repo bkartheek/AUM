@@ -20,7 +20,7 @@ function runScript(scriptName) {
 
 function showHelp() {
   logHeader("HELP MENU");
-  console.log(`Usage: node scripts/aum.js <command>`);
+  console.log(`Usage: node aum_framework/scripts/aum.js <command>`);
   console.log(`\nAvailable turn lifecycle commands:`);
   console.log(`  start     - Runs [Sṛṣṭi] context pruner (prune_context.js)`);
   console.log(`  verify    - Runs [Sthiti] build checks (run_tests_with_healing.js)`);

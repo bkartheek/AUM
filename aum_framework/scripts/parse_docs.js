@@ -1,7 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const aumDir = path.join(process.cwd(), '.aum');
+let aumDir = path.join(process.cwd(), '.aum');
+if (!fs.existsSync(aumDir)) {
+  aumDir = path.join(__dirname, '..', 'pkg_files', '.aum');
+}
 const outputJsonPath = path.join(__dirname, '..', 'docs_portal', 'src', 'docs_data.json');
 
 function parseFrontmatter(content) {
