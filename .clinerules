@@ -1,0 +1,11 @@
+# Cline Rules (AI Agent Guidelines)
+
+Any AI developer agent operating in this workspace must read and strictly follow the state guidelines and constraints defined in:
+1. `.aum/INSTRUCTIONS.md`
+2. `.aum/config.json`
+
+## Setup Configuration
+* Read `.aum/sphota.json` and the active `.aum/sankalpas/` file at startup to load the persistent state.
+* If a request is ambiguous, stop execution and present clarifying questions as defined in `.aum/templates/clarification_template.md`.
+* Compile draft codes and blueprints under the active `.aum/sankalpas/` file or `.aum/templates/`.
+* Log decisions and files under `.aum/sankalpas/`.

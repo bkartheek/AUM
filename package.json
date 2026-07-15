@@ -1,0 +1,9 @@
+{
+  "name": "aum-development-workspace",
+  "version": "1.0.0",
+  "description": "AUM Framework Development Workspace (Dogfooding)",
+  "private": true,
+  "dependencies": {
+    "aum-framework": "file:./aum_framework"
+  }
+}

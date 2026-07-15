@@ -26,7 +26,7 @@ jobs:
 
       - name: Build React Vite SPA
         run: |
-          cd aum_framework/docs_portal
+          cd docs_portal
           if ! npm install --legacy-peer-deps --no-audit --no-fund > build.log 2>&1; then
             cat build.log
             exit 1
@@ -46,7 +46,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           mkdir -p debug_logs
-          cp aum_framework/docs_portal/build.log debug_logs/build.log
+          cp docs_portal/build.log debug_logs/build.log
           git add debug_logs/build.log
           git commit -m "debug: add build failure log [skip ci]" || true
           git push origin main || true
@@ -54,5 +54,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: aum_framework/docs_portal/dist
+          folder: docs_portal/dist
           branch: gh-pages

@@ -5,7 +5,11 @@ let aumDir = path.join(process.cwd(), '.aum');
 if (!fs.existsSync(aumDir)) {
   aumDir = path.join(__dirname, '..', 'pkg_files', '.aum');
 }
-const outputJsonPath = path.join(__dirname, '..', 'docs_portal', 'src', 'docs_data.json');
+let outputJsonPath = path.join(process.cwd(), '.aum', 'docs_data.json');
+const devPortalPath = path.join(process.cwd(), 'docs_portal', 'src', 'docs_data.json');
+if (fs.existsSync(path.dirname(devPortalPath))) {
+  outputJsonPath = devPortalPath;
+}
 
 function parseFrontmatter(content) {
   const fmMatch = content.match(/^---\r?\n([\s\S]+?)\r?\n---\r?\n([\s\S]*)$/);

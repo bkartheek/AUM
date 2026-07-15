@@ -1,3 +1,7 @@
+# Exclude Node dependencies and package locks
+node_modules/
+package-lock.json
+
 # Exclude local-only user thought incubator files
 .aum/intent_awakening/
 
@@ -6,3 +10,9 @@
 
 # Exclude developer-specific local task/resolve logs
 .aum/sankalpas/sankalpa_*.md
+
+# Exclude temporary scratch folders
+scratch/
+
+# OS specific files
+.DS_Store
