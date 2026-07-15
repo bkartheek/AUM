@@ -1,13 +1,11 @@
-# Workspace: Vedic & Astronomical Projects
+# Workspace: AUM Intent Framework
 
-Welcome to the workspace repository. This directory contains the workspace-level applications and utilities, while hosting the **AUM Intent Engine** package in the `aum_framework/` subfolder.
+Welcome to the workspace repository. This directory hosts the **AUM Intent Engine** package in the `aum_framework/` subfolder.
 
 ---
 
 ## 📂 Repository Contents
 
-- **`vedic_library/`**: Standalone Interactive Vedic Library application detailing cosmic sound structures and chants.
-- **`universe/`**: Interactive exploration of astronomical metrics and cosmic bodies.
 - **`github_reporter.py`**: A utility tool to query public user repository statistics from the GitHub REST API.
 - **`aum_framework/`**: The packaged **AUM Cognitive Framework** code, developer guides, release builds, and templates.
 
