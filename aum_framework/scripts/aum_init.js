@@ -83,6 +83,29 @@ function copyRecursiveSync(src, dest, options = {}) {
   }
 }
 
+function appendGitignore(targetDir) {
+  const gitignorePath = path.join(targetDir, '.gitignore');
+  const aumIgnoreSection = `
+# AUM Cognitive Framework ignores
+.aum/sphota.json
+.aum/samskaras/
+.aum/intent_awakening/
+.aum/sankalpas/sankalpa_*.md
+`;
+  
+  if (fs.existsSync(gitignorePath)) {
+    let content = fs.readFileSync(gitignorePath, 'utf8');
+    if (!content.includes('.aum/sphota.json') && !content.includes('.aum/samskaras/')) {
+      content = content.trim() + '\n' + aumIgnoreSection;
+      fs.writeFileSync(gitignorePath, content, 'utf8');
+      console.log(`[ Config ]: Appended AUM exclusions to existing .gitignore`);
+    }
+  } else {
+    fs.writeFileSync(gitignorePath, aumIgnoreSection.trim() + '\n', 'utf8');
+    console.log(`[ Config ]: Created .gitignore with AUM exclusions`);
+  }
+}
+
 async function initProject() {
   try {
     await prepareInput();
@@ -196,6 +219,7 @@ async function initProject() {
       console.error(`[ Error ]: Failed to customize config.json:`, e);
     }
   }
+  appendGitignore(targetDir);
   closeReadline();
   
   console.log(`\n======================================================`);

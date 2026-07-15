@@ -11,6 +11,9 @@ package-lock.json
 # Exclude developer-specific local task/resolve logs
 .aum/sankalpas/sankalpa_*.md
 
+# Exclude dynamic memory profiles
+.aum/samskaras/
+
 # Exclude temporary scratch folders
 scratch/
 
