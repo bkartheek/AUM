@@ -55,12 +55,24 @@ function main() {
   
   const manifest = processFile(path.join(aumDir, 'MULA_SPHOTA.md'));
   const instructions = processFile(path.join(aumDir, 'INSTRUCTIONS.md'));
-  const config = fs.existsSync(path.join(aumDir, 'config.json')) 
-    ? JSON.parse(fs.readFileSync(path.join(aumDir, 'config.json'), 'utf8'))
+  
+  const configPath = path.join(aumDir, 'config.json');
+  const config = fs.existsSync(configPath) 
+    ? JSON.parse(fs.readFileSync(configPath, 'utf8'))
     : null;
   
-  const arbs = scanDir(path.join(aumDir, 'architecture'));
-  const adrs = scanDir(path.join(aumDir, 'architecture', 'decisions'));
+  let architectureDir = path.join(aumDir, 'architecture');
+  if (config && config.architecture_dir) {
+    architectureDir = path.resolve(process.cwd(), config.architecture_dir);
+  } else if (!fs.existsSync(architectureDir)) {
+    const templateArchDir = path.join(__dirname, '..', 'pkg_files', 'architecture_templates');
+    if (fs.existsSync(templateArchDir)) {
+      architectureDir = templateArchDir;
+    }
+  }
+  
+  const arbs = scanDir(architectureDir);
+  const adrs = scanDir(path.join(architectureDir, 'decisions'));
   
   const samskarasDir = path.join(aumDir, 'samskaras');
   const samskaras = [];

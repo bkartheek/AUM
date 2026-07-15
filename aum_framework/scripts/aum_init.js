@@ -99,6 +99,7 @@ async function initProject() {
   
   let projectName = "My Dharmic Project";
   let presetChoice = "1";
+  let architectureDir = "docs/architecture";
   
   if (isUpgrade) {
     console.log(`[ Info ]: Existing AUM installation detected. Preserving history logs, active sankalpas, and samskaras.`);
@@ -110,6 +111,7 @@ async function initProject() {
       try {
         const existingConfig = JSON.parse(fs.readFileSync(configPath, 'utf8'));
         projectName = existingConfig.project_name || projectName;
+        architectureDir = existingConfig.architecture_dir || architectureDir;
       } catch (e) {}
     }
   } else if (hasYesFlag) {
@@ -118,6 +120,9 @@ async function initProject() {
     // Fresh setup prompt inputs
     projectName = await askQuestion(`-> Enter Project Name [${projectName}]: `);
     projectName = projectName.trim() || "My Dharmic Project";
+    
+    architectureDir = await askQuestion(`-> Enter architecture records directory [${architectureDir}]: `);
+    architectureDir = architectureDir.trim() || "docs/architecture";
     
     console.log(`\nSelect Dharmic Guardrails Preset:`);
     console.log(`  1) Strict Guardrails (Yamas & Niyamas, Pre-commit audits, verification checks) [Recommended]`);
@@ -158,6 +163,14 @@ async function initProject() {
       console.warn(`[ Warning ]: Template source not found: ${srcPath}`);
     }
   });
+
+  // Copy architecture templates to target architectureDir
+  const archTemplatesSrc = path.join(pkgFilesDir, 'architecture_templates');
+  const archTemplatesDest = path.join(targetDir, architectureDir);
+  if (fs.existsSync(archTemplatesSrc)) {
+    // Upgrade mode should preserve existing custom ADRs/blueprints inside this folder
+    copyRecursiveSync(archTemplatesSrc, archTemplatesDest, { overwrite: !isUpgrade });
+  }
   
   // Customize config.json
   const destConfigPath = path.join(targetDir, '.aum', 'config.json');
@@ -165,6 +178,7 @@ async function initProject() {
     try {
       const config = JSON.parse(fs.readFileSync(destConfigPath, 'utf8'));
       config.project_name = projectName;
+      config.architecture_dir = architectureDir;
       
       if (!isUpgrade && presetChoice === "2") {
         // Strip out strict yamas and pre-commit niyamas for Lightweight mode
