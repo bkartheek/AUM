@@ -22,11 +22,11 @@ jobs:
           node-version: 22
 
       - name: Generate static docs JSON data
-        run: node scripts/parse_docs.js
+        run: node aum/scripts/parse_docs.js
 
       - name: Build React Vite SPA
         run: |
-          cd docs_portal
+          cd aum/docs_portal
           if ! npm install --legacy-peer-deps --no-audit --no-fund > build.log 2>&1; then
             cat build.log
             exit 1

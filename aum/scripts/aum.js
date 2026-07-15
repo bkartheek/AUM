@@ -32,6 +32,7 @@ function showHelp() {
   console.log(`  compile   - Runs [Pāṇini] generative code synthesizer (panini.js)`);
   console.log(`  assert    - Runs [Catuṣkoṭi] tetralemma assertion test (catuskoti.js)`);
   console.log(`  recognize - Runs [Pratyabhijñā] environmental auditor (pratyabhijna.js)`);
+  console.log(`  init      - [Sṛṣṭi Init] Initializes project with AUM framework templates (aum_init.js)`);
   console.log(`\n======================================================`);
 }
 
@@ -74,6 +75,9 @@ function main() {
       break;
     case 'recognize':
       runScript('pratyabhijna.js');
+      break;
+    case 'init':
+      runScript('aum_init.js');
       break;
     default:
       console.error(`[ Error ]: Unknown command: ${command}`);

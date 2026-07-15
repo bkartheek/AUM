@@ -1,0 +1,26 @@
+{
+  "name": "aum-framework",
+  "version": "1.0.0",
+  "description": "AUM: Intent-Driven Cognitive Workspace Framework",
+  "main": "scripts/aum.js",
+  "bin": {
+    "aum": "scripts/aum.js"
+  },
+  "scripts": {
+    "init": "node scripts/aum.js init",
+    "start": "node scripts/aum.js start",
+    "verify": "node scripts/aum.js verify",
+    "audit": "node scripts/aum.js audit",
+    "publish": "node scripts/aum.js publish"
+  },
+  "keywords": [
+    "aum",
+    "cognitive",
+    "workspace",
+    "intent",
+    "guardrails",
+    "rules"
+  ],
+  "author": "Universe Developer",
+  "license": "MIT"
+}

@@ -14,7 +14,7 @@ function run() {
   
   const platform = os.platform();
   const nodeVersion = process.version;
-  const targetDir = path.join(__dirname, '..');
+  const targetDir = process.cwd();
   
   let hasWriteAccess = false;
   try {

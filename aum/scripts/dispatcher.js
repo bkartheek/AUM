@@ -64,7 +64,7 @@ function runDispatcher() {
   console.log(`  [ Kāla Kañcuka ]   : Injecting turn limit: ${intent.turnLimit} turns max budget.`);
   
   // 3. Niyati-Kañcuka (Space / Boundaries)
-  console.log(`  [ Niyati Kañcuka ] : Restricting path read/write access strictly inside: ${path.join(__dirname, '..')}`);
+  console.log(`  [ Niyati Kañcuka ] : Restricting path read/write access strictly inside: ${path.join(process.cwd())}`);
   
   // 4. Vidyā-Kañcuka (Knowledge / Tools)
   console.log(`  [ Vidyā Kañcuka ]  : Loading selective tool set: [${intent.allowedTools.join(', ')}]`);

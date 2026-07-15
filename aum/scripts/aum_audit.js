@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const rootDir = path.join(__dirname, '..');
+const rootDir = process.cwd();
 const aumDir = path.join(rootDir, '.aum');
 
 function logHeader(msg) {

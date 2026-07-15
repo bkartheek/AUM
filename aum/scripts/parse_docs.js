@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const aumDir = path.join(__dirname, '..', '.aum');
+const aumDir = path.join(process.cwd(), '.aum');
 const outputJsonPath = path.join(__dirname, '..', 'docs_portal', 'src', 'docs_data.json');
 
 function parseFrontmatter(content) {

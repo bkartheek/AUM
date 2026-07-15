@@ -11,7 +11,7 @@ function run() {
   logHeader();
   console.log(`[ Bhāvanā ]: Incubation starting. Loading Saṃskāras caches...`);
   
-  const samskarasDir = path.join(__dirname, '..', '.aum', 'samskaras');
+  const samskarasDir = path.join(process.cwd(), '.aum', 'samskaras');
   const learnings = [];
   
   if (fs.existsSync(samskarasDir)) {
