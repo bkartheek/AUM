@@ -17,6 +17,7 @@
   },
   "config": {
     "project_name": "AUM",
+    "architecture_dir": "docs/architecture",
     "yamas": [
       "Ahiṃsā (Non-harm): Do not break existing compile builds or functional code paths",
       "Asteya (Non-stealing): Do not delete existing user logic, comments, or licenses without authorization",
@@ -816,5 +817,5 @@
       "associated_adr": "adr_019_portal_enhancements.md"
     }
   ],
-  "compiledAt": "2026-07-15T02:02:36.437Z"
+  "compiledAt": "2026-07-15T02:05:02.805Z"
 }
