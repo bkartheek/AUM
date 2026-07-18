@@ -97,7 +97,7 @@ body {
 
 .aum-main-viewport {
   flex: 1;
-  padding: 48px;
+  padding: 32px 40px;
   overflow-y: auto;
 }
 
@@ -475,8 +475,9 @@ body {
 
 /* Document Article View */
 .aum-article-view {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .aum-back-btn {
@@ -490,7 +491,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   transition: color 0.2s ease;
 }
 
@@ -499,8 +500,9 @@ body {
 }
 
 .aum-article-card {
-  padding: 48px;
+  padding: 32px 40px;
   border: 1px solid var(--border-color);
+  background-color: var(--bg-surface-glass);
 }
 
 .aum-article-meta {
