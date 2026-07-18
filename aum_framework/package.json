@@ -1,6 +1,6 @@
 {
   "name": "aum-framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AUM: Intent-Driven Cognitive Workspace Framework",
   "main": "scripts/aum.js",
   "bin": {

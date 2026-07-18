@@ -1,144 +1,121 @@
 # ॐ AUM: Intent-Driven Cognitive Guardrail Framework
 
-[![GitHub License](https://img.shields.io/github/license/bkartheek/AUM)](LICENSE)
-[![GitHub PRs](https://img.shields.io/github/issues-pr/bkartheek/AUM)](https://github.com/bkartheek/AUM/pulls)
-[![Node Version](https://img.shields.io/badge/node-%3E%3D22.0.0-green.svg)](https://nodejs.org/)
-
-**AUM** is a cognitive guardrail framework designed for pair-programming with AI agents. It establishes strict safety boundaries (*Kañcukas*), automates session checks (*Pratyabhijñā*), and audits codebases for logical design errors (*Hētvābhāsa*). AUM keeps your workspace clean, protects developer attention, and guarantees that AI agents operate in alignment with your architecture.
-
----
-
-## 🎯 Main Purpose of the Framework
-
-When coding with modern agentic AI assistants, it is easy to accumulate technical debt, loose code patterns, unapproved packages, and untracked architectural deviations. 
-
-AUM solves this problem by enforcing a **turn-based development lifecycle (Pañcakṛtya)** and injecting active system sheaths directly into the AI agent's memory using standard IDE rule structures. AUM guarantees:
-- **Design Authority**: Code cannot be changed unless backed by an Architecture Decision Record (ADR) or task blueprint.
-- **Fallacy Prevention**: Automatic scans check changed files for TODO stubs, print logs, and logic gaps.
-- **Environment Stability**: Environment diagnostics ensure your system parameters are recognized before execution.
-- **Lightweight Workspace**: All session states, caches, and memory profiles are isolated and kept out of Git.
-
----
-
-## 📦 Directory Structure
+<p align="center">
+  <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/npm/v/aum-framework.svg" alt="npm version"></a>
+  <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/npm/dm/aum-framework.svg" alt="npm downloads"></a>
+  <a href="https://github.com/bkartheek/AUM/blob/main/LICENSE"><img src="https://img.shields.io/github/license/bkartheek/AUM" alt="license"></a>
+  <a href="https://github.com/bkartheek/AUM/pulls"><img src="https://img.shields.io/github/issues-pr/bkartheek/AUM" alt="GitHub Pull Requests"></a>
+</p>
 
 ```text
-├── .agents/                    # Yogi agent instructions and custom system sheaths
-├── .aum/                       # Cognitive runtime folder (machine-read config & logs)
-│   ├── config.json             # Workspace rule configurations (Yamas/Niyamas)
-│   ├── sphota.json             # Live session stage state (gitignored)
-│   ├── samskaras/              # Local memory profile caches (gitignored)
-│   └── sankalpas/              # Developer resolve logs (WIP files gitignored)
-├── aum_framework/              # The AUM npm package source code
-│   ├── scripts/                # Execution binaries (aum.js, aum_init.js, etc.)
-│   └── pkg_files/              # Pristine rules and setup templates
-├── docs/                       # Human-readable documentation
-│   └── architecture/           # Architecture Review Board (ARB) & ADR decisions
-├── docs_portal/                # React Vite SPA documentation reader source
-└── release/                    # Compiled production documentation portal
+  █████╗ ██╗   ██╗███╗   ███╗    ███████╗███╗   ██╗ ██████╗██╗███╗   ██╗███████╗
+  ██╔══██╗██║   ██║████╗ ████║    ██╔════╝████╗  ██║██╔════╝██║████╗  ██║██╔════╝
+  ███████║██║   ██║██╔████╔██║    █████╗  ██╔██╗ ██║██║  ███╗██║██╔██╗ ██║█████╗  
+  ██╔══██║██║   ██║██║╚██╔╝██║    ██╔══╝  ██║╚██╗██║██║   ██║██║██║╚██╗██║██╔══╝  
+  ██║  ██║╚██████╔╝██║ ╚═╝ ██║    ███████╗██║ ╚████║╚██████╔╝██║██║ ╚████║███████╗
+  ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝    ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
+                               A U M   E N G I N E
 ```
 
----
-
-## 🚀 Getting Started & Installation
-
-AUM requires **Node.js (v22+)** and works natively with advanced AI-enabled editors like **Cursor**, **Cline**, **Roo Code**, and **VS Code**.
-
-### 1. Developing AUM (Workspace Setup)
-If you want to contribute to AUM or run it locally in this repository:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/bkartheek/AUM.git
-   cd AUM
-   ```
-2. Install package dependencies and symlink the CLI command:
-   ```bash
-   npm install
-   ```
-3. Run diagnostic checks:
-   ```bash
-   npx aum recognize
-   npx aum audit
-   ```
-
-### 2. Adding AUM to Multiple Projects (Initialization)
-You can initialize AUM inside **any existing or new target codebase** to enforce Yogi agent guardrails:
-1. From the root of your target project, run AUM's initializer:
-   ```bash
-   # Using the absolute path to your local AUM clone
-   node /path/to/AUM/aum_framework/scripts/aum_init.js
-   ```
-2. The **Interactive Wizard** will prompt you:
-   - **Project Name**: Customize your workspace identity.
-   - **Design Directory**: Choose where your ADR markdown files should live (Default: `docs/architecture`).
-   - **Guardrails Preset**: Select **Strict Guardrails** (standard audits and constraints) or **Lightweight Mode** (basic Yogi instructions).
-3. The wizard will copy Yogi's rules (`.agents/`, `.cursorrules`, `.clinerules`, `CLAUDE.md`) and automatically update your `.gitignore` with AUM exclusions.
+**AUM** is an ultra-lightweight, technology-agnostic **Intent-Driven Cognitive Guardrail Framework** for AI-assisted pair programming. It acts as an active cognitive firewall between you and your AI agents (Cursor, Cline, Roo Code, Claude Code, GitHub Copilot) to enforce design authority, prevent code regressions (*Hētvābhāsa*), audit modifications, and auto-heal environment compilation locks (*Prāyaścitta*).
 
 ---
 
-## ॐ Yogi: How Yogi Guides Development
+## ⚡ Features
 
-Once initialized, the resident framework guardian **Yogi** takes control of the IDE workspace:
-- **Yamas & Niyamas**: Yogi enforces workspace constraints (e.g. file isolation, compilation builds checking) defined in `.aum/config.json`.
-- **Pre-Commit Audits**: Runs fallacy checks (`npx aum audit`) on git staged files before commits are accepted.
-- **Reverse Vāk Trace**: Ensures all source code modifications correspond to a designated Architecture Decision Record (ADR) under `docs/architecture/decisions/`.
+- **🧠 Design Authority (Śabda)**: Banes raw code writing until an explicit resolve (*Saṅkalpa*) is initiated and an abstract plan is staged.
+- **🛡️ Sandbox Sheaths (Kañcukas)**: Strict execution sandboxes restricting token consumption, directory scopes, external shell downloads, and unapproved API usage.
+- **🧘 Yogi's Guidance**: Auto-injects unified instructions directly into the agent's context window via `.cursorrules`, `.clinerules`, and `CLAUDE.md`.
+- **🔍 Logic Fallacy Auditor (Hētvābhāsa)**: Scans modified files before commits to block empty stubs, left-over console print statements, and out-of-scope edits.
+- **🏥 Self-Healing Compiler (Prāyaścitta)**: Intercepts stack traces, automatically matches environment errors (e.g. missing Rolldown compiler bindings), resolves dependencies, and cleanly retries execution.
+- **⏱️ Turn-Based Lifecycle (Tāla)**: Cycles agent attention cleanly through structured cognitive stages: **Intake** (vision clarification) ➔ **Blueprint** (abstract flows design) ➔ **Verification** (boundary audit) ➔ **Manifestation** (code execution).
 
 ---
 
-## 🛠️ Debugging & Troubleshooting
+## 🚀 Quick Start
 
-If you encounter issues during development or linting, run these commands to diagnose:
-
-### 1. Linter Audit Fails (`npx aum audit`)
-If Yogi reports logical fallacy errors (*Hētvābhāsa*):
-```text
-[ HĒTVĀBHĀSA ERROR ] [ Asiddha Fallacy ]: File contains 1 placeholder stubs (TODO/FIXME).
-[ HĒTVĀBHĀSA AUDIT ]: FAILED. 1 violations detected.
-```
-- **Action**: Open the reported file, remove any temporary `TODO`, `FIXME`, or debug console prints, and re-run `npx aum audit`.
-
-### 2. Verification / Environment Crash
-If your workspace is unaligned or dependencies are broken, trigger AUM's self-healing runner (*Prāyaścitta*):
+### 1. Installation
+Install the framework from NPM in your target project root:
 ```bash
-npx aum verify
+npm install aum-framework
 ```
-This performs a system check, reinstalls broken dependencies, and attempts to resolve configuration conflicts.
+
+### 2. Initialization
+Run the interactive initializer to copy safety rules, template guidelines, and setup variables:
+```bash
+npx aum init
+```
+*(The wizard will configure Yogi sheaths, `.cursorrules`, `.clinerules`, and append exclusions to `.gitignore`).*
+
+### 3. Usage Lifecycle
+AUM orchestrates your AI developer turns through quick CLI commands:
+
+```bash
+# Start a new task resolve (locks focus and prunes context)
+npx aum start
+
+# Run the self-healing build checks to verify environment stability
+npx aum verify
+
+# Audit changed files for logical fallacies before committing
+npx aum audit
+
+# Compile local log files and export portal index database
+npx aum publish
+```
 
 ---
 
-## 🤝 Developer Contribution Guide
+## ⚙️ CLI Commands Reference
 
-We welcome contributions to AUM! To ensure the cognitive codebase remains clean and stable, all developers must adhere to the following rules:
+AUM CLI coordinates all cognitive and maintenance commands under Kashmir Shaivism's five cosmic lifecycle acts (*Pañcakṛtya*):
 
-### Yamas (Restraints to Follow)
-- **Ahiṃsā (Non-harm)**: Do not submit code that breaks the compiler build or existing test profiles.
-- **Asteya (Non-stealing)**: Do not delete existing user logic, helper functions, or license agreements.
-- **Satya (Truth)**: Do not submit mock stubs, empty test cases, or placeholder functions.
-- **Isolation**: Do not write code that reads or writes files outside the workspace root.
-
-### Pre-PR Checklist
-Before pushing code or opening a Pull Request:
-1. Verify that your environment is healthy:
-   ```bash
-   npx aum recognize
-   ```
-2. Run the linter to ensure zero logical violations:
-   ```bash
-   npx aum audit
-   ```
-3. Compile the documentation portal and update the release directory:
-   ```bash
-   # Compiles markdown to json
-   npx aum publish
-   # Rebuilds portal SPA
-   cd docs_portal && npm run build && cd ..
-   # Copies to release
-   rm -rf release/* && cp -R docs_portal/dist/* release/
-   ```
+| CLI Command | Cognitive Phase | Vedic Phase | Technical Action |
+| :--- | :--- | :--- | :--- |
+| `npx aum init` | **Setup** | *Sṛṣṭi* (Creation) | Copies Yogi sheaths, instructions, and templates. |
+| `npx aum start` | **Intake** | *Sṛṣṭi* (Intake) | Initiates a new Saṅkalpa resolve and prunes context logs. |
+| `npx aum verify` | **Build** | *Sthiti* (Preservation) | Runs compiler builds with automatic environment self-healing. |
+| `npx aum audit` | **Audit** | *Saṃhāra* (Cleanup) | Audits staged changes for comments, stubs, and logic fallacies. |
+| `npx aum publish` | **Compile** | *Tirobhāva* (Concealment) | Compiles framework markdown files into docs portal database. |
+| `npx aum prune` | **Clean** | *Prāṇāyāma* (Breath) | Prunes raw build logs from context window to prevent token decay. |
+| `npx aum evolve` | **Incubate** | *Bhāvanā* (Incubate) | Synthesizes local memory logs into system prompt rules. |
+| `npx aum compile` | **Synthesize** | *Pāṇini* (Grammar) | Generates boilerplates and classes from semantic intent roots. |
+| `npx aum assert` | **Test** | *Catuṣkoṭi* (Tetralemma) | Runs tetralemma assertions testing on async reactive streams. |
+| `npx aum recognize`| **Audit** | *Pratyabhijñā* (Identify) | Diagnoses platform types and directory write access boundaries. |
 
 ---
 
-## ⚠️ Critical Precautions (Careful Actions)
+## 🎨 Cognitive Lifecycle (The Tāla Rhythm)
 
-- **Never Commit Dynamic Files**: Do not track `.aum/sphota.json` or `.aum/samskaras/` in your commits. They contain local session configurations and machine memory profiles.
-- **Respect Design Separation**: Never create a design decision directly in code. Always write the Architecture Decision Record (ADR) under `docs/architecture/decisions/` *before* implementing the change.
+AI agents must transition through AUM's state machine to ensure design safety:
+
+```text
+       [ Intake Phase ]      ➔     [ Blueprint Phase ]     ➔     [ Verification ]     ➔     [ Manifest Phase ]
+      (Tāla Beat: INTAKE)         (Tāla Beat: BLUEPRINT)        (Tāla Beat: VERIFY)        (Tāla Beat: MANIFEST)
+      Interviews developer;        Maps abstract flows;          Audits boundaries;         Executes edits, runs
+      clarifies task intent.       decouples components.         outlines test plans.       build check, commits.
+```
+
+- **Intake**: Code modifications are strictly blocked. The agent must interview the developer using the Waking Intake Q&A worksheet.
+- **Blueprinting**: Decouples interfaces from implementation logic.
+- **Verification**: Assures that changes comply with system constraints and specifies test commands.
+- **Manifestation**: Changes are applied, compiled, audited for logic violations, and committed cleanly.
+
+---
+
+## 📖 Portal Documentation
+
+AUM hosts a premium **React/Vite single page documentation portal** compiled from the actual ADR (Architecture Decision Record) logs. 
+
+- **Local Reading**: Compile the documentation portal locally and open it in your browser:
+  ```bash
+  npx aum publish
+  cd docs_portal && npm run dev
+  ```
+- **Web Address**: The documentation portal is published at [bkartheek.github.io/AUM](https://bkartheek.github.io/AUM/).
+
+---
+
+## 📜 License
+
+AUM is open-source software licensed under the [MIT License](LICENSE).
