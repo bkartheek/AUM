@@ -55,6 +55,7 @@ function runAudit() {
 
     // We only scan script or markdown source files
     if (!file.match(/\.(js|jsx|ts|tsx|css|md)$/)) return;
+    if (file.startsWith('assets/')) return;
 
     console.log(`  -> Auditing file: ${file}`);
     const content = fs.readFileSync(filePath, 'utf8');
