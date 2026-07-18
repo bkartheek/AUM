@@ -97,7 +97,7 @@ body {
 
 .aum-main-viewport {
   flex: 1;
-  padding: 32px 40px;
+  padding: 40px 60px;
   overflow-y: auto;
 }
 
@@ -475,8 +475,8 @@ body {
 
 /* Document Article View */
 .aum-article-view {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   width: 100%;
 }
 
@@ -500,9 +500,10 @@ body {
 }
 
 .aum-article-card {
-  padding: 32px 40px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-surface-glass);
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 
 .aum-article-meta {
@@ -676,8 +677,8 @@ body {
 
 /* Onboarding Journey Styles */
 .aum-journey-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
