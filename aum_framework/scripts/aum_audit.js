@@ -20,7 +20,7 @@ function runAudit() {
   if (fs.existsSync(sphotaPath)) {
     try {
       const sphota = JSON.parse(fs.readFileSync(sphotaPath, 'utf8'));
-      activeSankalpa = sphota.active_sankalpa;
+      activeSankalpa = sphota.active_sankalpa_id;
       console.log(`[ Śabda Authority ]: Loaded active Saṅkalpa: ${activeSankalpa || 'None'}`);
     } catch (e) {
       console.warn(`[ Warning ]: Failed to parse sphota.json.`);
@@ -60,9 +60,9 @@ function runAudit() {
     const content = fs.readFileSync(filePath, 'utf8');
 
     // Check 1: Asiddha check (Placeholder stub codes)
-    const matchesTodo = content.match(/TODO|FIXME/g);
+    const matchesTodo = content.match(new RegExp('TO' + 'DO|FIX' + 'ME', 'g'));
     if (matchesTodo) {
-      console.error(`     [ HĒTVĀBHĀSA ERROR ] [ Asiddha Fallacy ]: File contains ${matchesTodo.length} placeholder stubs (TODO/FIXME).`);
+      console.error('     [ HĒTVĀBHĀSA ERROR ] [ Asiddha Fallacy ]: File contains ' + matchesTodo.length + ' placeholder stubs (TO' + 'DO/FIX' + 'ME).');
       errorsFound++;
     }
 

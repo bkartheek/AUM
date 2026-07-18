@@ -19,3 +19,6 @@ scratch/
 
 # OS specific files
 .DS_Store
+
+# Exclude build archives
+*.tgz

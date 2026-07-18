@@ -1,7 +1,11 @@
 const { execSync } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 
-const portalDir = path.join(__dirname, '..', 'docs_portal');
+let portalDir = path.join(__dirname, '..', 'docs_portal');
+if (!fs.existsSync(portalDir)) {
+  portalDir = path.join(__dirname, '..', '..', 'docs_portal');
+}
 
 function logHeader() {
   console.log(`======================================================`);
