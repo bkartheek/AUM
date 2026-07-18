@@ -21,6 +21,7 @@ import {
   Lock,
   RefreshCw,
   Eye,
+  GitCommit,
   Trash2,
   FileText
 } from 'lucide-react';
