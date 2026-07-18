@@ -1242,18 +1242,18 @@ body {
   font-family: 'Outfit', sans-serif;
   font-weight: 600;
   fill: #1e1103;
-  font-size: 13px;
+  font-size: 11px !important;
 }
 
 .aum-diag-text-sub {
   font-family: 'Inter', sans-serif;
   fill: #7c6853;
-  font-size: 10px;
+  font-size: 9px !important;
 }
 
 .aum-diag-text-code {
   font-family: 'Fira Code', monospace;
   fill: #b45309;
-  font-size: 9px;
+  font-size: 8px !important;
 }
 
