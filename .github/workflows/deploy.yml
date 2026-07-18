@@ -51,13 +51,8 @@ jobs:
           git commit -m "debug: add build failure log [skip ci]" || true
           git push origin main || true
 
-      - name: Deploy to root on main 🚀
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          rm -f index.html favicon.svg icons.svg
-          rm -rf assets vedic_library universe
-          cp -R docs_portal/dist/* ./
-          git add index.html favicon.svg icons.svg assets/ universe/ vedic_library/ || true
-          git commit -m "build: compile documentation portal assets to root [skip ci]" || true
-          git push origin HEAD:main || true
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs_portal/dist
+          branch: gh-pages
