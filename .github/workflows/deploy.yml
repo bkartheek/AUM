@@ -51,8 +51,13 @@ jobs:
           git commit -m "debug: add build failure log [skip ci]" || true
           git push origin main || true
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: docs_portal/dist
-          branch: gh-pages
+      - name: Deploy to docs/ on main 🚀
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          rm -f docs/index.html docs/favicon.svg docs/icons.svg
+          rm -rf docs/assets docs/vedic_library
+          cp -R docs_portal/dist/* docs/
+          git add docs/
+          git commit -m "build: compile documentation portal assets to docs/ [skip ci]" || true
+          git push origin main || true
