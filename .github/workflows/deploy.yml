@@ -58,6 +58,6 @@ jobs:
           rm -f index.html favicon.svg icons.svg
           rm -rf assets vedic_library universe
           cp -R docs_portal/dist/* ./
-          git add index.html favicon.svg icons.svg assets/ universe/ vedic_library/
+          git add index.html favicon.svg icons.svg assets/ universe/ vedic_library/ || true
           git commit -m "build: compile documentation portal assets to root [skip ci]" || true
-          git push origin main || true
+          git push origin HEAD:main || true
