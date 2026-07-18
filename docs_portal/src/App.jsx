@@ -35,6 +35,388 @@ marked.setOptions({
   mangle: false
 });
 
+function renderPillarDiagram(pillarId) {
+  switch (pillarId) {
+    case 0: // Brahman
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <defs>
+              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
+              </marker>
+            </defs>
+            <rect x="20" y="20" width="110" height="50" rx="8" className="aum-diag-node active" />
+            <text x="75" y="45" className="aum-diag-text-title" textAnchor="middle" fontSize="11">sphota.json</text>
+            <text x="75" y="60" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Active Tāla Beat</text>
+
+            <rect x="20" y="90" width="110" height="50" rx="8" className="aum-diag-node active" />
+            <text x="75" y="115" className="aum-diag-text-title" textAnchor="middle" fontSize="11">sankalpa_*.md</text>
+            <text x="75" y="130" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Target Intent Vows</text>
+
+            <line x1="130" y1="45" x2="200" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
+            <line x1="130" y1="115" x2="200" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
+
+            <circle cx="250" cy="80" r="40" className="aum-diag-node highlight" />
+            <text x="250" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="12">State Engine</text>
+            <text x="250" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Reconstructs State</text>
+
+            <line x1="290" y1="80" x2="360" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+            <rect x="370" y="55" width="110" height="50" rx="8" className="aum-diag-node active" />
+            <text x="425" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Stateless Core</text>
+            <text x="425" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Zero Memory Leak</text>
+          </svg>
+        </div>
+      );
+    case 1: // Yamas & Niyamas
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <defs>
+              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
+              </marker>
+            </defs>
+            <rect x="15" y="55" width="100" height="50" rx="8" className="aum-diag-node active" />
+            <text x="65" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Code Changes</text>
+            <text x="65" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">git diff / additions</text>
+
+            <line x1="115" y1="80" x2="185" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+            <polygon points="190,80 235,35 280,80 235,125" className="aum-diag-node highlight" />
+            <text x="235" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Auditor Gate</text>
+            <text x="235" y="90" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Yama-Niyama</text>
+
+            <line x1="280" y1="80" x2="350" y2="45" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
+            <line x1="280" y1="80" x2="350" y2="115" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
+
+            <rect x="360" y="20" width="120" height="40" rx="6" className="aum-diag-node active" style={{ stroke: '#15803d' }} />
+            <text x="420" y="45" className="aum-diag-text-title" textAnchor="middle" fill="#15803d" fontSize="11">Clean / Staged</text>
+
+            <rect x="360" y="100" width="120" height="40" rx="6" className="aum-diag-node active" style={{ stroke: '#b91c1c' }} />
+            <text x="420" y="125" className="aum-diag-text-title" textAnchor="middle" fill="#b91c1c" fontSize="11">Blocked / Error</text>
+          </svg>
+        </div>
+      );
+    case 2: // Mandukya
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <defs>
+              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
+              </marker>
+            </defs>
+            <rect x="10" y="55" width="90" height="50" rx="8" className="aum-diag-node active" />
+            <text x="55" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Jāgrat (Intake)</text>
+            <line x1="100" y1="80" x2="130" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+            <rect x="135" y="55" width="90" height="50" rx="8" className="aum-diag-node active" />
+            <text x="180" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Svapna (Blueprint)</text>
+            <line x1="225" y1="80" x2="255" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+            <rect x="260" y="55" width="90" height="50" rx="8" className="aum-diag-node active" />
+            <text x="305" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Suṣupti (Verify)</text>
+            <line x1="350" y1="80" x2="380" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+            <rect x="385" y="55" width="100" height="50" rx="8" className="aum-diag-node highlight" />
+            <text x="435" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Turīya (Manifest)</text>
+          </svg>
+        </div>
+      );
+    case 3: // Sankalpa
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <defs>
+              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
+              </marker>
+            </defs>
+            <text x="50" y="45" className="aum-diag-text-title" fontSize="11">Requirements</text>
+            <line x1="130" y1="40" x2="200" y2="70" className="aum-diag-line solid" markerEnd="url(#arrow-gold)" />
+
+            <text x="50" y="85" className="aum-diag-text-title" fontSize="11">Developer Goal</text>
+            <line x1="140" y1="80" x2="200" y2="80" className="aum-diag-line solid" markerEnd="url(#arrow-gold)" />
+
+            <text x="50" y="125" className="aum-diag-text-title" fontSize="11">Rule Constraints</text>
+            <line x1="140" y1="120" x2="200" y2="90" className="aum-diag-line solid" markerEnd="url(#arrow-gold)" />
+
+            <polygon points="210,50 310,50 280,110 240,110" className="aum-diag-node highlight" />
+            <text x="260" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Funnel</text>
+
+            <line x1="260" y1="110" x2="260" y2="130" className="aum-diag-line solid active" />
+            <line x1="260" y1="130" x2="350" y2="130" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+            <rect x="360" y="105" width="120" height="45" rx="6" className="aum-diag-node active" />
+            <text x="420" y="125" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Active Saṅkalpa Log</text>
+            <text x="420" y="138" className="aum-diag-text-code" textAnchor="middle" fontSize="8">sankalpa_005.md</text>
+          </svg>
+        </div>
+      );
+    case 4: // Pancakritya
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <circle cx="50" cy="80" r="32" className="aum-diag-node active" />
+            <text x="50" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Sṛṣṭi</text>
+            <text x="50" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Load Context</text>
+
+            <line x1="82" y1="80" x2="118" y2="80" className="aum-diag-line active" />
+
+            <circle cx="150" cy="80" r="32" className="aum-diag-node active" />
+            <text x="150" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Sthiti</text>
+            <text x="150" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Verify Build</text>
+
+            <line x1="182" y1="80" x2="218" y2="80" className="aum-diag-line active" />
+
+            <circle cx="250" cy="80" r="32" className="aum-diag-node active" />
+            <text x="250" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Saṃhāra</text>
+            <text x="250" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Clean / Refactor</text>
+
+            <line x1="282" y1="80" x2="318" y2="80" className="aum-diag-line active" />
+
+            <circle cx="350" cy="80" r="32" className="aum-diag-node active" />
+            <text x="350" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Vilaya</text>
+            <text x="350" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Ignore Config</text>
+
+            <line x1="382" y1="80" x2="418" y2="80" className="aum-diag-line active" />
+
+            <circle cx="450" cy="80" r="32" className="aum-diag-node highlight" />
+            <text x="450" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Anugraha</text>
+            <text x="450" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Commit & Push</text>
+          </svg>
+        </div>
+      );
+    case 5: // Mula Sphota
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <circle cx="250" cy="80" r="38" className="aum-diag-node highlight" />
+            <text x="250" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="10">MŪLA SPHOṬA</text>
+            <text x="250" y="90" className="aum-diag-text-code" textAnchor="middle" fontSize="8">manifest.md</text>
+
+            <line x1="212" y1="80" x2="135" y2="45" className="aum-diag-line active" />
+            <line x1="212" y1="80" x2="135" y2="115" className="aum-diag-line active" />
+            <line x1="288" y1="80" x2="365" y2="45" className="aum-diag-line active" />
+            <line x1="288" y1="80" x2="365" y2="115" className="aum-diag-line active" />
+
+            <rect x="25" y="25" width="110" height="35" rx="5" className="aum-diag-node active" />
+            <text x="80" y="46" className="aum-diag-text-title" textAnchor="middle" fontSize="9">config.json</text>
+
+            <rect x="25" y="100" width="110" height="35" rx="5" className="aum-diag-node active" />
+            <text x="80" y="121" className="aum-diag-text-title" textAnchor="middle" fontSize="9">INSTRUCTIONS.md</text>
+
+            <rect x="365" y="25" width="110" height="35" rx="5" className="aum-diag-node active" />
+            <text x="420" y="46" className="aum-diag-text-title" textAnchor="middle" fontSize="9">ARBs Decisions</text>
+
+            <rect x="365" y="100" width="110" height="35" rx="5" className="aum-diag-node active" />
+            <text x="420" y="121" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Vedic Rules</text>
+          </svg>
+        </div>
+      );
+    case 6: // Pratyaveksana
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <defs>
+              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
+              </marker>
+            </defs>
+            <rect x="20" y="55" width="110" height="50" rx="8" className="aum-diag-node active" style={{ stroke: '#b91c1c' }} />
+            <text x="75" y="80" className="aum-diag-text-title" textAnchor="middle" fill="#b91c1c" fontSize="11">Build / Test Fail</text>
+            <text x="75" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Compiler Error</text>
+
+            <line x1="130" y1="80" x2="200" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+            <rect x="210" y="55" width="110" height="50" rx="8" className="aum-diag-node highlight" />
+            <text x="265" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Retro compiler</text>
+            <text x="265" y="95" className="aum-diag-text-code" textAnchor="middle" fontSize="8">retrospective_LOG</text>
+
+            <line x1="320" y1="80" x2="380" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+            <rect x="390" y="55" width="90" height="50" rx="8" className="aum-diag-node active" style={{ stroke: '#15803d' }} />
+            <text x="435" y="80" className="aum-diag-text-title" textAnchor="middle" fill="#15803d" fontSize="11">Samskara</text>
+            <text x="435" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Learned Memory</text>
+          </svg>
+        </div>
+      );
+    case 7: // Mimamsa
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <polygon points="250,15 285,60 215,60" className="aum-diag-node highlight" />
+            <text x="250" y="45" className="aum-diag-text-title" textAnchor="middle" fontSize="10" fill="#ea580c">Śruti (Config)</text>
+
+            <polygon points="210,65 290,65 310,105 190,105" className="aum-diag-node active" />
+            <text x="250" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Liṅga (Diagnostics)</text>
+
+            <polygon points="185,110 315,110 335,150 165,150" className="aum-diag-node active" />
+            <text x="250" y="130" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Vākya / Prakaraṇa (Context)</text>
+          </svg>
+        </div>
+      );
+    case 8: // Vaisesika
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <rect x="30" y="30" width="120" height="100" rx="8" className="aum-diag-node active" />
+            <text x="90" y="60" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Dravya</text>
+            <text x="90" y="80" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Substance / Models</text>
+            <text x="90" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">db_schema.json</text>
+
+            <rect x="190" y="30" width="120" height="100" rx="8" className="aum-diag-node active" />
+            <text x="250" y="60" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Guṇa</text>
+            <text x="250" y="80" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Attributes / Types</text>
+            <text x="250" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">interface Profile</text>
+
+            <rect x="350" y="30" width="120" height="100" rx="8" className="aum-diag-node highlight" />
+            <text x="410" y="60" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Karma</text>
+            <text x="410" y="80" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Actions / Methods</text>
+            <text x="410" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">function verifyUser()</text>
+          </svg>
+        </div>
+      );
+    case 9: // Sankhya
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <rect x="10" y="60" width="75" height="40" rx="5" className="aum-diag-node active" />
+            <text x="47" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Prakṛti</text>
+            <text x="47" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Source Code</text>
+
+            <line x1="85" y1="80" x2="105" y2="80" className="aum-diag-line active" />
+
+            <rect x="110" y="60" width="75" height="40" rx="5" className="aum-diag-node active" />
+            <text x="147" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Buddhi</text>
+            <text x="147" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">AST Parser</text>
+
+            <line x1="185" y1="80" x2="205" y2="80" className="aum-diag-line active" />
+
+            <rect x="210" y="60" width="75" height="40" rx="5" className="aum-diag-node active" />
+            <text x="247" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Ahaṅkāra</text>
+            <text x="247" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Linking Symbols</text>
+
+            <line x1="285" y1="80" x2="305" y2="80" className="aum-diag-line active" />
+
+            <rect x="310" y="60" width="75" height="40" rx="5" className="aum-diag-node active" />
+            <text x="347" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Manas</text>
+            <text x="347" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Memory Mapping</text>
+
+            <line x1="385" y1="80" x2="405" y2="80" className="aum-diag-line active" />
+
+            <rect x="410" y="60" width="80" height="40" rx="5" className="aum-diag-node highlight" />
+            <text x="450" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Bhūtas</text>
+            <text x="450" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Built Assets</text>
+          </svg>
+        </div>
+      );
+    case 10: // Shaiva Kancukas
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <circle cx="250" cy="80" r="65" fill="none" stroke="#7c6853" strokeWidth="1.5" strokeDasharray="3 3" />
+            <circle cx="250" cy="80" r="50" fill="none" stroke="#b45309" strokeWidth="1" />
+            <circle cx="250" cy="80" r="35" fill="none" stroke="#ea580c" strokeWidth="1" />
+
+            <circle cx="250" cy="80" r="20" className="aum-diag-node highlight" />
+            <text x="250" y="84" className="aum-diag-text-title" textAnchor="middle" fontSize="9" fill="#ea580c">Agent</text>
+
+            <text x="140" y="45" className="aum-diag-text-sub" fontSize="9">Kāla (Time limit)</text>
+            <text x="140" y="125" className="aum-diag-text-sub" fontSize="9">Niyati (Directory restrict)</text>
+            <text x="330" y="45" className="aum-diag-text-sub" fontSize="9">Rāga (Sankalpa scope)</text>
+            <text x="330" y="125" className="aum-diag-text-sub" fontSize="9">Kalā (Command limit)</text>
+          </svg>
+        </div>
+      );
+    case 11: // Spanda
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <defs>
+              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
+              </marker>
+            </defs>
+            <rect x="20" y="55" width="100" height="50" rx="8" className="aum-diag-node active" />
+            <text x="70" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Unmeṣa</text>
+            <text x="70" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">(Emit Event)</text>
+
+            <line x1="120" y1="80" x2="200" y2="80" className="aum-diag-line active" markerEnd="url(#arrow-gold)" />
+
+            <circle cx="240" cy="80" r="30" className="aum-diag-node highlight" />
+            <text x="240" y="78" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Spanda</text>
+            <text x="240" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">(Throttle / Filter)</text>
+
+            <line x1="270" y1="80" x2="350" y2="80" className="aum-diag-line active" markerEnd="url(#arrow-gold)" />
+
+            <rect x="360" y="55" width="120" height="50" rx="8" className="aum-diag-node active" />
+            <text x="420" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Nimeṣa</text>
+            <text x="420" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">(Consume / Cleanup)</text>
+          </svg>
+        </div>
+      );
+    case 12: // Advaita
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <defs>
+              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
+              </marker>
+            </defs>
+            <g transform="translate(10, 0)">
+              <rect x="10" y="30" width="100" height="30" rx="5" className="aum-diag-node active" style={{ opacity: 0.6 }} />
+              <text x="60" y="48" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Duplicate helper A</text>
+
+              <rect x="10" y="70" width="100" height="30" rx="5" className="aum-diag-node active" style={{ opacity: 0.6 }} />
+              <text x="60" y="88" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Duplicate helper B</text>
+
+              <rect x="10" y="110" width="100" height="30" rx="5" className="aum-diag-node active" style={{ opacity: 0.6 }} />
+              <text x="60" y="128" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Unused Code stubs</text>
+
+              <line x1="110" y1="45" x2="200" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
+              <line x1="110" y1="85" x2="200" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
+              <line x1="110" y1="125" x2="200" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
+
+              <polygon points="210,80 250,40 290,80 250,120" className="aum-diag-node highlight" />
+              <text x="250" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Neti Neti</text>
+              <text x="250" y="88" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">(Negation)</text>
+
+              <line x1="290" y1="80" x2="350" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+              <rect x="360" y="55" width="110" height="50" rx="8" className="aum-diag-node active" />
+              <text x="415" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Unified Core</text>
+              <text x="415" y="93" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">(One source of truth)</text>
+            </g>
+          </svg>
+        </div>
+      );
+    case 13: // Navya-Nyaya
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <rect x="30" y="50" width="130" height="60" rx="8" className="aum-diag-node active" />
+            <text x="95" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Dharmin (Explicit type)</text>
+            <text x="95" y="95" className="aum-diag-text-code" textAnchor="middle" fontSize="8">const user: Dravya</text>
+
+            <line x1="160" y1="80" x2="330" y2="80" className="aum-diag-line active" />
+            <circle cx="245" cy="80" r="18" className="aum-diag-node highlight" />
+            <text x="245" y="84" className="aum-diag-text-title" textAnchor="middle" fontSize="10" fill="#ea580c">Relation</text>
+
+            <rect x="340" y="50" width="130" height="60" rx="8" className="aum-diag-node active" />
+            <text x="405" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Avacchedaka (Limiter)</text>
+            <text x="405" y="95" className="aum-diag-text-code" textAnchor="middle" fontSize="8">{"T extends Dravya"}</text>
+          </svg>
+        </div>
+      );
+    default:
+      return null;
+  }
+}
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('philosophy'); // 'philosophy' | 'pillars' | 'simulator' | 'handbook' | 'quickstart'
   const [selectedPillar, setSelectedPillar] = useState(0);
@@ -597,12 +979,40 @@ function assertState(streamState) {
                     </p>
                   </section>
 
-                  {/* Trika Sakti Overview */}
+                   {/* Trika Sakti Overview */}
                   <section className="aum-section">
                     <h3 className="aum-section-title">Trika Śakti: The Engine of Action</h3>
                     <p className="aum-section-desc">
                       Action inside an AI-assisted workspace requires balancing three fundamental spiritual forces before a single line of physical code is manifested:
                     </p>
+
+                    <div className="aum-diagram-container">
+                      <svg className="aum-diagram-svg" viewBox="0 0 600 160" width="100%">
+                        <defs>
+                          <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
+                          </marker>
+                        </defs>
+                        
+                        <line x1="160" y1="80" x2="230" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow)" />
+                        <line x1="370" y1="80" x2="440" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow)" />
+                        
+                        <rect x="30" y="30" width="130" height="100" rx="10" className="aum-diag-node active" />
+                        <text x="95" y="65" className="aum-diag-text-title" textAnchor="middle">Icchā Śakti</text>
+                        <text x="95" y="85" className="aum-diag-text-sub" textAnchor="middle">Divine Will / Intent</text>
+                        <text x="95" y="105" className="aum-diag-text-code" textAnchor="middle">Intake Stage</text>
+
+                        <rect x="240" y="30" width="130" height="100" rx="10" className="aum-diag-node active" />
+                        <text x="305" y="65" className="aum-diag-text-title" textAnchor="middle">Jñāna Śakti</text>
+                        <text x="305" y="85" className="aum-diag-text-sub" textAnchor="middle">Pure Wisdom / Plan</text>
+                        <text x="305" y="105" className="aum-diag-text-code" textAnchor="middle">Blueprint Stage</text>
+
+                        <rect x="450" y="30" width="130" height="100" rx="10" className="aum-diag-node active" />
+                        <text x="515" y="65" className="aum-diag-text-title" textAnchor="middle">Kriyā Śakti</text>
+                        <text x="515" y="85" className="aum-diag-text-sub" textAnchor="middle">Action / Execution</text>
+                        <text x="515" y="105" className="aum-diag-text-code" textAnchor="middle">Manifest Stage</text>
+                      </svg>
+                    </div>
                     
                     <div className="aum-grid-3">
                       <div className="aum-card-panel">
@@ -677,6 +1087,47 @@ function assertState(streamState) {
                         </tbody>
                       </table>
                     </div>
+
+                    <div className="aum-diagram-container" style={{ flexDirection: 'column' }}>
+                      <h4 className="aum-section-title" style={{ fontSize: '15px', marginBottom: '16px', marginTop: '16px' }}>Māṇḍūkya Consciousness State Machine</h4>
+                      <svg className="aum-diagram-svg" viewBox="0 0 500 500" width="100%" style={{ maxWidth: '400px' }}>
+                        <defs>
+                          <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stopColor="#ea580c" stopOpacity="0.15" />
+                            <stop offset="100%" stopColor="#ea580c" stopOpacity="0" />
+                          </radialGradient>
+                        </defs>
+                        
+                        <circle cx="250" cy="250" r="180" fill="url(#centerGlow)" />
+                        
+                        {/* Waking - Jagrat (Top-Right) */}
+                        <path d="M 250 250 L 420 250 A 170 170 0 0 0 250 80 Z" className="aum-diag-node active" />
+                        <text x="345" y="155" className="aum-diag-text-title" textAnchor="middle">Jāgrat</text>
+                        <text x="345" y="175" className="aum-diag-text-sub" textAnchor="middle">Waking (External)</text>
+                        <text x="345" y="195" className="aum-diag-text-code" textAnchor="middle">INTAKE BEAT</text>
+
+                        {/* Dream - Svapna (Top-Left) */}
+                        <path d="M 250 250 L 250 80 A 170 170 0 0 0 80 250 Z" className="aum-diag-node active" />
+                        <text x="155" y="155" className="aum-diag-text-title" textAnchor="middle">Svapna</text>
+                        <text x="155" y="175" className="aum-diag-text-sub" textAnchor="middle">Dream (Subtle)</text>
+                        <text x="155" y="195" className="aum-diag-text-code" textAnchor="middle">BLUEPRINT BEAT</text>
+
+                        {/* Deep Sleep - Susupti (Bottom-Left) */}
+                        <path d="M 250 250 L 80 250 A 170 170 0 0 0 250 420 Z" className="aum-diag-node active" />
+                        <text x="155" y="315" className="aum-diag-text-title" textAnchor="middle">Suṣupti</text>
+                        <text x="155" y="335" className="aum-diag-text-sub" textAnchor="middle">Deep Sleep (Potential)</text>
+                        <text x="155" y="355" className="aum-diag-text-code" textAnchor="middle">VERIFICATION BEAT</text>
+
+                        {/* Pure State - Turiya (Bottom-Right) */}
+                        <path d="M 250 250 L 250 420 A 170 170 0 0 0 420 250 Z" className="aum-diag-node active" />
+                        <text x="345" y="315" className="aum-diag-text-title" textAnchor="middle">Turīya</text>
+                        <text x="345" y="335" className="aum-diag-text-sub" textAnchor="middle">Absolute (Revelation)</text>
+                        <text x="345" y="355" className="aum-diag-text-code" textAnchor="middle">MANIFEST BEAT</text>
+
+                        <circle cx="250" cy="250" r="45" fill="#ea580c" stroke="#b45309" strokeWidth="2.5" />
+                        <text x="250" y="254" className="aum-diag-text-title" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">BRAHMAN</text>
+                      </svg>
+                    </div>
                   </section>
                 </div>
               )}
@@ -734,6 +1185,8 @@ function assertState(streamState) {
                       </header>
 
                       <div className="aum-detail-body">
+                        {renderPillarDiagram(selectedPillar)}
+
                         <div className="aum-detail-section">
                           <h5 className="aum-detail-section-title">Vedic Philosophy Context</h5>
                           <p className="aum-detail-section-text">{pillars[selectedPillar].philosophicalDepth}</p>
@@ -772,6 +1225,34 @@ function assertState(streamState) {
                     <p className="aum-page-desc">
                       Step through AUM's turn-based consciousness quarters. Test what the AI agent can or cannot do under each stage, and execute trigger commands locally.
                     </p>
+                  </div>
+
+                  <div className="aum-diagram-container" style={{ margin: '10px 0 25px 0' }}>
+                    <svg className="aum-diagram-svg" viewBox="0 0 600 120" width="100%">
+                      <line x1="125" y1="60" x2="185" y2="60" className={`aum-diag-line solid ${['blueprint', 'verification', 'manifest'].includes(simulatorStage) ? 'active' : ''}`} markerEnd="url(#arrow-gold)" />
+                      <line x1="265" y1="60" x2="325" y2="60" className={`aum-diag-line solid ${['verification', 'manifest'].includes(simulatorStage) ? 'active' : ''}`} markerEnd="url(#arrow-gold)" />
+                      <line x1="405" y1="60" x2="465" y2="60" className={`aum-diag-line solid ${simulatorStage === 'manifest' ? 'active' : ''}`} markerEnd="url(#arrow-gold)" />
+
+                      <rect x="25" y="30" width="100" height="60" rx="8" className={`aum-diag-node ${simulatorStage === 'intake' ? 'active highlight' : ''}`} />
+                      <text x="75" y="55" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Intake</text>
+                      <text x="75" y="70" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Jāgrat (Waking)</text>
+                      <text x="75" y="80" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Will / Intent</text>
+
+                      <rect x="185" y="30" width="100" height="60" rx="8" className={`aum-diag-node ${simulatorStage === 'blueprint' ? 'active highlight' : ''}`} />
+                      <text x="235" y="55" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Blueprint</text>
+                      <text x="235" y="70" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Svapna (Dream)</text>
+                      <text x="235" y="80" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Plan / Design</text>
+
+                      <rect x="325" y="30" width="100" height="60" rx="8" className={`aum-diag-node ${simulatorStage === 'verification' ? 'active highlight' : ''}`} />
+                      <text x="375" y="55" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Verification</text>
+                      <text x="375" y="70" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Suṣupti (Sleep)</text>
+                      <text x="375" y="80" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Audit Boundaries</text>
+
+                      <rect x="465" y="30" width="100" height="60" rx="8" className={`aum-diag-node ${simulatorStage === 'manifest' ? 'active highlight' : ''}`} />
+                      <text x="515" y="55" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Manifest</text>
+                      <text x="515" y="70" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Turīya (Absolute)</text>
+                      <text x="515" y="80" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Code Commit</text>
+                    </svg>
                   </div>
 
                   {/* Stage Timeline Controls */}
@@ -931,6 +1412,36 @@ function assertState(streamState) {
                     </p>
                   </div>
 
+                  <div className="aum-diagram-container" style={{ margin: '10px 0 25px 0' }}>
+                    <svg className="aum-diagram-svg" viewBox="0 0 600 160" width="100%">
+                      <path d="M 150 80 Q 200 80 250 30" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+                      <path d="M 150 80 Q 200 80 250 65" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+                      <path d="M 150 80 Q 200 80 250 95" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+                      <path d="M 150 80 Q 200 80 250 130" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+                      <rect x="20" y="55" width="130" height="50" rx="8" className="aum-diag-node highlight" />
+                      <text x="85" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">docs_data.json</text>
+                      <text x="85" y="92" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Compiled database</text>
+
+                      <rect x="250" y="10" width="140" height="30" rx="5" className="aum-diag-node active" />
+                      <text x="320" y="28" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Mūla Sphoṭa Manifest</text>
+
+                      <rect x="250" y="50" width="140" height="30" rx="5" className="aum-diag-node active" />
+                      <text x="320" y="68" className="aum-diag-text-title" textAnchor="middle" fontSize="9">ARB Review Logs</text>
+
+                      <rect x="250" y="90" width="140" height="30" rx="5" className="aum-diag-node active" />
+                      <text x="320" y="108" className="aum-diag-text-title" textAnchor="middle" fontSize="9">ADR Decision Records</text>
+
+                      <rect x="250" y="130" width="140" height="30" rx="5" className="aum-diag-node active" />
+                      <text x="320" y="148" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Saṃskāra Memories</text>
+
+                      <text x="405" y="28" className="aum-diag-text-sub" fontSize="9">→ Core instruction rules</text>
+                      <text x="405" y="68" className="aum-diag-text-sub" fontSize="9">→ Phase transitions & reviews</text>
+                      <text x="405" y="108" className="aum-diag-text-sub" fontSize="9">→ Specific system constraints</text>
+                      <text x="405" y="148" className="aum-diag-text-sub" fontSize="9">→ Self-healing cache profiles</text>
+                    </svg>
+                  </div>
+
                   {/* Search Filtering Bar */}
                   <div className="aum-search-wrapper">
                     <Search className="aum-search-icon-svg" size={18} />
@@ -1025,6 +1536,40 @@ function assertState(streamState) {
                       AUM is purely instruction-based. It runs inside the AI agent's prompt window using natural language trigger commands to transition state beat levels, evaluate fallacies (*Hētvābhāsa*), and lock focus (*Saṅkalpa*).
                     </p>
                   </section>
+
+                  <div className="aum-diagram-container" style={{ margin: '15px 0 25px 0' }}>
+                    <svg className="aum-diagram-svg" viewBox="0 0 600 120" width="100%">
+                      <line x1="85" y1="60" x2="110" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+                      <line x1="185" y1="60" x2="210" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+                      <line x1="285" y1="60" x2="310" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+                      <line x1="385" y1="60" x2="410" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+                      <line x1="485" y1="60" x2="510" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+
+                      <rect x="10" y="35" width="75" height="50" rx="6" className={`aum-diag-node active`} />
+                      <text x="47" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">1. SPARK</text>
+                      <text x="47" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Idea Seed</text>
+
+                      <rect x="110" y="35" width="75" height="50" rx="6" className={`aum-diag-node active`} />
+                      <text x="147" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">2. RESOLVE</text>
+                      <text x="147" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Set Vow</text>
+
+                      <rect x="210" y="35" width="75" height="50" rx="6" className={`aum-diag-node active`} />
+                      <text x="247" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">3. BEAT</text>
+                      <text x="247" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Advance Stage</text>
+
+                      <rect x="310" y="35" width="75" height="50" rx="6" className={`aum-diag-node active`} />
+                      <text x="347" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">4. CONCORD</text>
+                      <text x="347" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Approve Plan</text>
+
+                      <rect x="410" y="35" width="75" height="50" rx="6" className={`aum-diag-node active`} />
+                      <text x="447" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">5. VERIFY</text>
+                      <text x="447" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Compile Check</text>
+
+                      <rect x="510" y="35" width="80" height="50" rx="6" className={`aum-diag-node highlight`} />
+                      <text x="550" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">6. COMMIT</text>
+                      <text x="550" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Push Release</text>
+                    </svg>
+                  </div>
 
                   {/* CLI command tables */}
                   <section className="aum-section">
