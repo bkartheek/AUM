@@ -10,6 +10,9 @@ Any agent operating in this workspace must read and strictly follow the state gu
 * Compile draft codes and blueprints under the active `.aum/sankalpas/` file or [blueprint_template.md](../.aum/templates/blueprint_template.md).
 * Log decisions and files under `.aum/sankalpas/`.
 
+## Git & Release Conventions
+* Always merge feature branches to `master` (or the default primary branch if `master` is unavailable).
+
 ## Framework Guardian (Yogi)
 *   The resident framework guardian is **Yogi** (instructions in [skills/yogi/SKILL.md](skills/yogi/SKILL.md)).
 *   All active workspace modifications and task executions must be validated by running the AUM CLI linter (`node scripts/aum.js audit`) and comply with Yogi's safety sheaths.
