@@ -7,6 +7,8 @@ let pipedAnswers = [];
 let pipedIndex = 0;
 
 const hasYesFlag = process.argv.includes('-y') || process.argv.includes('--yes') || process.argv.includes('--non-interactive');
+const isGlobal = process.argv.includes('--global');
+const { runHooks } = require('./aum_hook.js');
 
 async function prepareInput() {
   if (!process.stdin.isTTY && !hasYesFlag) {
@@ -91,11 +93,17 @@ function appendGitignore(targetDir) {
 .aum/samskaras/
 .aum/intent_awakening/
 .aum/sankalpas/sankalpa_*.md
+
+# English mode ignores
+.aum/manifest.json
+.aum/memory/
+.aum/ideas/
+.aum/tasks/task_*.md
 `;
   
   if (fs.existsSync(gitignorePath)) {
     let content = fs.readFileSync(gitignorePath, 'utf8');
-    if (!content.includes('.aum/sphota.json') && !content.includes('.aum/samskaras/')) {
+    if (!content.includes('.aum/sphota.json') && !content.includes('.aum/manifest.json')) {
       content = content.trim() + '\n' + aumIgnoreSection;
       fs.writeFileSync(gitignorePath, content, 'utf8');
       console.log(`[ Config ]: Appended AUM exclusions to existing .gitignore`);
@@ -106,24 +114,32 @@ function appendGitignore(targetDir) {
   }
 }
 
-async function initProject() {
-  try {
-    await prepareInput();
-    const targetDir = process.cwd();
-    const pkgFilesDir = path.join(__dirname, '..', 'pkg_files');
-    const isUpgrade = fs.existsSync(path.join(targetDir, '.aum'));
+  async function initProject() {
+    try {
+      await prepareInput();
+      const targetDir = isGlobal ? require('os').homedir() : process.cwd();
+      const pkgFilesDir = path.join(__dirname, '..', 'pkg_files');
+      const isUpgrade = fs.existsSync(path.join(targetDir, '.aum'));
     
     console.log(`======================================================`);
     console.log(`   ॐ AUM COGNITIVE FRAMEWORK: INITIALIZER`);
-  console.log(`======================================================`);
-  console.log(`  Target Space : ${targetDir}`);
-  console.log(`  Mode         : ${isUpgrade ? '🔄 UPGRADE MODE' : '✨ FRESH INSTALLATION'}`);
-  console.log(`======================================================\n`);
+    console.log(`======================================================`);
+    console.log(`  Target Space : ${targetDir} ${isGlobal ? '(GLOBAL)' : ''}`);
+    console.log(`  Mode         : ${isUpgrade ? '🔄 UPGRADE MODE' : '✨ FRESH INSTALLATION'}`);
+    console.log(`======================================================\n`);
   
   let projectName = "My Dharmic Project";
   let presetChoice = "1";
+  let currentLanguage = "1";
   let architectureDir = "docs/architecture";
   
+  if (isUpgrade) {
+    if (fs.existsSync(path.join(targetDir, '.aum', 'manifest.json'))) {
+      currentLanguage = "2";
+    }
+  }
+  let languageChoice = currentLanguage;
+
   if (isUpgrade) {
     console.log(`[ Info ]: Existing AUM installation detected. Preserving history logs, active sankalpas, and samskaras.`);
     console.log(`[ Info ]: Upgrading core rules, Yogi instructions, and static templates...\n`);
@@ -137,6 +153,45 @@ async function initProject() {
         architectureDir = existingConfig.architecture_dir || architectureDir;
       } catch (e) {}
     }
+
+    if (!hasYesFlag) {
+      console.log(`\nSelect Framework Language Version for Upgrade:`);
+      console.log(`  1) Sanskrit Terminology (Original Vedic Mapping) ${currentLanguage === "1" ? '[Current]' : ''}`);
+      console.log(`  2) English Terminology (Localized Software Mapping) ${currentLanguage === "2" ? '[Current]' : ''}`);
+      languageChoice = await askQuestion(`Select option (1-2) [${currentLanguage}]: `);
+      languageChoice = languageChoice.trim() || currentLanguage;
+    }
+    
+    if (languageChoice !== currentLanguage) {
+      console.log(`\n[ Migration ]: Converting workspace structure to new language choice...`);
+      const aumDest = path.join(targetDir, '.aum');
+      if (languageChoice === "2") {
+        // Sanskrit -> English
+        const mappings = [
+          { src: 'sphota.json', dest: 'manifest.json' },
+          { src: 'sankalpas', dest: 'tasks' },
+          { src: 'samskaras', dest: 'memory' },
+          { src: 'intent_awakening', dest: 'ideas' }
+        ];
+        mappings.forEach(m => {
+          if (fs.existsSync(path.join(aumDest, m.src))) fs.renameSync(path.join(aumDest, m.src), path.join(aumDest, m.dest));
+        });
+        if (fs.existsSync(path.join(aumDest, 'MULA_SPHOTA.md'))) fs.unlinkSync(path.join(aumDest, 'MULA_SPHOTA.md'));
+      } else {
+        // English -> Sanskrit
+        const mappings = [
+          { src: 'manifest.json', dest: 'sphota.json' },
+          { src: 'tasks', dest: 'sankalpas' },
+          { src: 'memory', dest: 'samskaras' },
+          { src: 'ideas', dest: 'intent_awakening' }
+        ];
+        mappings.forEach(m => {
+          if (fs.existsSync(path.join(aumDest, m.src))) fs.renameSync(path.join(aumDest, m.src), path.join(aumDest, m.dest));
+        });
+        if (fs.existsSync(path.join(aumDest, 'MANIFEST.md'))) fs.unlinkSync(path.join(aumDest, 'MANIFEST.md'));
+      }
+    }
+
   } else if (hasYesFlag) {
     console.log(`[ Info ]: Non-interactive mode activated. Using default configurations.`);
   } else {
@@ -152,6 +207,12 @@ async function initProject() {
     console.log(`  2) Lightweight Mode (Yogi guidelines and rules only)`);
     presetChoice = await askQuestion(`Select option (1-2) [1]: `);
     presetChoice = presetChoice.trim() || "1";
+
+    console.log(`\nSelect Framework Language Version:`);
+    console.log(`  1) Sanskrit Terminology (Original Vedic Mapping) [Recommended]`);
+    console.log(`  2) English Terminology (Localized Software Mapping)`);
+    languageChoice = await askQuestion(`Select option (1-2) [1]: `);
+    languageChoice = languageChoice.trim() || "1";
   }
   
   // List files to copy
@@ -168,11 +229,19 @@ async function initProject() {
     path.join('.aum', 'sphota.json'),
     path.join('.aum', 'sankalpas'),
     path.join('.aum', 'samskaras'),
-    path.join('.aum', 'intent_awakening')
+    path.join('.aum', 'intent_awakening'),
+    path.join('.aum', 'manifest.json'),
+    path.join('.aum', 'tasks'),
+    path.join('.aum', 'memory'),
+    path.join('.aum', 'ideas')
   ];
   
   filesToCopy.forEach(file => {
-    const srcPath = path.join(pkgFilesDir, file);
+    let srcFile = file;
+    if (file === '.aum' && languageChoice === "2") {
+      srcFile = '.aum_en';
+    }
+    const srcPath = path.join(pkgFilesDir, srcFile);
     const destPath = path.join(targetDir, file);
     
     if (fs.existsSync(srcPath)) {
@@ -219,7 +288,13 @@ async function initProject() {
       console.error(`[ Error ]: Failed to customize config.json:`, e);
     }
   }
-  appendGitignore(targetDir);
+  
+  if (!isGlobal) {
+    appendGitignore(targetDir);
+  } else {
+    console.log(`[ Config ]: Skipping .gitignore creation for global install.`);
+  }
+  
   closeReadline();
   
   console.log(`\n======================================================`);
@@ -227,12 +302,21 @@ async function initProject() {
     console.log(`[ Success ]: AUM Framework upgrade complete.`);
   } else {
     console.log(`[ Success ]: Project initialized successfully.`);
-    console.log(`\nNext Steps:`);
-    console.log(`  1. Load the project workspace folder in VS Code, Cursor, or Cline.`);
-    console.log(`  2. Yogi will automatically take over using .agents/ and rules!`);
-    console.log(`  3. Run 'npx aum start' to begin your first turn resolve.`);
+    if (isGlobal) {
+      console.log(`[ Notice ]: Global Central Nervous System is active at ~/.aum`);
+    } else {
+      console.log(`\nNext Steps:`);
+      console.log(`  1. Load the project workspace folder in VS Code, Cursor, or Cline.`);
+      console.log(`  2. Yogi will automatically take over using .agents/ and rules!`);
+      console.log(`  3. Run 'npx aum start' to begin your first turn resolve.`);
+    }
   }
   console.log(`======================================================`);
+
+  if (isGlobal) {
+    runHooks();
+  }
+
   } catch (err) {
     console.error(`\n[ Fatal Error ]: Initializer failed:`, err);
     closeReadline();

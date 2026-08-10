@@ -10,10 +10,11 @@ function logHeader(title) {
   console.log(`======================================================`);
 }
 
-function runScript(scriptName) {
+function runScript(scriptName, additionalArgs = []) {
   const scriptPath = path.join(scriptsDir, scriptName);
   try {
-    execSync(`node "${scriptPath}"`, { stdio: 'inherit' });
+    const argsStr = additionalArgs.join(' ');
+    execSync(`node "${scriptPath}" ${argsStr}`, { stdio: 'inherit' });
   } catch (error) {
     process.exit(1);
   }
@@ -34,6 +35,7 @@ function showHelp() {
   console.log(`  assert    - Runs [Catuṣkoṭi] tetralemma assertion test (catuskoti.js)`);
   console.log(`  recognize - Runs [Pratyabhijñā] environmental auditor (pratyabhijna.js)`);
   console.log(`  init      - [Sṛṣṭi Init] Initializes project with AUM framework templates (aum_init.js)`);
+  console.log(`  hook      - [Global Hooks] Injects AUM routing instructions into all installed AI tools (aum_hook.js)`);
   console.log(`\n======================================================`);
 }
 
@@ -78,7 +80,10 @@ function main() {
       runScript('pratyabhijna.js');
       break;
     case 'init':
-      runScript('aum_init.js');
+      runScript('aum_init.js', args.slice(1));
+      break;
+    case 'hook':
+      runScript('aum_hook.js');
       break;
     default:
       console.error(`[ Error ]: Unknown command: ${command}`);

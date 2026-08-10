@@ -47,6 +47,13 @@ npx aum init
 ```
 *(The wizard will configure Yogi sheaths, `.cursorrules`, `.clinerules`, and append exclusions to `.gitignore`).*
 
+**Global Central Nervous System Installation (Recommended)**
+To install AUM globally across your entire OS and actively monitor all your AI agents:
+```bash
+npx aum init --global
+```
+This sets up a master `~/.aum/` hub and automatically injects AUM routing instructions into all your installed AI agents (Cursor, Claude, Copilot, Roo, etc).
+
 ### 3. Usage Lifecycle
 AUM orchestrates your AI developer turns through quick CLI commands:
 
@@ -62,6 +69,9 @@ npx aum audit
 
 # Compile local log files and export portal index database
 npx aum publish
+
+# Scan and inject global AUM routing instructions into all local AI tools
+npx aum hook
 ```
 
 ---
@@ -73,6 +83,7 @@ AUM CLI coordinates all cognitive and maintenance commands under Kashmir Shaivis
 | CLI Command | Cognitive Phase | Vedic Phase | Technical Action |
 | :--- | :--- | :--- | :--- |
 | `npx aum init` | **Setup** | *Sṛṣṭi* (Creation) | Copies Yogi sheaths, instructions, and templates. |
+| `npx aum hook` | **Setup** | *Sūtra* (Thread) | Injects global routing rules into Cursor, Claude, Copilot, etc. |
 | `npx aum start` | **Intake** | *Sṛṣṭi* (Intake) | Initiates a new Saṅkalpa resolve and prunes context logs. |
 | `npx aum verify` | **Build** | *Sthiti* (Preservation) | Runs compiler builds with automatic environment self-healing. |
 | `npx aum audit` | **Audit** | *Saṃhāra* (Cleanup) | Audits staged changes for comments, stubs, and logic fallacies. |

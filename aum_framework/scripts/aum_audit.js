@@ -1,9 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const os = require('os');
 
 const rootDir = process.cwd();
-const aumDir = path.join(rootDir, '.aum');
+let aumDir = path.join(rootDir, '.aum');
+if (!fs.existsSync(aumDir)) {
+  aumDir = path.join(os.homedir(), '.aum');
+}
 
 function logHeader(msg) {
   console.log(`\n======================================================`);
@@ -14,16 +18,18 @@ function logHeader(msg) {
 function runAudit() {
   logHeader("STARTING LINTER AUDIT");
   
-  // 1. Read Active Saṅkalpa from sphota.json
+  // 1. Read Active Saṅkalpa from sphota.json or manifest.json
   let activeSankalpa = null;
-  const sphotaPath = path.join(aumDir, 'sphota.json');
+  let sphotaPath = path.join(aumDir, 'sphota.json');
+  if (!fs.existsSync(sphotaPath)) sphotaPath = path.join(aumDir, 'manifest.json');
+  
   if (fs.existsSync(sphotaPath)) {
     try {
       const sphota = JSON.parse(fs.readFileSync(sphotaPath, 'utf8'));
-      activeSankalpa = sphota.active_sankalpa_id;
-      console.log(`[ Śabda Authority ]: Loaded active Saṅkalpa: ${activeSankalpa || 'None'}`);
+      activeSankalpa = sphota.active_sankalpa_id || sphota.active_task_id;
+      console.log(`[ Authority ]: Loaded active Task/Saṅkalpa: ${activeSankalpa || 'None'}`);
     } catch (e) {
-      console.warn(`[ Warning ]: Failed to parse sphota.json.`);
+      console.warn(`[ Warning ]: Failed to parse ${path.basename(sphotaPath)}.`);
     }
   }
 

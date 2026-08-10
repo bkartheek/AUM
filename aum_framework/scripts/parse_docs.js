@@ -1,9 +1,16 @@
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 let aumDir = path.join(process.cwd(), '.aum');
 if (!fs.existsSync(aumDir)) {
-  aumDir = path.join(__dirname, '..', 'pkg_files', '.aum');
+  aumDir = path.join(os.homedir(), '.aum');
+  if (!fs.existsSync(aumDir)) {
+    aumDir = path.join(__dirname, '..', 'pkg_files', '.aum');
+    if (!fs.existsSync(aumDir)) {
+      aumDir = path.join(__dirname, '..', 'pkg_files', '.aum_en');
+    }
+  }
 }
 let outputJsonPath = path.join(process.cwd(), '.aum', 'docs_data.json');
 const devPortalPath = path.join(process.cwd(), 'docs_portal', 'src', 'docs_data.json');
@@ -53,7 +60,9 @@ function scanDir(dirPath) {
 function main() {
   console.log('Starting doc parsing...');
   
-  const manifest = processFile(path.join(aumDir, 'MULA_SPHOTA.md'));
+  let manifestPath = path.join(aumDir, 'MULA_SPHOTA.md');
+  if (!fs.existsSync(manifestPath)) manifestPath = path.join(aumDir, 'MANIFEST.md');
+  const manifest = processFile(manifestPath);
   const instructions = processFile(path.join(aumDir, 'INSTRUCTIONS.md'));
   
   const configPath = path.join(aumDir, 'config.json');
@@ -74,7 +83,8 @@ function main() {
   const arbs = scanDir(architectureDir);
   const adrs = scanDir(path.join(architectureDir, 'decisions'));
   
-  const samskarasDir = path.join(aumDir, 'samskaras');
+  let samskarasDir = path.join(aumDir, 'samskaras');
+  if (!fs.existsSync(samskarasDir)) samskarasDir = path.join(aumDir, 'memory');
   const samskaras = [];
   if (fs.existsSync(samskarasDir)) {
     fs.readdirSync(samskarasDir)

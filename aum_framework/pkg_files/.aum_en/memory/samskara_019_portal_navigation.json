@@ -1,0 +1,11 @@
+{
+  "sankalpa_id": "sankalpa_019_portal_navigation",
+  "task_title": "Portal Collapsible Sidebar and Navigation Context Memory",
+  "summary": "Resolved layout workspace width limits and back-button view resets.",
+  "resolved_date": "2026-07-14",
+  "critical_learnings": [
+    "Fixed-width sidebar layout compressed code reading panes. Created a 'sidebarCollapsed' state in App.jsx and collapsed CSS variable transitions to dynamically hide the sidebar.",
+    "Clicking Back from document details view reset the user to the homepage dashboard, breaking their guided learning step. Added 'docSource' state memory tracking to redirect back to the active journey node."
+  ],
+  "associated_adr": "adr_019_portal_enhancements.md"
+}

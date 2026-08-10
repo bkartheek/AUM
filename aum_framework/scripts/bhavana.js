@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 function logHeader() {
   console.log(`======================================================`);
@@ -11,7 +12,12 @@ function run() {
   logHeader();
   console.log(`[ Bhāvanā ]: Incubation starting. Loading Saṃskāras caches...`);
   
-  const samskarasDir = path.join(process.cwd(), '.aum', 'samskaras');
+  let aumDir = path.join(process.cwd(), '.aum');
+  if (!fs.existsSync(aumDir)) {
+    aumDir = path.join(os.homedir(), '.aum');
+  }
+  let samskarasDir = path.join(aumDir, 'samskaras');
+  if (!fs.existsSync(samskarasDir)) samskarasDir = path.join(aumDir, 'memory');
   const learnings = [];
   
   if (fs.existsSync(samskarasDir)) {
