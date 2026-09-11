@@ -2,7 +2,7 @@
 title: "Conceptual Blueprint Template"
 type: "template"
 phase: "Phase 3: Structural Blueprinting"
-vedic_state: "Svapna"
+vedic_state: "Architecture Design"
 description: "Template to stage abstract process flows and decoupling diagrams"
 ---
 

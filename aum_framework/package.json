@@ -1,13 +1,18 @@
 {
   "name": "aum-framework",
-  "version": "1.1.0",
-  "description": "AUM: Intent-Driven Cognitive Workspace Framework",
+  "version": "1.2.0",
+  "description": "AUM: Global Intent Orchestration Layer for AI agents (domain-agnostic)",
   "main": "scripts/aum.js",
   "bin": {
     "aum": "scripts/aum.js"
   },
   "scripts": {
+    "embed:start": "node scripts/aum_embed.js",
+    "graph:view": "node scripts/graph_view.js",
     "init": "node scripts/aum.js init",
+    "install:global": "node scripts/aum.js install",
+    "sync": "node scripts/aum.js sync",
+    "test:global": "node scripts/aum.js test-global",
     "start": "node scripts/aum.js start",
     "verify": "node scripts/aum.js verify",
     "audit": "node scripts/aum.js audit",
@@ -19,7 +24,9 @@
     "workspace",
     "intent",
     "guardrails",
-    "rules"
+    "rules",
+    "embedding",
+    "knowledge-graph"
   ],
   "author": "Kartheek Bhupathiraju",
   "license": "MIT",
@@ -33,5 +40,13 @@
   "homepage": "https://github.com/bkartheek/AUM#readme",
   "engines": {
     "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@xenova/transformers": "^2.5.0",
+    "faiss-node": "^0.3.0",
+    "sqlite3": "^5.1.7",
+    "chokidar": "^3.5.3",
+    "express": "^4.19.2",
+    "vis-network": "^9.1.2"
   }
 }

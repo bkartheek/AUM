@@ -1,14 +1,14 @@
 ---
-title: "Pratyavēkṣaṇa Retrospective Template"
+title: "Retrospective Audit Retrospective Template"
 type: "template"
 phase: "Phase 2: Invariant Boundaries"
-vedic_state: "Suṣupti"
+vedic_state: "System Constraints"
 description: "Worksheet template to perform periodic alignment retrospectives, auditing codebase purity, and preventing rule drift."
 ---
 
-# Pratyavēkṣaṇa Retrospective Log (Phase 2 — Self-Examination)
+# Retrospective Audit Retrospective Log (Phase 2 — Self-Examination)
 
-Use this template to perform periodic introspection on project and framework development. Retrospectives should be run at regular milestones (e.g. end of release cycles or every 5th completed Saṅkalpa) to prevent cognitive and structural drift.
+Use this template to perform periodic introspection on project and framework development. Retrospectives should be run at regular milestones (e.g. end of release cycles or every 5th completed Task) to prevent cognitive and structural drift.
 
 ---
 
@@ -17,36 +17,36 @@ Use this template to perform periodic introspection on project and framework dev
 *   **Audit Date**: [YYYY-MM-DD]
 *   **Active Framework Version**: [vX.Y.Z]
 *   **Contributors Audited**: [List of developers & AI agents active in this cycle]
-*   **Logs Analyzed**: [List of Saṅkalpas & ADRs reviewed]
+*   **Logs Analyzed**: [List of Tasks & ADRs reviewed]
 
 ---
 
-## 🚫 2. Yamas & Niyamas Compliance Audit
+## 🚫 2. Strict Rules & Observances Compliance Audit
 
 Audit the files modified in this cycle against the system ethics:
 
-### Yamas (Restraints)
+### Strict Rules (Restraints)
 *   **Ahiṃsā (Non-harm)**: Did any commit break compilation builds, unit tests, or existing functionality? (Yes/No - detail any occurrences).
 *   **Asteya (Non-stealing)**: Did any agent delete user comments, logic functions, or licenses without authorization? (Yes/No - detail).
 *   **Satya (Truth)**: Are there any temporary stubs, empty placeholder functions, or mock codes left in the active codebase? (Yes/No - detail).
 *   **Isolation**: Were any files read/written outside the designated workspace path? (Yes/No).
 
-### Niyamas (Observances)
+### Observances (Observances)
 *   **Śauca (Purity)**: Is the codebase formatting clean? Are there any unresolved compiler/linter warnings?
 *   **Svādhyāya (Self-study)**: Did the agent/developer run logical tracing and execution validations before staging?
 *   **Visual Consistency**: Did all chat communications and transaction receipts adhere to formatting standards?
 
 ---
 
-## 🔄 3. Grantha Synchronization & Vāk Trace Audit
+## 🔄 3. Documentation Synchronization & Traceability Trace Audit
 
 Verify the alignment between design documents and public files:
-*   **Reverse Vāk Trace Checks**: Did any edits to public files (e.g. `README.md`, `CLAUDE.md`, source code) occur without a corresponding Saṅkalpa or ADR?
-*   **Sphoṭa Index Check**: Does [MULA_SPHOTA.md](file:///Users/universe/AUM/.aum/MULA_SPHOTA.md) index match the physical files in the workspace exactly? (Yes/No - list discrepancies).
+*   **Reverse Traceability Trace Checks**: Did any edits to public files (e.g. `README.md`, `CLAUDE.md`, source code) occur without a corresponding Task or ADR?
+*   **Manifest Index Check**: Does [MANIFEST.md](file:///Users/universe/AUM/.aum/MANIFEST.md) index match the physical files in the workspace exactly? (Yes/No - list discrepancies).
 
 ---
 
-## 🧠 4. Satsaṅga Alignment (Drift Assessment)
+## 🧠 4. System Alignment (Drift Assessment)
 
 Assess collective alignment and identify decay:
 *   **Rule Drift**: Have any AI agents or developers bypass rules, ignore triggers, or drift away from the core philosophy?

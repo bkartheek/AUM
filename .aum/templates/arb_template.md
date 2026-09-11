@@ -2,7 +2,7 @@
 title: "Architecture Review Board: [Topic Name]"
 type: "architecture_review"
 phase: "Phase 2: Invariant Boundaries"
-vedic_state: "Suṣupti"
+vedic_state: "System Constraints"
 description: "[Brief 1-sentence description of the architectural change]"
 ---
 
@@ -37,7 +37,7 @@ description: "[Brief 1-sentence description of the architectural change]"
 ---
 
 ## 3. Theoretical & Cognitive Foundations
-*Present the conceptual research backing this architecture. Map the changes to classical Indian/Vedic philosophies (such as Bhartrihari's Vāk Levels, Mandukya Upanishad States of Consciousness, Pramāṇa sources of knowledge, Samyama concentration stages, or Nāda Yoga). Explain the deep cognitive rationale behind the layout.*
+*Present the conceptual research backing this architecture. Map the changes to classical Indian/Vedic philosophies (such as Bhartrihari's Traceability Levels, Mandukya Upanishad States of Consciousness, Pramāṇa sources of knowledge, Samyama concentration stages, or Nāda Yoga). Explain the deep cognitive rationale behind the layout.*
 
 ---
 

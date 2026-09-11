@@ -34,51 +34,83 @@
 
 ## 🚀 Quick Start
 
-### 1. Installation
-Install the framework from NPM in your target project root:
+### Global Intent Orchestrator (recommended)
+
+Install once at the OS level — not tied to a single project:
+
 ```bash
-npm install aum-framework
+# from aum_framework/ (or after npm install -g aum-framework)
+node scripts/aum.js install          # creates ~/.aum + hooks agents
+node scripts/aum.js sync             # after every framework change
+node scripts/aum.js test-global      # smoke-test the hub
+
+# Intent orchestration (use --global inside a repo that also has .aum/)
+aum spark "raw idea"
+aum concern "something feels wrong"
+aum resolve "Name the goal"
+aum beat next
+aum drone
+aum domain diagnostic   # or general | development
 ```
 
-### 2. Initialization
-Run the interactive initializer to copy safety rules, template guidelines, and setup variables:
+Hub layout: `~/.aum/` (`ORCHESTRATOR.md`, `manifest.json`, `tasks/`, `ideas/`, `domains/`, `runtime/`, `agents/skills/developer`).
+
+Put `aum` on your PATH without sudo:
+
+```bash
+npm link --prefix "$HOME/.local"
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+### Project-local init (optional)
 ```bash
 npx aum init
 ```
-*(The wizard will configure Yogi sheaths, `.cursorrules`, `.clinerules`, and append exclusions to `.gitignore`).*
+*(Local `.aum` overrides global for that workspace.)*
 
-**Global Central Nervous System Installation (Recommended)**
-To install AUM globally across your entire OS and actively monitor all your AI agents:
+**Global Central Nervous System**
 ```bash
-npx aum init --global
-```
-This sets up a master `~/.aum/` hub and automatically injects AUM routing instructions into all your installed AI agents (Cursor, Claude, Copilot, Roo, etc).
-
-### 3. Usage Lifecycle
-AUM orchestrates your AI developer turns through quick CLI commands:
-
-```bash
-# Start a new task resolve (locks focus and prunes context)
-npx aum start
-
-# Run the self-healing build checks to verify environment stability
-npx aum verify
-
-# Audit changed files for logical fallacies before committing
-npx aum audit
-
-# Compile local log files and export portal index database
-npx aum publish
-
-# Scan and inject global AUM routing instructions into all local AI tools
-npx aum hook
+npx aum init --global   # alias of: aum install
+npx aum hook            # refresh agent injections
 ```
 
 ---
 
-## ⚙️ CLI Commands Reference
+## 📊 Knowledge Graph Architecture
 
-AUM CLI coordinates all cognitive and maintenance commands under Kashmir Shaivism's five cosmic lifecycle acts (*Pañcakṛtya*):
+AUM now includes a **lightweight knowledge‑graph backend** that continuously records every interaction without relying on LLM token usage.
+
+### Components
+- **Embedding Daemon (`scripts/aum_embed.js`)** – watches `~/.aum/logs/*.log`, creates 384‑dim MiniLM embeddings, stores vectors in a FAISS index and metadata in `~/.aum/embedding/meta.sqlite`.
+- **Vector Store (FAISS)** – fast nearest‑neighbor search for semantic similarity.
+- **Metadata SQLite DB** – keeps project, timestamp, model, intent, prompt, and response.
+- **Graph Viewer (`scripts/graph_view.js`)** – an Express server that reads the SQLite DB and renders an interactive graph with `vis-network`.
+
+### How it works
+1. **Start the daemon** – `npm run embed:start` (runs in background).  It updates the FAISS index and DB in real‑time.
+2. **Run a task** – `npx aum start` → `npx aum verify` etc.  Each step logs JSON entries; the daemon embeds them automatically.
+3. **View the graph** – `npm run graph:view` opens `http://localhost:3000` showing nodes for each logged interaction, linked chronologically.
+4. **Prompt enrichment** – Future AUM commands can query the vector store for the most similar past intent and prepend a concise context block (planned for next release).
+
+### Usage Steps
+```bash
+# 1️⃣ Install dependencies (already done)
+npm install
+
+# 2️⃣ Launch the embedding daemon (runs in background)
+npm run embed:start   # or: npx aum embed:start
+
+# 3️⃣ Execute your normal AUM workflow
+npx aum start
+npx aum verify
+npx aum audit
+npx aum publish
+
+# 4️⃣ Open the interactive graph UI
+npm run graph:view   # opens http://localhost:3000
+```
+
+> The daemon writes a small `embed.log` in `~/.aum/embedding/` for troubleshooting.
 
 | CLI Command | Cognitive Phase | Vedic Phase | Technical Action |
 | :--- | :--- | :--- | :--- |

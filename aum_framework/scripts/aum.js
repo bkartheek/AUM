@@ -1,54 +1,70 @@
 #!/usr/bin/env node
-const { execSync } = require('child_process');
+const fs = require('fs');
 const path = require('path');
+const { SPG, printReceipt } = require('./lib/receipts');
 
 const scriptsDir = __dirname;
 
-function logHeader(title) {
-  console.log(`======================================================`);
-  console.log(`   AUM INTEGRATED INTENT ORCHESTRATOR : ${title}`);
-  console.log(`======================================================`);
-}
-
 function runScript(scriptName, additionalArgs = []) {
   const scriptPath = path.join(scriptsDir, scriptName);
-  try {
-    const argsStr = additionalArgs.join(' ');
-    execSync(`node "${scriptPath}" ${argsStr}`, { stdio: 'inherit' });
-  } catch (error) {
-    process.exit(1);
-  }
+  const { spawnSync } = require('child_process');
+  const result = spawnSync(process.execPath, [scriptPath, ...additionalArgs], {
+    stdio: 'inherit'
+  });
+  if (result.status && result.status !== 0) process.exit(result.status);
 }
 
 function showHelp() {
-  logHeader("HELP MENU");
-  console.log(`Usage: node aum_framework/scripts/aum.js <command>`);
-  console.log(`\nAvailable turn lifecycle commands:`);
-  console.log(`  start     - Runs [Sṛṣṭi] context pruner (prune_context.js)`);
-  console.log(`  verify    - Runs [Sthiti] build checks (run_tests_with_healing.js)`);
-  console.log(`  audit     - Runs [Saṃhāra] logical fallacy auditor (aum_audit.js)`);
-  console.log(`  publish   - Runs [Tirobhāva] static document parser (parse_docs.js)`);
-  console.log(`  prune     - Runs [Prāṇāyāma] context ventilator (pranayama.js)`);
-  console.log(`  evolve    - Runs [Sphoṭa-Bhāvanā] rules incubator (bhavana.js)`);
-  console.log(`  heal      - Runs [Catur-Upāya] error recovery resolver (upaya.js)`);
-  console.log(`  compile   - Runs [Pāṇini] generative code synthesizer (panini.js)`);
-  console.log(`  assert    - Runs [Catuṣkoṭi] tetralemma assertion test (catuskoti.js)`);
-  console.log(`  recognize - Runs [Pratyabhijñā] environmental auditor (pratyabhijna.js)`);
-  console.log(`  init      - [Sṛṣṭi Init] Initializes project with AUM framework templates (aum_init.js)`);
-  console.log(`  hook      - [Global Hooks] Injects AUM routing instructions into all installed AI tools (aum_hook.js)`);
-  console.log(`\n======================================================`);
+  printReceipt(SPG.aum, 'AUM INTENT ORCHESTRATOR', [
+    ['Usage', 'aum <command> [args]'],
+    ['install', 'Install / upgrade global hub (~/.aum) + hooks'],
+    ['sync', 'Sync package → global runtime (preserve state)'],
+    ['uninstall', 'Strip hooks; --purge also deletes ~/.aum'],
+    ['hook', 'Re-inject instructions into AI agents'],
+    ['spark', 'Capture raw idea'],
+    ['concern', 'Capture worry / symptom'],
+    ['resolve', 'Open sequenced resolve'],
+    ['beat', 'next | set <stage>'],
+    ['drone', 'Print context anchor'],
+    ['domain', 'general | development | diagnostic'],
+    ['init', 'Project-local scaffold (optional --global)'],
+    ['start', 'Legacy context scan'],
+    ['audit', 'Fallacy audit on git changes'],
+    ['verify', 'Build / heal runner'],
+    ['publish', 'Parse docs portal data']
+  ], SPG.globe);
 }
 
 function main() {
   const args = process.argv.slice(2);
-  const command = args[0];
+  const command = (args[0] || '').toLowerCase();
 
-  if (!command) {
+  if (!command || command === 'help' || command === '--help' || command === '-h') {
     showHelp();
     return;
   }
 
-  switch (command.toLowerCase()) {
+  switch (command) {
+    case 'install':
+      runScript('aum_install.js', args.slice(1));
+      break;
+    case 'sync':
+      runScript('aum_sync.js', args.slice(1));
+      break;
+    case 'uninstall':
+      runScript('aum_uninstall.js', args.slice(1));
+      break;
+    case 'hook':
+      runScript('aum_hook.js', args.slice(1));
+      break;
+    case 'spark':
+    case 'concern':
+    case 'resolve':
+    case 'beat':
+    case 'drone':
+    case 'domain':
+      runScript('aum_intent.js', args); // pass --global to force ~/.aum even inside a local project
+      break;
     case 'start':
       runScript('prune_context.js');
       break;
@@ -80,13 +96,18 @@ function main() {
       runScript('pratyabhijna.js');
       break;
     case 'init':
-      runScript('aum_init.js', args.slice(1));
+      // Prefer new global install when --global
+      if (args.includes('--global')) {
+        runScript('aum_install.js', args.slice(1).filter(a => a !== '--global'));
+      } else {
+        runScript('aum_init.js', args.slice(1));
+      }
       break;
-    case 'hook':
-      runScript('aum_hook.js');
+    case 'test-global':
+      runScript('aum_selftest.js', args.slice(1));
       break;
     default:
-      console.error(`[ Error ]: Unknown command: ${command}`);
+      console.error(`${SPG.fail} Unknown command: ${command}`);
       showHelp();
       process.exit(1);
   }

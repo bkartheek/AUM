@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
-
+const { execSync } = require('child_process');
 let rlInstance = null;
 let pipedAnswers = [];
 let pipedIndex = 0;
@@ -303,7 +303,10 @@ function appendGitignore(targetDir) {
   } else {
     console.log(`[ Success ]: Project initialized successfully.`);
     if (isGlobal) {
-      console.log(`[ Notice ]: Global Central Nervous System is active at ~/.aum`);
+        console.log(`[ Notice ]: Global Central Nervous System is active at ~/.aum`);
+        try {
+          execSync('npm run embed:start &', { stdio: 'ignore' });
+        } catch (e) { /* ignore */ }
     } else {
       console.log(`\nNext Steps:`);
       console.log(`  1. Load the project workspace folder in VS Code, Cursor, or Cline.`);

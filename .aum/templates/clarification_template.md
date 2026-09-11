@@ -2,7 +2,7 @@
 title: "Cognitive Intake Worksheet Template"
 type: "template"
 phase: "Phase 4: Concordance & Validation"
-vedic_state: "Jāgrat"
+vedic_state: "Active Implementation"
 description: "Template to align on and clarify vision before drafting blueprints"
 ---
 
@@ -16,9 +16,9 @@ Use this worksheet template to align on, define, and clarify the core intent of 
 
 We need to align on the core vision for: **[Name of Process / Product / Initiative]**.
 
-### 1. Active Saṅkalpa Context
-*   **Saṅkalpa Mapping**: [Is this workflow continuing an existing `Active` / `Paused` operational Saṅkalpa, or initiating a new one?]
-*   **Context Scope**: [Does this change expand a parent Saṅkalpa, or operate as a standalone task?]
+### 1. Active Task Context
+*   **Task Mapping**: [Is this workflow continuing an existing `Active` / `Paused` operational Task, or initiating a new one?]
+*   **Context Scope**: [Does this change expand a parent Task, or operate as a standalone task?]
 
 
 ### 2. Core Intake Questions

@@ -1,6 +1,5 @@
 {
   "project_name": "AUM",
-  "architecture_dir": "docs/architecture",
   "yamas": [
     "Ahiṃsā (Non-harm): Do not break existing compile builds or functional code paths",
     "Asteya (Non-stealing): Do not delete existing user logic, comments, or licenses without authorization",
@@ -20,5 +19,6 @@
     "blueprint",
     "verification",
     "manifest"
-  ]
+  ],
+  "architecture_dir": "docs/architecture"
 }
