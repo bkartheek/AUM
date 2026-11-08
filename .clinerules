@@ -1,11 +1,17 @@
-# Cline Rules (AI Agent Guidelines)
+# ॐ AUM — READ THIS FIRST
 
-Any AI developer agent operating in this workspace must read and strictly follow the state guidelines and constraints defined in:
-1. `.aum/INSTRUCTIONS.md`
-2. `.aum/config.json`
+AUM = **intent orchestration + guardrails for AI coding agents**.  
+Spine: **Clarify → Plan → Act** through **Māṇḍūkya** quarters **A · U · M · Turīya**.
 
-## Setup Configuration
-* Read `.aum/sphota.json` and the active `.aum/sankalpas/` file at startup to load the persistent state.
-* If a request is ambiguous, stop execution and present clarifying questions as defined in `.aum/templates/clarification_template.md`.
-* Compile draft codes and blueprints under the active `.aum/sankalpas/` file or `.aum/templates/`.
-* Log decisions and files under `.aum/sankalpas/`.
+| Beat | Quarter | Job | Code? |
+|---|---|---|---|
+| `intake` | A Jāgrat | Clarify | No |
+| `blueprint` | U Svapna | Plan | No |
+| `verification` | M Suṣupti | Plan/still | No |
+| `manifest` | Turīya | Act / Proceed | Yes |
+
+**Do:** read manifest + tasks + INTENT/ORCHESTRATOR; capture spark/concern/resolve; beat through lifecycle; await Proceed/manifest before code.
+
+**Do not:** bypass lifecycle; skip clarification; treat experimental CLI as core; claim hard sandboxing; rewrite `~/` agent configs without user ask or `aum hook|install|sync`; drop Māṇḍūkya or CPA.
+
+Full rules: `aum_framework/CORE_RULES.md`

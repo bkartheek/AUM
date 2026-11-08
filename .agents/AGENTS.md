@@ -1,17 +1,28 @@
-# AUM Framework Integration Rules
+# AGENTS.md — AUM (read first)
 
-Any agent operating in this workspace must read and strictly follow the state guidelines, cognitive beats, and invariants defined in:
-1. [INSTRUCTIONS.md](../.aum/INSTRUCTIONS.md)
-2. [config.json](../.aum/config.json)
+## What this project is
+AUM is an **intent orchestration and guardrail layer for AI coding agents**.  
+**Clarify → Plan → Act**, founded on the **Māṇḍūkya Upaniṣad** (**A · U · M · Turīya**).  
+CPA expresses the quarters; it does not replace them.
 
-## Setup Configuration
-* Read [sphota.json](../.aum/sphota.json) and the active `.aum/sankalpas/` file at startup to load the persistent state.
-* If a request is ambiguous, stop execution and present clarifying questions as defined in [clarification_template.md](../.aum/templates/clarification_template.md).
-* Compile draft codes and blueprints under the active `.aum/sankalpas/` file or [blueprint_template.md](../.aum/templates/blueprint_template.md).
-* Log decisions and files under `.aum/sankalpas/`.
+| Beat | Quarter | Job | Code? |
+|---|---|---|---|
+| `intake` | A | Clarify | No |
+| `blueprint` | U | Plan | No |
+| `verification` | M | Plan/still | No |
+| `manifest` | Turīya | Act / Proceed | Yes |
 
-## Framework Guardian (Yogi)
-*   The resident framework guardian is **Yogi** (instructions in [skills/yogi/SKILL.md](skills/yogi/SKILL.md)).
-*   All active workspace modifications and task executions must be validated by running the AUM CLI linter (`node scripts/aum.js audit`) and comply with Yogi's safety sheaths.
+See `aum_framework/CORE_RULES.md` · `aum_framework/INTENT.md`.
 
+## Do
+1. Read manifest + active `tasks/` + `ORCHESTRATOR.md`/`INTENT.md` first.
+2. Capture with spark/concern/resolve; stage with beat; clarify before code.
+3. Skills: [Yogi](skills/yogi/SKILL.md) (A/clarify) · [Om](skills/om/SKILL.md) (Turīya/sequence) · [Developer](skills/developer/SKILL.md) (sync).
 
+## Do not
+1. Do not bypass the lifecycle or code early.
+2. Do not skip clarification.
+3. Do not treat demo/experimental CLI as core workflow.
+4. Do not claim hard sandbox enforcement (honor-system + hooks/CLI only).
+5. Do not rewrite home configs without explicit user ask or `aum hook|install|sync`.
+6. Do not invent extra gates; do not drop Māṇḍūkya or CPA.

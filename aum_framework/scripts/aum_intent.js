@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { resolveAumDir, ensureDir, readJson, writeJson } = require('./lib/paths');
 const { SPG, printReceipt, focusLock } = require('./lib/receipts');
+const { quarterForBeat, receiptRows, mayWriteCode, PASHYANTI } = require('./lib/mandukya');
 
 function aumContext() {
   const { dir, scope } = resolveAumDir();
@@ -64,11 +65,12 @@ function cmdSpark(text) {
   const id = `spark_${stamp()}`;
   const block = `### ${id}\n- **Captured**: ${new Date().toISOString()}\n- **Scope**: ${scope}\n- **Seed**: ${text}\n`;
   appendMarkdown(path.join(dir, 'ideas', 'sparks.md'), block);
-  printReceipt(SPG.spark, 'PASHYANTĪ SEED CAPTURED', [
+  printReceipt(SPG.spark, 'PAŚYANTĪ SEED CAPTURED', [
     ['Spark ID', id],
+    ['Quarter', PASHYANTI.title],
     ['Concept', `"${text.slice(0, 80)}${text.length > 80 ? '…' : ''}"`],
     ['Incubator', path.join(dir, 'ideas', 'sparks.md')],
-    ['Status', 'Causal State (Phase 0)']
+    ['Next', 'aum resolve → enters A / Jāgrat (intake)']
   ], SPG.seed);
 }
 
@@ -78,11 +80,12 @@ function cmdConcern(text) {
   const id = `concern_${stamp()}`;
   const block = `### ${id}\n- **Captured**: ${new Date().toISOString()}\n- **Scope**: ${scope}\n- **Concern**: ${text}\n- **Guidance**: Hold action; clarify and sequence before remediation.\n`;
   appendMarkdown(path.join(dir, 'ideas', 'concerns.md'), block);
-  printReceipt(SPG.concern, 'CONCERN CAPTURED', [
+  printReceipt(SPG.concern, 'PAŚYANTĪ CONCERN CAPTURED', [
     ['Concern ID', id],
+    ['Quarter', PASHYANTI.title],
     ['Signal', `"${text.slice(0, 80)}${text.length > 80 ? '…' : ''}"`],
     ['Log', path.join(dir, 'ideas', 'concerns.md')],
-    ['Next', 'aum resolve <title>  →  clarify  →  sequence']
+    ['Next', 'aum resolve → A Jāgrat clarify → U plan → M verify → · act']
   ], SPG.diagnostic);
 }
 
@@ -129,14 +132,18 @@ function cmdResolve(title) {
   data.sphota.pasyanti_vision = title;
   writeJson(manifestPath, data);
 
-  printReceipt(SPG.resolve, 'SAṄKALPA RESOLVE INITIATED', [
+  const q = quarterForBeat('intake');
+  printReceipt(SPG.resolve, 'SAṄKALPA RESOLVE · ENTERS JĀGRAT', [
     ['Resolve ID', id],
     ['Title', title],
     ['Log File', filePath],
+    ['Phoneme', `${q.phoneme} (${q.phoneme_sanskrit})`],
+    ['State', `${q.state} / ${q.state_en}`],
     ['Beat', 'intake'],
+    ['CPA', 'clarify'],
     ['Scope', scope],
-    ['Status', 'Focal Lock Engaged']
-  ], SPG.intent);
+    ['Code', 'forbidden until Turīya / manifest']
+  ], SPG.jagrat);
 }
 
 function cmdBeat(args) {
@@ -167,23 +174,31 @@ function cmdBeat(args) {
     process.exit(1);
   }
 
-  focusLock(`Advancing lifecycle beat → ${next}`);
+  const q = quarterForBeat(next);
+  focusLock(`Māṇḍūkya quarter → ${q.title}`);
   data.tala_beat = next;
+  data.mandukya = {
+    phoneme: q.phoneme,
+    state: q.state,
+    state_en: q.state_en,
+    cpa: q.cpa
+  };
   writeJson(manifestPath, data);
 
   const icons = {
-    intake: SPG.intake,
-    blueprint: SPG.blueprint,
-    verification: SPG.verify,
-    manifest: SPG.manifest
+    intake: SPG.jagrat,
+    blueprint: SPG.svapna,
+    verification: SPG.susupti,
+    manifest: SPG.turiya
   };
 
-  printReceipt(icons[next] || SPG.beat, 'TĀLA BEAT ADVANCED', [
-    ['Beat', next],
-    ['Stages', stages.join(' → ')],
+  printReceipt(icons[next] || SPG.beat, 'MĀṆḌŪKYA QUARTER ADVANCED', [
+    ...receiptRows(next),
+    ['Stages', 'A intake → U blueprint → M verification → · manifest'],
     ['Active', data.active_task_id || '(none)'],
-    ['Scope', scope]
-  ], SPG.sequence);
+    ['Scope', scope],
+    ['Write code', mayWriteCode(next) ? 'ALLOWED (Turīya)' : 'FORBIDDEN']
+  ], SPG.aum);
 }
 
 function cmdDrone() {
@@ -191,17 +206,31 @@ function cmdDrone() {
   const { data } = loadManifest(dir);
   const config = readJson(path.join(dir, 'config.json'), {});
   const version = readJson(path.join(dir, 'VERSION.json'), {});
-  printReceipt(SPG.drone, 'CONTEXT ANCHOR (DRONE)', [
+  const beat = data.tala_beat || 'intake';
+  const q = quarterForBeat(beat);
+  const humanIntent =
+    (data.human_intent && data.human_intent.text) ||
+    (readJson(path.join(dir, 'alignment.json'), {}).human_intent) ||
+    '';
+  const agents =
+    (data.aligned_agents && data.aligned_agents.families) ||
+    (readJson(path.join(dir, 'alignment.json'), {}).agent_families) ||
+    [];
+  printReceipt(SPG.drone, 'TURĪYA CONTEXT ANCHOR (DRONE)', [
+    ['Witness', 'Turīya — silent awareness of A · U · M'],
+    ['Human intent', (humanIntent || '(unset — run aum install)').slice(0, 72)],
+    ['Agents', (agents.length ? agents.join(' · ') : '(none)')],
     ['Scope', scope],
     ['Hub', dir],
-    ['Beat', data.tala_beat || 'intake'],
+    ...receiptRows(beat),
     ['Active', data.active_task_id || data.active_sankalpa_id || '(none)'],
     ['Vision', (data.sphota && data.sphota.pasyanti_vision) || '(empty)'],
     ['Domain', data.domain_profile || config.active_domain || 'general'],
     ['Version', version.version || '(unset)'],
     ['Yamas', (config.yamas || []).length + ' restraints'],
-    ['Niyamas', (config.niyamas || []).length + ' observances']
-  ], SPG.aum);
+    ['Niyamas', (config.niyamas || []).length + ' observances'],
+    ['Code now?', mayWriteCode(beat) ? 'yes' : 'no — stay in ' + q.state_en]
+  ], SPG.turiya);
 }
 
 function cmdDomain(name) {

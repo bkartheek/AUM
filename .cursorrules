@@ -1,11 +1,31 @@
-# Cursor Rules (AI Agent Guidelines)
+# ॐ AUM — READ THIS FIRST
 
-Any AI developer agent operating in this workspace must read and strictly follow the state guidelines and constraints defined in:
-1. `.aum/INSTRUCTIONS.md`
-2. `.aum/config.json`
+## What this project is
+AUM is an **intent orchestration and guardrail layer for AI coding agents**.  
+It routes work **Clarify → Plan → Act**.  
+Foundation: **Māṇḍūkya Upaniṣad** — **A · U · M · Silence (Turīya)**.  
+Clarify→Plan→Act walks those quarters; it does **not** replace them.
 
-## Setup Configuration
-* Read `.aum/sphota.json` and the active `.aum/sankalpas/` file at startup to load the persistent state.
-* If a request is ambiguous, stop execution and present clarifying questions as defined in `.aum/templates/clarification_template.md`.
-* Compile draft codes and blueprints under the active `.aum/sankalpas/` file or `.aum/templates/`.
-* Log decisions and files under `.aum/sankalpas/`.
+| Beat | Quarter | Job | Code? |
+|---|---|---|---|
+| `intake` | A Jāgrat | Clarify — spark/concern/resolve, ask questions | No |
+| `blueprint` | U Svapna | Plan — approach + file list | No |
+| `verification` | M Suṣupti | Plan/still — lock, audit | No |
+| `manifest` | Turīya | Act — or after human **Proceed** | Yes |
+
+Full map: `aum_framework/INTENT.md` · `aum_framework/CORE_RULES.md` · `aum_framework/scripts/lib/mandukya.js`
+
+## Do
+1. Read `manifest.json` (local `.aum/` else `~/.aum/`) + active `tasks/` + `ORCHESTRATOR.md`/`INTENT.md` before acting.
+2. Ambiguous prompt → echo intent → list files → clarify → wait for Proceed / `manifest`.
+3. Prefer `aum spark|concern|resolve|beat|drone|anchor|lock|unlock|mandukya`.
+4. Changing AUM → `aum sync` && `aum hook`, then re-test the spine.
+
+## Do not
+1. Do not bypass the lifecycle or write code in intake/blueprint/verification.
+2. Do not skip clarification on fuzzy/wrong/incomplete prompts.
+3. Do not treat demo/experimental commands (`heal`, `compile`, `assert`, `recognize`, `evolve`, `prune`, `start`, `publish`, …) as core workflow.
+4. Do not claim hard tool sandboxing — gating is **honor-system** + CLI/hooks; AUM does not sandbox editor tools.
+5. Do not rewrite home agent configs unless the user explicitly asks or you run `aum hook|install|sync` with that purpose.
+6. Do not invent extra approval gates beyond `manifest` or **Proceed**.
+7. Do not drop Māṇḍūkya for “CPA only,” or drop CPA for metaphor-only talk.

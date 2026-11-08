@@ -26,7 +26,15 @@ function main() {
   focusLock('Running global runtime self-test');
   const steps = [];
 
-  let r = run(['install']);
+  let r = run([
+    'install',
+    '--yes',
+    '--intent',
+    'Selftest: align human and agent intent via Māṇḍūkya Clarify-Plan-Act',
+    '--agents',
+    'detected',
+    '--no-hooks'
+  ]);
   assert(r.status === 0, 'install failed: ' + (r.stderr || r.stdout));
   steps.push('install');
 

@@ -1,20 +1,33 @@
----
-title: "Claude Code Instructions"
-type: "guideline"
-phase: "Phase 1: Pure Vision"
-vedic_state: "Turīya"
-description: "Repository-wide instructions for Claude Code to conform to the Intent Engine principles"
----
+# CLAUDE.md — AUM (read first)
 
-# CLAUDE.md: Claude Code Project Rules
+## What this project is
+AUM is an **intent orchestration and guardrail layer for AI coding agents**.  
+Routes work **Clarify → Plan → Act**.  
+Foundation: **Māṇḍūkya Upaniṣad** — **A · U · M · Silence (Turīya)**.  
+CPA walks the quarters; it does **not** replace them.
 
-This project uses the **AUM Intent Engine**—a universal cognitive framework to align AI and human actions with the user's intent.
+| Beat | Quarter | Job | Code? |
+|---|---|---|---|
+| `intake` | A Jāgrat | Clarify — spark/concern/resolve | No |
+| `blueprint` | U Svapna | Plan — design + file impact | No |
+| `verification` | M Suṣupti | Plan/still — lock, audit | No |
+| `manifest` | Turīya | Act (or after **Proceed**) | Yes |
 
-## 🚨 CRITICAL RULES FOR CLAUDE CODE
+Canonical: `aum_framework/CORE_RULES.md` · `aum_framework/INTENT.md` · `scripts/lib/mandukya.js`
 
-1.  **Check Active Saṅkalpa**: At start of session, read `.aum/sphota.json` and the active log under `.aum/sankalpas/` to align with the invariants, constraints, and active resolve.
-2.  **Halt Premature Execution**: Do not edit workspace code unless there is an active Saṅkalpa and the Tāla beat is set to `manifest` in `sphota.json`.
-3.  **Self-Orchestrate Triggers**: Act as the framework's runtime engine. Intercept user triggers (e.g. `AUM: RESOLVE`, `AUM: SPARK`, `AUM: BEAT next`, `AUM: DRONE`), modify the `.aum/` state files accordingly, and print visual transaction receipts.
-4.  **Keep Logs Updated**: Document session progress, blueprint structures, and resolutions inside the active resolve log under `.aum/sankalpas/sankalpa_XXX_[name].md`.
-5.  **Adhere to Boundaries**: Respect constraints in `.aum/config.json` and [boundaries.md](.aum/templates/boundaries.md).
+## Do
+1. Read `manifest.json` (local `.aum/` overrides `~/.aum/`) + active `tasks/` + orchestrator docs before acting.
+2. New/ambiguous request → distilled intent → file list → clarify → await Proceed / beat `manifest`.
+3. Honor triggers: `AUM: SPARK|CONCERN|RESOLVE|BEAT|DRONE` or `aum` CLI; emit SPG receipts.
+4. Framework edits → `aum sync` → `aum hook` → verify spine.
 
+## Do not
+1. Do not bypass `intake` → `blueprint` → `verification` → `manifest`.
+2. Do not skip clarification.
+3. Do not treat experimental commands (`heal`, `compile`, `assert`, `recognize`, `evolve`, `prune`, `start`, `publish`, …) as core.
+4. Do not claim OS/tool sandbox enforcement that does not exist (honor-system + CLI/hooks only).
+5. Do not rewrite `~/` agent configs except via explicit user ask or `aum hook|install|sync`.
+6. Do not add parallel gates beyond `manifest` / **Proceed**.
+7. Do not dilute Māṇḍūkya or replace it with CPA-only language (keep both).
+
+Legacy `sphota.json` / `sankalpas/` = `manifest.json` / `tasks/`.

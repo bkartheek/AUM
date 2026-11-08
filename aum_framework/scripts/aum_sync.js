@@ -1,8 +1,9 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
 const { globalHub, ensureDir, frameworkRoot, scriptsDir, pkgFilesDir, readJson, writeJson } = require('./lib/paths');
 const { SPG, printReceipt, focusLock } = require('./lib/receipts');
-const { installGlobal, writeOrchestrator } = require('./aum_install');
+const { installGlobal, writeOrchestrator, seedMandukya } = require('./aum_install');
 const { runHooks } = require('./aum_hook');
 
 function copyRecursive(src, dest) {
@@ -22,24 +23,28 @@ function copyRecursive(src, dest) {
 }
 
 /**
- * Sync framework package → ~/.aum runtime (preserves user tasks/ideas/memory/manifest).
+ * Sync framework package → ~/.aum runtime.
+ * Preserves: tasks, ideas, memory, manifest, ACTIVE_CONTEXT, alignment.json
  */
-function syncGlobal({ hook = true } = {}) {
+async function syncGlobal({ hook = true } = {}) {
   focusLock('Syncing framework package into global AUM runtime');
   const hub = globalHub();
 
   if (!fs.existsSync(hub)) {
-    return installGlobal({ runHook: hook });
+    return installGlobal({
+      runHook: hook,
+      nonInteractive: true,
+      intent: undefined,
+      interview: undefined
+    });
   }
 
-  // Refresh protocol docs (not user state dirs)
   const srcAum = path.join(pkgFilesDir(), '.aum_en');
   const protocolFiles = [
     'INSTRUCTIONS.md',
     'PHILOSOPHY.md',
     'DICTIONARY.md',
-    'MANIFEST.md',
-    'config.json'
+    'MANIFEST.md'
   ];
   let files = 0;
   if (fs.existsSync(srcAum)) {
@@ -50,13 +55,16 @@ function syncGlobal({ hook = true } = {}) {
         files++;
       }
     }
-    // templates
     files += copyRecursive(path.join(srcAum, 'templates'), path.join(hub, 'templates'));
-    files += copyRecursive(path.join(srcAum, 'tasks', 'template.md'), path.join(hub, 'tasks', 'template.md'));
+    const tmpl = path.join(srcAum, 'tasks', 'template.md');
+    if (fs.existsSync(tmpl)) {
+      files += copyRecursive(tmpl, path.join(hub, 'tasks', 'template.md'));
+    }
   }
 
   writeOrchestrator(hub);
-  files++;
+  seedMandukya(hub);
+  files += 2;
 
   files += copyRecursive(scriptsDir(), path.join(hub, 'runtime', 'scripts'));
 
@@ -64,42 +72,55 @@ function syncGlobal({ hook = true } = {}) {
   if (fs.existsSync(agentsSrc)) {
     files += copyRecursive(agentsSrc, path.join(hub, 'agents'));
   }
+  const workspaceSkills = path.join(frameworkRoot(), '..', '.agents', 'skills');
+  if (fs.existsSync(workspaceSkills)) {
+    files += copyRecursive(workspaceSkills, path.join(hub, 'agents', 'skills'));
+  }
 
   const pkg = readJson(path.join(frameworkRoot(), 'package.json'), { version: '0.0.0' });
   writeJson(path.join(hub, 'VERSION.json'), {
     version: pkg.version,
     synced_at: new Date().toISOString(),
-    framework_root: frameworkRoot()
+    framework_root: frameworkRoot(),
+    architecture: 'mandukya'
   });
 
-  // Merge config mode
   const configPath = path.join(hub, 'config.json');
   const cfg = readJson(configPath, {});
   writeJson(configPath, {
     ...cfg,
     mode: 'global',
+    architecture: cfg.architecture || 'mandukya',
     domain_profiles: cfg.domain_profiles || ['general', 'development', 'diagnostic']
   });
 
-  if (hook) runHooks({ rich: true });
+  const alignment = readJson(path.join(hub, 'alignment.json'), {});
+  if (hook) {
+    runHooks({
+      rich: true,
+      families: alignment.agent_families,
+      humanIntent: alignment.human_intent
+    });
+  }
 
   printReceipt(SPG.sync, 'GLOBAL RUNTIME SYNCED', [
     ['Hub', hub],
     ['Files', String(files)],
     ['Version', pkg.version],
-    ['Preserved', 'tasks · ideas · memory · manifest']
+    ['Preserved', 'tasks · ideas · memory · manifest · ACTIVE_CONTEXT · alignment'],
+    ['Architecture', 'Māṇḍūkya']
   ], SPG.develop);
 
   return { hub, files, version: pkg.version };
 }
 
 if (require.main === module) {
-  try {
-    syncGlobal();
-  } catch (err) {
-    console.error(`${SPG.fail} Sync failed:`, err.message);
-    process.exit(1);
-  }
+  syncGlobal()
+    .then(() => process.exit(0))
+    .catch((err) => {
+      console.error(`${SPG.fail} Sync failed:`, err.message);
+      process.exit(1);
+    });
 }
 
 module.exports = { syncGlobal };

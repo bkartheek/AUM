@@ -11,10 +11,15 @@ const SPG = {
   beat: '⏱️',
   drone: '🥁',
   concern: '🌊',
-  intake: '👂',
-  blueprint: '🗺️',
-  verify: '🔍',
-  manifest: '✨',
+  // Māṇḍūkya quarters
+  jagrat: '🌅',      // A — waking
+  svapna: '🌙',      // U — dreaming
+  susupti: '🌑',     // M — deep sleep
+  turiya: '✦',       // Amātra — silence / the fourth
+  intake: '🌅',
+  blueprint: '🌙',
+  verify: '🌑',
+  manifest: '✦',
   install: '🌐',
   sync: '🔄',
   uninstall: '🧹',
@@ -52,7 +57,7 @@ function receipt(titleIcon, title, rows = [], footerIcon = SPG.aum) {
     line(),
     body,
     line('─'),
-    `  ${footerIcon}  AUM Intent Orchestrator  ·  SPG Receipt`,
+    `  ${footerIcon}  AUM · Māṇḍūkya Orchestrator  ·  SPG Receipt`,
     line()
   ].join('\n');
 }

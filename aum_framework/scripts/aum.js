@@ -1,9 +1,14 @@
 #!/usr/bin/env node
-const fs = require('fs');
 const path = require('path');
 const { SPG, printReceipt } = require('./lib/receipts');
+const { diagram, summarizeAll, QUARTERS, STAGE_ORDER } = require('./lib/mandukya');
 
 const scriptsDir = __dirname;
+
+/** Metaphor demos outside the Māṇḍūkya beat cycle — kept, labeled. */
+const EXPERIMENTAL = new Set([
+  'heal', 'compile', 'assert', 'recognize', 'evolve', 'prune', 'start', 'publish'
+]);
 
 function runScript(scriptName, additionalArgs = []) {
   const scriptPath = path.join(scriptsDir, scriptName);
@@ -15,24 +20,67 @@ function runScript(scriptName, additionalArgs = []) {
 }
 
 function showHelp() {
-  printReceipt(SPG.aum, 'AUM SPHOTA INTENT ORCHESTRATOR', [
-    ['Usage', 'aum <command> [args]'],
-    ['anchor', 'Synthesize <380 token context anchor'],
-    ['distill', 'Sub-15ms local voice/speech intent filter'],
-    ['lock / unlock', 'Engage/release mechanical write lock'],
-    ['wrap', 'Save session snapshot (Yoga Saṃskāra)'],
-    ['graph', 'View/manage multi-intent DAG'],
-    ['install', 'Install global hub (~/.aum) + bridge hooks'],
-    ['sync', 'Sync package → global runtime (preserve state)'],
-    ['hook', 'Re-inject instructions into AI agents'],
-    ['spark', 'Capture raw idea'],
-    ['concern', 'Capture worry / symptom'],
-    ['resolve', 'Open sequenced resolve'],
-    ['beat', 'next | set <stage>'],
-    ['drone', 'Print context anchor'],
-    ['audit', 'Fallacy audit on git changes'],
-    ['verify', 'Build / heal runner']
-  ], SPG.globe);
+  console.log(`
+${SPG.aum}  AUM — Māṇḍūkya Intent Orchestrator
+${'═'.repeat(64)}
+  Foundation: Māṇḍūkya Upaniṣad — A · U · M · Silence (Turīya)
+  Practical lens through the quarters: Clarify → Plan → Act
+
+${diagram()}
+
+  Spine: ${summarizeAll()}
+
+  ── A  JĀGRAT (waking) · beat=intake · CLARIFY ─────────────────
+  distill <text>     Meet the gross prompt; strip voice noise
+  spark <text>       Paśyantī seed — raw idea
+  concern <text>     Paśyantī seed — risk / symptom
+  resolve <title>    Open Saṅkalpa (starts in Jāgrat / intake)
+  drone              Context Anchor under Turīya witness
+
+  ── U  SVAPNA (dreaming) · beat=blueprint · PLAN ─────────────
+  beat next|set      Advance / set quarter (intake…manifest)
+  anchor             Subtle mental schema (<380 tokens)
+
+  ── M  SUṢUPTI (deep sleep) · beat=verification · PLAN/still ─
+  lock [reason]      Hold action in the causal seed
+  audit              Hētvābhāsa scan before manifestation
+
+  ── ·  TURĪYA (silence) · beat=manifest · ACT ────────────────
+  unlock             Release seed → Vaikharī (code allowed)
+  verify             Build check after expression
+  intent             Print Māṇḍūkya map + CPA lens
+  mandukya           Alias of intent — show four quarters
+
+  ── RUNTIME (Turīya nervous system) ──────────────────────────
+  install [--intent "…" --agents cursor,claude --yes --no-hooks]
+                     Capture human intent, align agents, seed Māṇḍūkya hub
+  sync               Refresh runtime; preserve ACTIVE_CONTEXT + alignment
+  hook [--agents …|--all]  Opt-in inject routing into home agent configs
+  wrap graph init domain uninstall
+  test-global  test-thorough
+
+  ── EXPERIMENTAL (not Māṇḍūkya beats) ────────────────────────
+  start prune evolve heal compile assert recognize publish
+
+  Docs: INTENT.md · arb_000_mandukya_foundation.md
+${'═'.repeat(64)}
+`);
+}
+
+function showMandukyaIntent() {
+  const rows = STAGE_ORDER.map((b) => {
+    const q = QUARTERS[b];
+    return [q.phoneme, `${q.beat} · ${q.state_en} · ${q.cpa}`];
+  });
+  printReceipt(SPG.aum, 'MĀṆḌŪKYA QUARTERS', [
+    ['Syllable', 'A · U · M · Amātra (silence)'],
+    ...rows,
+    ['CPA', 'Clarify→Plan→Act expressed through the quarters'],
+    ['Witness', 'Turīya = Om / ORCHESTRATOR / drone'],
+    ['Code', 'Only in Turīya beat (manifest) or Proceed'],
+    ['Doc', 'aum_framework/INTENT.md']
+  ], SPG.sequence);
+  console.log('\n' + diagram());
 }
 
 function main() {
@@ -44,7 +92,18 @@ function main() {
     return;
   }
 
+  if (EXPERIMENTAL.has(command)) {
+    console.error(
+      `${SPG.warn} "${command}" is experimental (outside Māṇḍūkya beats). ` +
+      `Quarters: A intake · U blueprint · M verification · · manifest. See INTENT.md`
+    );
+  }
+
   switch (command) {
+    case 'intent':
+    case 'mandukya':
+      showMandukyaIntent();
+      break;
     case 'anchor':
       runScript('aum_anchor.js', args.slice(1));
       break;
@@ -62,6 +121,7 @@ function main() {
       runScript('aum_wrap.js', args.slice(1));
       break;
     case 'install':
+      // Supports: --intent "…" --agents cursor,claude --yes|--non-interactive --no-hooks
       runScript('aum_install.js', args.slice(1));
       break;
     case 'sync':
@@ -71,6 +131,7 @@ function main() {
       runScript('aum_uninstall.js', args.slice(1));
       break;
     case 'hook':
+      // Supports: --agents cursor,claude | --all
       runScript('aum_hook.js', args.slice(1));
       break;
     case 'spark':
@@ -79,7 +140,7 @@ function main() {
     case 'beat':
     case 'drone':
     case 'domain':
-      runScript('aum_intent.js', args); // pass --global to force ~/.aum even inside a local project
+      runScript('aum_intent.js', args);
       break;
     case 'start':
       runScript('prune_context.js');
@@ -112,7 +173,6 @@ function main() {
       runScript('pratyabhijna.js');
       break;
     case 'init':
-      // Prefer new global install when --global
       if (args.includes('--global')) {
         runScript('aum_install.js', args.slice(1).filter(a => a !== '--global'));
       } else {
