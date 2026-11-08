@@ -35,43 +35,58 @@
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start & Installation
 
-### 1. Installation
-Install the framework from NPM in your target project root:
+### Option A: Install via Universal Tarball (Any Machine via NPM/NVM)
+Anyone on macOS, Linux, or Windows can install globally or run directly without cloning:
+
 ```bash
+# Global installation via GitHub release artifact
+npm install -g https://github.com/bkartheek/AUM/tarball/v1.3.0
+
+# Or run instantly via NPX (zero permanent install)
+npx https://github.com/bkartheek/AUM/tarball/v1.3.0
+```
+
+### Option B: Install from NPM Registry (when published)
+```bash
+npm install -g aum-framework
+# or project-local
 npm install aum-framework
 ```
 
-### 2. Initialization
-Run the interactive initializer to copy safety rules, template guidelines, and setup variables:
+### Option C: Install from Source
 ```bash
-npx aum init
-```
-*(The wizard will configure Yogi sheaths, `.cursorrules`, `.clinerules`, and append exclusions to `.gitignore`).*
-
-### 3. Usage Lifecycle
-AUM orchestrates your AI developer turns through quick CLI commands:
-
-```bash
-# Start a new task resolve (locks focus and prunes context)
-npx aum start
-
-# Run the self-healing build checks to verify environment stability
-npx aum verify
-
-# Audit changed files for logical fallacies before committing
-npx aum audit
-
-# Compile local log files and export portal index database
-npx aum publish
+git clone https://github.com/bkartheek/AUM.git
+cd AUM/aum_framework
+node scripts/aum.js install
 ```
 
 ---
 
-## ⚙️ CLI Commands Reference
+## ⚡ SPHOTA OS CLI Commands
 
-AUM CLI coordinates all cognitive and maintenance commands under Kashmir Shaivism's five cosmic lifecycle acts (*Pañcakṛtya*):
+AUM coordinates both Kashmir Shaivism Pañcakṛtya cognitive phases and the SPHOTA OS multi-intent engine:
+
+```bash
+# Voice & Intent Distillation (< 15ms local resolution)
+aum distill "Fix the login route and make sure we don't break sqlite and later check redis"
+
+# Two-tier context anchor synthesis (< 380 tokens)
+aum anchor
+
+# Physical mechanical write lock for Prompt #1 design alignment
+aum lock "Awaiting design review"
+aum unlock
+
+# End of day session snapshot (Yoga Saṃskāra) for instant morning recall
+aum wrap "Completed webhook handler; tomorrow wire up DB idempotency"
+
+# View and manage multi-intent DAG
+aum graph
+```
+
+### Cognitive Lifecycle Reference
 
 | CLI Command | Cognitive Phase | Vedic Phase | Technical Action |
 | :--- | :--- | :--- | :--- |
