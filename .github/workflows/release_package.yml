@@ -1,0 +1,49 @@
+name: Build & Release NPM Package Artifact
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (via NVM environment)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Build Tarball Artifact (npm pack)
+        working-directory: ./aum_framework
+        run: |
+          npm pack
+          TARBALL=$(ls aum-framework-*.tgz)
+          echo "TARBALL_NAME=$TARBALL" >> $GITHUB_ENV
+          echo "Built artifact: $TARBALL"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aum-framework-tarball
+          path: ./aum_framework/${{ env.TARBALL_NAME }}
+
+      - name: Attach Tarball Artifact to GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: ./aum_framework/${{ env.TARBALL_NAME }}
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
