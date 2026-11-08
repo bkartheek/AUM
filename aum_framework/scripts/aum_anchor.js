@@ -66,23 +66,18 @@ ${guards}
 
   const tokenEstimate = estimateTokenCount(content);
 
-  // Write local anchor
-  const localAum = path.join(process.cwd(), '.aum');
-  if (fs.existsSync(localAum)) {
-    fs.writeFileSync(path.join(localAum, 'CONTEXT.md'), content, 'utf8');
-  }
-
-  // Write global anchor
+  // Write exclusively to OS-level global hub (~/.aum/ACTIVE_CONTEXT.md)
   const home = process.env.HOME || process.env.USERPROFILE;
   const globalAum = path.join(home, '.aum');
   if (!fs.existsSync(globalAum)) fs.mkdirSync(globalAum, { recursive: true });
-  fs.writeFileSync(path.join(globalAum, 'ACTIVE_CONTEXT.md'), content, 'utf8');
+  const globalPath = path.join(globalAum, 'ACTIVE_CONTEXT.md');
+  fs.writeFileSync(globalPath, content, 'utf8');
 
   return {
     content,
     tokenEstimate,
-    localPath: fs.existsSync(localAum) ? path.join(localAum, 'CONTEXT.md') : null,
-    globalPath: path.join(globalAum, 'ACTIVE_CONTEXT.md')
+    localPath: null,
+    globalPath
   };
 }
 

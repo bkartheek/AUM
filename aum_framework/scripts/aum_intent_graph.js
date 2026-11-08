@@ -17,8 +17,7 @@ const { execSync } = require('child_process');
 const { SPG, printReceipt } = require('./lib/receipts');
 
 function getProjectAumDir() {
-  const localAum = path.join(process.cwd(), '.aum');
-  if (fs.existsSync(localAum)) return localAum;
+  // Pure Global Hub at ~/.aum
   const home = process.env.HOME || process.env.USERPROFILE;
   return path.join(home, '.aum');
 }
@@ -32,6 +31,11 @@ function getActiveGitBranch() {
   }
 }
 
+function getWorkspaceKey() {
+  const cwd = process.cwd();
+  return path.basename(cwd).replace(/[^a-zA-Z0-9_-]/g, '_');
+}
+
 function getIntentsDir() {
   const aumDir = getProjectAumDir();
   const intentsDir = path.join(aumDir, 'intents');
@@ -40,8 +44,9 @@ function getIntentsDir() {
 }
 
 function getBranchStatePath(branchName) {
+  const wsKey = getWorkspaceKey();
   const safeBranch = (branchName || getActiveGitBranch()).replace(/[^a-zA-Z0-9_-]/g, '_');
-  return path.join(getIntentsDir(), `branch_${safeBranch}.json`);
+  return path.join(getIntentsDir(), `${wsKey}_branch_${safeBranch}.json`);
 }
 
 function loadIntentGraph(branchName) {

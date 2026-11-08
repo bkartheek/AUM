@@ -4,20 +4,9 @@ const path = require('path');
 
 const GLOBAL_AUM = path.join(os.homedir(), '.aum');
 
-function forceGlobal() {
-  return process.env.AUM_FORCE_GLOBAL === '1'
-    || process.env.AUM_HUB === 'global'
-    || process.argv.includes('--global');
-}
-
-function resolveAumDir(cwd = process.cwd()) {
-  if (forceGlobal()) {
-    return { dir: GLOBAL_AUM, scope: 'global' };
-  }
-  const local = path.join(cwd, '.aum');
-  if (fs.existsSync(local)) return { dir: local, scope: 'local' };
-  if (fs.existsSync(GLOBAL_AUM)) return { dir: GLOBAL_AUM, scope: 'global' };
-  return { dir: GLOBAL_AUM, scope: 'global-missing' };
+function resolveAumDir() {
+  // Pure OS-Level Global Architecture: All intent state lives in ~/.aum
+  return { dir: GLOBAL_AUM, scope: 'global' };
 }
 
 function globalHub() {
@@ -52,6 +41,10 @@ function readJson(filePath, fallback = null) {
 function writeJson(filePath, data) {
   ensureDir(path.dirname(filePath));
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
+
+function forceGlobal() {
+  return true; // Always OS-level global hub at ~/.aum
 }
 
 module.exports = {

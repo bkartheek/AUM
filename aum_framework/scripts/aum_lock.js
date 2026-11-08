@@ -12,8 +12,7 @@ const path = require('path');
 const { SPG, printReceipt } = require('./lib/receipts');
 
 function getLockFilePath() {
-  const localAum = path.join(process.cwd(), '.aum');
-  if (fs.existsSync(localAum)) return path.join(localAum, '.intent_locked');
+  // Pure OS-Level Global Lock at ~/.aum/.intent_locked
   const home = process.env.HOME || process.env.USERPROFILE;
   return path.join(home, '.aum', '.intent_locked');
 }
