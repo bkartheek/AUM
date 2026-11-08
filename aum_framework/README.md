@@ -23,99 +23,59 @@
 
 ## ⚡ Features
 
+- **🌐 SPHOTA OS Universal Multi-Intent Engine**: Disentangles Macro-Goals, Micro-Focus, Guard Invariants, and Parked Ideas across Git branches.
+- **🎙️ Sub-15ms Speech & Voice Distiller**: Native Levenshtein symbol grounding + Mīmāṃsā Ṣaḍ-Liṅga heuristic stripping to eliminate voice-to-text noise in < 15ms.
+- **🔒 Deterministic Mechanical Lock (`aum lock / unlock`)**: Prevents agents from prematurely writing code on Prompt #1 without design alignment.
+- **🧘 Yoga Saṃskāras Overnight Memory (`aum wrap / resume`)**: Preserves session state so morning boots in Cursor, Copilot, or Claude recall previous work instantly.
+- **⚡ Strict Two-Tier Token Economy**: Guarantees context injections stay strictly bounded between **180 and 380 tokens**.
 - **🧠 Design Authority (Śabda)**: Banes raw code writing until an explicit resolve (*Saṅkalpa*) is initiated and an abstract plan is staged.
 - **🛡️ Sandbox Sheaths (Kañcukas)**: Strict execution sandboxes restricting token consumption, directory scopes, external shell downloads, and unapproved API usage.
-- **🧘 Yogi's Guidance**: Auto-injects unified instructions directly into the agent's context window via `.cursorrules`, `.clinerules`, and `CLAUDE.md`.
 - **🔍 Logic Fallacy Auditor (Hētvābhāsa)**: Scans modified files before commits to block empty stubs, left-over console print statements, and out-of-scope edits.
 - **🏥 Self-Healing Compiler (Prāyaścitta)**: Intercepts stack traces, automatically matches environment errors (e.g. missing Rolldown compiler bindings), resolves dependencies, and cleanly retries execution.
-- **⏱️ Turn-Based Lifecycle (Tāla)**: Cycles agent attention cleanly through structured cognitive stages: **Intake** (vision clarification) ➔ **Blueprint** (abstract flows design) ➔ **Verification** (boundary audit) ➔ **Manifestation** (code execution).
 
 ---
 
 ## 🚀 Quick Start
 
-### Global Intent Orchestrator (recommended)
-
-Install once at the OS level — not tied to a single project:
-
+### 1. Installation
+Install the framework from NPM in your target project root:
 ```bash
-# from aum_framework/ (or after npm install -g aum-framework)
-node scripts/aum.js install          # creates ~/.aum + hooks agents
-node scripts/aum.js sync             # after every framework change
-node scripts/aum.js test-global      # smoke-test the hub
-
-# Intent orchestration (use --global inside a repo that also has .aum/)
-aum spark "raw idea"
-aum concern "something feels wrong"
-aum resolve "Name the goal"
-aum beat next
-aum drone
-aum domain diagnostic   # or general | development
+npm install aum-framework
 ```
 
-Hub layout: `~/.aum/` (`ORCHESTRATOR.md`, `manifest.json`, `tasks/`, `ideas/`, `domains/`, `runtime/`, `agents/skills/developer`).
-
-Put `aum` on your PATH without sudo:
-
-```bash
-npm link --prefix "$HOME/.local"
-export PATH="$HOME/.local/bin:$PATH"
-```
-
-### Project-local init (optional)
+### 2. Initialization
+Run the interactive initializer to copy safety rules, template guidelines, and setup variables:
 ```bash
 npx aum init
 ```
-*(Local `.aum` overrides global for that workspace.)*
+*(The wizard will configure Yogi sheaths, `.cursorrules`, `.clinerules`, and append exclusions to `.gitignore`).*
 
-**Global Central Nervous System**
+### 3. Usage Lifecycle
+AUM orchestrates your AI developer turns through quick CLI commands:
+
 ```bash
-npx aum init --global   # alias of: aum install
-npx aum hook            # refresh agent injections
+# Start a new task resolve (locks focus and prunes context)
+npx aum start
+
+# Run the self-healing build checks to verify environment stability
+npx aum verify
+
+# Audit changed files for logical fallacies before committing
+npx aum audit
+
+# Compile local log files and export portal index database
+npx aum publish
 ```
 
 ---
 
-## 📊 Knowledge Graph Architecture
+## ⚙️ CLI Commands Reference
 
-AUM now includes a **lightweight knowledge‑graph backend** that continuously records every interaction without relying on LLM token usage.
-
-### Components
-- **Embedding Daemon (`scripts/aum_embed.js`)** – watches `~/.aum/logs/*.log`, creates 384‑dim MiniLM embeddings, stores vectors in a FAISS index and metadata in `~/.aum/embedding/meta.sqlite`.
-- **Vector Store (FAISS)** – fast nearest‑neighbor search for semantic similarity.
-- **Metadata SQLite DB** – keeps project, timestamp, model, intent, prompt, and response.
-- **Graph Viewer (`scripts/graph_view.js`)** – an Express server that reads the SQLite DB and renders an interactive graph with `vis-network`.
-
-### How it works
-1. **Start the daemon** – `npm run embed:start` (runs in background).  It updates the FAISS index and DB in real‑time.
-2. **Run a task** – `npx aum start` → `npx aum verify` etc.  Each step logs JSON entries; the daemon embeds them automatically.
-3. **View the graph** – `npm run graph:view` opens `http://localhost:3000` showing nodes for each logged interaction, linked chronologically.
-4. **Prompt enrichment** – Future AUM commands can query the vector store for the most similar past intent and prepend a concise context block (planned for next release).
-
-### Usage Steps
-```bash
-# 1️⃣ Install dependencies (already done)
-npm install
-
-# 2️⃣ Launch the embedding daemon (runs in background)
-npm run embed:start   # or: npx aum embed:start
-
-# 3️⃣ Execute your normal AUM workflow
-npx aum start
-npx aum verify
-npx aum audit
-npx aum publish
-
-# 4️⃣ Open the interactive graph UI
-npm run graph:view   # opens http://localhost:3000
-```
-
-> The daemon writes a small `embed.log` in `~/.aum/embedding/` for troubleshooting.
+AUM CLI coordinates all cognitive and maintenance commands under Kashmir Shaivism's five cosmic lifecycle acts (*Pañcakṛtya*):
 
 | CLI Command | Cognitive Phase | Vedic Phase | Technical Action |
 | :--- | :--- | :--- | :--- |
 | `npx aum init` | **Setup** | *Sṛṣṭi* (Creation) | Copies Yogi sheaths, instructions, and templates. |
-| `npx aum hook` | **Setup** | *Sūtra* (Thread) | Injects global routing rules into Cursor, Claude, Copilot, etc. |
 | `npx aum start` | **Intake** | *Sṛṣṭi* (Intake) | Initiates a new Saṅkalpa resolve and prunes context logs. |
 | `npx aum verify` | **Build** | *Sthiti* (Preservation) | Runs compiler builds with automatic environment self-healing. |
 | `npx aum audit` | **Audit** | *Saṃhāra* (Cleanup) | Audits staged changes for comments, stubs, and logic fallacies. |
@@ -155,7 +115,7 @@ AUM hosts a premium **React/Vite single page documentation portal** compiled fro
   npx aum publish
   cd docs_portal && npm run dev
   ```
-- **Web Address**: The documentation portal is published at [bkartheek.github.io/AUM](https://bkartheek.github.com/AUM).
+- **Web Address**: The documentation portal is published at [bkartheek.github.io/AUM](https://bkartheek.github.io/AUM/).
 
 ---
 

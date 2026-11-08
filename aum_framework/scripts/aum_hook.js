@@ -7,18 +7,20 @@ const homeDir = os.homedir();
 
 const ROUTING_INSTRUCTION = `
 ---
-# ॐ AUM GLOBAL NERVOUS SYSTEM HOOK
-# CRITICAL RULE: You are operating under the AUM Global Intent Orchestrator.
+# ॐ AUM SPHOTA INTENT BRIDGE (WORLD-CLASS BI-DIRECTIONAL GATEKEEPER)
+# CRITICAL RULE: You are operating under the AUM Sphoṭa Intent Operating System.
 # Before starting ANY task, taking ANY action, or modifying ANY files:
-# 1. You MUST read the central state at ~/.aum/manifest.json (or local .aum/manifest.json — local overrides global)
-# 2. You MUST read ~/.aum/ORCHESTRATOR.md (domain-agnostic intent layer)
-# 3. Capture intent, ideas, and concerns first — even if the user prompt is wrong or fuzzy
-# 4. Clarify → sequence (intake → blueprint → verification → manifest) → then guide/act
-# 5. Prefer CLI orchestration: aum spark | concern | resolve | beat | drone | sync | hook
-# 6. All tasks/memory live under ~/.aum/tasks and ~/.aum/memory (or local .aum equivalents)
-# 7. VISUAL CONFIRMATION: Begin EVERY response with exactly: ☄️
-# 8. Emit rich SPG (Sphota Pictographic Glyph) receipts on every state change
-# NEVER skip this verification step.
+# 1. READ CONTEXT: Read active anchor at ~/.aum/ACTIVE_CONTEXT.md (or local .aum/CONTEXT.md - local wins)
+# 2. PROMPT #1 BI-DIRECTIONAL PROTOCOL (MANDATORY):
+#    - DO NOT generate code, diffs, or execute file writes on the user's initial prompt.
+#    - Echo the Distilled Human Intent (Paśyantī), stripping voice filler and phonetic slips.
+#    - Project your Agent Intent: State planned architectural approach and exact file impact list.
+#    - Probe for unstated assumptions before proceeding.
+#    - Conclude with: "Awaiting approval. Reply 'Proceed' to begin implementation."
+# 3. MECHANICAL LOCK: Do not bypass or circumvent .aum/.intent_locked.
+# 4. TOKEN ECONOMY: Keep injected memory strictly < 380 tokens.
+# 5. VISUAL CONFIRMATION: Begin EVERY response with exactly: ☄️
+# 6. Emit rich SPG (Sphota Pictographic Glyph) receipts on every state transition.
 ---
 `;
 
@@ -47,8 +49,8 @@ function injectMarkdownFile(dest, name) {
   let currentContent = '';
   if (fs.existsSync(dest)) currentContent = fs.readFileSync(dest, 'utf8');
 
-  if (currentContent.includes('AUM GLOBAL NERVOUS SYSTEM HOOK')) {
-    const regex = /---\n# ॐ AUM GLOBAL NERVOUS SYSTEM HOOK[\s\S]*?---\n/;
+  if (currentContent.includes('AUM GLOBAL NERVOUS SYSTEM HOOK') || currentContent.includes('AUM SPHOTA INTENT BRIDGE')) {
+    const regex = /---\n# ॐ (?:AUM GLOBAL NERVOUS SYSTEM HOOK|AUM SPHOTA INTENT BRIDGE)[\s\S]*?---\n/;
     if (regex.test(currentContent)) {
       fs.writeFileSync(dest, currentContent.replace(regex, ROUTING_INSTRUCTION + '\n').trim() + '\n', 'utf8');
       return 'updated';

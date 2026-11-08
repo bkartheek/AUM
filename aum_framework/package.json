@@ -1,6 +1,6 @@
 {
   "name": "aum-framework",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "AUM: Global Intent Orchestration Layer for AI agents (domain-agnostic)",
   "main": "scripts/aum.js",
   "bin": {

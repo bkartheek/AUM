@@ -23,12 +23,15 @@
 
 ## ⚡ Features
 
+- **🌐 SPHOTA OS Universal Multi-Intent Engine**: Disentangles Macro-Goals, Micro-Focus, Guard Invariants, and Parked Ideas across Git branches.
+- **🎙️ Sub-15ms Speech & Voice Distiller**: Native Levenshtein symbol grounding + Mīmāṃsā Ṣaḍ-Liṅga heuristic stripping to eliminate voice-to-text noise in < 15ms.
+- **🔒 Deterministic Mechanical Lock (`aum lock / unlock`)**: Prevents agents from prematurely writing code on Prompt #1 without design alignment.
+- **🧘 Yoga Saṃskāras Overnight Memory (`aum wrap / resume`)**: Preserves session state so morning boots in Cursor, Copilot, or Claude recall previous work instantly.
+- **⚡ Strict Two-Tier Token Economy**: Guarantees context injections stay strictly bounded between **180 and 380 tokens**.
 - **🧠 Design Authority (Śabda)**: Banes raw code writing until an explicit resolve (*Saṅkalpa*) is initiated and an abstract plan is staged.
 - **🛡️ Sandbox Sheaths (Kañcukas)**: Strict execution sandboxes restricting token consumption, directory scopes, external shell downloads, and unapproved API usage.
-- **🧘 Yogi's Guidance**: Auto-injects unified instructions directly into the agent's context window via `.cursorrules`, `.clinerules`, and `CLAUDE.md`.
 - **🔍 Logic Fallacy Auditor (Hētvābhāsa)**: Scans modified files before commits to block empty stubs, left-over console print statements, and out-of-scope edits.
 - **🏥 Self-Healing Compiler (Prāyaścitta)**: Intercepts stack traces, automatically matches environment errors (e.g. missing Rolldown compiler bindings), resolves dependencies, and cleanly retries execution.
-- **⏱️ Turn-Based Lifecycle (Tāla)**: Cycles agent attention cleanly through structured cognitive stages: **Intake** (vision clarification) ➔ **Blueprint** (abstract flows design) ➔ **Verification** (boundary audit) ➔ **Manifestation** (code execution).
 
 ---
 

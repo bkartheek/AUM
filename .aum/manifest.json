@@ -1,23 +1,24 @@
 {
-  "active_task_id": "sankalpa_006",
-  "active_sankalpa_id": "sankalpa_006",
-  "last_retrospective_id": "",
+  "active_task_id": "task_009_sphota_os_universal_intent_engine",
+  "active_sankalpa_id": "task_009_sphota_os_universal_intent_engine",
+  "last_retrospective_id": "sankalpa_006",
   "sphota": {
-    "pasyanti_vision": "Global domain-agnostic intent orchestration player with agent hooks, runtime sync, and rich SPG receipts",
+    "pasyanti_vision": "SPHOTA OS: Universal Multi-Intent Engine with Theory of Mind Synchronization, Sub-15ms Local Distiller, and Autonomous Guardian Subagent",
     "madhyama_blueprint": {
       "hub": "~/.aum",
-      "commands": ["install", "sync", "uninstall", "spark", "resolve", "beat", "drone", "concern"],
-      "profiles": ["general", "development", "diagnostic"]
+      "tracks": ["Track A: State Engine & DAG", "Track B: Local Distillation", "Track C: Universal Hooks", "Track D: Autonomous Guardian"],
+      "token_budget": "180-380 tokens",
+      "latency_sla": "<15ms local"
     },
     "vaikhari_files": [
-      "aum_framework/scripts/aum.js",
-      "aum_framework/scripts/aum_install.js",
-      "aum_framework/scripts/aum_sync.js",
-      "aum_framework/scripts/aum_intent.js",
+      "aum_framework/scripts/aum_intent_graph.js",
+      "aum_framework/scripts/aum_anchor.js",
+      "aum_framework/scripts/aum_distiller.js",
       "aum_framework/scripts/aum_hook.js",
-      "aum_framework/scripts/lib/receipts.js",
-      "aum_framework/scripts/lib/paths.js"
+      "aum_framework/scripts/aum_wrap.js",
+      "aum_framework/scripts/aum.js"
     ]
   },
-  "tala_beat": "manifest"
+  "tala_beat": "manifest",
+  "guardian_agent": "sphota_guardian"
 }

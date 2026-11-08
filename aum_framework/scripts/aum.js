@@ -15,23 +15,23 @@ function runScript(scriptName, additionalArgs = []) {
 }
 
 function showHelp() {
-  printReceipt(SPG.aum, 'AUM INTENT ORCHESTRATOR', [
+  printReceipt(SPG.aum, 'AUM SPHOTA INTENT ORCHESTRATOR', [
     ['Usage', 'aum <command> [args]'],
-    ['install', 'Install / upgrade global hub (~/.aum) + hooks'],
+    ['anchor', 'Synthesize <380 token context anchor'],
+    ['distill', 'Sub-15ms local voice/speech intent filter'],
+    ['lock / unlock', 'Engage/release mechanical write lock'],
+    ['wrap', 'Save session snapshot (Yoga Saṃskāra)'],
+    ['graph', 'View/manage multi-intent DAG'],
+    ['install', 'Install global hub (~/.aum) + bridge hooks'],
     ['sync', 'Sync package → global runtime (preserve state)'],
-    ['uninstall', 'Strip hooks; --purge also deletes ~/.aum'],
     ['hook', 'Re-inject instructions into AI agents'],
     ['spark', 'Capture raw idea'],
     ['concern', 'Capture worry / symptom'],
     ['resolve', 'Open sequenced resolve'],
     ['beat', 'next | set <stage>'],
     ['drone', 'Print context anchor'],
-    ['domain', 'general | development | diagnostic'],
-    ['init', 'Project-local scaffold (optional --global)'],
-    ['start', 'Legacy context scan'],
     ['audit', 'Fallacy audit on git changes'],
-    ['verify', 'Build / heal runner'],
-    ['publish', 'Parse docs portal data']
+    ['verify', 'Build / heal runner']
   ], SPG.globe);
 }
 
@@ -45,6 +45,22 @@ function main() {
   }
 
   switch (command) {
+    case 'anchor':
+      runScript('aum_anchor.js', args.slice(1));
+      break;
+    case 'distill':
+      runScript('aum_distiller.js', args.slice(1));
+      break;
+    case 'graph':
+      runScript('aum_intent_graph.js', args.slice(1));
+      break;
+    case 'lock':
+    case 'unlock':
+      runScript('aum_lock.js', [command, ...args.slice(1)]);
+      break;
+    case 'wrap':
+      runScript('aum_wrap.js', args.slice(1));
+      break;
     case 'install':
       runScript('aum_install.js', args.slice(1));
       break;
@@ -105,6 +121,9 @@ function main() {
       break;
     case 'test-global':
       runScript('aum_selftest.js', args.slice(1));
+      break;
+    case 'test-thorough':
+      runScript('aum_thorough_test.js', args.slice(1));
       break;
     default:
       console.error(`${SPG.fail} Unknown command: ${command}`);
