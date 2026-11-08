@@ -7,6 +7,9 @@ package-lock.json
 
 # Exclude dynamic cognitive session state (prevents merge conflicts)
 .aum/sphota.json
+.aum/CONTEXT.md
+.aum/memory/
+.aum/.intent_locked
 
 # Exclude developer-specific local task/resolve logs
 .aum/sankalpas/sankalpa_*.md
@@ -14,11 +17,9 @@ package-lock.json
 # Exclude dynamic memory profiles
 .aum/samskaras/
 
-# Exclude temporary scratch folders
-scratch/
-
-# OS specific files
-.DS_Store
-
-# Exclude build archives
+# Exclude build archives and release artifacts
 *.tgz
+release/
+docs_portal/.aum/
+scratch/
+.DS_Store
