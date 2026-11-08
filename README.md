@@ -39,14 +39,24 @@ AUM does **not** intercept or sandbox Cursor / Claude / Copilot tool calls.
 
 ## Quick start
 
+### 1. Instant run via NPX (Zero install)
+```bash
+npx https://github.com/bkartheek/AUM/tarball/v1.5.0 mandukya
+```
+
+### 2. Global install on any machine
+```bash
+npm install -g https://github.com/bkartheek/AUM/tarball/v1.5.0
+aum install    # Seeds ~/.aum hub + aligns AI agent hooks
+aum drone      # Show active intent / beat
+```
+
+### 3. Install from source
 ```bash
 git clone https://github.com/bkartheek/AUM.git
 cd AUM/aum_framework
-node scripts/aum.js install    # ~/.aum hub + agent hooks
-node scripts/aum.js drone      # show active intent / beat
+node scripts/aum.js install
 ```
-
-Or: `npm install -g aum-framework` then `aum install`.
 
 ---
 
