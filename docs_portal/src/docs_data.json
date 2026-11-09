@@ -1,5 +1,5 @@
 {
-  "version": "1.7.0",
+  "version": "1.7.1",
   "title": "SĀKSHĪ (साक्षी) & SPHOTA OS Documentation Portal",
   "manifest": {
     "filename": "MANIFEST.md",
@@ -20,17 +20,14 @@
   "activeContext": {
     "filename": "ACTIVE_CONTEXT.md",
     "attributes": {
-      "# ॐ AUM SPHOTA INTENT ANCHOR [Hub": "~/.aum]",
-      "• Human Intent (primary)": "Selftest: align human and agent intent via Māṇḍūkya Clarify-Plan-Act",
-      "• Aligned Agents": "cursor, claude, copilot, cline, roo, gemini, aider, windsurf, codex",
-      "• Detected on install": "cursor, claude, copilot, cline, roo, gemini, aider, windsurf, codex",
-      "• Architecture": "Māṇḍūkya A · U · M · Turīya",
-      "• Operational lens": "Clarify → Plan → Act through the quarters",
-      "• Active beat default": "intake (A / Jāgrat / Clarify)",
-      "• Guards": "",
-      "• Startup": "Read this file + ORCHESTRATOR.md + INTENT.md + manifest.json"
+      "# ॐ AUM SPHOTA INTENT ANCHOR [Workspace": "AUM | Branch: main]",
+      "• Parent Macro": "Build SPHOTA OS Multi-Intent Universal Engine",
+      "• Active Micro-Focus": "SPHOTA OS Multi-Intent Bridge Deployment",
+      "• Yesterday's Progress": "Consolidated all 6 plans into master SPHOTA OS unified blueprint",
+      "• Active Invariant Guards": "",
+      "• MANDATORY PROMPT #1 PROTOCOL": ""
     },
-    "body": "\n## Human ↔ Agent alignment\n\n**Person wants:**  \nSelftest: align human and agent intent via Māṇḍūkya Clarify-Plan-Act\n\n**Agents operating under that intent:**\n  • **Cursor** (`cursor`) — IDE agent chat + Composer; rules via .cursorrules / .cursor/rules\n  • **Claude Code** (`claude`) — CLI/IDE via CLAUDE.md; prefer aum CLI triggers in-session\n  • **GitHub Copilot** (`copilot`) — Inline + chat; instructions markdown in Copilot config paths\n  • **Cline** (`cline`) — .clinerules routing\n  • **Roo Code** (`roo`) — .roocode routing\n  • **Gemini / Antigravity** (`gemini`) — AGENTS.md under .gemini\n  • **Aider** (`aider`) — .aider.conf.yml message hook\n  • **Windsurf** (`windsurf`) — .windsurfrules\n  • **Codex CLI** (`codex`) — .codex/AGENTS.md + instructions.md\n\n## Māṇḍūkya default architecture\nMāṇḍūkya Quarters of AUM\n════════════════════════════════════════\n  Turīya (Amātra / Silence) — witness + Act when beat=manifest\n           │ governs\n  A Jāgrat (intake/clarify) → U Svapna (blueprint/plan)\n           → M Suṣupti (verification) → · Turīya/Act (manifest)\n  Paśyantī sparks feed A (waking intake)\n════════════════════════════════════════\n\nCapture: `aum spark|concern|resolve` · Stage: `aum beat` · Witness: `aum drone` · Map: `aum mandukya`\n"
+    "body": ""
   },
   "intent": {
     "filename": "INTENT.md",
@@ -900,5 +897,5 @@
     }
   ],
   "patternRegistry": null,
-  "compiledAt": "2026-11-09T08:27:40.954Z"
+  "compiledAt": "2026-11-09T08:50:03.816Z"
 }

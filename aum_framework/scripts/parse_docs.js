@@ -133,7 +133,7 @@ function main() {
   }
   
   const docsData = {
-    version: '1.7.0',
+    version: '1.7.1',
     title: 'SĀKSHĪ (साक्षी) & SPHOTA OS Documentation Portal',
     manifest,
     instructions,

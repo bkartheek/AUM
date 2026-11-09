@@ -1,14 +1,12 @@
 {
   "name": "aum-framework",
-  "version": "1.7.0",
-  "description": "AUM: Global Intent Orchestration Layer for AI agents (domain-agnostic)",
+  "version": "1.7.1",
+  "description": "SĀKSHĪ (साक्षी) & SPHOTA OS: Global Intent & Consciousness Engine for AI Agents",
   "main": "scripts/aum.js",
   "bin": {
     "aum": "scripts/aum.js"
   },
   "scripts": {
-    "embed:start": "node scripts/aum_embed.js",
-    "graph:view": "node scripts/graph_view.js",
     "init": "node scripts/aum.js init",
     "install:global": "node scripts/aum.js install",
     "sync": "node scripts/aum.js sync",
@@ -19,14 +17,15 @@
     "publish": "node scripts/aum.js publish"
   },
   "keywords": [
+    "sakshi",
     "aum",
-    "cognitive",
-    "workspace",
+    "sphota",
+    "mandukya",
     "intent",
     "guardrails",
-    "rules",
-    "embedding",
-    "knowledge-graph"
+    "ai-agents",
+    "cursor",
+    "claude"
   ],
   "author": "Kartheek Bhupathiraju",
   "license": "MIT",
@@ -37,11 +36,12 @@
   "bugs": {
     "url": "https://github.com/bkartheek/AUM/issues"
   },
-  "homepage": "https://github.com/bkartheek/AUM#readme",
+  "homepage": "https://bkartheek.github.io/AUM/",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=16.0.0"
   },
-  "dependencies": {
+  "dependencies": {},
+  "optionalDependencies": {
     "@xenova/transformers": "^2.5.0",
     "faiss-node": "^0.3.0",
     "sqlite3": "^5.1.7",

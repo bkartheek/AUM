@@ -1,7 +1,7 @@
 # ॐ SĀKSHĪ (साक्षी) & SPHOTA OS: Intent & Consciousness Engine for AI Agents
 
 <p align="center">
-  <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/badge/version-1.7.0-gold.svg" alt="version 1.7.0"></a>
+  <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/badge/version-1.7.1-gold.svg" alt="version 1.7.1"></a>
   <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/npm/v/aum-framework.svg" alt="npm version"></a>
   <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/npm/dm/aum-framework.svg" alt="npm downloads"></a>
   <a href="https://github.com/bkartheek/AUM/blob/main/LICENSE"><img src="https://img.shields.io/github/license/bkartheek/AUM" alt="license"></a>
