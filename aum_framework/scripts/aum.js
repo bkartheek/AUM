@@ -56,6 +56,8 @@ ${diagram()}
                      Capture human intent, align agents, seed Māṇḍūkya hub
   sync               Refresh runtime; preserve ACTIVE_CONTEXT + alignment
   hook [--agents …|--all]  Opt-in inject routing into home agent configs
+  patterns           View hierarchical patterns-of-patterns registry
+  harvest            Scan & cache workspace AST symbols (<15ms grounding)
   wrap graph init domain uninstall
   test-global  test-thorough
 
@@ -119,6 +121,12 @@ function main() {
       break;
     case 'wrap':
       runScript('aum_wrap.js', args.slice(1));
+      break;
+    case 'patterns':
+      runScript('aum_patterns.js', args.slice(1));
+      break;
+    case 'harvest':
+      runScript('aum_ast_harvester.js', args.slice(1));
       break;
     case 'install':
       // Supports: --intent "…" --agents cursor,claude --yes|--non-interactive --no-hooks

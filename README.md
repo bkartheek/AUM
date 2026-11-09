@@ -79,6 +79,10 @@ aum anchor                           # <380 token context card
 # Act (only on manifest / Proceed)
 aum audit
 aum verify
+
+# Meta-Patterns & AST Grounding
+aum patterns                         # View hierarchical pattern-of-patterns registry
+aum harvest                          # Refresh workspace symbol index for <15ms voice grounding
 ```
 
 Runtime: `aum sync` · `aum hook` · `aum wrap "…"`.  
