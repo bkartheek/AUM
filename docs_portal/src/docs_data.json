@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "title": "SĀKSHĪ (साक्षी) & SPHOTA OS Documentation Portal",
   "manifest": {
     "filename": "MANIFEST.md",
@@ -900,5 +900,5 @@
     }
   ],
   "patternRegistry": null,
-  "compiledAt": "2026-11-09T08:22:55.259Z"
+  "compiledAt": "2026-11-09T08:27:40.954Z"
 }
