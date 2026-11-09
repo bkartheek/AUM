@@ -1,12 +1,13 @@
 {
   "name": "aum-framework",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "SĀKSHĪ (साक्षी) & SPHOTA OS: Consciousness & Epistemological Engine for AI Agents",
   "main": "scripts/aum.js",
   "bin": {
     "aum": "scripts/aum.js"
   },
   "scripts": {
+    "postinstall": "node scripts/aum_install.js --non-interactive",
     "init": "node scripts/aum.js init",
     "install:global": "node scripts/aum.js install",
     "sync": "node scripts/aum.js sync",

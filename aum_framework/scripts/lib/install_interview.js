@@ -44,59 +44,40 @@ async function runInstallInterview(opts = {}) {
   const flags = { ...parseInstallArgs(), ...opts };
   const detected = detectFamilies();
 
-  let humanIntent = flags.intent;
-  let agentFamilies = flags.agents != null ? parseAgentList(flags.agents) : null;
+  let humanIntent = flags.intent || DEFAULT_INTENT;
+  let agentFamilies = flags.agents != null ? parseAgentList(flags.agents) : (detected.length ? detected : ['cursor']);
 
-  const interactive = !flags.nonInteractive && process.stdin.isTTY && !flags.intent;
+  // By default, install silently and smoothly without asking CLI prompts
+  // Users who explicitly pass --interactive can still opt into interactive Q&A
+  const interactive = flags.interactive === true && process.stdin.isTTY;
 
   if (interactive) {
     const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-    console.log('\nॐ  AUM install — align human intent with your AI agent\n');
+    console.log('\nॐ  SĀKSHĪ install — align human intent with your AI agents\n');
     console.log('Foundation: Māṇḍūkya A · U · M · Turīya  →  Clarify → Plan → Act\n');
 
-    humanIntent = await ask(
+    const ansIntent = await ask(
       rl,
-      '1) What do you want AUM to do for you?\n   (your primary intent — one or two sentences)\n> '
+      '1) What do you want SĀKSHĪ to do for you?\n   (your primary intent — press enter for default)\n> '
     );
-    if (!humanIntent) {
-      humanIntent = DEFAULT_INTENT;
-      console.log(`   (using default intent)\n`);
-    }
+    if (ansIntent) humanIntent = ansIntent;
 
     console.log('\n2) AI agents detected on this machine:');
     if (detected.length === 0) {
-      console.log('   (none detected — you can still choose families to prepare)');
+      console.log('   (none detected — configuring cursor default)');
     } else {
       detected.forEach((f) => console.log(`   • ${FAMILIES[f].label} (${f})`));
     }
-    console.log('\n   Known families: ' + Object.keys(FAMILIES).join(', '));
     const agentAns = await ask(
       rl,
       '   Hook which agents? [detected | all | none | comma list]\n> '
     );
     agentFamilies = parseAgentList(agentAns || 'detected');
     if ((agentAns || 'detected') === 'detected' && detected.length === 0) {
-      agentFamilies = [];
-    }
-
-    if (agentFamilies.length > 0) {
-      const ok = await ask(
-        rl,
-        `\n3) Write AUM routing into home configs for: ${agentFamilies.join(', ')}?\n   (required for day-one alignment; say no to skip hooks)\n   [Y/n] > `
-      );
-      if (/^n/i.test(ok)) {
-        flags.skipHooks = true;
-      }
-    } else {
-      flags.skipHooks = true;
+      agentFamilies = ['cursor'];
     }
 
     rl.close();
-  } else {
-    humanIntent = humanIntent || DEFAULT_INTENT;
-    if (agentFamilies == null) {
-      agentFamilies = detected.length ? detected : ['cursor'];
-    }
   }
 
   return {
@@ -104,7 +85,7 @@ async function runInstallInterview(opts = {}) {
     agentFamilies,
     detectedFamilies: detected,
     runHooks: !flags.skipHooks && agentFamilies.length > 0,
-    nonInteractive: !!flags.nonInteractive
+    nonInteractive: !interactive
   };
 }
 
