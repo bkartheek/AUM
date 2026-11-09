@@ -1,5 +1,5 @@
 {
-  "version": "1.7.1",
+  "version": "1.8.0",
   "title": "SĀKSHĪ (साक्षी) & SPHOTA OS Documentation Portal",
   "manifest": {
     "filename": "MANIFEST.md",
@@ -86,7 +86,8 @@
       "windsurf",
       "codex"
     ],
-    "user_name": "Kartheek"
+    "user_name": "Kartheek",
+    "user_title": "Seeker (Jijñāsu)"
   },
   "arbs": [
     {
@@ -898,5 +899,5 @@
     }
   ],
   "patternRegistry": null,
-  "compiledAt": "2026-11-09T12:02:27.949Z"
+  "compiledAt": "2026-11-09T12:08:59.537Z"
 }

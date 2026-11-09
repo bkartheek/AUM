@@ -97,3 +97,4 @@ This document formalizes the canonical classical texts, philosophical systems (*
 - The Distiller strips the noise to recover the pure Paśyantī flash in `< 15ms`.
 - The engine drafts the Madhyamā architectural blueprint.
 - Turīya commits the verified Vaikharī code to disk.
+

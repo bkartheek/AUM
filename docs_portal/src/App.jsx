@@ -239,7 +239,7 @@ export default function App() {
   // Stepper State
   const [simulatorStage, setSimulatorStage] = useState('intake');
   const [terminalHistory, setTerminalHistory] = useState([
-    { type: 'system', text: '☄️ ॐ SĀKSHĪ (साक्षी) SPHOTA OS v1.7.1 Active.' },
+    { type: 'system', text: '☄️ ॐ SĀKSHĪ (साक्षी) SPHOTA OS v1.8.0 Active.' },
     { type: 'system', text: 'Current Quarter: INTAKE (A · Jāgrat). Code writes mechanically locked.' }
   ]);
   const [terminalInput, setTerminalInput] = useState('');
@@ -573,7 +573,7 @@ function promotePatterns(samskaras) {
           </nav>
 
           <div className="aum-sidebar-footer">
-            <span>v1.7.1 • Global Nervous System (~/.aum)</span>
+            <span>v1.8.0 • Global Nervous System (~/.aum)</span>
           </div>
         </aside>
 
@@ -1050,7 +1050,7 @@ ${distillerResult.groundedSymbols.map(s => `│   • ${s}`).join('\n')}
                           <span style={{ background: '#10b981' }} />
                         </div>
                         <span className="aum-terminal-title">SĀKSHĪ Witness Console • Active Quarter: {simulatorStage.toUpperCase()}</span>
-                        <span className="aum-terminal-beat">v1.7.1</span>
+                        <span className="aum-terminal-beat">v1.8.0</span>
                       </div>
 
                       <div className="aum-terminal-body">
