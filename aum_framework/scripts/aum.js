@@ -112,6 +112,10 @@ function main() {
     case 'distill':
       runScript('aum_distiller.js', args.slice(1));
       break;
+    case 'satsang':
+    case 'tapovan':
+      runScript('aum_satsang.js', args.slice(1));
+      break;
     case 'graph':
       runScript('aum_intent_graph.js', args.slice(1));
       break;

@@ -1,0 +1,82 @@
+[
+  {
+    "day": 1,
+    "theme": "Sākshī (The Neutral Witness)",
+    "source": "Śvetāśvatara Upaniṣad 4.6 / Sāṅkhya Kārikā",
+    "seed_sanskrit": "द्वा सुपर्णा सयुजा सखाया समानं वृक्षं परिषस्वजाते। तयोरन्यः पिप्पलं स्वाद्वत्त्यनश्नन्नन्यो अभिचाकशीति॥",
+    "translation": "Two birds of beautiful plumage, close companions, dwell on the same tree. One eats the sweet and sour fruits of the tree, while the other looks on as a silent, detached witness.",
+    "inquiry": "Observe the two movements within yourself. One is the active mind and the coding agent reaching for results, writing bytes, reacting to errors. The other is Sākshī—the serene, unaffected awareness watching the entire movement without anxiety. Can you rest in the second bird today while the first one works?"
+  },
+  {
+    "day": 2,
+    "theme": "Sphoṭa (The Indivisible Flash of Intent)",
+    "source": "Bhartṛhari's Vākyapadīya (Brahmakāṇḍa)",
+    "seed_sanskrit": "अविभक्तः स्फोटो जायते",
+    "translation": "Before speech fractures into multiple sounds and letters, it shines in the heart as an undivided, instantaneous flash of meaning.",
+    "inquiry": "Notice where a software feature truly originates. It does not start in JavaScript syntax or database tables; it bursts into your awareness as an undivided intuitive flash (Sphoṭa). The code is merely its downstream ripple. Have you honored the clarity of the origin before scattering it into syntax?"
+  },
+  {
+    "day": 3,
+    "theme": "A · Jāgrat (The Waking Intake)",
+    "source": "Māṇḍūkya Upaniṣad, Verse 3",
+    "seed_sanskrit": "जागरितस्थानो बहिष्प्रज्ञः सप्ताङ्ग एकोनविंशतिमुखः स्थूलभुग्वैश्वानरः प्रथमः पादः॥",
+    "translation": "The first quarter is Jāgrat, conscious of external objects, engaging through the nineteen senses, experiencing the gross manifestation.",
+    "inquiry": "In software, this is Intake. When a requirement enters, we do not leap into building. We stand fully awake in the waking world, receiving every acoustic ripple, every user constraint, without rushing into sleep or fantasy. Are your eyes open to what the user actually asked, or what you imagined?"
+  },
+  {
+    "day": 4,
+    "theme": "U · Svapna (The Subtle Blueprint)",
+    "source": "Māṇḍūkya Upaniṣad, Verse 4",
+    "seed_sanskrit": "स्वप्नस्थानोऽन्तःप्रज्ञः सप्ताङ्ग एकोनविंशतिमुखः प्रविविक्तभुक्तैजसो द्वितीयः पादः॥",
+    "translation": "The second quarter is Svapna, conscious of internal subtle forms, creating whole universes purely from the impressions of the mind.",
+    "inquiry": "In software, this is the Blueprint. Before a single file is altered on disk, the entire architectural schema takes form in the subtle realm of thought. In Svapna, no physical code writes are permitted. Let the design become crystal-clear in thought before giving it physical birth."
+  },
+  {
+    "day": 5,
+    "theme": "M · Suṣupti (Deep Stillness & Invariant Gate)",
+    "source": "Māṇḍūkya Upaniṣad, Verse 5",
+    "seed_sanskrit": "यत्र सुप्तो न कञ्चन कामं कामयते न कञ्चन स्वप्नं पश्यति तत्सुषुप्तम्॥",
+    "translation": "Where the sleeper desires no objects and dreams no dreams—that is Suṣupti, unified consciousness, a mass of wisdom and silent potential.",
+    "inquiry": "In software, this is Verification. All active brainstorming ceases. We enter stillness. The compiler tests, AST invariants, and boundary checks run in silence. Only what can endure deep sleep without dissolving is true. Does your code hold its integrity in silence?"
+  },
+  {
+    "day": 6,
+    "theme": "· · Turīya (The Transcendent Fourth)",
+    "source": "Māṇḍūkya Upaniṣad, Verse 7",
+    "seed_sanskrit": "नान्तःप्रज्ञं न बहिष्प्रज्ञं नोभयतःप्रज्ञं... शान्तं शिवमद्वैतं चतुर्थं मन्यन्ते स आत्मा स विज्ञेयः॥",
+    "translation": "Neither inward-turned nor outward-turned... peaceful, auspicious, non-dual—that is Turīya, the True Self to be realized.",
+    "inquiry": "Turīya is the silence out of which A, U, and M emerge and into which they dissolve. In software, this is Manifestation: the code is written, deployed, and the engineer rests once more in silent unattached awareness, free from the fruits of the work."
+  },
+  {
+    "day": 7,
+    "theme": "Adhyāsa (Superimposition & Debugging)",
+    "source": "Śaṅkarācārya's Brahma Sūtra Bhāṣya",
+    "seed_sanskrit": "स्मृतिरूपः परत्र पूर्वदृष्टावभासः",
+    "translation": "Superimposition (Adhyāsa) is the apparent presentation to consciousness of something previously observed, projected upon another locus like a snake seen upon a rope.",
+    "inquiry": "Every software bug is a case of Adhyāsa: the developer superimposes an assumption upon memory that does not exist in reality. When a crash occurs, do not panic. Step back and ask: 'What illusion am I projecting upon this variable? Where is the rope beneath the snake?'"
+  },
+  {
+    "day": 8,
+    "theme": "Kaṇāda's Padārtha (The Anatomy of State)",
+    "source": "Vaiśeṣika Sūtras 1.1.4",
+    "seed_sanskrit": "द्रव्यगुणकर्मसामान्यविशेषसमवायानां पदार्थानां तत्त्वज्ञानान्निःश्रेयसम्",
+    "translation": "Highest liberation arises from the precise discernment of the categories of existence: Substance (Dravya), Quality (Guṇa), Action (Karma), Universality, Particularity, and Inherence.",
+    "inquiry": "In your data models, keep the categories pure. What is the Substance (the database record or object identity)? What is the Quality (its immutable attributes)? What is the Action (the state mutation)? When these categories are muddled, suffering in the codebase begins."
+  },
+  {
+    "day": 9,
+    "theme": "Ṛta (The Self-Sustaining Cosmic Order)",
+    "source": "Ṛgveda 10.190.1",
+    "seed_sanskrit": "ऋतं च सत्यं चाभीद्धात्तपसोऽध्यजायन्त",
+    "translation": "From the burning intensity of cosmic contemplation (Tapas), Ṛta (Cosmic Order) and Satya (Truth) were born.",
+    "inquiry": "Ṛta is the intrinsic order of the universe that needs no central tyrant to enforce it—the seasons turn, the rivers flow, mathematics remains unbroken. A world-class software architecture embodies Ṛta: its parts cohere naturally, without brittle hacks or duct tape."
+  },
+  {
+    "day": 10,
+    "theme": "Saṃskāras (Memory & Impression Imprints)",
+    "source": "Patañjali's Yoga Sūtras 1.18",
+    "seed_sanskrit": "विरामप्रत्ययाभ्यासपूर्वः संस्कारशेषोऽन्यः",
+    "translation": "When all mental fluctuations are stilled through practice, only subconscious latent impressions (Saṃskāras) remain.",
+    "inquiry": "Every interaction leaves an impression. In Sākshī, each turn generates a Saṃskāra in memory, clustering into habit patterns. Notice what mental impressions your daily work is creating inside you. Are you coding from agitation, or from stillness?"
+  }
+]
