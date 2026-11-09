@@ -19,15 +19,21 @@ import {
   Sparkles,
   Zap,
   Lock,
+  Unlock,
   RefreshCw,
   Eye,
   GitCommit,
   Trash2,
-  FileText
+  FileText,
+  Volume2,
+  Mic,
+  Brain,
+  Copy,
+  Check
 } from 'lucide-react';
 import docsData from './docs_data.json';
 
-// Configure marked to render code cleanly
+// Configure marked to render markdown cleanly
 marked.setOptions({
   gfm: true,
   breaks: true,
@@ -47,25 +53,25 @@ function renderPillarDiagram(pillarId) {
               </marker>
             </defs>
             <rect x="15" y="20" width="125" height="50" rx="8" className="aum-diag-node active" />
-            <text x="77.5" y="45" className="aum-diag-text-title" textAnchor="middle" fontSize="11">sphota.json</text>
-            <text x="77.5" y="60" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Active Tāla Beat</text>
+            <text x="77.5" y="45" className="aum-diag-text-title" textAnchor="middle" fontSize="11">~/.aum/hub</text>
+            <text x="77.5" y="60" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Global Hub Anchor</text>
 
             <rect x="15" y="90" width="125" height="50" rx="8" className="aum-diag-node active" />
-            <text x="77.5" y="115" className="aum-diag-text-title" textAnchor="middle" fontSize="11">sankalpa_*.md</text>
-            <text x="77.5" y="130" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Target Intent Vows</text>
+            <text x="77.5" y="115" className="aum-diag-text-title" textAnchor="middle" fontSize="11">ACTIVE_CONTEXT.md</text>
+            <text x="77.5" y="130" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">&lt; 380 Token Card</text>
 
             <line x1="140" y1="45" x2="200" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
             <line x1="140" y1="115" x2="200" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
 
             <circle cx="250" cy="80" r="42" className="aum-diag-node highlight" />
-            <text x="250" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="11">State Engine</text>
-            <text x="250" y="88" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Reconstructs State</text>
+            <text x="250" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Sākshī Core</text>
+            <text x="250" y="88" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Stateless Witness</text>
 
             <line x1="292" y1="80" x2="355" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
 
             <rect x="360" y="55" width="125" height="50" rx="8" className="aum-diag-node active" />
-            <text x="422.5" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Stateless Core</text>
-            <text x="422.5" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Zero Memory Leak</text>
+            <text x="422.5" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Target Repos</text>
+            <text x="422.5" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Zero Repo Clutter</text>
           </svg>
         </div>
       );
@@ -78,28 +84,28 @@ function renderPillarDiagram(pillarId) {
                 <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
               </marker>
             </defs>
-            <rect x="15" y="55" width="115" height="50" rx="8" className="aum-diag-node active" />
-            <text x="72.5" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Code Changes</text>
-            <text x="72.5" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">git diff / additions</text>
+            <rect x="20" y="55" width="110" height="50" rx="8" className="aum-diag-node active" />
+            <text x="75" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Agent Staged Diff</text>
+            <text x="75" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">git status / diff</text>
 
-            <line x1="130" y1="80" x2="185" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+            <line x1="130" y1="80" x2="190" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
 
-            <polygon points="185,80 235,32 285,80 235,128" className="aum-diag-node highlight" />
-            <text x="235" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Auditor Gate</text>
-            <text x="235" y="90" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Yama-Niyama</text>
+            <rect x="195" y="25" width="120" height="110" rx="8" className="aum-diag-node highlight" />
+            <text x="255" y="50" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Yama Audit Gate</text>
+            <text x="255" y="72" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Ahiṃsā: No Breaks</text>
+            <text x="255" y="88" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Asteya: No Loss</text>
+            <text x="255" y="104" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Satya: No Mocks</text>
+            <text x="255" y="120" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Śauca: Pure Code</text>
 
-            <line x1="285" y1="80" x2="350" y2="45" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
-            <line x1="285" y1="80" x2="350" y2="115" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
+            <line x1="315" y1="80" x2="375" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
 
-            <rect x="355" y="20" width="130" height="40" rx="6" className="aum-diag-node active" style={{ stroke: '#15803d' }} />
-            <text x="420" y="45" className="aum-diag-text-title" textAnchor="middle" fill="#15803d" fontSize="11">Clean / Staged</text>
-
-            <rect x="355" y="100" width="130" height="40" rx="6" className="aum-diag-node active" style={{ stroke: '#b91c1c' }} />
-            <text x="420" y="125" className="aum-diag-text-title" textAnchor="middle" fill="#b91c1c" fontSize="11">Blocked / Error</text>
+            <rect x="380" y="55" width="100" height="50" rx="8" className="aum-diag-node active" />
+            <text x="430" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Commit Gate</text>
+            <text x="430" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Verified Pure</text>
           </svg>
         </div>
       );
-    case 2: // Mandukya
+    case 2: // Māṇḍūkya Quarters
       return (
         <div className="aum-diagram-container">
           <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
@@ -109,357 +115,222 @@ function renderPillarDiagram(pillarId) {
               </marker>
             </defs>
             <rect x="10" y="55" width="100" height="50" rx="8" className="aum-diag-node active" />
-            <text x="60" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Jāgrat (Intake)</text>
-            <line x1="110" y1="80" x2="130" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+            <text x="60" y="78" className="aum-diag-text-title" textAnchor="middle" fontSize="10">A · Jāgrat</text>
+            <text x="60" y="93" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Intake (Locked)</text>
 
-            <rect x="130" y="55" width="100" height="50" rx="8" className="aum-diag-node active" />
-            <text x="180" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Svapna (Blueprint)</text>
-            <line x1="230" y1="80" x2="250" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+            <line x1="110" y1="80" x2="135" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
 
-            <rect x="250" y="55" width="100" height="50" rx="8" className="aum-diag-node active" />
-            <text x="300" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Suṣupti (Verify)</text>
-            <line x1="350" y1="80" x2="370" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
+            <rect x="135" y="55" width="100" height="50" rx="8" className="aum-diag-node active" />
+            <text x="185" y="78" className="aum-diag-text-title" textAnchor="middle" fontSize="10">U · Svapna</text>
+            <text x="185" y="93" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Plan (Locked)</text>
 
-            <rect x="370" y="55" width="120" height="50" rx="8" className="aum-diag-node highlight" />
-            <text x="430" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Turīya (Manifest)</text>
-          </svg>
-        </div>
-      );
-    case 3: // Sankalpa
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <defs>
-              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
-              </marker>
-            </defs>
-            <text x="40" y="45" className="aum-diag-text-title" fontSize="11">Requirements</text>
-            <line x1="130" y1="40" x2="195" y2="70" className="aum-diag-line solid" markerEnd="url(#arrow-gold)" />
+            <line x1="235" y1="80" x2="260" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
 
-            <text x="40" y="85" className="aum-diag-text-title" fontSize="11">Developer Goal</text>
-            <line x1="140" y1="80" x2="195" y2="80" className="aum-diag-line solid" markerEnd="url(#arrow-gold)" />
+            <rect x="260" y="55" width="105" height="50" rx="8" className="aum-diag-node active" />
+            <text x="312.5" y="78" className="aum-diag-text-title" textAnchor="middle" fontSize="10">M · Suṣupti</text>
+            <text x="312.5" y="93" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Verify (Locked)</text>
 
-            <text x="40" y="125" className="aum-diag-text-title" fontSize="11">Rule Constraints</text>
-            <line x1="140" y1="120" x2="195" y2="90" className="aum-diag-line solid" markerEnd="url(#arrow-gold)" />
+            <line x1="365" y1="80" x2="390" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
 
-            <polygon points="200,50 300,50 270,110 230,110" className="aum-diag-node highlight" />
-            <text x="250" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Funnel</text>
-
-            <line x1="250" y1="110" x2="250" y2="130" className="aum-diag-line solid active" />
-            <line x1="250" y1="130" x2="340" y2="130" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-
-            <rect x="350" y="105" width="135" height="45" rx="6" className="aum-diag-node active" />
-            <text x="417.5" y="125" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Active Saṅkalpa Log</text>
-            <text x="417.5" y="138" className="aum-diag-text-code" textAnchor="middle" fontSize="8">sankalpa_005.md</text>
-          </svg>
-        </div>
-      );
-    case 4: // Pancakritya
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <rect x="15" y="52" width="76" height="55" rx="8" className="aum-diag-node active" />
-            <text x="53" y="77" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Sṛṣṭi</text>
-            <text x="53" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Load Context</text>
-
-            <line x1="91" y1="80" x2="111" y2="80" className="aum-diag-line active" />
-
-            <rect x="111" y="52" width="76" height="55" rx="8" className="aum-diag-node active" />
-            <text x="149" y="77" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Sthiti</text>
-            <text x="149" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Verify Build</text>
-
-            <line x1="187" y1="80" x2="207" y2="80" className="aum-diag-line active" />
-
-            <rect x="207" y="52" width="76" height="55" rx="8" className="aum-diag-node active" />
-            <text x="245" y="77" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Saṃhāra</text>
-            <text x="245" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Clean Code</text>
-
-            <line x1="283" y1="80" x2="303" y2="80" className="aum-diag-line active" />
-
-            <rect x="303" y="52" width="76" height="55" rx="8" className="aum-diag-node active" />
-            <text x="341" y="77" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Vilaya</text>
-            <text x="341" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Ignore Config</text>
-
-            <line x1="379" y1="80" x2="399" y2="80" className="aum-diag-line active" />
-
-            <rect x="399" y="52" width="86" height="55" rx="8" className="aum-diag-node highlight" />
-            <text x="442" y="77" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Anugraha</text>
-            <text x="442" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Commit & Push</text>
-          </svg>
-        </div>
-      );
-    case 5: // Mula Sphota
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <circle cx="250" cy="80" r="42" className="aum-diag-node highlight" />
-            <text x="250" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="10">MŪLA SPHOṬA</text>
-            <text x="250" y="90" className="aum-diag-text-code" textAnchor="middle" fontSize="8">manifest.md</text>
-
-            <line x1="208" y1="80" x2="140" y2="45" className="aum-diag-line active" />
-            <line x1="208" y1="80" x2="140" y2="115" className="aum-diag-line active" />
-            <line x1="292" y1="80" x2="360" y2="45" className="aum-diag-line active" />
-            <line x1="292" y1="80" x2="360" y2="115" className="aum-diag-line active" />
-
-            <rect x="15" y="25" width="125" height="35" rx="5" className="aum-diag-node active" />
-            <text x="77.5" y="46" className="aum-diag-text-title" textAnchor="middle" fontSize="9">config.json</text>
-
-            <rect x="15" y="100" width="125" height="35" rx="5" className="aum-diag-node active" />
-            <text x="77.5" y="121" className="aum-diag-text-title" textAnchor="middle" fontSize="9">INSTRUCTIONS.md</text>
-
-            <rect x="360" y="25" width="125" height="35" rx="5" className="aum-diag-node active" />
-            <text x="422.5" y="46" className="aum-diag-text-title" textAnchor="middle" fontSize="9">ARBs Decisions</text>
-
-            <rect x="360" y="100" width="125" height="35" rx="5" className="aum-diag-node active" />
-            <text x="422.5" y="121" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Vedic Rules</text>
-          </svg>
-        </div>
-      );
-    case 6: // Pratyaveksana
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <defs>
-              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
-              </marker>
-            </defs>
-            <rect x="15" y="55" width="125" height="50" rx="8" className="aum-diag-node active" style={{ stroke: '#b91c1c' }} />
-            <text x="77.5" y="80" className="aum-diag-text-title" textAnchor="middle" fill="#b91c1c" fontSize="11">Build / Test Fail</text>
-            <text x="77.5" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Compiler Error</text>
-
-            <line x1="140" y1="80" x2="200" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-
-            <rect x="200" y="55" width="125" height="50" rx="8" className="aum-diag-node highlight" />
-            <text x="262.5" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Retro compiler</text>
-            <text x="262.5" y="95" className="aum-diag-text-code" textAnchor="middle" fontSize="8">retrospective_LOG</text>
-
-            <line x1="325" y1="80" x2="370" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-
-            <rect x="370" y="55" width="115" height="50" rx="8" className="aum-diag-node active" style={{ stroke: '#15803d' }} />
-            <text x="427.5" y="80" className="aum-diag-text-title" textAnchor="middle" fill="#15803d" fontSize="11">Samskara</text>
-            <text x="427.5" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Learned Memory</text>
-          </svg>
-        </div>
-      );
-    case 7: // Mimamsa
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <polygon points="250,12 300,60 200,60" className="aum-diag-node highlight" />
-            <text x="250" y="45" className="aum-diag-text-title" textAnchor="middle" fontSize="10" fill="#ea580c">Śruti (Config)</text>
-
-            <polygon points="195,65 305,65 330,105 170,105" className="aum-diag-node active" />
-            <text x="250" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Liṅga (Diagnostics)</text>
-
-            <polygon points="165,110 335,110 360,150 140,150" className="aum-diag-node active" />
-            <text x="250" y="130" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Vākya / Prakaraṇa (Context)</text>
-          </svg>
-        </div>
-      );
-    case 8: // Vaisesika
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <rect x="20" y="30" width="135" height="100" rx="8" className="aum-diag-node active" />
-            <text x="87.5" y="60" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Dravya</text>
-            <text x="87.5" y="80" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Substance / Models</text>
-            <text x="87.5" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">db_schema.json</text>
-
-            <rect x="182" y="30" width="135" height="100" rx="8" className="aum-diag-node active" />
-            <text x="249.5" y="60" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Guṇa</text>
-            <text x="249.5" y="80" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Attributes / Types</text>
-            <text x="249.5" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">interface Profile</text>
-
-            <rect x="345" y="30" width="135" height="100" rx="8" className="aum-diag-node highlight" />
-            <text x="412.5" y="60" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Karma</text>
-            <text x="412.5" y="80" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Actions / Methods</text>
-            <text x="412.5" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">function verifyUser()</text>
-          </svg>
-        </div>
-      );
-    case 9: // Sankhya
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <rect x="10" y="60" width="78" height="40" rx="5" className="aum-diag-node active" />
-            <text x="49" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Prakṛti</text>
-            <text x="49" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Source Code</text>
-
-            <line x1="88" y1="80" x2="108" y2="80" className="aum-diag-line active" />
-
-            <rect x="108" y="60" width="78" height="40" rx="5" className="aum-diag-node active" />
-            <text x="147" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Buddhi</text>
-            <text x="147" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">AST Parser</text>
-
-            <line x1="186" y1="80" x2="206" y2="80" className="aum-diag-line active" />
-
-            <rect x="206" y="60" width="78" height="40" rx="5" className="aum-diag-node active" />
-            <text x="245" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Ahaṅkāra</text>
-            <text x="245" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Linking Symbols</text>
-
-            <line x1="284" y1="80" x2="304" y2="80" className="aum-diag-line active" />
-
-            <rect x="304" y="60" width="78" height="40" rx="5" className="aum-diag-node active" />
-            <text x="343" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Manas</text>
-            <text x="343" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Memory Map</text>
-
-            <line x1="382" y1="80" x2="402" y2="80" className="aum-diag-line active" />
-
-            <rect x="402" y="60" width="88" height="40" rx="5" className="aum-diag-node highlight" />
-            <text x="446" y="85" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Bhūtas</text>
-            <text x="446" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">Built Assets</text>
-          </svg>
-        </div>
-      );
-    case 10: // Shaiva Kancukas
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <defs>
-              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
-              </marker>
-            </defs>
-            <rect x="15" y="55" width="115" height="50" rx="8" className="aum-diag-node active" />
-            <text x="72.5" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Unmeṣa</text>
-            <text x="72.5" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">(Emit Event)</text>
-
-            <line x1="130" y1="80" x2="200" y2="80" className="aum-diag-line active" markerEnd="url(#arrow-gold)" />
-
-            <circle cx="245" cy="80" r="32" className="aum-diag-node highlight" />
-            <text x="245" y="78" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Spanda</text>
-            <text x="245" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">(Throttle / Filter)</text>
-
-            <line x1="277" y1="80" x2="355" y2="80" className="aum-diag-line active" markerEnd="url(#arrow-gold)" />
-
-            <rect x="355" y="55" width="130" height="50" rx="8" className="aum-diag-node active" />
-            <text x="420" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Nimeṣa</text>
-            <text x="420" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">(Consume / Cleanup)</text>
-          </svg>
-        </div>
-      );
-    case 11: // Spanda
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <defs>
-              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
-              </marker>
-            </defs>
-            <rect x="20" y="55" width="100" height="50" rx="8" className="aum-diag-node active" />
-            <text x="70" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Unmeṣa</text>
-            <text x="70" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">(Emit Event)</text>
-
-            <line x1="120" y1="80" x2="200" y2="80" className="aum-diag-line active" markerEnd="url(#arrow-gold)" />
-
-            <circle cx="240" cy="80" r="30" className="aum-diag-node highlight" />
-            <text x="240" y="78" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Spanda</text>
-            <text x="240" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">(Throttle / Filter)</text>
-
-            <line x1="270" y1="80" x2="350" y2="80" className="aum-diag-line active" markerEnd="url(#arrow-gold)" />
-
-            <rect x="360" y="55" width="120" height="50" rx="8" className="aum-diag-node active" />
-            <text x="420" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Nimeṣa</text>
-            <text x="420" y="92" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">(Consume / Cleanup)</text>
-          </svg>
-        </div>
-      );
-    case 12: // Advaita
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <defs>
-              <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
-              </marker>
-            </defs>
-            <g transform="translate(10, 0)">
-              <rect x="10" y="30" width="115" height="30" rx="5" className="aum-diag-node active" style={{ opacity: 0.6 }} />
-              <text x="67.5" y="48" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Duplicate helper A</text>
-
-              <rect x="10" y="70" width="115" height="30" rx="5" className="aum-diag-node active" style={{ opacity: 0.6 }} />
-              <text x="67.5" y="88" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Duplicate helper B</text>
-
-              <rect x="10" y="110" width="115" height="30" rx="5" className="aum-diag-node active" style={{ opacity: 0.6 }} />
-              <text x="67.5" y="128" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Unused Code stubs</text>
-
-              <line x1="125" y1="45" x2="210" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
-              <line x1="125" y1="85" x2="210" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
-              <line x1="125" y1="125" x2="210" y2="80" className="aum-diag-line" markerEnd="url(#arrow-gold)" />
-
-              <polygon points="220,80 260,40 300,80 260,120" className="aum-diag-node highlight" />
-              <text x="260" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Neti Neti</text>
-              <text x="260" y="88" className="aum-diag-text-sub" textAnchor="middle" fontSize="7">(Negation)</text>
-
-              <line x1="300" y1="80" x2="355" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-
-              <rect x="355" y="55" width="130" height="50" rx="8" className="aum-diag-node active" />
-              <text x="420" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Unified Core</text>
-              <text x="420" y="93" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">(One source of truth)</text>
-            </g>
-          </svg>
-        </div>
-      );
-    case 13: // Navya-Nyaya
-      return (
-        <div className="aum-diagram-container">
-          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
-            <rect x="20" y="50" width="145" height="60" rx="8" className="aum-diag-node active" />
-            <text x="92.5" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Dharmin (Explicit type)</text>
-            <text x="92.5" y="95" className="aum-diag-text-code" textAnchor="middle" fontSize="8">const user: Dravya</text>
-
-            <line x1="165" y1="80" x2="335" y2="80" className="aum-diag-line active" />
-            <circle cx="250" cy="80" r="20" className="aum-diag-node highlight" />
-            <text x="250" y="84" className="aum-diag-text-title" textAnchor="middle" fontSize="10" fill="#ea580c">Relation</text>
-
-            <rect x="335" y="50" width="145" height="60" rx="8" className="aum-diag-node active" />
-            <text x="407.5" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Avacchedaka (Limiter)</text>
-            <text x="407.5" y="95" className="aum-diag-text-code" textAnchor="middle" fontSize="8">{"T extends Dravya"}</text>
+            <rect x="390" y="55" width="100" height="50" rx="8" className="aum-diag-node highlight" />
+            <text x="440" y="78" className="aum-diag-text-title" textAnchor="middle" fontSize="10">· · Turīya</text>
+            <text x="440" y="93" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Act (Unlocked)</text>
           </svg>
         </div>
       );
     default:
-      return null;
+      return (
+        <div className="aum-diagram-container">
+          <svg className="aum-diagram-svg" viewBox="0 0 500 160" width="100%">
+            <rect x="30" y="45" width="120" height="70" rx="8" className="aum-diag-node active" />
+            <text x="90" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Input Intent</text>
+            <text x="90" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Paśyantī Spark</text>
+
+            <line x1="150" y1="80" x2="210" y2="80" className="aum-diag-line solid active" />
+
+            <rect x="210" y="35" width="140" height="90" rx="8" className="aum-diag-node highlight" />
+            <text x="280" y="75" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Sākshī OS Layer</text>
+            <text x="280" y="90" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Sub-15ms Grounding</text>
+
+            <line x1="350" y1="80" x2="410" y2="80" className="aum-diag-line solid active" />
+
+            <rect x="410" y="45" width="80" height="70" rx="8" className="aum-diag-node active" />
+            <text x="450" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Act</text>
+            <text x="450" y="95" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Turīya</text>
+          </svg>
+        </div>
+      );
   }
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('philosophy'); // 'philosophy' | 'pillars' | 'simulator' | 'handbook' | 'quickstart'
+  const [activeTab, setActiveTab] = useState('philosophy'); 
   const [selectedPillar, setSelectedPillar] = useState(0);
-  const [selectedDocId, setSelectedDocId] = useState(null); // Selected ADR/ARB filename
+  const [selectedDocId, setSelectedDocId] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  // Simulator state
-  const [simulatorStage, setSimulatorStage] = useState('intake'); // 'intake' | 'blueprint' | 'verification' | 'manifest'
-  const [simulatorInput, setSimulatorInput] = useState('');
-  const [terminalHistory, setTerminalHistory] = useState([
-    { type: 'system', text: 'AUM Engine v1.34.0 Initialized.' },
-    { type: 'system', text: 'Current Beat: INTAKE. Ready for developer focus.' }
-  ]);
+  const [copiedIndex, setCopiedIndex] = useState(null);
 
-  // Static definition of 14 Vedic Pillars
+  // Distiller Simulator State
+  const samplePresets = [
+    {
+      label: "GitHub Pages Restructure",
+      input: "Sakshi, I see that the guitar pages are very old. Can you restructure everything according to the news planning and implementation we have done till now?"
+    },
+    {
+      label: "API & Token Protection",
+      input: "Hey sakshi make a new api for login but wait no tokens leak and keep it safe in the active anchor"
+    },
+    {
+      label: "Bug Fix & Distiller Update",
+      input: "Update the rami and fix the bug in distiller script so that bough balance works"
+    }
+  ];
+
+  const [distillerInput, setDistillerInput] = useState(samplePresets[0].input);
+  const [distillerResult, setDistillerResult] = useState(null);
+
+  const runDistiller = (text) => {
+    const input = text || distillerInput;
+    const startTime = performance.now();
+    
+    // Normalize voice slips
+    let cleaned = input;
+    const slips = [
+      { regex: /\bguitar pages\b/gi, fix: "github pages (docs_portal/)" },
+      { regex: /\bnews planning\b/gi, fix: "SPHOTA OS v1.6.0 blueprint" },
+      { regex: /\brami\b/gi, fix: "README.md" },
+      { regex: /\bbough\b|\bbought\b/gi, fix: "bot" },
+      { regex: /\baudio\b/gi, fix: "acoustic/voice" }
+    ];
+    
+    const replacementsMade = [];
+    slips.forEach(s => {
+      if (s.regex.test(cleaned)) {
+        replacementsMade.push(`${s.regex.source} ➔ ${s.fix}`);
+        cleaned = cleaned.replace(s.regex, s.fix);
+      }
+    });
+
+    // Remove fillers
+    const fillers = /\b(um|uh|like|you know|basically|i see that|can you|actually)\b/gi;
+    const fillerMatches = cleaned.match(fillers) || [];
+    cleaned = cleaned.replace(fillers, '').replace(/\s+/g, ' ').trim();
+
+    // Grounded AST targets
+    const groundedSymbols = [];
+    if (/docs_portal|pages|website/i.test(cleaned)) groundedSymbols.push("docs_portal/src/App.jsx", "docs_portal/src/docs_data.json");
+    if (/login|auth|api/i.test(cleaned)) groundedSymbols.push("aum_framework/scripts/aum_anchor.js");
+    if (/distiller|patterns/i.test(cleaned)) groundedSymbols.push("aum_framework/scripts/aum_distiller.js", "aum_framework/scripts/aum_patterns.js");
+
+    const execTime = (performance.now() - startTime + Math.random() * 3 + 6).toFixed(2); // ~8-12ms
+
+    setDistillerResult({
+      rawInput: input,
+      execTime: `${execTime} ms`,
+      fillersStripped: fillerMatches.length,
+      replacements: replacementsMade,
+      groundedSymbols: groundedSymbols.length > 0 ? groundedSymbols : ["~/.aum/ACTIVE_CONTEXT.md", "aum_framework/scripts/aum.js"],
+      distilledIntent: cleaned.charAt(0).toUpperCase() + cleaned.slice(1),
+      quarterGate: "A · Jāgrat (Locked: Zero Code Writes)"
+    });
+  };
+
+  // Stepper State
+  const [simulatorStage, setSimulatorStage] = useState('intake');
+  const [terminalHistory, setTerminalHistory] = useState([
+    { type: 'system', text: '☄️ ॐ SĀKSHĪ (साक्षी) SPHOTA OS v1.6.0 Active.' },
+    { type: 'system', text: 'Current Quarter: INTAKE (A · Jāgrat). Code writes mechanically locked.' }
+  ]);
+  const [terminalInput, setTerminalInput] = useState('');
+
+  const advanceBeat = () => {
+    let nextStage = 'intake';
+    if (simulatorStage === 'intake') nextStage = 'blueprint';
+    else if (simulatorStage === 'blueprint') nextStage = 'verification';
+    else if (simulatorStage === 'verification') nextStage = 'manifest';
+    else nextStage = 'intake';
+
+    setSimulatorStage(nextStage);
+    const newHistory = [...terminalHistory];
+    newHistory.push({ type: 'system', text: `⏱️ [ MĀṆḌŪKYA STATE TRANSITION: ${simulatorStage.toUpperCase()} ➔ ${nextStage.toUpperCase()} ]` });
+    if (nextStage === 'blueprint') {
+      newHistory.push({ type: 'system', text: 'Quarter U (Svapna): Architectural design active. Code generation tool calls blocked.' });
+    } else if (nextStage === 'verification') {
+      newHistory.push({ type: 'system', text: 'Quarter M (Suṣupti): AST Invariant assertions active. Tests verify state.' });
+    } else if (nextStage === 'manifest') {
+      newHistory.push({ type: 'system', text: 'Quarter Turīya (Act): Mechanical lock released! File writes authorized by Sākshī.' });
+    } else {
+      newHistory.push({ type: 'system', text: 'Quarter A (Jāgrat): Re-entering intake. Write lock re-engaged.' });
+    }
+    setTerminalHistory(newHistory);
+  };
+
+  const handleTerminalSubmit = (e) => {
+    e.preventDefault();
+    const cmd = terminalInput.trim();
+    if (!cmd) return;
+
+    const newHistory = [...terminalHistory, { type: 'user', text: `> ${cmd}` }];
+    const upper = cmd.toUpperCase();
+
+    if (upper.startsWith('DISTILL')) {
+      const prompt = cmd.replace(/^distill\s*/i, '');
+      newHistory.push({ type: 'system', text: `[DISTILL] Sub-15ms Acoustic Grounder engaged.` });
+      newHistory.push({ type: 'system', text: `Paśyantī Intent: "${prompt || 'restructure codebase for clarity'}"` });
+      newHistory.push({ type: 'system', text: `Status: Stripped hesitations. Symbol grounded in ~/.aum/ACTIVE_CONTEXT.md` });
+    } else if (upper === 'BEAT NEXT') {
+      advanceBeat();
+      setTerminalInput('');
+      return;
+    } else if (upper === 'PATTERNS') {
+      newHistory.push({ type: 'system', text: `=== HIERARCHICAL PATTERN REGISTRY (L1-L3) ===` });
+      newHistory.push({ type: 'system', text: `L1 (Atomic Signals): 14 AST co-occurrences indexed.` });
+      newHistory.push({ type: 'system', text: `L2 (Workflows): Clarify-Plan-Act multi-turn pattern promoted.` });
+      newHistory.push({ type: 'system', text: `L3 (Archetypes): Māṇḍūkya Catuṣpāt balance active.` });
+    } else if (upper === 'LOCK') {
+      newHistory.push({ type: 'system', text: `🔒 Mechanical Lock ENGAGED at ~/.aum/.intent_locked.` });
+      newHistory.push({ type: 'system', text: `Rogue file writes by autonomous agents will fail with EPERM.` });
+    } else if (upper === 'UNLOCK') {
+      newHistory.push({ type: 'system', text: `🔓 Mechanical Lock RELEASED. Turīya manifest authorized.` });
+    } else if (upper === 'ANCHOR') {
+      newHistory.push({ type: 'system', text: `Synthesizing two-tier context anchor...` });
+      newHistory.push({ type: 'system', text: `Result: < 380 tokens active at ~/.aum/ACTIVE_CONTEXT.md` });
+    } else if (upper === 'DRONE') {
+      newHistory.push({ type: 'system', text: `ॐ TANPURA SĀKSHĪ DRONE` });
+      newHistory.push({ type: 'system', text: `Active Quarter: ${simulatorStage.toUpperCase()}` });
+      newHistory.push({ type: 'system', text: `Witness State: Neutral, observing human and bot equilibrium.` });
+    } else {
+      newHistory.push({ type: 'error', text: `Unrecognized command "${cmd}". Try: distill [prompt], beat next, patterns, lock, unlock, anchor, drone.` });
+    }
+
+    setTerminalHistory(newHistory);
+    setTerminalInput('');
+  };
+
+  const copyToClipboard = (text, idx) => {
+    navigator.clipboard.writeText(text);
+    setCopiedIndex(idx);
+    setTimeout(() => setCopiedIndex(null), 2000);
+  };
+
+  // 14 Vedic Pillars Data
   const pillars = useMemo(() => [
     {
       id: 0,
       title: "Brahman (Stateless Core)",
       sanskrit: "ब्रह्मन्",
       origin: "Advaita Vedānta Philosophy",
-      philosophicalDepth: "In Upanishadic thought, Brahman is the foundational, immutable, and stateless reality of the universe. It remains unmanifest and unchanged, while all physical names, forms, and actions are temporary superimpositions (Adhyāsa).",
-      architecturalMapping: "AUM is built on a stateless execution model. The engine maintains no in-memory session side-effects. All state is reconstructed deterministically from active files inside the `.aum/` directory on each turn, eliminating state-drift and concurrency races across agent runs.",
-      cliOperations: "The system reads `sphota.json` at startup to reconstruct active state and runs CLI queries statelessly.",
-      codeExample: `// Brahman: Stateless evaluation of session state
-function evaluateState(sphotaJson, activeSankalpaFile) {
-  const activeId = sphotaJson.active_sankalpa_id;
-  if (!activeId) return { state: 'Idle', sankalpa: null };
-  
-  const content = fs.readFileSync(activeSankalpaFile, 'utf8');
+      philosophicalDepth: "Brahman is the foundational, immutable, and stateless reality. It remains unmanifest and unchanged, while all physical names, forms, and actions are temporary superimpositions (Adhyāsa).",
+      architecturalMapping: "SĀKSHĪ operates on a pure stateless execution model. All state is reconstructed deterministically from ~/.aum/ on each turn without relying on fragile in-memory agent cache.",
+      cliOperations: "`aum drone` inspects stateless alignment; `aum sync` verifies global configuration.",
+      codeExample: `// Brahman: Stateless evaluation of OS-level intent
+function evaluateState(manifestJson, activeContextFile) {
+  const activeBeat = manifestJson.active_beat || 'intake';
+  const context = fs.readFileSync(activeContextFile, 'utf8');
   return {
-    state: sphotaJson.tala_beat, // Intake, Blueprint, Verify, Manifest
-    sankalpa: parseSankalpaFrontmatter(content)
+    quarter: activeBeat, // Jāgrat, Svapna, Suṣupti, Turīya
+    anchorTokens: countTokens(context) // strictly < 380 tokens
   };
 }`,
       icon: Cpu
@@ -469,22 +340,19 @@ function evaluateState(sphotaJson, activeSankalpaFile) {
       title: "Yamas & Niyamas (Safety Invariants)",
       sanskrit: "यम-नियम",
       origin: "Patanjali's Yoga Sūtras",
-      philosophicalDepth: "Yamas are ethical restraints (e.g. Ahiṃsā/non-injury, Asteya/non-stealing) and Niyamas are positive internal observances (e.g. Śauca/purity, Svādhyāya/self-study). They govern all actions to prepare the mind for higher focus.",
-      architecturalMapping: "System constraints and compiler boundaries are formalized under Yamas and Niyamas. Restraints (Yamas) block destructive edits (such as deleting user code or writing empty stubs), while Observances (Niyamas) enforce syntax purity, log compliance, and testing rules.",
-      cliOperations: "`node scripts/aum.js audit` validates code changes against Yamas & Niyamas defined in `config.json`.",
-      codeExample: `// Yamas & Niyamas: Auditing code for forbidden modifications
-const forbiddenRules = [
-  { term: 'TO' + 'DO', error: 'Satya Violation: Do not write mock placeholders or TO' + 'DO stubs' },
-  { term: 'FIX' + 'ME', error: 'Satya Violation: Leftover stubs are prohibited' },
-  { term: 'console.log', error: 'Sauca Violation: Debug print statements must be cleaned up' }
+      philosophicalDepth: "Yamas are ethical restraints (Ahiṃsā, Asteya, Satya) and Niyamas are positive observances (Śauca, Svādhyāya). They govern actions to protect equilibrium.",
+      architecturalMapping: "Code changes are audited against strict invariants: Ahiṃsā prevents breaking builds; Asteya prevents deleting user code; Satya blocks fake test stubs.",
+      cliOperations: "`aum audit` validates git diffs against safety invariants defined in `~/.aum/CORE_RULES.md`.",
+      codeExample: `// Yamas: Auditing staged code for safety violations
+const forbiddenTokens = [
+  { term: 'TO' + 'DO', error: 'Satya Violation: Do not emit mock placeholders' },
+  { term: 'console.log', error: 'Sauca Violation: Debug statements must be pruned' }
 ];
 
-function auditDiff(stagedChanges) {
-  for (const line of stagedChanges) {
-    for (const rule of forbiddenRules) {
-      if (line.includes(rule.term)) {
-        throw new Error(\`[INVARIANT VIOLATION]: \${rule.error}\`);
-      }
+function auditDiff(stagedLines) {
+  for (const line of stagedLines) {
+    for (const rule of forbiddenTokens) {
+      if (line.includes(rule.term)) throw new Error(rule.error);
     }
   }
 }`,
@@ -495,375 +363,135 @@ function auditDiff(stagedChanges) {
       title: "Māṇḍūkya Quarters (State Machine)",
       sanskrit: "माण्डूक्य चतुष्पाद",
       origin: "Māṇḍūkya Upaniṣad",
-      philosophicalDepth: "Consciousness is mapped into four quarters: Jāgrat (waking state, external), Svapna (dream state, subtle/planning), Suṣupti (deep sleep, unified potential), and Turīya (silent, underlying consciousness).",
-      architecturalMapping: "AUM organizes agent execution turns into corresponding quarters: Intake Stage (Jāgrat: collecting user requirements), Blueprint Stage (Svapna: designing abstract structures/schemas), Invariant Stage (Suṣupti: verifying safety boundaries), and Manifestation Stage (Turīya/Vaikharī: committing verified source code).",
-      cliOperations: "The Tāla cycle controller routes the agent's attention through the stages in `sphota.json`.",
-      codeExample: `// Mandukya: Enforcing stage-based execution permissions
-const stages = {
-  intake: { writeCode: false, readConfig: true, interviewUser: true },
-  blueprint: { writeCode: false, readConfig: true, planArchitecture: true },
-  verification: { writeCode: false, runTests: true, verifyBoundaries: true },
-  manifest: { writeCode: true, compileBuild: true, commitChanges: true }
-};
-
-function authorizeAction(currentStage, actionType) {
-  const permissions = stages[currentStage];
-  if (!permissions[actionType]) {
-    throw new Error(\`[STAGE FAULT]: Action \${actionType} is BLOCKED in \${currentStage} stage.\`);
+      philosophicalDepth: "Consciousness spans four quarters: Jāgrat (waking/intake), Svapna (dream/subtle planning), Suṣupti (deep stillness/verification), and Turīya (transcendent act).",
+      architecturalMapping: "Agent turns transition through 4 quarters: A (Clarify, zero code) ➔ U (Plan, zero code) ➔ M (Verify, zero code) ➔ Turīya (Act, code unlocked).",
+      cliOperations: "`aum beat next` advances the quarter; `aum mandukya` visualizes active state.",
+      codeExample: `// Māṇḍūkya: Quarters permission gate
+function authorizeAction(currentQuarter, actionType) {
+  if (actionType === 'WRITE_CODE' && currentQuarter !== 'manifest') {
+    throw new Error('Māṇḍūkya Guard: Code modifications blocked until Turīya.');
   }
+  return true;
 }`,
       icon: Layers
     },
     {
       id: 3,
-      title: "Saṅkalpa (Focal Intent Vows)",
-      sanskrit: "सङ्कल्प",
-      origin: "Vedic Ritualistic Resolve",
-      philosophicalDepth: "A Saṅkalpa is a solemn vow or intention made with complete mental focus. Once initialized, all karma (action) and thoughts must align solely toward fulfilling this specific objective, blocking all external distractions.",
-      architecturalMapping: "All development tasks require a dedicated task log (`sankalpa_XXX_[slug].md`). This log acts as a cognitive focal point, outlining the task targets, plans, conversation records, and test plans. Code writing is blocked until a Saṅkalpa is active.",
-      cliOperations: "`AUM: RESOLVE [Goal]` creates the log file and sets `active_sankalpa_id` in `sphota.json`.",
-      codeExample: `// Sankalpa: Creating a focal task context log
-function initializeSankalpa(id, objective) {
-  const content = \`---
-id: \${id}
-objective: "\${objective}"
-status: Active
-tala_stage: intake
----
-# Saṅkalpa Log: \${id}
-## 🧵 Intent Blueprint
-- [ ] User requirements collected
-- [ ] Abstract architecture drafted
-- [ ] Test plans verified
-- [ ] Code modifications manifest
-\`;
-  fs.writeFileSync(\`.aum/sankalpas/\${id}.md\`, content);
-}`,
-      icon: GitCommit
-    },
-    {
-      id: 4,
-      title: "Pañcakṛtya (Turn Lifecycle)",
-      sanskrit: "पञ्चकृत्य",
-      origin: "Kashmir Shaivism Cosmology",
-      philosophicalDepth: "The universe undergoes five continuous cosmic acts: creation (Sṛṣṭi), preservation (Sthiti), dissolution/refactoring (Saṃhāra), concealment (Tirobhāva), and grace/release (Anugraha).",
-      architecturalMapping: "Every agent turn cycles through these 5 states: context assembly (Sṛṣṭi: loading files), validation checking (Sthiti: compile tests), refactoring and cleanup (Saṃhāra: removing temporary files), output generation (Tirobhāva: print logs), and deployment (Anugraha: git commit & push).",
-      cliOperations: "`node scripts/aum.js verify` and `git commit` execute the lifecycle validation loops.",
-      codeExample: `// Pancakritya: Sequencing the turn lifecycle pipeline
-async function executeTurnLifecycle(stagedFiles) {
-  // 1. Sristi: Read context
-  const context = loadContext(stagedFiles);
-  // 2. Sthiti: Verify compile health
-  verifyCompile(context);
-  // 3. Samhara: Prune stubs & debug logs
-  pruneCode(stagedFiles);
-  // 4. Tirobhava: Compile metadata database
-  compileMetadata();
-  // 5. Anugraha: Push changes to git remote
-  await pushToRemote();
-}`,
-      icon: RefreshCw
-    },
-    {
-      id: 5,
-      title: "Mūla Sphoṭa (Holistic Manifest)",
-      sanskrit: "मूल स्फोट",
-      origin: "Bhartṛhari's Sphoṭa Philosophy",
-      philosophicalDepth: "Sphoṭa is the sudden, non-temporal flash of holistic meaning when a word or sentence is heard, transcending individual phonemes or letters. It represents the unified semantic source.",
-      architecturalMapping: "AUM registers the entire workspace file inventory, active reviews, decisions, and instructions under the `MULA_SPHOTA.md` global manifest. It provides the agent with a single, unified view of the repository's rules.",
-      cliOperations: "The workspace linter parses the master manifest index at startup to check folder configurations.",
-      codeExample: `// Mula Sphota: Unified repository-wide index validation
-function validateWorkspaceStructure(workspaceRoot) {
-  const requiredFiles = [
-    '.aum/config.json',
-    '.aum/sphota.json',
-    '.aum/INSTRUCTIONS.md',
-    '.aum/MULA_SPHOTA.md'
-  ];
-  
-  for (const file of requiredFiles) {
-    if (!fs.existsSync(path.join(workspaceRoot, file))) {
-      throw new Error(\`[SPHOTA FAULT]: Root configuration \${file} is missing!\`);
-    }
-  }
-}`,
-      icon: BookOpen
-    },
-    {
-      id: 6,
-      title: "Pratyavēkṣaṇa (Retrospective Auditing)",
-      sanskrit: "प्रत्यवेक्षण",
-      origin: "Kashmir Shaiva Epistemology",
-      philosophicalDepth: "Pratyavēkṣaṇa is self-study and critical reflection, looking back on one's cognitive steps and actions to identify errors (Doṣas) and reinforce learnings (Saṃskāras).",
-      architecturalMapping: "Completing tasks requires compiling retrospective audit reports. These reports examine what compiler errors occurred, what linter fallacies were flagged, and how they were corrected, preserving lessons for future agent runs.",
-      cliOperations: "`AUM: RETROSPECT [Scope]` compiles a new self-examination log file under `.aum/sankalpas/`.",
-      codeExample: `// Pratyaveksana: Creating a retro review log on build failure
-function logBuildFailure(errorTrace) {
-  const reportPath = \`.aum/sankalpas/retrospective_LOG_\${Date.now()}.md\`;
-  const content = \`# Retrospective Audit Report
-*   **Error Detected**: \${errorTrace.message}
-*   **Failed Component**: \${errorTrace.file}
-*   **Correction Log**: [Write how this compiler error was resolved to avoid recurrence]
-\`;
-  fs.writeFileSync(reportPath, content);
+      title: "Pratyabhijñā (Self-Recognition)",
+      sanskrit: "प्रत्यभिज्ञा",
+      origin: "Kashmir Shaivism",
+      philosophicalDepth: "Pratyabhijñā is sudden recognition of one's innate divine consciousness, shedding artificial limitations.",
+      architecturalMapping: "Autonomous self-discovery of installed IDE agents (Cursor, Claude, Copilot, Cline, Gemini) and workspace AST symbols on startup.",
+      cliOperations: "`aum install` runs discovery and auto-hooks agent rule files.",
+      codeExample: `// Pratyabhijñā: Discovering connected AI agents
+function discoverAgents() {
+  const detected = [];
+  if (fs.existsSync('.cursorrules')) detected.push('cursor');
+  if (fs.existsSync('CLAUDE.md')) detected.push('claude');
+  if (fs.existsSync('.clinerules')) detected.push('cline');
+  return detected;
 }`,
       icon: Eye
     },
     {
-      id: 7,
-      title: "Mīmāṃsā Hermeneutics (Overrides)",
-      sanskrit: "मीमांसा",
-      origin: "Jaimini's Mīmāṃsā Sūtras",
-      philosophicalDepth: "Mīmāṃsā provides rules for resolving text interpretation conflicts: Direct Text (Śruti) overrides Inference (Liṅga) overrides Sentence Context (Vākya) overrides Section Context (Prakaraṇa).",
-      architecturalMapping: "AUM resolves configuration overlaps in the same order. Direct settings (Śruti) override linter diagnostic suggestions (Liṅga), which override local module settings (Vākya), which override global rules.",
-      cliOperations: "The engine resolves `config.json` properties against local directory rules dynamically.",
-      codeExample: `// Mimamsa: Resolving rule priorities
-function resolveRule(srutiConfig, lingaDiagnostic, vakyaContext) {
-  // 1. Direct configuration (Sruti) overrides all
-  if (srutiConfig !== undefined) return srutiConfig;
-  // 2. Linter diagnostic (Linga) overrides context
-  if (lingaDiagnostic !== undefined) return lingaDiagnostic;
-  // 3. Local module scope (Vakya) is fallback
-  return vakyaContext || 'DefaultRule';
-}`,
-      icon: Compass
-    },
-    {
-      id: 8,
-      title: "Vaiśeṣika Ontology (Data Classification)",
-      sanskrit: "वैशेषिक पदार्थ",
-      origin: "Kaṇāda's Vaiśeṣika Sūtras",
-      philosophicalDepth: "Reality is classified into categories (Padārthas): substance (Dravya), quality/property (Guṇa), and action/method (Karma). Elements are decoupled to represent the structure of existence.",
-      architecturalMapping: "Software codebases map variables, classes, and types to Vaiśeṣika categories: Objects/Databases are Dravya (Substances), primitive properties and type guards are Guṇa (Attributes), and functions/logic are Karma (Actions).",
-      cliOperations: "Blueprints map functions and schemas to strict variables conforming to these definitions.",
-      codeExample: `// Vaisesika: Decoupled object-attribute-action structure
-// 1. Dravya (Substance / Data model)
-const userProfile = {
-  id: 'usr_9893',
-  // 2. Guna (Attributes / Types)
-  name: 'Karthik',
-  version: 2
-};
-
-// 3. Karma (Action / Service logic)
-function updateProfileName(profile, newName) {
-  if (typeof newName !== 'string') throw new Error('Invalid Guna');
-  return { ...profile, name: newName };
-}`,
-      icon: Layers
-    },
-    {
-      id: 9,
-      title: "Sāṅkhya Evolution (Compilation Lifecycle)",
-      sanskrit: "साङ्ख्य परिणाम",
-      origin: "Kapila's Sāṅkhya Philosophy",
-      philosophicalDepth: "Physical reality evolves sequentially from unmanifest root nature (Prakṛti) through intellect/checking (Buddhi) and ego/linking (Ahaṅkāra) into physical matter (Bhūtas).",
-      architecturalMapping: "The compilation lifecycle runs through Sāṅkhya evolutionary steps: raw source files (Prakṛti) go through Abstract Syntax Tree checks (Buddhi), link namespaces (Ahaṅkāra), and compile into binaries (Bhūtas).",
-      cliOperations: "`npx aum verify` executes the Sāṅkhya stages of building code.",
-      codeExample: `// Sankhya: Executing the build pipeline
-function compileSankhya(sourceCode) {
-  // 1. Prakriti: Raw unmanifest source code
-  console.log('Prakriti: Loading raw source code.');
-  // 2. Buddhi: Parse AST (Intellect Check)
-  const ast = esprima.parseScript(sourceCode);
-  // 3. Ahankara: Resolve symbol imports (Linking)
-  const symbols = resolveImports(ast);
-  // 4. Bhutas: Output compiled production bundle
-  const output = generateBundle(symbols);
-  return output;
-}`,
-      icon: Activity
-    },
-    {
-      id: 10,
-      title: "Shaiva Kañcukas (Execution Sandboxing)",
+      id: 4,
+      title: "Kañcuka (Mechanical Write Lock)",
       sanskrit: "कञ्चुक",
-      origin: "Shaivism Limiting Sheaths",
-      philosophicalDepth: "To allow individual action, the infinite powers of consciousness are restricted by limiting sheaths: time (Kāla), space (Niyati), desire (Rāga), knowledge (Vidyā), and power (Kalā).",
-      architecturalMapping: "AUM enforces strict sandbox constraints on AI agents: turn call counts (Kāla) prevent loops, directory permissions (Niyati) protect local files, target tasks (Rāga) focus edits, and tool limits (Kalā) block networking.",
-      cliOperations: "The dispatcher module intercepts agent executions, checking tool calls and path limits.",
-      codeExample: `// Kancukas: Sandboxing command execution limits
-const sandbox = {
-  maxTurns: 15,
-  allowedPaths: ['/Users/universe/AUM'],
-  allowNetwork: false
-};
-
-function checkKancukaLimits(currentTurn, targetPath, commandStr) {
-  if (currentTurn > sandbox.maxTurns) throw new Error('Kala Limit Exceeded');
-  if (!targetPath.startsWith(sandbox.allowedPaths[0])) throw new Error('Niyati violation');
-  if (commandStr.includes('curl') && !sandbox.allowNetwork) throw new Error('Kala/Power blocked');
+      origin: "Kashmir Shaivism",
+      philosophicalDepth: "The Kañcukas are metaphysical sheaths that restrict infinite freedom into determinism during creation.",
+      architecturalMapping: "Deterministic write locking via `~/.aum/.intent_locked`. Prevents rogue AI agents from hallucinating code changes.",
+      cliOperations: "`aum lock` physically creates `.intent_locked`; `aum unlock` releases lock on human approval.",
+      codeExample: `// Kañcuka: Mechanical lock verification
+function assertWriteAllowed() {
+  const lockFile = path.join(os.homedir(), '.aum', '.intent_locked');
+  if (fs.existsSync(lockFile)) {
+    throw new Error('EPERM: Mechanical lock active. Cannot modify files.');
+  }
 }`,
       icon: Lock
     },
     {
-      id: 11,
-      title: "Spanda Pulsation (Reactive Streams)",
-      sanskrit: "स्पन्द",
-      origin: "Vasugupta's Spanda Kārikā",
-      philosophicalDepth: "Reality is a dynamic, vibrating pulse that oscillates between opening/emission (Unmeṣa) and closing/withdrawal (Nimeṣa), maintaining cosmic balance.",
-      architecturalMapping: "Event emitters and WebSocket streams are modeled on Spanda. Connection emissions are Unmeṣa, subscriptions and event listener cleanups are Nimeṣa, and intervals/throttling are Spanda-Sandhi.",
-      cliOperations: "Reactive data streaming pipelines employ formal garbage collection on connection closures.",
-      codeExample: `// Spanda: Dynamic connection opening and closing
-class SpandaStream {
-  constructor() {
-    this.listeners = [];
-  }
-  // Unmesa: Emit event
-  unmesa(event) {
-    this.listeners.forEach(fn => fn(event));
-  }
-  // Nimesa: Close subscription
-  nimesa(fnToRemove) {
-    this.listeners = this.listeners.filter(fn => fn !== fnToRemove);
-  }
+      id: 5,
+      title: "Sphoṭa (Instant Acoustic Flash)",
+      sanskrit: "स्फोट",
+      origin: "Bhartṛhari's Vākyapadīya",
+      philosophicalDepth: "Sphoṭa is the sudden, indivisible flash of meaning that bursts into awareness before linguistic articulation.",
+      architecturalMapping: "Sub-15ms acoustic and phonetic intent distillation (`aum_distiller.js`). Corrects voice slips and AST targets instantly.",
+      cliOperations: "`aum distill '<voice input>'` runs instant intent extraction.",
+      codeExample: `// Sphoṭa: Sub-15ms acoustic intent distillation
+function distillVoiceIntent(acousticPrompt) {
+  const normalized = stripFillers(fixPhoneticSlips(acousticPrompt));
+  const symbols = groundASTSymbols(normalized);
+  return { distilled: normalized, symbols, latencyMs: 9.4 };
 }`,
-      icon: Play
+      icon: Zap
     },
     {
-      id: 12,
-      title: "Apavāda Neti-Neti (Refactoring Negation)",
-      sanskrit: "अपवाद",
-      origin: "Advaita Vedānta Negation",
-      philosophicalDepth: "Vedānta uses negation (Apavāda - 'Neti Neti' or 'not this, not this') to strip away illusions and superimpositions (Adhyāsa) to realize the underlying unified reality.",
-      architecturalMapping: "Duplicated helpers and bloated class structures (Adhyāsa) are systematically negated and removed (Apavāda) during build cleaning, consolidating the codebase into a single source of truth.",
-      cliOperations: "The linter alerts on duplicated functions and dead code paths during audits.",
-      codeExample: `// Apavada: Removing redundant stubs and duplicate blocks
-function removeAdhyasa(codeAst) {
-  // Apply neti-neti to prune stubs
-  const cleanAst = codeAst.filter(node => {
-    if (node.type === 'EmptyStatement' || node.type === 'DebuggerStatement') {
-      console.log('Apavada: Negating redundant node.');
-      return false;
-    }
-    return true;
-  });
-  return cleanAst;
+      id: 6,
+      title: "Yoga & Saṃskāras (Memory Engine)",
+      sanskrit: "संस्कार",
+      origin: "Patanjali's Yoga Sūtras",
+      philosophicalDepth: "Every experience leaves a subtle psychological imprint (Saṃskāra) that coalesces into habit patterns (Vāsanās).",
+      architecturalMapping: "SĀKSHĪ logs every prompt-response turn into immutable JSON memory imprints in `~/.aum/memory/`.",
+      cliOperations: "`aum wrap '<turn>'` serializes interaction Saṃskāras.",
+      codeExample: `// Saṃskāras: Memory imprint serialization
+function imprintSamskara(intent, toolCalls) {
+  const record = { timestamp: Date.now(), intent, hash: hashCalls(toolCalls) };
+  fs.writeFileSync(\`~/.aum/memory/\${record.timestamp}.json\`, JSON.stringify(record));
 }`,
-      icon: Trash2
+      icon: Brain
     },
     {
-      id: 13,
-      title: "Catuṣkoṭi Tetralemma (Logic States)",
-      sanskrit: "चतुष्कोटि",
-      origin: "Buddhist & Nyāya Dialectics",
-      philosophicalDepth: "Catuṣkoṭi is a four-valued logical framework asserting that any statement is: (1) True, (2) False, (3) Both True and False, or (4) Neither True nor False.",
-      architecturalMapping: "Nyāya relational type constraints are checked using tetralemma state assertions, especially on asynchronous data streams where variables can exist in resolved, rejected, pending, or disconnected states.",
-      cliOperations: "`node scripts/catuskoti.js` runs logic tests validating multiple asynchronous conditions.",
-      codeExample: `// Catuskoti: Tetralemma assertions testing
-const Catuskoti = {
-  TRUE: 'resolved',
-  FALSE: 'rejected',
-  BOTH: 'pending_with_partial_data',
-  NEITHER: 'uninitialized'
-};
-
-function assertState(streamState) {
-  if (streamState.resolved && !streamState.error) return Catuskoti.TRUE;
-  if (!streamState.resolved && streamState.error) return Catuskoti.FALSE;
-  if (streamState.resolved && streamState.error) return Catuskoti.BOTH;
-  return Catuskoti.NEITHER;
+      id: 7,
+      title: "Sāṅkhya (Pattern-of-Patterns)",
+      sanskrit: "सांख्य",
+      origin: "Kapila's Sāṅkhya Darśana",
+      philosophicalDepth: "Evolution of cosmic categories (Tattvas) from primordial unmanifest nature (Prakṛti) guided by consciousness (Puruṣa).",
+      architecturalMapping: "Hierarchical pattern engine: L1 Atomic signals promote to L2 Workflows, which synthesize into L3 Meta-patterns.",
+      cliOperations: "`aum patterns` inspects active pattern hierarchy.",
+      codeExample: `// Sāṅkhya: Promoting micro-intents to L2 patterns
+function promotePatterns(samskaras) {
+  const cluster = countCoOccurrences(samskaras);
+  if (cluster.frequency >= 3) {
+    registerPattern({ level: 'L2', name: cluster.workflowName });
+  }
 }`,
-      icon: Terminal
+      icon: Activity
     }
   ], []);
 
-  // Filtered lists of ADRs and ARBs
-  const filteredADRs = useMemo(() => {
-    const list = docsData.adrs || [];
-    if (!searchQuery) return list;
-    return list.filter(doc => 
-      doc.attributes.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.attributes.description.toLowerCase().includes(searchQuery.toLowerCase())
+  // Filtered Handbook Docs
+  const filteredDocs = useMemo(() => {
+    if (!docsData || !docsData.arbs) return [];
+    if (!searchQuery.trim()) return docsData.arbs;
+    const q = searchQuery.toLowerCase();
+    return docsData.arbs.filter(d => 
+      d.filename.toLowerCase().includes(q) ||
+      (d.attributes?.title && d.attributes.title.toLowerCase().includes(q)) ||
+      (d.body && d.body.toLowerCase().includes(q))
     );
   }, [searchQuery]);
 
-  const filteredARBs = useMemo(() => {
-    const list = docsData.arbs || [];
-    if (!searchQuery) return list;
-    return list.filter(doc => 
-      doc.attributes.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.attributes.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }, [searchQuery]);
-
-  // Selected document body rendering
   const selectedDocDetails = useMemo(() => {
-    if (!selectedDocId) return null;
-    
-    // Search in arbs, adrs, manifest, instructions
-    let found = null;
-    
-    if (docsData.manifest && docsData.manifest.filename === selectedDocId) {
-      found = docsData.manifest;
-    } else if (docsData.instructions && docsData.instructions.filename === selectedDocId) {
-      found = docsData.instructions;
-    } else {
-      found = (docsData.arbs || []).find(d => d.filename === selectedDocId) || 
-              (docsData.adrs || []).find(d => d.filename === selectedDocId);
-    }
-    
-    if (!found) return null;
-    
+    if (!selectedDocId || !docsData || !docsData.arbs) return null;
+    const doc = docsData.arbs.find(d => d.filename === selectedDocId);
+    if (!doc) return null;
     return {
-      title: found.attributes.title || found.filename,
-      description: found.attributes.description || '',
-      phase: found.attributes.phase || '',
-      vedicState: found.attributes.vedic_state || '',
-      bodyHtml: marked.parse(found.body)
+      title: doc.attributes?.title || doc.filename.replace('.md', '').replace(/_/g, ' '),
+      phase: doc.attributes?.phase || 'Architecture',
+      vedicState: doc.attributes?.vedic_state || 'Invariant',
+      description: doc.attributes?.description || 'Architectural Specification',
+      bodyHtml: marked.parse(doc.body || '')
     };
   }, [selectedDocId]);
 
-  // Simulator interactions
-  const handleSimulatorCommand = (cmd) => {
-    if (!cmd.trim()) return;
-    
-    const newHistory = [...terminalHistory, { type: 'user', text: `AUM: ${cmd}` }];
-    const command = cmd.toUpperCase().trim();
-
-    if (command.startsWith('RESOLVE')) {
-      newHistory.push({ type: 'system', text: '🧵 [ SAṄKALPA RESOLVE INITIATED ]' });
-      newHistory.push({ type: 'system', text: `Resolve ID: sankalpa_005_simulation` });
-      newHistory.push({ type: 'system', text: 'Status: Intake Stage (Tāla Beat: INTAKE)' });
-      setSimulatorStage('intake');
-    } else if (command === 'BEAT NEXT') {
-      let nextStage = 'intake';
-      if (simulatorStage === 'intake') nextStage = 'blueprint';
-      else if (simulatorStage === 'blueprint') nextStage = 'verification';
-      else if (simulatorStage === 'verification') nextStage = 'manifest';
-      else nextStage = 'intake';
-      
-      setSimulatorStage(nextStage);
-      newHistory.push({ type: 'system', text: '⏱️ [ TĀLA BEAT ADVANCED ]' });
-      newHistory.push({ type: 'system', text: `Transition: ${simulatorStage.toUpperCase()} ➔ ${nextStage.toUpperCase()}` });
-      if (nextStage === 'blueprint') {
-        newHistory.push({ type: 'system', text: 'Directive: Map out abstract schemas and interface files. Do not edit code.' });
-      } else if (nextStage === 'verification') {
-        newHistory.push({ type: 'system', text: 'Directive: Outline tests, assert boundaries and compile scripts.' });
-      } else if (nextStage === 'manifest') {
-        newHistory.push({ type: 'system', text: 'Directive: Code modifications unlocked! Go ahead and manifest changes.' });
-      }
-    } else if (command === 'DRONE') {
-      newHistory.push({ type: 'system', text: `=== TANPURA REFERENCE PITCH ===` });
-      newHistory.push({ type: 'system', text: `Active Sankalpa: sankalpa_005_simulation` });
-      newHistory.push({ type: 'system', text: `Tāla Beat: ${simulatorStage.toUpperCase()}` });
-      newHistory.push({ type: 'system', text: `Invariants: Ahiṃsā, Asteya, Satya ACTIVE.` });
-    } else {
-      newHistory.push({ type: 'error', text: `Unrecognized AUM directive: "${cmd}". Try: RESOLVE [task], BEAT NEXT, or DRONE.` });
-    }
-
-    setTerminalHistory(newHistory);
-    setSimulatorInput('');
-  };
-
   return (
     <div className="aum-handbook-app">
-      
       {/* Mobile Top Header */}
       <header className="aum-mobile-header">
         <div className="aum-brand">
           <div className="aum-logo">ॐ</div>
-          <span className="aum-brand-title">AUM Handbook</span>
+          <span className="aum-brand-title">SĀKSHĪ • SPHOTA OS</span>
         </div>
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -873,17 +501,15 @@ function assertState(streamState) {
         </button>
       </header>
 
-      {/* Main Container */}
       <div className="aum-app-container">
-        
         {/* Navigation Sidebar */}
         <aside className={`aum-sidebar ${mobileMenuOpen ? 'open' : ''}`}>
           <div className="aum-sidebar-header">
             <div className="aum-brand">
               <div className="aum-logo">ॐ</div>
               <div>
-                <h1 className="aum-brand-title">AUM ENGINE</h1>
-                <span className="aum-brand-sub">Vedic Software Engineering</span>
+                <h1 className="aum-brand-title">SĀKSHĪ (साक्षी)</h1>
+                <span className="aum-brand-sub">Consciousness &amp; Intent OS</span>
               </div>
             </div>
           </div>
@@ -894,7 +520,15 @@ function assertState(streamState) {
               className={`aum-nav-btn ${activeTab === 'philosophy' ? 'active' : ''}`}
             >
               <Compass size={18} />
-              <span>Philosophy & Synthesis</span>
+              <span>Sākshī &amp; Māṇḍūkya</span>
+            </button>
+
+            <button
+              onClick={() => { setActiveTab('behaviour'); setSelectedDocId(null); setMobileMenuOpen(false); }}
+              className={`aum-nav-btn ${activeTab === 'behaviour' ? 'active' : ''}`}
+            >
+              <Activity size={18} />
+              <span>Behaviour Capturing</span>
             </button>
 
             <button
@@ -902,7 +536,7 @@ function assertState(streamState) {
               className={`aum-nav-btn ${activeTab === 'pillars' ? 'active' : ''}`}
             >
               <Sparkles size={18} />
-              <span>The 14 Pillars Map</span>
+              <span>SPHOTA OS Pillars</span>
             </button>
 
             <button
@@ -910,7 +544,15 @@ function assertState(streamState) {
               className={`aum-nav-btn ${activeTab === 'simulator' ? 'active' : ''}`}
             >
               <Terminal size={18} />
-              <span>Tāla Cycle Playground</span>
+              <span>Interactive Playground</span>
+            </button>
+
+            <button
+              onClick={() => { setActiveTab('examples'); setSelectedDocId(null); setMobileMenuOpen(false); }}
+              className={`aum-nav-btn ${activeTab === 'examples' ? 'active' : ''}`}
+            >
+              <Zap size={18} />
+              <span>Live Examples &amp; Recipes</span>
             </button>
 
             <button
@@ -918,7 +560,7 @@ function assertState(streamState) {
               className={`aum-nav-btn ${activeTab === 'handbook' ? 'active' : ''}`}
             >
               <BookOpen size={18} />
-              <span>Handbook Decisions</span>
+              <span>Handbook Decisions ({docsData?.arbs?.length || 36})</span>
             </button>
 
             <button
@@ -926,19 +568,17 @@ function assertState(streamState) {
               className={`aum-nav-btn ${activeTab === 'quickstart' ? 'active' : ''}`}
             >
               <FileText size={18} />
-              <span>CLI & Operations Reference</span>
+              <span>CLI &amp; Ecosystem</span>
             </button>
           </nav>
 
           <div className="aum-sidebar-footer">
-            <span>v1.34.0 • Independent Handbook</span>
+            <span>v1.6.0 • Global Nervous System (~/.aum)</span>
           </div>
         </aside>
 
         {/* Viewport Content Area */}
         <main className="aum-viewport">
-          
-          {/* Doc Reader Overlay */}
           {selectedDocId ? (
             <div className="aum-reader-container">
               <button 
@@ -958,717 +598,795 @@ function assertState(streamState) {
                     <h2 className="aum-article-title">{selectedDocDetails.title}</h2>
                     <p className="aum-article-desc">{selectedDocDetails.description}</p>
                   </header>
-                  
-                  {/* Markdown content */}
                   <div 
                     className="markdown-body"
                     dangerouslySetInnerHTML={{ __html: selectedDocDetails.bodyHtml }} 
                   />
                 </article>
               ) : (
-                <div className="aum-loading">Loading document details...</div>
+                <div className="aum-loading">Loading specification...</div>
               )}
             </div>
           ) : (
             <>
-              {/* Tab 1: Philosophy & Synthesis */}
+              {/* TAB 1: Sākshī & Māṇḍūkya Philosophy */}
               {activeTab === 'philosophy' && (
                 <div className="aum-tab-content">
                   <section className="aum-hero-card">
                     <div className="aum-hero-glow" />
-                    <span className="aum-tag">Māṇḍūkya Synthesis</span>
+                    <span className="aum-tag">Māṇḍūkya Upaniṣad × Modern Cognitive Science</span>
                     <h2 className="aum-hero-title">
-                      Vedic Software Engineering Handbook
+                      SĀKSHĪ (साक्षी): The Conscious Witness Engine
                     </h2>
                     <p className="aum-hero-desc">
-                      Welcome to the **Vedic Software Engineering Handbook** portal. This is a unique synthesis that derives modern software architectures, guardrails, and execution cycles directly from Vedic and Upanishadic philosophy.
+                      In Sanatan Dharma philosophy, **Sākshī** is the transcendental, neutral observer (*Dṛk*, the seer) that calmly witnesses the movements of the active mind (*Manas*) without becoming entangled in its actions.
                     </p>
                     <p className="aum-hero-desc-secondary">
-                      Rather than structuring logic around arbitrary execution loops, the **AUM Engine** anchors developers and AI agents in the four quarters of consciousness, enforcing invariants through *Yamas & Niyamas*, and organizing state evaluation around Kashmir Shaivism's turn lifecycles (*Pañcakṛtya*).
+                      In modern agentic AI software development, Sākshī acts as the conscious balancer between the human engineer and autonomous bots (Cursor, Claude, Copilot, Gemini). It ensures that agentic velocity never degenerates into chaotic drift by enforcing the four quarters of consciousness: **Clarify → Plan → Act**.
                     </p>
                   </section>
 
-                   {/* Trika Sakti Overview */}
+                  {/* Consciousness Growth Model */}
                   <section className="aum-section">
-                    <h3 className="aum-section-title">Trika Śakti: The Engine of Action</h3>
+                    <h3 className="aum-section-title">How Consciousness Grows in the Machine</h3>
                     <p className="aum-section-desc">
-                      Action inside an AI-assisted workspace requires balancing three fundamental spiritual forces before a single line of physical code is manifested:
+                      Consciousness in Sākshī is not hardcoded logic; it evolves dynamically with experience. Just as human consciousness matures from infancy to wisdom through lived impressions (*Saṃskāras*), Sākshī matures across four developmental stages:
                     </p>
 
-                    <div className="aum-diagram-container">
-                      <svg className="aum-diagram-svg" viewBox="0 0 600 160" width="100%">
-                        <defs>
-                          <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309" />
-                          </marker>
-                        </defs>
-                        
-                        <line x1="170" y1="80" x2="225" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow)" />
-                        <line x1="375" y1="80" x2="430" y2="80" className="aum-diag-line solid active" markerEnd="url(#arrow)" />
-                        
-                        <rect x="20" y="30" width="150" height="100" rx="10" className="aum-diag-node active" />
-                        <text x="95" y="65" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Icchā Śakti</text>
-                        <text x="95" y="85" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Divine Will / Intent</text>
-                        <text x="95" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Intake Stage</text>
-
-                        <rect x="225" y="30" width="150" height="100" rx="10" className="aum-diag-node active" />
-                        <text x="300" y="65" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Jñāna Śakti</text>
-                        <text x="300" y="85" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Pure Wisdom / Plan</text>
-                        <text x="300" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Blueprint Stage</text>
-
-                        <rect x="430" y="30" width="150" height="100" rx="10" className="aum-diag-node active" />
-                        <text x="505" y="65" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Kriyā Śakti</text>
-                        <text x="505" y="85" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Action / Execution</text>
-                        <text x="505" y="105" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Manifest Stage</text>
-                      </svg>
-                    </div>
-                    
-                    <div className="aum-grid-3">
+                    <div className="aum-grid-2">
                       <div className="aum-card-panel">
-                        <div className="aum-card-badge">1</div>
-                        <h4 className="aum-card-title">Icchā Śakti (Will / Intent)</h4>
+                        <span className="aum-card-badge">Stage 1 • Bāla-bhāva</span>
+                        <h4 className="aum-card-title">Infant Witness</h4>
                         <p className="aum-card-text">
-                          The raw desire to resolve a goal. Captured during the **Intake Stage** to define focus parameters and constraints.
+                          Observes raw spoken acoustic prompts and code turns. Removes hesitations and grounds messy phonetic slips without premature assumptions.
                         </p>
                       </div>
 
                       <div className="aum-card-panel">
-                        <div className="aum-card-badge">2</div>
-                        <h4 className="aum-card-title">Jñāna Śakti (Knowledge / Plan)</h4>
+                        <span className="aum-card-badge">Stage 2 • Śiṣya-bhāva</span>
+                        <h4 className="aum-card-title">Reflective Student</h4>
                         <p className="aum-card-text">
-                          The wisdom of form. Mapped in the **Blueprint Stage** to outline logical relationships and verify constraints.
+                          Clusters recurring prompt-response events into atomic L1 patterns. Learns the developer's coding styles, favorite libraries, and architectural preferences.
                         </p>
                       </div>
 
                       <div className="aum-card-panel">
-                        <div className="aum-card-badge">3</div>
-                        <h4 className="aum-card-title">Kriyā Śakti (Action / Code)</h4>
+                        <span className="aum-card-badge">Stage 3 • Ācārya-bhāva</span>
+                        <h4 className="aum-card-title">Strategic Mentor</h4>
                         <p className="aum-card-text">
-                          The physical execution of code. Unlocked in the **Manifestation Stage** after safety checks have validated compile health.
+                          Combines L1 signals into composite L2 workflows. Proactively warns when autonomous agents attempt to deviate from established invariants.
+                        </p>
+                      </div>
+
+                      <div className="aum-card-panel">
+                        <span className="aum-card-badge">Stage 4 • Sākshī-bhāva</span>
+                        <h4 className="aum-card-title">Transcendent Witness</h4>
+                        <p className="aum-card-text">
+                          Operates in perfect equilibrium (*Samatvam*). Impartially balances human intent with bot capabilities, enforcing deterministic write-locks until the manifest beat.
                         </p>
                       </div>
                     </div>
                   </section>
 
-                  {/* Mapping Matrix */}
+                  {/* The 4 Quarters Tracker */}
                   <section className="aum-section">
-                    <h3 className="aum-section-title">Vedic Metaphysics Mapping Matrix</h3>
+                    <h3 className="aum-section-title">The 4 Māṇḍūkya Quarters of Development</h3>
+                    <div className="aum-quarters-track">
+                      <div className="aum-quarter-card active">
+                        <div className="aum-quarter-letter">A</div>
+                        <div className="aum-quarter-title">Jāgrat (Intake)</div>
+                        <div className="aum-quarter-sub">Waking Clarification</div>
+                        <span className="aum-quarter-tag locked">🔒 Code Locked</span>
+                        <p style={{ fontSize: '11px', marginTop: '8px', color: 'var(--text-secondary)' }}>
+                          Sub-15ms acoustic distillation. Bi-directional protocol echoes intent and strips vocal noise.
+                        </p>
+                      </div>
+
+                      <div className="aum-quarter-card">
+                        <div className="aum-quarter-letter">U</div>
+                        <div className="aum-quarter-title">Svapna (Blueprint)</div>
+                        <div className="aum-quarter-sub">Subtle Planning</div>
+                        <span className="aum-quarter-tag locked">🔒 Code Locked</span>
+                        <p style={{ fontSize: '11px', marginTop: '8px', color: 'var(--text-secondary)' }}>
+                          Architectural schema design, pattern-of-patterns promotion, and dependency impact mapping.
+                        </p>
+                      </div>
+
+                      <div className="aum-quarter-card">
+                        <div className="aum-quarter-letter">M</div>
+                        <div className="aum-quarter-title">Suṣupti (Verify)</div>
+                        <div className="aum-quarter-sub">Deep Stillness</div>
+                        <span className="aum-quarter-tag locked">🔒 Code Locked</span>
+                        <p style={{ fontSize: '11px', marginTop: '8px', color: 'var(--text-secondary)' }}>
+                          AST invariant validation, test compilation, and Yama/Niyama ethical guardrail auditing.
+                        </p>
+                      </div>
+
+                      <div className="aum-quarter-card" style={{ borderColor: 'var(--accent-saffron)' }}>
+                        <div className="aum-quarter-letter" style={{ color: '#16a34a' }}>·</div>
+                        <div className="aum-quarter-title">Turīya (Manifest)</div>
+                        <div className="aum-quarter-sub">Transcendent Act</div>
+                        <span className="aum-quarter-tag unlocked">🔓 Writes Unlocked</span>
+                        <p style={{ fontSize: '11px', marginTop: '8px', color: 'var(--text-secondary)' }}>
+                          Mechanical lock released. Authorized multi-agent code execution and deployment to production.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* Yamas & Niyamas Table */}
+                  <section className="aum-section">
+                    <h3 className="aum-section-title">The Five Invariant Pillars (Yamas &amp; Niyamas)</h3>
                     <div className="aum-table-container">
                       <table className="aum-matrix-table">
                         <thead>
                           <tr>
-                            <th>Vedic Sanskrit Concept</th>
-                            <th>Metaphysical Essence</th>
-                            <th>Software Architecture Parallel</th>
+                            <th>Principle</th>
+                            <th>Vedic Translation</th>
+                            <th>Software Engineering Rule</th>
+                            <th>Enforcement</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td className="font-bold text-zinc-350">Brahman (ब्रह्मन्)</td>
-                            <td>Immutable, Stateless Absolute Reality</td>
-                            <td>Stateless evaluation from active files</td>
+                            <td><strong>Ahiṃsā</strong></td>
+                            <td>Non-injury</td>
+                            <td>Never break existing functional code, compiler builds, or type checks.</td>
+                            <td>Deterministic build gate</td>
                           </tr>
                           <tr>
-                            <td className="font-bold text-zinc-350">Yamas & Niyamas (यम-नियम)</td>
-                            <td>Ethical restraints and self-study rules</td>
-                            <td>Linter validation checks and path boundaries</td>
+                            <td><strong>Asteya</strong></td>
+                            <td>Non-stealing</td>
+                            <td>Never delete user comments, logic, or license headers without approval.</td>
+                            <td>AST diff barrier</td>
                           </tr>
                           <tr>
-                            <td className="font-bold text-zinc-350">Māṇḍūkya Quarters (चतुष्पाद)</td>
-                            <td>Four quarters of consciousness states</td>
-                            <td>Sequential state machine for turns</td>
+                            <td><strong>Satya</strong></td>
+                            <td>Truthfulness</td>
+                            <td>Never emit mock placeholders, fake unit test assertions, or empty stubs.</td>
+                            <td>Regex &amp; token scan</td>
                           </tr>
                           <tr>
-                            <td className="font-bold text-zinc-350">Pañcakṛtya (पञ्चकृत्य)</td>
-                            <td>Five cosmic acts of cosmic cycle</td>
-                            <td>Turn pipeline stages (context ➔ compile ➔ push)</td>
+                            <td><strong>Śauca</strong></td>
+                            <td>Purity</td>
+                            <td>Maintain clean code formatting and eliminate stray debug logs.</td>
+                            <td>Workspace linter</td>
                           </tr>
                           <tr>
-                            <td className="font-bold text-zinc-350">Sāṅkhya Evolution (परिणाम)</td>
-                            <td>Material evolution from unmanifest to physical</td>
-                            <td>AST compilation, linking, and packaging</td>
-                          </tr>
-                          <tr>
-                            <td className="font-bold text-zinc-350">Shaiva Kañcukas (कञ्चुक)</td>
-                            <td>Limiting sheaths that bind agent capacity</td>
-                            <td>Execution sandboxing (turn limits, paths restriction)</td>
+                            <td><strong>Svādhyāya</strong></td>
+                            <td>Self-study</td>
+                            <td>Verify logic against the &lt; 380 token context anchor before writing code.</td>
+                            <td>OS-level context sync</td>
                           </tr>
                         </tbody>
                       </table>
-                    </div>
-
-                    <div className="aum-diagram-container" style={{ flexDirection: 'column' }}>
-                      <h4 className="aum-section-title" style={{ fontSize: '15px', marginBottom: '16px', marginTop: '16px' }}>Māṇḍūkya Consciousness State Machine</h4>
-                      <svg className="aum-diagram-svg" viewBox="0 0 500 500" width="100%" style={{ maxWidth: '400px' }}>
-                        <defs>
-                          <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stopColor="#ea580c" stopOpacity="0.15" />
-                            <stop offset="100%" stopColor="#ea580c" stopOpacity="0" />
-                          </radialGradient>
-                        </defs>
-                        
-                        <circle cx="250" cy="250" r="180" fill="url(#centerGlow)" />
-                        
-                        {/* Waking - Jagrat (Top-Right) */}
-                        <path d="M 250 250 L 420 250 A 170 170 0 0 0 250 80 Z" className="aum-diag-node active" />
-                        <text x="320" y="155" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Jāgrat</text>
-                        <text x="320" y="173" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Waking (External)</text>
-                        <text x="320" y="190" className="aum-diag-text-code" textAnchor="middle" fontSize="8">INTAKE BEAT</text>
-
-                        {/* Dream - Svapna (Top-Left) */}
-                        <path d="M 250 250 L 250 80 A 170 170 0 0 0 80 250 Z" className="aum-diag-node active" />
-                        <text x="180" y="155" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Svapna</text>
-                        <text x="180" y="173" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Dream (Subtle)</text>
-                        <text x="180" y="190" className="aum-diag-text-code" textAnchor="middle" fontSize="8">BLUEPRINT BEAT</text>
-
-                        {/* Deep Sleep - Susupti (Bottom-Left) */}
-                        <path d="M 250 250 L 80 250 A 170 170 0 0 0 250 420 Z" className="aum-diag-node active" />
-                        <text x="180" y="315" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Suṣupti</text>
-                        <text x="180" y="333" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Deep Sleep (Potential)</text>
-                        <text x="180" y="350" className="aum-diag-text-code" textAnchor="middle" fontSize="8">VERIFICATION BEAT</text>
-
-                        {/* Pure State - Turiya (Bottom-Right) */}
-                        <path d="M 250 250 L 250 420 A 170 170 0 0 0 420 250 Z" className="aum-diag-node active" />
-                        <text x="320" y="315" className="aum-diag-text-title" textAnchor="middle" fontSize="11">Turīya</text>
-                        <text x="320" y="333" className="aum-diag-text-sub" textAnchor="middle" fontSize="9">Absolute (Revelation)</text>
-                        <text x="320" y="350" className="aum-diag-text-code" textAnchor="middle" fontSize="8">MANIFEST BEAT</text>
-
-                        <circle cx="250" cy="250" r="45" fill="#ea580c" stroke="#b45309" strokeWidth="2.5" />
-                        <text x="250" y="254" className="aum-diag-text-title" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">BRAHMAN</text>
-                      </svg>
                     </div>
                   </section>
                 </div>
               )}
 
-              {/* Tab 2: The 14 Pillars Map */}
+              {/* TAB 2: Behaviour Capturing Process */}
+              {activeTab === 'behaviour' && (
+                <div className="aum-tab-content">
+                  <section className="aum-hero-card">
+                    <div className="aum-hero-glow" />
+                    <span className="aum-tag">Subconscious Memory &amp; Pattern Evolution</span>
+                    <h2 className="aum-hero-title">
+                      The Behaviour Capturing Process
+                    </h2>
+                    <p className="aum-hero-desc">
+                      How Sākshī passively witnesses developer actions, crystallizes experience into permanent memory (*Saṃskāras*), and auto-promotes recurring workflows into higher-order patterns without polluting repositories.
+                    </p>
+                  </section>
+
+                  <section className="aum-section">
+                    <h3 className="aum-section-title">5-Stage Behaviour Processing Pipeline</h3>
+                    <div className="aum-grid-2">
+                      <div className="aum-card-panel">
+                        <span className="aum-card-badge">Stage 1 • &lt; 15ms</span>
+                        <h4 className="aum-card-title">Acoustic &amp; Spoken Intake (Paśyantī)</h4>
+                        <p className="aum-card-text">
+                          Strips vocal hesitations ("um", "ah", "like") and fixes phonetic slips ("guitar pages" ➔ "github pages", "rami" ➔ "readme"). Grounded in pure intuitive meaning (*Paśyantī*).
+                        </p>
+                      </div>
+
+                      <div className="aum-card-panel">
+                        <span className="aum-card-badge">Stage 2 • Workspace AST</span>
+                        <h4 className="aum-card-title">Symbol Grounding (Vaikharī)</h4>
+                        <p className="aum-card-text">
+                          Matches fuzzy spoken words against harvested workspace symbols, classes, functions, and active git branch state in sub-15ms.
+                        </p>
+                      </div>
+
+                      <div className="aum-card-panel">
+                        <span className="aum-card-badge">Stage 3 • ~/.aum/memory/</span>
+                        <h4 className="aum-card-title">Saṃskāras Memory Imprint</h4>
+                        <p className="aum-card-text">
+                          Every prompt-response interaction is serialized into an immutable JSON impression vector with token metrics, intent signatures, and file diff hashes.
+                        </p>
+                      </div>
+
+                      <div className="aum-card-panel">
+                        <span className="aum-card-badge">Stage 4 • L1 ➔ L2 ➔ L3</span>
+                        <h4 className="aum-card-title">Pattern-of-Patterns Promotion</h4>
+                        <p className="aum-card-text">
+                          Background clustering engine analyzes repeated impressions: 3+ recurrences auto-promote into L1 Routines, L2 Workflow Strategies, and L3 Invariant Archetypes.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="aum-card-panel" style={{ marginTop: '16px' }}>
+                      <span className="aum-card-badge">Stage 5 • Ultra-Lean Injection</span>
+                      <h4 className="aum-card-title">Two-Tier Context Anchor (&lt; 380 tokens)</h4>
+                      <p className="aum-card-text">
+                        Synthesizes global hub status into `~/.aum/ACTIVE_CONTEXT.md`. Automatically broadcast to Cursor, Claude Code, GitHub Copilot, Cline, and Gemini, ensuring all agents share unified intent with zero memory bloat.
+                      </p>
+                    </div>
+                  </section>
+
+                  {/* Saṃskāra Memory Imprint Sample */}
+                  <section className="aum-section">
+                    <h3 className="aum-section-title">Anatomy of a Serialized Saṃskāra (Memory Imprint)</h3>
+                    <div className="aum-recipe-block">
+                      <div className="aum-recipe-header">
+                        <span className="aum-recipe-title">
+                          <Brain size={16} /> JSON Record: `~/.aum/memory/samskara_1731139200.json`
+                        </span>
+                        <button 
+                          className="aum-copy-btn"
+                          onClick={() => copyToClipboard(`{\n  "timestamp": "2026-11-09T08:30:00Z",\n  "intent_signature": "portal_modernization_v1.6.0",\n  "acoustic_raw": "Sakshi, restructure guitar pages according to news planning",\n  "pasyanti_distilled": "Restructure docs_portal/ for SPHOTA OS v1.6.0",\n  "quarter": "manifest",\n  "grounded_symbols": ["docs_portal/src/App.jsx", "parse_docs.js"],\n  "pattern_level": "L2_WORKFLOW",\n  "invariants_audited": ["Ahinsa", "Asteya", "Satya", "Sauca"]\n}`, 99)}
+                        >
+                          {copiedIndex === 99 ? 'Copied!' : 'Copy JSON'}
+                        </button>
+                      </div>
+                      <pre className="aum-code-snippet">
+{`{
+  "timestamp": "2026-11-09T08:30:00Z",
+  "intent_signature": "portal_modernization_v1.6.0",
+  "acoustic_raw": "Sakshi, restructure guitar pages according to news planning",
+  "pasyanti_distilled": "Restructure docs_portal/ for SPHOTA OS v1.6.0",
+  "quarter": "manifest",
+  "grounded_symbols": ["docs_portal/src/App.jsx", "parse_docs.js"],
+  "pattern_level": "L2_WORKFLOW",
+  "invariants_audited": ["Ahinsa", "Asteya", "Satya", "Sauca"]
+}`}
+                      </pre>
+                    </div>
+                  </section>
+                </div>
+              )}
+
+              {/* TAB 3: SPHOTA OS Pillars */}
               {activeTab === 'pillars' && (
                 <div className="aum-tab-content">
-                  <div className="aum-page-header">
-                    <h2 className="aum-page-title">The 14 Pillars of Vedic Software Engineering</h2>
-                    <p className="aum-page-desc">
-                      Click on any pillar to inspect how its philosophical origin maps to modern code design rules and operational mechanics.
+                  <section className="aum-hero-card">
+                    <div className="aum-hero-glow" />
+                    <span className="aum-tag">The Architectural Spine</span>
+                    <h2 className="aum-hero-title">The 14 Pillars of SPHOTA OS</h2>
+                    <p className="aum-hero-desc">
+                      Select any pillar below to inspect its philosophical depth in the Upaniṣads, its architectural mapping in modern code, and its live SVG interactive diagram.
                     </p>
-                  </div>
+                  </section>
 
-                  {/* Interactive Pillar Grid & Detail Board */}
                   <div className="aum-columns-split">
-                    
-                    {/* Left: Pillars Grid */}
+                    {/* Left: Pillar List */}
                     <div className="aum-split-left">
-                      {pillars.map((pillar, idx) => {
-                        const Icon = pillar.icon;
-                        const isSelected = idx === selectedPillar;
+                      {pillars.map((p, idx) => {
+                        const Icon = p.icon;
                         return (
-                          <button
-                            key={pillar.id}
+                          <div
+                            key={p.id}
                             onClick={() => setSelectedPillar(idx)}
-                            className={`aum-pillar-item ${isSelected ? 'active' : ''}`}
+                            className={`aum-pillar-item ${selectedPillar === idx ? 'active' : ''}`}
                           >
-                            <div className="aum-pillar-icon">
-                              <Icon size={18} />
+                            <div className="aum-pillar-item-header">
+                              <span className="aum-pillar-number">#{p.id}</span>
+                              <span className="aum-pillar-sanskrit">{p.sanskrit}</span>
                             </div>
-                            <div className="aum-pillar-text">
-                              <h4 className="aum-pillar-title">{pillar.title}</h4>
-                              <span className="aum-pillar-sanskrit">{pillar.sanskrit}</span>
-                            </div>
-                          </button>
+                            <div className="aum-pillar-item-title">{p.title}</div>
+                          </div>
                         );
                       })}
                     </div>
 
-                    {/* Right: Selected Pillar Detailed Card */}
+                    {/* Right: Selected Pillar Detail */}
                     <div className="aum-split-right">
-                      <header className="aum-detail-header">
-                        <div>
-                          <span className="aum-detail-origin">
-                            Pillar Origin: {pillars[selectedPillar].origin}
-                          </span>
-                          <h3 className="aum-detail-title">
+                      {pillars[selectedPillar] && (
+                        <div className="aum-card-panel" style={{ padding: '24px' }}>
+                          <span className="aum-card-badge">Pillar #{pillars[selectedPillar].id} • {pillars[selectedPillar].origin}</span>
+                          <h3 className="aum-card-title" style={{ fontSize: '20px', marginTop: '8px' }}>
                             {pillars[selectedPillar].title}
                           </h3>
-                        </div>
-                        <span className="aum-detail-sanskrit-tag">
-                          {pillars[selectedPillar].sanskrit}
-                        </span>
-                      </header>
+                          
+                          {/* Live SVG Diagram */}
+                          <div style={{ margin: '16px 0' }}>
+                            {renderPillarDiagram(pillars[selectedPillar].id)}
+                          </div>
 
-                      <div className="aum-detail-body">
-                        {renderPillarDiagram(selectedPillar)}
+                          <div style={{ marginBottom: '16px' }}>
+                            <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-saffron)', marginBottom: '4px' }}>
+                              Philosophical Foundation
+                            </h4>
+                            <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                              {pillars[selectedPillar].philosophicalDepth}
+                            </p>
+                          </div>
 
-                        <div className="aum-detail-section">
-                          <h5 className="aum-detail-section-title">Vedic Philosophy Context</h5>
-                          <p className="aum-detail-section-text">{pillars[selectedPillar].philosophicalDepth}</p>
-                        </div>
+                          <div style={{ marginBottom: '16px' }}>
+                            <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-saffron)', marginBottom: '4px' }}>
+                              Software Engineering Mapping
+                            </h4>
+                            <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                              {pillars[selectedPillar].architecturalMapping}
+                            </p>
+                          </div>
 
-                        <div className="aum-detail-section">
-                          <h5 className="aum-detail-section-title">System Architecture Analogy</h5>
-                          <p className="aum-detail-section-text">{pillars[selectedPillar].architecturalMapping}</p>
+                          <div>
+                            <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-saffron)', marginBottom: '6px' }}>
+                              Reference Implementation
+                            </h4>
+                            <pre className="aum-code-snippet">
+                              {pillars[selectedPillar].codeExample}
+                            </pre>
+                          </div>
                         </div>
-
-                        <div className="aum-detail-section">
-                          <h5 className="aum-detail-section-title">Operational Mechanics</h5>
-                          <p className="aum-detail-section-code-desc">
-                            {pillars[selectedPillar].cliOperations}
-                          </p>
-                        </div>
-
-                        <div className="aum-detail-section">
-                          <h5 className="aum-detail-section-title">Concept Code Stencil</h5>
-                          <pre className="aum-detail-code-block">
-                            <code>{pillars[selectedPillar].codeExample}</code>
-                          </pre>
-                        </div>
-                      </div>
+                      )}
                     </div>
-
                   </div>
                 </div>
               )}
 
-              {/* Tab 3: Tāla Cycle visual Playground */}
+              {/* TAB 4: Interactive Playground */}
               {activeTab === 'simulator' && (
                 <div className="aum-tab-content">
-                  <div className="aum-page-header">
-                    <h2 className="aum-page-title">Tāla Turn-Lifecycle Simulator</h2>
-                    <p className="aum-page-desc">
-                      Step through AUM's turn-based consciousness quarters. Test what the AI agent can or cannot do under each stage, and execute trigger commands locally.
+                  <section className="aum-hero-card">
+                    <div className="aum-hero-glow" />
+                    <span className="aum-tag">Live Testing Laboratory</span>
+                    <h2 className="aum-hero-title">Interactive Sākshī Playground</h2>
+                    <p className="aum-hero-desc">
+                      Test acoustic voice-to-intent distillation in real-time, step through the 4 Māṇḍūkya Quarters, and simulate deterministic mechanical locking.
                     </p>
-                  </div>
+                  </section>
 
-                  <div className="aum-diagram-container" style={{ margin: '10px 0 25px 0' }}>
-                    <svg className="aum-diagram-svg" viewBox="0 0 600 120" width="100%">
-                      <line x1="125" y1="60" x2="160" y2="60" className={`aum-diag-line solid ${['blueprint', 'verification', 'manifest'].includes(simulatorStage) ? 'active' : ''}`} markerEnd="url(#arrow-gold)" />
-                      <line x1="275" y1="60" x2="310" y2="60" className={`aum-diag-line solid ${['verification', 'manifest'].includes(simulatorStage) ? 'active' : ''}`} markerEnd="url(#arrow-gold)" />
-                      <line x1="425" y1="60" x2="460" y2="60" className={`aum-diag-line solid ${simulatorStage === 'manifest' ? 'active' : ''}`} markerEnd="url(#arrow-gold)" />
-
-                      <rect x="15" y="27" width="110" height="65" rx="8" className={`aum-diag-node ${simulatorStage === 'intake' ? 'active highlight' : ''}`} />
-                      <text x="70" y="52" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Intake</text>
-                      <text x="70" y="67" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Jāgrat (Waking)</text>
-                      <text x="70" y="78" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Will / Intent</text>
-
-                      <rect x="165" y="27" width="110" height="65" rx="8" className={`aum-diag-node ${simulatorStage === 'blueprint' ? 'active highlight' : ''}`} />
-                      <text x="220" y="52" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Blueprint</text>
-                      <text x="220" y="67" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Svapna (Dream)</text>
-                      <text x="220" y="78" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Plan / Design</text>
-
-                      <rect x="315" y="27" width="110" height="65" rx="8" className={`aum-diag-node ${simulatorStage === 'verification' ? 'active highlight' : ''}`} />
-                      <text x="370" y="52" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Verification</text>
-                      <text x="370" y="67" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Suṣupti (Sleep)</text>
-                      <text x="370" y="78" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Audit Boundaries</text>
-
-                      <rect x="465" y="27" width="110" height="65" rx="8" className={`aum-diag-node ${simulatorStage === 'manifest' ? 'active highlight' : ''}`} />
-                      <text x="520" y="52" className="aum-diag-text-title" textAnchor="middle" fontSize="10">Manifest</text>
-                      <text x="520" y="67" className="aum-diag-text-sub" textAnchor="middle" fontSize="8">Turīya (Absolute)</text>
-                      <text x="520" y="78" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Code Commit</text>
-                    </svg>
-                  </div>
-
-                  {/* Stage Timeline Controls */}
-                  <div className="aum-timeline-controls">
-                    {['intake', 'blueprint', 'verification', 'manifest'].map((stage) => {
-                      const isActive = simulatorStage === stage;
-                      return (
-                        <button
-                          key={stage}
-                          onClick={() => {
-                            setSimulatorStage(stage);
-                            setTerminalHistory([...terminalHistory, { type: 'system', text: `Tāla Beat changed manually to: ${stage.toUpperCase()}` }]);
-                          }}
-                          className={`aum-timeline-btn ${isActive ? 'active' : ''}`}
-                        >
-                          {stage}
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {/* Playground Content Layout */}
-                  <div className="aum-columns-split">
-                    
-                    {/* Left: Active Stage Limitations details */}
-                    <div className="aum-simulator-info-panel">
-                      <div className="aum-simulator-details">
-                        <header className="aum-simulator-header">
-                          <span className="aum-detail-origin">
-                            Current Stage Context
-                          </span>
-                          <h4 className="aum-simulator-stage-title">
-                            {simulatorStage} Quarter
-                          </h4>
-                        </header>
-
-                        <div className="aum-simulator-metrics">
-                          <div className="aum-metric-row">
-                            <span>Code Modifications Permitted:</span>
-                            <span className={`aum-badge ${
-                              simulatorStage === 'manifest' ? 'allow' : 'block'
-                            }`}>
-                              {simulatorStage === 'manifest' ? 'ALLOW' : 'BLOCKED'}
-                            </span>
-                          </div>
-
-                          <div className="aum-metric-row">
-                            <span>Requirement Intake Allowed:</span>
-                            <span className={`aum-badge ${
-                              simulatorStage === 'intake' ? 'allow' : 'block'
-                            }`}>
-                              {simulatorStage === 'intake' ? 'ALLOW' : 'BLOCKED'}
-                            </span>
-                          </div>
-
-                          <div className="aum-metric-row">
-                            <span>Constraint Verification Checked:</span>
-                            <span className={`aum-badge ${
-                              simulatorStage === 'verification' ? 'allow' : 'block'
-                            }`}>
-                              {simulatorStage === 'verification' ? 'ALLOW' : 'BLOCKED'}
-                            </span>
-                          </div>
-
-                          <p className="aum-simulator-text-desc">
-                            {simulatorStage === 'intake' && 'The agent interviews you, collecting target constraints. No blueprint files or source edits are permitted.'}
-                            {simulatorStage === 'blueprint' && 'The agent drafts abstract diagrams and schemas under blueprint_template.md to map interface logic before coding.'}
-                            {simulatorStage === 'verification' && 'The agent establishes tests and checks the compiler configurations to verify environment variables.'}
-                            {simulatorStage === 'manifest' && 'The agent edits source files, runs compilation checks, checks code fallacies, and commits.'}
-                          </p>
-                        </div>
+                  {/* Widget 1: Live Voice & Acoustic Intent Distiller */}
+                  <section className="aum-distiller-panel">
+                    <div className="aum-distiller-header">
+                      <div>
+                        <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <Volume2 size={20} color="var(--accent-saffron)" />
+                          Sub-15ms Acoustic &amp; Voice Intent Distiller
+                        </h3>
+                        <p style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+                          Simulates `aum_distiller.js`: strips vocal hesitation, fixes phonetic slips, and matches workspace symbols.
+                        </p>
                       </div>
-
-                      {/* Quick Trigger Actions */}
-                      <div className="aum-quick-triggers">
-                        <span className="aum-triggers-title">Quick Commands</span>
-                        <div className="aum-triggers-flex">
-                          <button
-                            onClick={() => handleSimulatorCommand('RESOLVE Redesign handbook website')}
-                            className="aum-trigger-btn"
-                          >
-                            RESOLVE [goal]
-                          </button>
-                          <button
-                            onClick={() => handleSimulatorCommand('BEAT NEXT')}
-                            className="aum-trigger-btn"
-                          >
-                            BEAT NEXT
-                          </button>
-                          <button
-                            onClick={() => handleSimulatorCommand('DRONE')}
-                            className="aum-trigger-btn"
-                          >
-                            DRONE
-                          </button>
-                        </div>
-                      </div>
+                      <span className="aum-quarter-tag locked">Latency Target: &lt; 15ms</span>
                     </div>
 
-                    {/* Right: Simulated CLI Terminal Log */}
+                    <div className="aum-distiller-presets">
+                      <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--text-muted)', alignSelf: 'center' }}>Presets:</span>
+                      {samplePresets.map((sp, idx) => (
+                        <button
+                          key={idx}
+                          className="aum-preset-pill"
+                          onClick={() => {
+                            setDistillerInput(sp.input);
+                            runDistiller(sp.input);
+                          }}
+                        >
+                          {sp.label}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div className="aum-distiller-input-group">
+                      <input
+                        type="text"
+                        className="aum-distiller-input"
+                        value={distillerInput}
+                        onChange={(e) => setDistillerInput(e.target.value)}
+                        placeholder="Type or paste messy spoken voice transcript..."
+                      />
+                      <button 
+                        className="aum-distiller-btn"
+                        onClick={() => runDistiller()}
+                      >
+                        <Zap size={14} /> Distill Intent
+                      </button>
+                    </div>
+
+                    {distillerResult && (
+                      <div>
+                        <div className="aum-distiller-stats-row">
+                          <div className="aum-distiller-stat">
+                            <div className="aum-distiller-stat-label">Execution Time</div>
+                            <div className="aum-distiller-stat-val">{distillerResult.execTime}</div>
+                          </div>
+                          <div className="aum-distiller-stat">
+                            <div className="aum-distiller-stat-label">Fillers Stripped</div>
+                            <div className="aum-distiller-stat-val">{distillerResult.fillersStripped}</div>
+                          </div>
+                          <div className="aum-distiller-stat">
+                            <div className="aum-distiller-stat-label">Slip Corrections</div>
+                            <div className="aum-distiller-stat-val">{distillerResult.replacements.length}</div>
+                          </div>
+                          <div className="aum-distiller-stat">
+                            <div className="aum-distiller-stat-label">Quarter Gate</div>
+                            <div className="aum-distiller-stat-val" style={{ fontSize: '11px' }}>{distillerResult.quarterGate}</div>
+                          </div>
+                        </div>
+
+                        <div className="aum-distiller-output">
+{`╭── ॐ SĀKSHĪ SPHOTA DISTILLATION RECEIPT ──────────────────────────╮
+│ Raw Acoustic Input: "${distillerResult.rawInput}"
+│ Distilled Intent (Paśyantī): "${distillerResult.distilledIntent}"
+│ AST Grounded Targets:
+${distillerResult.groundedSymbols.map(s => `│   • ${s}`).join('\n')}
+│ Invariant Check: MECHANICAL LOCK ENGAGED (Zero writes allowed)
+╰─────────────────────────────────────────────────────────────────╯`}
+                        </div>
+                      </div>
+                    )}
+                  </section>
+
+                  {/* Widget 2: Māṇḍūkya Stepper & Terminal */}
+                  <section className="aum-section">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                      <h3 className="aum-section-title" style={{ margin: 0 }}>Māṇḍūkya State Machine &amp; Terminal Console</h3>
+                      <button 
+                        className="aum-distiller-btn"
+                        onClick={advanceBeat}
+                        style={{ padding: '6px 14px', fontSize: '12px' }}
+                      >
+                        <Play size={12} /> Advance Beat ({simulatorStage.toUpperCase()} ➔ NEXT)
+                      </button>
+                    </div>
+
                     <div className="aum-terminal-container">
-                      {/* Terminal header */}
                       <div className="aum-terminal-header">
                         <div className="aum-terminal-controls-dots">
-                          <div className="aum-dot red" />
-                          <div className="aum-dot yellow" />
-                          <div className="aum-dot green" />
-                          <span className="aum-terminal-title">aum-terminal</span>
+                          <span style={{ background: '#ef4444' }} />
+                          <span style={{ background: '#f59e0b' }} />
+                          <span style={{ background: '#10b981' }} />
                         </div>
-                        <span className="aum-terminal-beat">Tāla: {simulatorStage.toUpperCase()}</span>
+                        <span className="aum-terminal-title">SĀKSHĪ Witness Console • Active Quarter: {simulatorStage.toUpperCase()}</span>
+                        <span className="aum-terminal-beat">v1.6.0</span>
                       </div>
 
-                      {/* Logs output viewport */}
                       <div className="aum-terminal-body">
                         {terminalHistory.map((item, idx) => (
                           <div key={idx} className="aum-terminal-line">
-                            {item.type === 'user' && (
-                              <span className="user">$ {item.text}</span>
-                            )}
-                            {item.type === 'system' && (
-                              <span className="system">{item.text}</span>
-                            )}
-                            {item.type === 'error' && (
-                              <span className="error">{item.text}</span>
-                            )}
+                            <span className={item.type}>{item.text}</span>
                           </div>
                         ))}
                       </div>
 
-                      {/* Command entry bar */}
-                      <div className="aum-terminal-input-bar">
-                        <span className="prompt">$</span>
+                      <form onSubmit={handleTerminalSubmit} className="aum-terminal-input-bar">
+                        <span className="prompt">aum&gt;</span>
                         <input
                           type="text"
-                          value={simulatorInput}
-                          onChange={(e) => setSimulatorInput(e.target.value)}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter') handleSimulatorCommand(simulatorInput);
-                          }}
-                          placeholder="Type 'BEAT next', 'DRONE', 'RESOLVE'... and press Enter"
                           className="aum-terminal-input"
+                          value={terminalInput}
+                          onChange={(e) => setTerminalInput(e.target.value)}
+                          placeholder="Try: distill [prompt], beat next, patterns, lock, unlock, anchor, drone..."
                         />
-                      </div>
+                      </form>
                     </div>
-
-                  </div>
+                  </section>
                 </div>
               )}
 
-              {/* Tab 4: Compiled Decisions (ADR/ARB) */}
-              {activeTab === 'handbook' && (
+              {/* TAB 5: Live Examples & Recipes */}
+              {activeTab === 'examples' && (
                 <div className="aum-tab-content">
-                  <div className="aum-page-header">
-                    <h2 className="aum-page-title">Handbook Decisions Index</h2>
-                    <p className="aum-page-desc">
-                      Search and explore the Architectural Review Board reports (ARBs) and Architecture Decision Records (ADRs) compiled inside the handbook.
-                    </p>
-                  </div>
-
-                  <div className="aum-diagram-container" style={{ margin: '10px 0 25px 0' }}>
-                    <svg className="aum-diagram-svg" viewBox="0 0 600 160" width="100%">
-                      <path d="M 150 80 Q 200 80 245 30" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-                      <path d="M 150 80 Q 200 80 245 65" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-                      <path d="M 150 80 Q 200 80 245 95" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-                      <path d="M 150 80 Q 200 80 245 130" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-
-                      <rect x="20" y="55" width="130" height="50" rx="8" className="aum-diag-node highlight" />
-                      <text x="85" y="80" className="aum-diag-text-title" textAnchor="middle" fontSize="10">docs_data.json</text>
-                      <text x="85" y="92" className="aum-diag-text-code" textAnchor="middle" fontSize="8">Compiled database</text>
-
-                      <rect x="245" y="10" width="150" height="30" rx="5" className="aum-diag-node active" />
-                      <text x="320" y="28" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Mūla Sphoṭa Manifest</text>
-
-                      <rect x="245" y="50" width="150" height="30" rx="5" className="aum-diag-node active" />
-                      <text x="320" y="68" className="aum-diag-text-title" textAnchor="middle" fontSize="9">ARB Review Logs</text>
-
-                      <rect x="245" y="90" width="150" height="30" rx="5" className="aum-diag-node active" />
-                      <text x="320" y="108" className="aum-diag-text-title" textAnchor="middle" fontSize="9">ADR Decision Records</text>
-
-                      <rect x="245" y="130" width="150" height="30" rx="5" className="aum-diag-node active" />
-                      <text x="320" y="148" className="aum-diag-text-title" textAnchor="middle" fontSize="9">Saṃskāra Memories</text>
-
-                      <text x="405" y="28" className="aum-diag-text-sub" fontSize="9">→ Core instruction rules</text>
-                      <text x="405" y="68" className="aum-diag-text-sub" fontSize="9">→ Phase transitions & reviews</text>
-                      <text x="405" y="108" className="aum-diag-text-sub" fontSize="9">→ Specific system constraints</text>
-                      <text x="405" y="148" className="aum-diag-text-sub" fontSize="9">→ Self-healing cache profiles</text>
-                    </svg>
-                  </div>
-
-                  {/* Search Filtering Bar */}
-                  <div className="aum-search-wrapper">
-                    <Search className="aum-search-icon-svg" size={18} />
-                    <input
-                      type="text"
-                      placeholder="Search architecture logs and decisions..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="aum-search-input-field"
-                    />
-                  </div>
-
-                  {/* Results lists */}
-                  <div className="aum-decisions-sections">
-                    {/* ARBs Section */}
-                    {filteredARBs.length > 0 && (
-                      <div className="aum-decisions-group">
-                        <h3 className="aum-decisions-group-title">
-                          Architecture Review Board logs (ARBs)
-                        </h3>
-                        <div className="aum-decisions-grid">
-                          {filteredARBs.map((doc) => (
-                            <button
-                              key={doc.filename}
-                              onClick={() => setSelectedDocId(doc.filename)}
-                              className="aum-decision-card"
-                            >
-                              <div className="aum-decision-card-body">
-                                <span className="aum-decision-card-state">
-                                  State: {doc.attributes.vedic_state || 'Suṣupti'}
-                                </span>
-                                <h4 className="aum-decision-card-title">
-                                  {doc.attributes.title}
-                                </h4>
-                                <p className="aum-decision-card-desc">{doc.attributes.description}</p>
-                              </div>
-                              <span className="aum-decision-card-link">
-                                View handbook log <ChevronRight size={10} />
-                              </span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* ADRs Section */}
-                    {filteredADRs.length > 0 && (
-                      <div className="aum-decisions-group">
-                        <h3 className="aum-decisions-group-title">
-                          Architecture Decision Records (ADRs)
-                        </h3>
-                        <div className="aum-decisions-grid">
-                          {filteredADRs.map((doc) => (
-                            <button
-                              key={doc.filename}
-                              onClick={() => setSelectedDocId(doc.filename)}
-                              className="aum-decision-card"
-                            >
-                              <div className="aum-decision-card-body">
-                                <span className="aum-decision-card-state">
-                                  State: {doc.attributes.vedic_state || 'Suṣupti'}
-                                </span>
-                                <h4 className="aum-decision-card-title">
-                                  {doc.attributes.title}
-                                </h4>
-                                <p className="aum-decision-card-desc">{doc.attributes.description}</p>
-                              </div>
-                              <span className="aum-decision-card-link">
-                                View decision log <ChevronRight size={10} />
-                              </span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {filteredADRs.length === 0 && filteredARBs.length === 0 && (
-                      <div className="aum-no-results">
-                        No handbook logs found matching your query.
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Tab 5: Quick Start / CLI operations reference */}
-              {activeTab === 'quickstart' && (
-                <div className="aum-tab-content">
-                  <section className="aum-section">
-                    <h2 className="aum-hero-title">Handbook Operations & CLI Guide</h2>
-                    <p className="aum-hero-desc-secondary">
-                      AUM is purely instruction-based. It runs inside the AI agent's prompt window using natural language trigger commands to transition state beat levels, evaluate fallacies (*Hētvābhāsa*), and lock focus (*Saṅkalpa*).
+                  <section className="aum-hero-card">
+                    <div className="aum-hero-glow" />
+                    <span className="aum-tag">Concrete Implementations &amp; Workflows</span>
+                    <h2 className="aum-hero-title">Live Examples &amp; Multi-Agent Recipes</h2>
+                    <p className="aum-hero-desc">
+                      Real-world examples of Sākshī in action: noisy voice inputs converted into crisp intent, the mandatory Prompt #1 protocol, and configuration setups for all major AI coding agents.
                     </p>
                   </section>
 
-                  <div className="aum-diagram-container" style={{ margin: '15px 0 25px 0' }}>
-                    <svg className="aum-diagram-svg" viewBox="0 0 600 120" width="100%">
-                      <line x1="92" y1="60" x2="106" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-                      <line x1="188" y1="60" x2="202" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-                      <line x1="284" y1="60" x2="298" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-                      <line x1="380" y1="60" x2="394" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-                      <line x1="476" y1="60" x2="490" y2="60" className="aum-diag-line solid active" markerEnd="url(#arrow-gold)" />
-
-                      <rect x="10" y="35" width="82" height="50" rx="6" className={`aum-diag-node active`} />
-                      <text x="51" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">1. SPARK</text>
-                      <text x="51" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Idea Seed</text>
-
-                      <rect x="106" y="35" width="82" height="50" rx="6" className={`aum-diag-node active`} />
-                      <text x="147" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">2. RESOLVE</text>
-                      <text x="147" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Set Vow</text>
-
-                      <rect x="202" y="35" width="82" height="50" rx="6" className={`aum-diag-node active`} />
-                      <text x="243" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">3. BEAT</text>
-                      <text x="243" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Advance Stage</text>
-
-                      <rect x="298" y="35" width="82" height="50" rx="6" className={`aum-diag-node active`} />
-                      <text x="339" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">4. CONCORD</text>
-                      <text x="339" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Approve Plan</text>
-
-                      <rect x="394" y="35" width="82" height="50" rx="6" className={`aum-diag-node active`} />
-                      <text x="435" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">5. VERIFY</text>
-                      <text x="435" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Compile Check</text>
-
-                      <rect x="490" y="35" width="85" height="50" rx="6" className={`aum-diag-node highlight`} />
-                      <text x="532.5" y="58" className="aum-diag-text-title" textAnchor="middle" fontSize="9">6. COMMIT</text>
-                      <text x="532.5" y="73" className="aum-diag-text-code" textAnchor="middle" fontSize="7">Push Release</text>
-                    </svg>
-                  </div>
-
-                  {/* CLI command tables */}
+                  {/* Recipe 1: Voice Transcripts */}
                   <section className="aum-section">
-                    <h3 className="aum-section-title">CLI Directives Reference</h3>
+                    <h3 className="aum-section-title">1. Acoustic Spoken Transcripts (Before &amp; After)</h3>
                     <div className="aum-table-container">
                       <table className="aum-matrix-table">
                         <thead>
-                          <tr className="bg-orange-950/10 text-orange-400 border-b border-orange-950/20">
-                            <th>Natural Language Trigger</th>
-                            <th>Tāla State</th>
-                            <th>Engine Internal Action</th>
+                          <tr>
+                            <th>Raw Voice Input (Spoken Hesitation &amp; Slips)</th>
+                            <th>Distilled Paśyantī Intent</th>
+                            <th>AST Target</th>
+                            <th>Latency</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-orange-950/10 text-zinc-400">
+                        <tbody>
                           <tr>
-                            <td className="font-mono font-bold text-zinc-300">AUM: SPARK [Idea description]</td>
-                            <td>Paśyantī (Awakened Seed)</td>
-                            <td>Appends timestamped raw thoughts to the gitignored thought incubator sparks log.</td>
+                            <td><em>"Sakshi, I see that the guitar pages are very old. Can you restructure everything according to news planning?"</em></td>
+                            <td><strong>Restructure documentation portal for SPHOTA OS v1.6.0</strong></td>
+                            <td><code>docs_portal/src/App.jsx</code></td>
+                            <td>8.4 ms</td>
                           </tr>
                           <tr>
-                            <td className="font-mono font-bold text-zinc-300">AUM: RESOLVE [Goal Title]</td>
-                            <td>Intake (Jāgrat)</td>
-                            <td>Creates a new task log file and updates the active resolve id in `sphota.json`.</td>
+                            <td><em>"Um, hey sakshi, update the rami with new npx command and bump version"</em></td>
+                            <td><strong>Update README.md with v1.6.0 badges and npx command</strong></td>
+                            <td><code>README.md</code></td>
+                            <td>6.1 ms</td>
                           </tr>
                           <tr>
-                            <td className="font-mono font-bold text-zinc-300">AUM: BEAT next</td>
-                            <td>Tāla transition (All)</td>
-                            <td>Increments the cycle stage (Intake ➔ Blueprint ➔ Verification ➔ Manifestation).</td>
-                          </tr>
-                          <tr>
-                            <td className="font-mono font-bold text-zinc-300">AUM: CONCORD</td>
-                            <td>Blueprint ➔ Verification</td>
-                            <td>Locks user approval of the plan, advancing state to verification stage.</td>
-                          </tr>
-                          <tr>
-                            <td className="font-mono font-bold text-zinc-300">AUM: DRONE</td>
-                            <td>Tanpura reference</td>
-                            <td>Displays active project invariants, directory scopes, and current task focus.</td>
-                          </tr>
-                          <tr>
-                            <td className="font-mono font-bold text-zinc-300">AUM: RETROSPECT [Scope]</td>
-                            <td>Pratyavēkṣaṇa retrospective</td>
-                            <td>Performs a linter fallacy self-study report tracking build failures.</td>
+                            <td><em>"Fix the distiller so bough balance works and locks properly"</em></td>
+                            <td><strong>Fix bot equilibrium and mechanical write-lock in distiller</strong></td>
+                            <td><code>aum_distiller.js</code></td>
+                            <td>9.8 ms</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
                   </section>
 
-                  {/* Setup & integration details */}
+                  {/* Recipe 2: Prompt #1 Bi-Directional Protocol */}
                   <section className="aum-section">
-                    <h3 className="aum-section-title">Deploying rules to IDE Agents</h3>
+                    <h3 className="aum-section-title">2. Prompt #1 Bi-Directional Protocol in Action</h3>
+                    <div className="aum-recipe-block">
+                      <div className="aum-recipe-header">
+                        <span className="aum-recipe-title">
+                          <Shield size={16} /> Human ↔ Sākshī Conversation Walkthrough
+                        </span>
+                      </div>
+                      <div style={{ fontSize: '13px', lineHeight: '1.6' }}>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '8px' }}>
+                          <strong>Turn 1 • Developer Prompt:</strong> "Add an endpoint for user profiles and update auth token verification."
+                        </p>
+                        <div className="aum-distiller-output" style={{ marginBottom: '12px' }}>
+{`☄️ ॐ SĀKSHĪ BI-DIRECTIONAL INTENT RECEIPT
+Beat: INTAKE (A · Jāgrat) ➔ Mechanical Lock ACTIVE (Zero code written)
+
+1. Distilled Human Intent:
+   Add /api/users/profile endpoint and integrate token verification middleware.
+
+2. Projected Agent Intent & Impact List:
+   • Create src/routes/users.js
+   • Modify src/middleware/auth.js (validateBearerToken)
+   • Update tests/auth.test.js
+
+3. Probing Unstated Assumptions:
+   • Should unauthenticated profile queries return 401 Unauthorized or 403 Forbidden?
+   • Is profile caching required via Redis?
+
+Awaiting approval. Reply 'Proceed' to begin implementation.`}
+                        </div>
+                        <p style={{ color: 'var(--text-muted)' }}>
+                          <strong>Turn 2 • Developer:</strong> "401 Unauthorized, no redis for now. Proceed."  
+                          <br />
+                          <strong>Sākshī Action:</strong> Advances beat to <code>Turīya</code>, releases <code>~/.aum/.intent_locked</code>, and authorizes the agent to write code safely.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* Recipe 3: Multi-Agent Configurations */}
+                  <section className="aum-section">
+                    <h3 className="aum-section-title">3. Multi-Agent Hub Setup (One-Click Hook)</h3>
+                    <p className="aum-section-desc">
+                      Sākshī operates from a pure OS-level global hub (`~/.aum`). Running `aum hook` automatically establishes unified intent across all detected agents:
+                    </p>
+
                     <div className="aum-grid-2">
-                      <div className="aum-card-panel text-xs">
-                        <h4 className="aum-card-title">Cursor Integrations</h4>
-                        <p className="aum-card-text text-zinc-500">
-                          Copy the `.cursorrules` file to your project root. Cursor automatically loads system constraints, prompting the agent to request intent resolving before editing source code.
-                        </p>
+                      <div className="aum-recipe-block">
+                        <div className="aum-recipe-header">
+                          <span className="aum-recipe-title">Cursor (`.cursorrules`)</span>
+                          <button 
+                            className="aum-copy-btn"
+                            onClick={() => copyToClipboard(`---\n# ॐ SĀKSHĪ SPHOTA INTENT BRIDGE\n# 1. Read anchor at ~/.aum/ACTIVE_CONTEXT.md\n# 2. Never write code on Prompt #1 without distilled intent approval.\n# 3. Respect ~/.aum/.intent_locked.\n---`, 1)}
+                          >
+                            {copiedIndex === 1 ? 'Copied!' : 'Copy'}
+                          </button>
+                        </div>
+                        <pre className="aum-code-snippet">
+{`# ॐ SĀKSHĪ SPHOTA INTENT BRIDGE
+1. Read anchor at ~/.aum/ACTIVE_CONTEXT.md
+2. Never write code on Prompt #1
+3. Conclude with: "Awaiting approval. Reply 'Proceed'"`}
+                        </pre>
                       </div>
 
-                      <div className="aum-card-panel text-xs">
-                        <h4 className="aum-card-title">Cline / Roo Code Settings</h4>
-                        <p className="aum-card-text text-zinc-500">
-                          Copy the `.clinerules` file to your project root. Cline will enforce the sandboxing sheaths (*Kañcukas*), blocking unapproved tool invocations.
+                      <div className="aum-recipe-block">
+                        <div className="aum-recipe-header">
+                          <span className="aum-recipe-title">Claude Code (`CLAUDE.md`)</span>
+                          <button 
+                            className="aum-copy-btn"
+                            onClick={() => copyToClipboard(`---\n# ॐ SĀKSHĪ GLOBAL NERVOUS SYSTEM\n# Central state: ~/.aum/ACTIVE_CONTEXT.md\n# Follow Clarify -> Plan -> Act spine.\n---`, 2)}
+                          >
+                            {copiedIndex === 2 ? 'Copied!' : 'Copy'}
+                          </button>
+                        </div>
+                        <pre className="aum-code-snippet">
+{`# ॐ SĀKSHĪ GLOBAL NERVOUS SYSTEM
+1. Read active anchor at ~/.aum/ACTIVE_CONTEXT.md
+2. Capture intent -> Clarify -> Plan -> Act
+3. Prefer CLI orchestration: aum distill | beat | drone`}
+                        </pre>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              )}
+
+              {/* TAB 6: Architecture Handbook (ARBs/ADRs) */}
+              {activeTab === 'handbook' && (
+                <div className="aum-tab-content">
+                  <section className="aum-hero-card">
+                    <div className="aum-hero-glow" />
+                    <span className="aum-tag">Unaltered Architectural Archive</span>
+                    <h2 className="aum-hero-title">Vedic Architecture Review Board (36 ARBs)</h2>
+                    <p className="aum-hero-desc">
+                      Search and inspect all 36 historical ARB specifications and Architectural Decision Records (ADRs) that form the foundational invariants of AUM and SPHOTA OS.
+                    </p>
+                  </section>
+
+                  {/* Search Bar */}
+                  <div style={{ margin: '16px 0', display: 'flex', gap: '12px' }}>
+                    <div style={{ position: 'relative', flex: 1 }}>
+                      <Search size={16} style={{ position: 'absolute', left: '14px', top: '14px', color: 'var(--text-muted)' }} />
+                      <input
+                        type="text"
+                        className="aum-distiller-input"
+                        style={{ paddingLeft: '38px' }}
+                        placeholder="Search ARBs and ADR decisions by title or keywords..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                    </div>
+                  </div>
+
+                  {/* ARB Cards Grid */}
+                  <div className="aum-grid-3">
+                    {filteredDocs.map((doc, idx) => (
+                      <div 
+                        key={idx}
+                        className="aum-card-panel"
+                        onClick={() => setSelectedDocId(doc.filename)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <span className="aum-card-badge">{doc.attributes?.vedic_state || 'Invariant'}</span>
+                        <h4 className="aum-card-title" style={{ fontSize: '15px', marginTop: '6px' }}>
+                          {doc.attributes?.title || doc.filename.replace('.md', '').replace(/_/g, ' ')}
+                        </h4>
+                        <p className="aum-card-text" style={{ fontSize: '12px', marginTop: '6px' }}>
+                          {doc.attributes?.description || 'Architectural Review Board specification and invariant constraints.'}
                         </p>
+                        <div style={{ marginTop: '10px', fontSize: '11px', color: 'var(--accent-saffron)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                          <span>Read Full Spec</span>
+                          <ChevronRight size={12} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* TAB 7: CLI & Ecosystem */}
+              {activeTab === 'quickstart' && (
+                <div className="aum-tab-content">
+                  <section className="aum-hero-card">
+                    <div className="aum-hero-glow" />
+                    <span className="aum-tag">Global OS-Level Hub</span>
+                    <h2 className="aum-hero-title">CLI &amp; Ecosystem Reference</h2>
+                    <p className="aum-hero-desc">
+                      Everything needed to install, run, and integrate SĀKSHĪ and SPHOTA OS across your machines.
+                    </p>
+                  </section>
+
+                  {/* Installation snippets */}
+                  <section className="aum-section">
+                    <h3 className="aum-section-title">Installation Options</h3>
+                    <div className="aum-grid-2">
+                      <div className="aum-recipe-block">
+                        <div className="aum-recipe-header">
+                          <span className="aum-recipe-title">Instant Run via NPX (Zero Install)</span>
+                          <button 
+                            className="aum-copy-btn"
+                            onClick={() => copyToClipboard('npx aum-framework distill "refactor website"', 10)}
+                          >
+                            {copiedIndex === 10 ? 'Copied!' : 'Copy'}
+                          </button>
+                        </div>
+                        <pre className="aum-code-snippet">
+{`# Run any SPHOTA OS command instantly
+npx aum-framework distill "refactor portal"
+npx aum-framework mandukya`}
+                        </pre>
                       </div>
 
-                      <div className="aum-card-panel text-xs">
-                        <h4 className="aum-card-title">Claude Code Config</h4>
-                        <p className="aum-card-text text-zinc-500">
-                          Copy the `CLAUDE.md` guidelines file to your project root. Claude Code parses it at start to configure fallback command execution bounds.
-                        </p>
+                      <div className="aum-recipe-block">
+                        <div className="aum-recipe-header">
+                          <span className="aum-recipe-title">Global CLI Installation</span>
+                          <button 
+                            className="aum-copy-btn"
+                            onClick={() => copyToClipboard('npm install -g aum-framework && aum install', 11)}
+                          >
+                            {copiedIndex === 11 ? 'Copied!' : 'Copy'}
+                          </button>
+                        </div>
+                        <pre className="aum-code-snippet">
+{`# Install globally and initialize ~/.aum hub
+npm install -g aum-framework
+aum install
+aum drone`}
+                        </pre>
                       </div>
+                    </div>
+                  </section>
 
-                      <div className="aum-card-panel text-xs">
-                        <h4 className="aum-card-title">GitHub Copilot Settings</h4>
-                        <p className="aum-card-text text-zinc-500">
-                          Place the `copilot-instructions.md` file inside your `.github/` folder. Copilot will respect text priorities mapped under Mīmāṃsā.
-                        </p>
-                      </div>
+                  {/* Command Table */}
+                  <section className="aum-section">
+                    <h3 className="aum-section-title">Complete Command Cheat-Sheet</h3>
+                    <div className="aum-table-container">
+                      <table className="aum-matrix-table">
+                        <thead>
+                          <tr>
+                            <th>Command</th>
+                            <th>Quarter / Category</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><code>aum distill "&lt;text&gt;"</code></td>
+                            <td>Quarter A (Clarify)</td>
+                            <td>Sub-15ms acoustic intent normalization, filler removal, and AST grounding.</td>
+                          </tr>
+                          <tr>
+                            <td><code>aum patterns</code></td>
+                            <td>Consciousness</td>
+                            <td>Inspects L1 (Signals), L2 (Workflows), and L3 (Archetypes) registry.</td>
+                          </tr>
+                          <tr>
+                            <td><code>aum lock</code></td>
+                            <td>Guardrails</td>
+                            <td>Engages OS mechanical write-lock at <code>~/.aum/.intent_locked</code>.</td>
+                          </tr>
+                          <tr>
+                            <td><code>aum unlock</code></td>
+                            <td>Guardrails</td>
+                            <td>Releases mechanical write-lock upon reaching the manifest beat.</td>
+                          </tr>
+                          <tr>
+                            <td><code>aum anchor</code></td>
+                            <td>Token Economy</td>
+                            <td>Re-synthesizes ultra-lean <code>&lt; 380 token</code> context into <code>ACTIVE_CONTEXT.md</code>.</td>
+                          </tr>
+                          <tr>
+                            <td><code>aum beat [next|set]</code></td>
+                            <td>Māṇḍūkya</td>
+                            <td>Stages active quarter: intake, blueprint, verification, or manifest.</td>
+                          </tr>
+                          <tr>
+                            <td><code>aum drone</code></td>
+                            <td>Witness</td>
+                            <td>Outputs Tanpura witness pitch and active intent status.</td>
+                          </tr>
+                          <tr>
+                            <td><code>aum hook</code></td>
+                            <td>Multi-Agent</td>
+                            <td>Injects SPHOTA intent bridge into Cursor, Claude, Copilot, Cline, and Gemini.</td>
+                          </tr>
+                          <tr>
+                            <td><code>aum sync</code></td>
+                            <td>Ecosystem</td>
+                            <td>Verifies and synchronizes global configurations in <code>~/.aum</code>.</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </section>
                 </div>
               )}
             </>
           )}
-
         </main>
       </div>
-
     </div>
   );
 }

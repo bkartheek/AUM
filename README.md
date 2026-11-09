@@ -1,115 +1,111 @@
-# ॐ AUM: Intent Orchestration for AI Agents
+# ॐ SĀKSHĪ (साक्षी) & SPHOTA OS: Intent & Consciousness Engine for AI Agents
 
 <p align="center">
+  <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/badge/version-1.6.0-gold.svg" alt="version 1.6.0"></a>
   <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/npm/v/aum-framework.svg" alt="npm version"></a>
   <a href="https://npmjs.org/package/aum-framework"><img src="https://img.shields.io/npm/dm/aum-framework.svg" alt="npm downloads"></a>
   <a href="https://github.com/bkartheek/AUM/blob/main/LICENSE"><img src="https://img.shields.io/github/license/bkartheek/AUM" alt="license"></a>
+  <a href="https://bkartheek.github.io/AUM/"><img src="https://img.shields.io/badge/docs-portal-orange.svg" alt="docs portal"></a>
 </p>
 
-**AUM** routes work with AI coding agents through one spine: **Clarify → Plan → Act**.
+**SĀKSHĪ** (साक्षी — *The Conscious Witness*) is an intent orchestration and consciousness layer for AI coding agents. Grounded in the **Māṇḍūkya Upaniṣad** (**A · U · M · Turīya**) and operating through the **Clarify → Plan → Act** spine, Sākshī acts as an impartial witness that balances human intent with autonomous bot execution.
 
-It is an **intent orchestration layer** (CLI + hooks + agent instructions), not an OS sandbox and not a substitute for your editor’s permissions.
-
-Canonical short doc: [`aum_framework/INTENT.md`](aum_framework/INTENT.md).
+It operates as a **pure OS-level global intent engine** (`~/.aum`), keeping your repositories completely clean while synchronizing multi-agent workflows across **Cursor**, **Claude Code**, **GitHub Copilot**, **Cline**, and **Gemini/Antigravity**.
 
 ---
 
-## What AUM is for
+## 🌟 Core Capabilities
 
-1. **Clarify** — Capture fuzzy or wrong prompts (`spark` / `concern` / `resolve` / `distill`); ask questions; **no code yet**.
-2. **Plan** — Advance beats (`blueprint` → `verification`); lock design alignment; keep a compact context anchor.
-3. **Act** — Edit and build only when the beat is `manifest` or the human says **Proceed**.
-
-Optional Vedic / musical metaphors live under `vedic_library/` and PHILOSOPHY docs — useful depth, not the product headline.
-
----
-
-## What AUM guarantees vs honor-system
-
-| Guaranteed by tooling | Honor-system (agent must comply) |
-|---|---|
-| State under `~/.aum` or local `.aum` | No premature code writes |
-| CLI for spark / resolve / beat / drone / lock | Reading orchestrator + manifest each session |
-| Hook text injected into agent rule files | Respecting `.intent_locked` and Proceed |
-| Light `aum audit` on git diffs | Staying inside the active resolve |
-
-AUM does **not** intercept or sandbox Cursor / Claude / Copilot tool calls.
+1. **Sub-15ms Acoustic & Voice Distiller (`aum distill`)**: Strips speech hesitations ("um", "ah", "like") and resolves phonetic slips ("guitar pages" ➔ "github pages", "rami" ➔ "readme") grounded against active AST workspace symbols.
+2. **Consciousness Growth Engine (`aum patterns`)**: Captures interactions into permanent memory impressions (*Saṃskāras*), clustering micro-intents into L1 (Routines), L2 (Strategies), and L3 (Archetypes).
+3. **Deterministic Mechanical Lock (`aum lock / unlock`)**: Engages OS-level write locks (`~/.aum/.intent_locked`) to physically prevent autonomous agents from premature code modification.
+4. **Ultra-Lean Context Anchor (`aum anchor`)**: Synthesizes global workspace state and active intent into a strictly bounded `< 380 token` anchor injected into agent rule files.
+5. **Pure OS-Level Global Nervous System (`~/.aum`)**: Zero local `.aum` directories required in your code repositories.
 
 ---
 
-## Quick start
+## The 4 Māṇḍūkya Quarters of Development
 
-### 1. Instant run via NPX (Zero install)
+| Beat | Quarter | State | Technical Job | Code Writes? |
+| :--- | :--- | :--- | :--- | :--- |
+| `intake` | **A (Jāgrat)** | Waking Intake | Sub-15ms acoustic distillation; capture intent; Bi-Directional Protocol | ❌ **Locked** |
+| `blueprint` | **U (Svapna)** | Subtle Blueprint | Architectural planning; pattern-of-patterns promotion | ❌ **Locked** |
+| `verification` | **M (Suṣupti)** | Deep Stillness | Invariant assertions; test validation; AST compliance | ❌ **Locked** |
+| `manifest` | **· (Turīya)** | Transcendent Act | Coordinated multi-agent execution & deployment | ✅ **Unlocked** |
+
+---
+
+## Quickstart
+
+### 1. Instant Run via NPX (Zero Install)
 ```bash
-npx https://github.com/bkartheek/AUM/tarball/v1.5.0 mandukya
+npx aum-framework distill "refactor the guitar pages according to news planning"
+npx aum-framework mandukya
 ```
 
-### 2. Global install on any machine
+### 2. Global Install
 ```bash
-npm install -g https://github.com/bkartheek/AUM/tarball/v1.5.0
-aum install    # Seeds ~/.aum hub + aligns AI agent hooks
-aum drone      # Show active intent / beat
-```
+npm install -g aum-framework
 
-### 3. Install from source
-```bash
-git clone https://github.com/bkartheek/AUM.git
-cd AUM/aum_framework
-node scripts/aum.js install
-```
+# Initialize global OS hub at ~/.aum and auto-hook active IDE agents
+aum install
 
----
-
-## Core CLI (orchestration spine)
-
-```bash
-# Clarify
-aum distill "noisy voice prompt…"
-aum spark "raw idea"
-aum concern "something feels wrong"
-aum resolve "Name the goal"          # starts at intake
+# View current witness state
 aum drone
-
-# Plan
-aum beat next                        # or: aum beat set blueprint
-aum lock "Awaiting design alignment"
-aum unlock                           # after Proceed
-aum anchor                           # <380 token context card
-
-# Act (only on manifest / Proceed)
-aum audit
-aum verify
-
-# Meta-Patterns & AST Grounding
-aum patterns                         # View hierarchical pattern-of-patterns registry
-aum harvest                          # Refresh workspace symbol index for <15ms voice grounding
 ```
 
-Runtime: `aum sync` · `aum hook` · `aum wrap "…"`.  
-Experimental demos (`heal`, `compile`, `assert`, …) stay available but are labeled non-core in `aum help`.
-
-Lifecycle beats: `intake` → `blueprint` → `verification` → `manifest`.
-
----
-
-## Agent skills (roles on the spine)
-
-| Skill | Stage | Job |
-|---|---|---|
-| **Yogi** | Clarify | Guardian at intake; stop ambiguous leaps to code |
-| **Om** | Plan | Keep beats / active resolve sequenced |
-| **Developer** | Meta | When changing AUM itself: edit → `aum sync` → test |
-
----
-
-## Docs portal
-
+### 3. Core CLI Reference
 ```bash
-npx aum publish
-cd docs_portal && npm run dev
+# Clarify (Quarter A)
+aum distill "noisy spoken prompt…"
+aum spark "raw idea"
+aum resolve "Name the active goal"
+
+# Plan (Quarter U)
+aum beat next                        # advance intake -> blueprint
+aum patterns                         # view L1-L3 pattern-of-patterns
+aum lock --reason "Design review"    # deterministic write-lock
+
+# Verify (Quarter M)
+aum verify                           # test & compiler verification
+aum audit                            # git diff invariant audit
+
+# Manifest (Quarter Turīya - Proceed)
+aum unlock                           # release write-lock
+aum beat set manifest
+
+# Ecosystem
+aum anchor                           # re-synthesize <380 token context
+aum hook                             # inject rules into Cursor, Claude, Copilot, Cline, Gemini
+aum sync                             # verify global ~/.aum integrity
 ```
 
-Published at [bkartheek.github.io/AUM](https://bkartheek.github.io/AUM/).
+---
+
+## Multi-Agent Harmony
+
+Sākshī establishes a unified nervous system across all major AI coding agents:
+- **Cursor** (`.cursorrules` / `.cursor/rules`)
+- **Claude Code** (`CLAUDE.md`)
+- **GitHub Copilot** (`.github/copilot-instructions.md`)
+- **Cline & Roo Code** (`.clinerules`, `.roocode`)
+- **Gemini / Antigravity** (`.gemini/AGENTS.md`)
+
+Each agent reads the centralized context anchor at `~/.aum/ACTIVE_CONTEXT.md`, preventing memory drift and hallucinated file writes.
+
+---
+
+## Documentation Portal
+
+The live interactive documentation portal is published at:  
+👉 **[https://bkartheek.github.io/AUM/](https://bkartheek.github.io/AUM/)**
+
+To run the documentation portal locally:
+```bash
+cd docs_portal
+npm install
+npm run dev
+```
 
 ---
 

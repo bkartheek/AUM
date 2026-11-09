@@ -2,9 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-let aumDir = path.join(process.cwd(), '.aum');
+// Resolve global ~/.aum directory, fallback to local or packaged fallback
+let aumDir = path.join(os.homedir(), '.aum');
 if (!fs.existsSync(aumDir)) {
-  aumDir = path.join(os.homedir(), '.aum');
+  aumDir = path.join(process.cwd(), '.aum');
   if (!fs.existsSync(aumDir)) {
     aumDir = path.join(__dirname, '..', 'pkg_files', '.aum');
     if (!fs.existsSync(aumDir)) {
@@ -12,10 +13,11 @@ if (!fs.existsSync(aumDir)) {
     }
   }
 }
-let outputJsonPath = path.join(process.cwd(), '.aum', 'docs_data.json');
-const devPortalPath = path.join(process.cwd(), 'docs_portal', 'src', 'docs_data.json');
-if (fs.existsSync(path.dirname(devPortalPath))) {
-  outputJsonPath = devPortalPath;
+
+// Target output path
+let outputJsonPath = path.join(process.cwd(), 'docs_portal', 'src', 'docs_data.json');
+if (!fs.existsSync(path.dirname(outputJsonPath))) {
+  outputJsonPath = path.join(process.cwd(), '.aum', 'docs_data.json');
 }
 
 function parseFrontmatter(content) {
@@ -39,7 +41,7 @@ function parseFrontmatter(content) {
 }
 
 function processFile(filePath) {
-  if (!fs.existsSync(filePath)) return null;
+  if (!filePath || !fs.existsSync(filePath)) return null;
   const content = fs.readFileSync(filePath, 'utf8');
   const { attributes, body } = parseFrontmatter(content);
   return {
@@ -57,34 +59,52 @@ function scanDir(dirPath) {
     .filter(Boolean);
 }
 
+function findFile(filename) {
+  // Check ~/.aum
+  const inAum = path.join(aumDir, filename);
+  if (fs.existsSync(inAum)) return inAum;
+  // Check workspace root
+  const inRoot = path.join(process.cwd(), filename);
+  if (fs.existsSync(inRoot)) return inRoot;
+  // Check aum_framework
+  const inPkg = path.join(__dirname, '..', filename);
+  if (fs.existsSync(inPkg)) return inPkg;
+  return null;
+}
+
 function main() {
-  console.log('Starting doc parsing...');
+  console.log('Starting SPHOTA OS documentation compilation...');
   
-  let manifestPath = path.join(aumDir, 'MULA_SPHOTA.md');
-  if (!fs.existsSync(manifestPath)) manifestPath = path.join(aumDir, 'MANIFEST.md');
+  // Manifest & Core instructions
+  let manifestPath = findFile('MANIFEST.md') || findFile('MULA_SPHOTA.md');
   const manifest = processFile(manifestPath);
-  const instructions = processFile(path.join(aumDir, 'INSTRUCTIONS.md'));
+  const instructions = processFile(findFile('INSTRUCTIONS.md'));
+  const activeContext = processFile(findFile('ACTIVE_CONTEXT.md'));
+  const intent = processFile(findFile('INTENT.md'));
+  const coreRules = processFile(findFile('CORE_RULES.md'));
+  const philosophy = processFile(findFile('PHILOSOPHY.md'));
   
-  const configPath = path.join(aumDir, 'config.json');
-  const config = fs.existsSync(configPath) 
+  // Configuration
+  const configPath = findFile('config.json');
+  const config = configPath && fs.existsSync(configPath) 
     ? JSON.parse(fs.readFileSync(configPath, 'utf8'))
     : null;
   
-  let architectureDir = path.join(aumDir, 'architecture');
-  if (config && config.architecture_dir) {
-    architectureDir = path.resolve(process.cwd(), config.architecture_dir);
-  } else if (!fs.existsSync(architectureDir)) {
-    const templateArchDir = path.join(__dirname, '..', 'pkg_files', 'architecture_templates');
-    if (fs.existsSync(templateArchDir)) {
-      architectureDir = templateArchDir;
+  // Architecture documents (all 34+ ARBs and ADRs)
+  let architectureDir = path.join(process.cwd(), 'docs', 'architecture');
+  if (!fs.existsSync(architectureDir)) {
+    architectureDir = path.join(aumDir, 'architecture');
+    if (!fs.existsSync(architectureDir)) {
+      architectureDir = path.join(__dirname, '..', 'pkg_files', 'architecture_templates');
     }
   }
   
   const arbs = scanDir(architectureDir);
   const adrs = scanDir(path.join(architectureDir, 'decisions'));
   
-  let samskarasDir = path.join(aumDir, 'samskaras');
-  if (!fs.existsSync(samskarasDir)) samskarasDir = path.join(aumDir, 'memory');
+  // Saṃskāras Memory
+  let samskarasDir = path.join(aumDir, 'memory');
+  if (!fs.existsSync(samskarasDir)) samskarasDir = path.join(aumDir, 'samskaras');
   const samskaras = [];
   if (fs.existsSync(samskarasDir)) {
     fs.readdirSync(samskarasDir)
@@ -102,14 +122,30 @@ function main() {
         }
       });
   }
+
+  // Patterns
+  let patternRegistry = null;
+  const patternPath = path.join(aumDir, 'patterns', 'pattern_registry.json');
+  if (fs.existsSync(patternPath)) {
+    try {
+      patternRegistry = JSON.parse(fs.readFileSync(patternPath, 'utf8'));
+    } catch (_) {}
+  }
   
   const docsData = {
+    version: '1.6.0',
+    title: 'SĀKSHĪ (साक्षी) & SPHOTA OS Documentation Portal',
     manifest,
     instructions,
+    activeContext,
+    intent,
+    coreRules,
+    philosophy,
     config,
     arbs,
     adrs,
     samskaras,
+    patternRegistry,
     compiledAt: new Date().toISOString()
   };
 
@@ -119,7 +155,7 @@ function main() {
   }
   
   fs.writeFileSync(outputJsonPath, JSON.stringify(docsData, null, 2), 'utf8');
-  console.log(`Successfully compiled docs to: ${outputJsonPath}`);
+  console.log(`Successfully compiled docs data (${arbs.length} ARBs, ${adrs.length} ADRs, ${samskaras.length} Saṃskāras) to: ${outputJsonPath}`);
 }
 
 main();

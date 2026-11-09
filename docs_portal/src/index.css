@@ -1257,3 +1257,251 @@ body {
   font-size: 8px !important;
 }
 
+/* Sākshī Consciousness & SPHOTA OS Additions */
+.aum-distiller-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: var(--shadow-main);
+}
+
+.aum-distiller-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.aum-distiller-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.aum-preset-pill {
+  background: var(--bg-base);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aum-preset-pill:hover {
+  border-color: var(--accent-saffron);
+  color: var(--accent-saffron);
+  background: #fffdf9;
+}
+
+.aum-distiller-input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.aum-distiller-input {
+  flex: 1;
+  background: var(--bg-base);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.aum-distiller-input:focus {
+  border-color: var(--accent-saffron);
+}
+
+.aum-distiller-btn {
+  background: linear-gradient(135deg, var(--accent-saffron), var(--accent-gold));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.aum-distiller-btn:hover {
+  opacity: 0.92;
+}
+
+.aum-distiller-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.aum-distiller-stat {
+  background: var(--bg-base);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.aum-distiller-stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.aum-distiller-stat-val {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-saffron);
+  margin-top: 2px;
+}
+
+.aum-distiller-output {
+  background: #18120b;
+  color: #f7ecd9;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  position: relative;
+  overflow-x: auto;
+}
+
+.aum-quarters-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .aum-quarters-track {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aum-quarter-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.aum-quarter-card.active {
+  border-color: var(--accent-saffron);
+  box-shadow: 0 0 16px rgba(234, 88, 12, 0.15);
+  background: #fffdfa;
+}
+
+.aum-quarter-letter {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent-saffron);
+  margin-bottom: 4px;
+}
+
+.aum-quarter-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.aum-quarter-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.aum-quarter-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.aum-quarter-tag.locked {
+  background: rgba(180, 83, 9, 0.12);
+  color: #b45309;
+}
+
+.aum-quarter-tag.unlocked {
+  background: rgba(22, 163, 74, 0.12);
+  color: #15803d;
+}
+
+.aum-recipe-block {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.aum-recipe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.aum-recipe-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aum-copy-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.aum-copy-btn:hover {
+  color: var(--accent-saffron);
+  border-color: var(--accent-saffron);
+}
+
+.aum-code-snippet {
+  background: #18120b;
+  color: #f7ecd9;
+  border-radius: 6px;
+  padding: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+
