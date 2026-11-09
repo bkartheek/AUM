@@ -85,7 +85,8 @@
       "aider",
       "windsurf",
       "codex"
-    ]
+    ],
+    "user_name": "Kartheek"
   },
   "arbs": [
     {
@@ -897,5 +898,5 @@
     }
   ],
   "patternRegistry": null,
-  "compiledAt": "2026-11-09T08:50:03.816Z"
+  "compiledAt": "2026-11-09T12:02:27.949Z"
 }

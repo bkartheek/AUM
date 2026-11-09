@@ -10,9 +10,9 @@
   {
     "day": 2,
     "theme": "Sphoṭa (The Indivisible Flash of Intent)",
-    "source": "Bhartṛhari's Vākyapadīya (Brahmakāṇḍa)",
-    "seed_sanskrit": "अविभक्तः स्फोटो जायते",
-    "translation": "Before speech fractures into multiple sounds and letters, it shines in the heart as an undivided, instantaneous flash of meaning.",
+    "source": "Bhartṛhari's Vākyapadīya (Brahmakāṇḍa 1.1)",
+    "seed_sanskrit": "अनादिनिधनं ब्रह्म शब्दतत्त्वं यदक्षरम्। विवर्ततेऽर्थभावेन प्रक्रिया जगतो यतः॥",
+    "translation": "Brahman is without beginning or end, the indestructible essence of the Word. It transforms into meaning and manifestation, from which the process of the universe proceeds.",
     "inquiry": "Notice where a software feature truly originates. It does not start in JavaScript syntax or database tables; it bursts into your awareness as an undivided intuitive flash (Sphoṭa). The code is merely its downstream ripple. Have you honored the clarity of the origin before scattering it into syntax?"
   },
   {
@@ -50,9 +50,9 @@
   {
     "day": 7,
     "theme": "Adhyāsa (Superimposition & Debugging)",
-    "source": "Śaṅkarācārya's Brahma Sūtra Bhāṣya",
-    "seed_sanskrit": "स्मृतिरूपः परत्र पूर्वदृष्टावभासः",
-    "translation": "Superimposition (Adhyāsa) is the apparent presentation to consciousness of something previously observed, projected upon another locus like a snake seen upon a rope.",
+    "source": "Śaṅkarācārya's Brahma Sūtra Bhāṣya (Adhyāsa Bhāṣya)",
+    "seed_sanskrit": "स्मृतिरूपः परत्र पूर्वदृष्टावभासः। तमेतं एवंलक्षणं अध्यासमाचक्षते पण्डिताः॥",
+    "translation": "Superimposition (Adhyāsa) is the apparent presentation to consciousness of something previously observed, projected upon another locus like a snake seen upon a rope. The wise term this Adhyāsa.",
     "inquiry": "Every software bug is a case of Adhyāsa: the developer superimposes an assumption upon memory that does not exist in reality. When a crash occurs, do not panic. Step back and ask: 'What illusion am I projecting upon this variable? Where is the rope beneath the snake?'"
   },
   {
@@ -60,7 +60,7 @@
     "theme": "Kaṇāda's Padārtha (The Anatomy of State)",
     "source": "Vaiśeṣika Sūtras 1.1.4",
     "seed_sanskrit": "द्रव्यगुणकर्मसामान्यविशेषसमवायानां पदार्थानां तत्त्वज्ञानान्निःश्रेयसम्",
-    "translation": "Highest liberation arises from the precise discernment of the categories of existence: Substance (Dravya), Quality (Guṇa), Action (Karma), Universality, Particularity, and Inherence.",
+    "translation": "Highest liberation arises from the precise discernment of the categories of existence: Substance (Dravya), Quality (Guṇa), Action (Karma), Generality, Particularity, and Inherence.",
     "inquiry": "In your data models, keep the categories pure. What is the Substance (the database record or object identity)? What is the Quality (its immutable attributes)? What is the Action (the state mutation)? When these categories are muddled, suffering in the codebase begins."
   },
   {
@@ -78,5 +78,37 @@
     "seed_sanskrit": "विरामप्रत्ययाभ्यासपूर्वः संस्कारशेषोऽन्यः",
     "translation": "When all mental fluctuations are stilled through practice, only subconscious latent impressions (Saṃskāras) remain.",
     "inquiry": "Every interaction leaves an impression. In Sākshī, each turn generates a Saṃskāra in memory, clustering into habit patterns. Notice what mental impressions your daily work is creating inside you. Are you coding from agitation, or from stillness?"
+  },
+  {
+    "day": 11,
+    "theme": "Pramāṇa (The Instruments of Knowledge)",
+    "source": "Gautama's Nyāya Sūtras 1.1.3",
+    "seed_sanskrit": "प्रत्यक्षानुमानोपमानशब्दाः प्रमाणानि",
+    "translation": "Direct perception (Pratyakṣa), logical inference (Anumāna), analogy (Upamāna), and authoritative testimony (Śabda) are the four valid instruments of knowledge.",
+    "inquiry": "In technical diagnostics, test your epistemology. Did you directly observe the error trace (Pratyakṣa), or merely infer its cause from hearsay (Anumāna)? Clarity arises when the instrument of knowledge is rigorously matched to the problem."
+  },
+  {
+    "day": 12,
+    "theme": "Tat Tvam Asi (Non-Dual Architecture)",
+    "source": "Chāndogya Upaniṣad 6.8.7",
+    "seed_sanskrit": "स य एषोऽणिमैतदात्म्यमिदं सर्वं तत्सत्यं स आत्मा तत्त्वमसि श्वेतकेतो",
+    "translation": "That which is the finest essence—the whole universe has That as its soul. That is the Truth. That is the Self. Thou art That, O Śvetaketu.",
+    "inquiry": "When the observer and the observed recognize their common substrate, friction disappears. When human intent and the software tool reflect one undivided purpose without artificial barriers, the work ceases to be an external burden; it becomes an effortless expression of being."
+  },
+  {
+    "day": 13,
+    "theme": "Citta-Vṛtti-Nirodha (Quieting the Context Window)",
+    "source": "Patañjali's Yoga Sūtras 1.2",
+    "seed_sanskrit": "योगश्चित्तवृत्तिनिरोधः",
+    "translation": "Yoga is the intentional quieting of the whirlpools and modifications of the mind-field.",
+    "inquiry": "The context window of an AI agent is its Citta (mind-field). When flooded with redundant logs, irrelevant memory, and scattered instructions, hallucinations (Vṛttis) surge. When we prune the context to under 380 tokens, we practice computational Yoga. Is your mind quiet enough to hear the solution?"
+  },
+  {
+    "day": 14,
+    "theme": "Neti, Neti (The Method of Subtraction)",
+    "source": "Bṛhadāraṇyaka Upaniṣad 2.3.6",
+    "seed_sanskrit": "अथात आदेशो नेति नेति न ह्येतस्मादिति नेत्यन्यत्परमस्ति",
+    "translation": "Now therefore follows the teaching: 'Not this, not this.' For there is nothing higher than this instruction: 'It is not this.'",
+    "inquiry": "Mastery in architecture is rarely achieved by adding more code, dependencies, or layers. It is achieved through Neti Neti: systematically eliminating the non-essential until only the pure, irreplaceable truth remains. What can you safely remove today?"
   }
 ]
