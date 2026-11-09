@@ -1,6 +1,6 @@
 {
   "name": "aum-development-workspace",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "AUM Framework Development Workspace (Dogfooding)",
   "private": true,
   "bin": {

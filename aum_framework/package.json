@@ -1,6 +1,6 @@
 {
   "name": "aum-framework",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "SĀKSHĪ (साक्षी) & SPHOTA OS: Consciousness & Epistemological Engine for AI Agents",
   "main": "scripts/aum.js",
   "bin": {
@@ -14,8 +14,7 @@
     "test:global": "node scripts/aum.js test-global",
     "start": "node scripts/aum.js start",
     "verify": "node scripts/aum.js verify",
-    "audit": "node scripts/aum.js audit",
-    "publish": "node scripts/aum.js publish"
+    "audit": "node scripts/aum.js audit"
   },
   "keywords": [
     "sakshi",

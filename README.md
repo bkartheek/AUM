@@ -1,7 +1,7 @@
 # ॐ SĀKSHĪ (साक्षी) & SPHOTA OS
 ### The Conscious Witness & Epistemological Orchestration Engine for AI Coding Agents
 
-[![Version](https://img.shields.io/badge/version-1.8.1-f59e0b?style=for-the-badge&logo=target&logoColor=white)](https://npmjs.org/package/aum-framework)
+[![Version](https://img.shields.io/badge/version-1.8.2-f59e0b?style=for-the-badge&logo=target&logoColor=white)](https://npmjs.org/package/aum-framework)
 [![NPM Version](https://img.shields.io/npm/v/aum-framework?style=for-the-badge&color=ea580c&logo=npm)](https://npmjs.org/package/aum-framework)
 [![NPM Downloads](https://img.shields.io/npm/dm/aum-framework?style=for-the-badge&color=16a34a&logo=node.js)](https://npmjs.org/package/aum-framework)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://github.com/bkartheek/AUM/blob/main/LICENSE)
